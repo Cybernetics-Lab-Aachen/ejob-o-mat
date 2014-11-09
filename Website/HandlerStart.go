@@ -11,10 +11,14 @@ import (
 
 func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	pwd := request.FormValue(`PWD`)
-	if pwd != betaPassword {
-		defer http.Redirect(response, request, "/", 307)
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelSECURITY, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameUSER, `A wrong password was used.`, pwd)
-		return
+	readSession := request.FormValue(`session`)
+
+	if readSession == `` {
+		if pwd != betaPassword {
+			defer http.Redirect(response, request, `/`, 307)
+			Log.LogFull(senderName, LM.CategoryAPP, LM.LevelSECURITY, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameUSER, `A wrong password was used.`, pwd)
+			return
+		}
 	}
 
 	lang := Tools.GetRequestLanguage(request)[0]
@@ -22,6 +26,12 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
+
+	if readSession != `` {
+		data.Basis.Session = readSession
+	} else {
+		data.Basis.Session = Tools.RandomGUID()
+	}
 
 	if strings.Contains(lang.Language, `de`) {
 		data.TextStartButton = `Fragebogen beginnen`
