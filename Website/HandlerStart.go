@@ -5,15 +5,17 @@ import (
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
+	"github.com/SommerEngineering/Re4EEE/DB"
 	"net/http"
 	"strings"
+	"time"
 )
 
 func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	pwd := request.FormValue(`PWD`)
 	readSession := request.FormValue(`session`)
 
-	if readSession == `` {
+	if readSession == `` || DB.LoadAnswers(readSession).Session == `` {
 		if pwd != betaPassword {
 			defer http.Redirect(response, request, `/`, 307)
 			Log.LogFull(senderName, LM.CategoryAPP, LM.LevelSECURITY, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameUSER, `A wrong password was used.`, pwd)
@@ -31,6 +33,10 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 		data.Basis.Session = readSession
 	} else {
 		data.Basis.Session = Tools.RandomGUID()
+		answers := DB.Answers{}
+		answers.Session = data.Basis.Session
+		answers.CreateTimeUTC = time.Now().UTC()
+		DB.StoreNewAnswers(answers)
 	}
 
 	if strings.Contains(lang.Language, `de`) {
