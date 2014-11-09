@@ -9,5 +9,7 @@ import (
 func main() {
 	Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameSTARTUP, `Re4EEE is starting.`)
 	System.InitHandlers()
+	registerHandlers()
+	registerAllAppConfigurationParameters()
 	System.StartAndBlockForever()
 }
