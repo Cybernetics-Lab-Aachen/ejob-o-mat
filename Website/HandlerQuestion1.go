@@ -46,9 +46,9 @@ func HandlerQuestion1(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = `Ja, es ist erforderlich`
-		data.TextButton2 = `Nein, ich möchte diese Funktion nicht`
-		data.TextButton3 = `Nein, es ist nicht erforderlich`
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Egal`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
@@ -57,7 +57,7 @@ func HandlerQuestion1(response http.ResponseWriter, request *http.Request) {
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
-		data.TextButton3 = `No`
+		data.TextButton3 = `Does not matter`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`

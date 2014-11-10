@@ -29,37 +29,38 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 	data.Button1Status = BUTTON_SHOW
 	data.Button2Status = BUTTON_SHOW
 	data.Button3Status = BUTTON_SHOW
-	data.Button4Status = BUTTON_HIDDEN
-	data.Button5Status = BUTTON_HIDDEN
+	data.Button4Status = BUTTON_SHOW
+	data.Button5Status = BUTTON_SHOW
 
-	data.Button1Data = `1`
-	data.Button2Data = `0`
-	data.Button3Data = `*`
-	data.Button4Data = ``
-	data.Button5Data = ``
+	data.Button1Data = `none`
+	data.Button2Data = `up10`
+	data.Button3Data = `up25`
+	data.Button4Data = `up100`
+	data.Button5Data = `up1000`
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
 	data.NoQuestions = totalQuestions
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
-		data.TextButton4 = ``
-		data.TextButton5 = ``
+		data.TextButton1 = `Keines`
+		data.TextButton2 = `Bis 10 €`
+		data.TextButton3 = `Bis 25 €`
+		data.TextButton4 = `Bis 100 €`
+		data.TextButton5 = `Bis 1000 €`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Budget`
+		data.TextQuestionBody = `Welches Budget haben Sie für die einmalige Anschaffung pro
+		Studierenden?`
 	} else {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
-		data.TextButton4 = ``
-		data.TextButton5 = ``
+		data.TextButton1 = `None`
+		data.TextButton2 = `Up to USD 10`
+		data.TextButton3 = `Up to USD 25`
+		data.TextButton4 = `Up to USD 100`
+		data.TextButton5 = `Up to USD 1000`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Budget`
+		data.TextQuestionBody = `What is your budget for the one-time purchase per student?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

@@ -32,7 +32,7 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 		DB.UpdateAnswers(answers)
 	}
 
-	if no+1 > 28 {
+	if no+1 > 27 {
 		http.Redirect(response, request, `/result`, 307)
 	} else {
 		http.Redirect(response, request, fmt.Sprintf("/question%d?lang=%s&session=%s", (no+1), lang, session), 307)

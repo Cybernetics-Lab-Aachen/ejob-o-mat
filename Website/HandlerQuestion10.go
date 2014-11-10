@@ -28,13 +28,13 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 
 	data.Button1Status = BUTTON_SHOW
 	data.Button2Status = BUTTON_SHOW
-	data.Button3Status = BUTTON_SHOW
+	data.Button3Status = BUTTON_HIDDEN
 	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
 
-	data.Button1Data = `1`
-	data.Button2Data = `0`
-	data.Button3Data = `*`
+	data.Button1Data = `support4lecture`
+	data.Button2Data = `replace`
+	data.Button3Data = ``
 	data.Button4Data = ``
 	data.Button5Data = ``
 
@@ -43,23 +43,27 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
+		data.TextButton1 = `Vorlesung/Übung etc. unterstützen`
+		data.TextButton2 = `Präsenzveranstaltung ersetzen`
 		data.TextButton3 = ``
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Einsatzzweck`
+		data.TextQuestionBody = `Suchen Sie ein E-Learning-Tool zur Unterstützung Ihrer Vorlesung,
+		Übung etc. oder eines um die Präsenzveranstaltung zu ersetzen (Stichwort:
+		Flipped Classroom)?`
 	} else {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
+		data.TextButton1 = `Support Lecture`
+		data.TextButton2 = `Replace on-site attendance`
 		data.TextButton3 = ``
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Purpose`
+		data.TextQuestionBody = `Do you want an e-learning solution to support your lecture,
+		exercise, etc. or a solution to replace the on-site attendance (keyword:
+		flipped classroom)?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

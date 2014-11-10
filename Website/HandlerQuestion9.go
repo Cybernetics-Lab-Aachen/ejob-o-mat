@@ -43,23 +43,25 @@ func HandlerQuestion9(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Egal`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Lernziele`
+		data.TextQuestionBody = `Sollen die Studierende direkt in dem E-Learning-Tool die
+		Lernziele einsehen können?`
 	} else {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Yes`
+		data.TextButton2 = `No`
+		data.TextButton3 = `Does not matter`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Learning Objectives`
+		data.TextQuestionBody = `Should it possible that the students are able to read the
+		learning objectives directly inside the e-learning solution?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

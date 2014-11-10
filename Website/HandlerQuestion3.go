@@ -43,23 +43,25 @@ func HandlerQuestion3(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Egal`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Kommentare`
+		data.TextQuestionBody = `Wollen Sie, dass die Studierende Inhalte kommentieren können?
+		Dies bedeutet nicht automatisch, dass die Studierende anonym auftreten.`
 	} else {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Yes`
+		data.TextButton2 = `No`
+		data.TextButton3 = `Does not matter`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Comments`
+		data.TextQuestionBody = `Do you want that students are able to comment content? This does
+		not means, that the students are anonymous.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)
