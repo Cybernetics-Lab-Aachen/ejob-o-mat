@@ -43,23 +43,24 @@ func HandlerQuestion13(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Egal`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Hochschulnetz`
+		data.TextQuestionBody = `Möchten Sie, dass das E-Learning-Tool in Ihrem Hochschulnetz betrieben wird?`
 	} else {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Yes`
+		data.TextButton2 = `No`
+		data.TextButton3 = `Does not matter`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `University's Network`
+		data.TextQuestionBody = `Do you want that the e-learning solution is running at your local
+		university's network?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

@@ -43,23 +43,25 @@ func HandlerQuestion14(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Egal`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Klassische Computerprogramme`
+		data.TextQuestionBody = `Könnten Sie auch klassische Computerprogramme einsetzen? Dies erfordert
+		ggf. dass Sie die Software z.B. im Rechnerpool installieren lassen müssen.`
 	} else {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Yes`
+		data.TextButton2 = `No`
+		data.TextButton3 = `Does not matter`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Classical Computer Programs`
+		data.TextQuestionBody = `Are you able to use classical computer programs? This requires maybe to
+		install the software at your computer pool.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)
