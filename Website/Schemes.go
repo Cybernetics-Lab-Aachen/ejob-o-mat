@@ -1,5 +1,9 @@
 package Website
 
+import (
+	"github.com/SommerEngineering/Re4EEE/XML"
+)
+
 type Basis struct {
 	Name    string
 	Version string
@@ -16,6 +20,14 @@ type PageStart struct {
 	Basis           Basis
 	TextWelcome     string
 	TextStartButton string
+}
+
+type PageResults struct {
+	Basis      Basis
+	MainLang   string
+	Groups     []XML.ProductGroup
+	TextHeader string
+	TextMatch  string
 }
 
 type PageQuestion struct {
