@@ -43,23 +43,25 @@ func HandlerQuestion24(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Unbekannt`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Darbietende Lehrverfahren`
+		data.TextQuestionBody = `Planen Sie darbietende Lehrverfahren wie z.B. Vorträge, Vorlesungen,
+		Demonstrationen, etc. einzusetzen?`
 	} else {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Yes`
+		data.TextButton2 = `No`
+		data.TextButton3 = `Unknown`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Presenting Teaching Methods`
+		data.TextQuestionBody = `Do you want to use presenting teaching methods like e.g. talks, lectures,
+		demonstrations, etc.?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

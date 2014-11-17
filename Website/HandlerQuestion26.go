@@ -43,23 +43,25 @@ func HandlerQuestion26(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Unbekannt`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Explorative Lehrverfahren`
+		data.TextQuestionBody = `Planen Sie explorative Lehrverfahren wie z.B. Projektarbeiten, Fallstudien,
+		Planspiele, etc. einzusetzen?`
 	} else {
-		data.TextButton1 = ``
-		data.TextButton2 = ``
-		data.TextButton3 = ``
+		data.TextButton1 = `Yes`
+		data.TextButton2 = `No`
+		data.TextButton3 = `Unknown`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Explorative Teaching Methods`
+		data.TextQuestionBody = `Do you want to use explorative teaching methods like e.g. projects, case studies,
+		simulation games, etc.?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)
