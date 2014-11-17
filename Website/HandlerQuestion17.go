@@ -49,8 +49,10 @@ func HandlerQuestion17(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `Hochverfügbarkeit`
+		data.TextQuestionBody = `Möchten Sie, dass das Tool eine Hochverfügbarkeit bietet? Das bedeutet, dass
+		der E-Learning-Dienst so ausgelegt ist, dass dieser selbst bei Ausfall von Teilsystemen (z.B. ein Hardware-Problem)
+		weiterhin eingesetzt werden kann.`
 	} else {
 		data.TextButton1 = ``
 		data.TextButton2 = ``
@@ -58,8 +60,9 @@ func HandlerQuestion17(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = ``
-		data.TextQuestionBody = ``
+		data.TextQuestionTopic = `High Availability`
+		data.TextQuestionBody = `Do you want that the e-learning solution provides a high availability? That means,
+		that the solution is still usable, even if parts of the system are failing (e.g. a hardware defekt).`
 	}
 
 	Tools.SendChosenLanguage(response, lang)
