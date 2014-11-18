@@ -80,8 +80,6 @@ type ProductGroup struct {
 	GroupDescription Descriptions     `xml:"Descriptions"`
 	SharedProperties SharedProperties `xml:"SharedProperties"`
 	ExampleGroup     []ExampleGroup   `xml:"ExampleGroup"`
-	ScoreText        string           ``
-	Score            int              ``
 }
 
 type ProductsGroup struct {

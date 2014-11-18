@@ -4,6 +4,19 @@ import (
 	"time"
 )
 
+type ProductGroup struct {
+	Name     string `bson:"Name"`
+	Points   int    `bson:"Points"`
+	Percent  string `bson:"Percent"`
+	XMLIndex int    `bson:"XMLIndex"`
+}
+
+type Recommendation struct {
+	CreateTimeUTC time.Time      `bson:"CreateTimeUTC"`
+	Session       string         `bson:"Session"`
+	ProductGroups []ProductGroup `bson:"ProductGroups"`
+}
+
 type Answers struct {
 	CreateTimeUTC time.Time `bson:"CreateTimeUTC"`
 	Session       string    `bson:"Session"`

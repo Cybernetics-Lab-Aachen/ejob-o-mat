@@ -9,5 +9,6 @@ var (
 )
 
 const (
-	collAnswers = `Answers`
+	collAnswers         = `Answers`
+	collRecommendations = `Recommendations`
 )

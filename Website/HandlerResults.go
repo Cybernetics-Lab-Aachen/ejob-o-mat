@@ -5,8 +5,10 @@ import (
 	"github.com/SommerEngineering/Ocean/Tools"
 	"github.com/SommerEngineering/Re4EEE/Algorithm"
 	"github.com/SommerEngineering/Re4EEE/DB"
+	"github.com/SommerEngineering/Re4EEE/XML"
 	"net/http"
 	"strings"
+	"time"
 )
 
 func HandlerResults(response http.ResponseWriter, request *http.Request) {
@@ -14,14 +16,20 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	session := request.FormValue(`session`)
 	lang := Tools.GetRequestLanguage(request)[0]
 	answers := DB.LoadAnswers(session)
-	groups := Algorithm.ExecuteAnswers(answers)
+	assessedGroups := Algorithm.ExecuteAnswers(answers)
+	groups := XML.GetData()
+	resultSet := DB.Recommendation{}
+
+	resultSet.CreateTimeUTC = time.Now().UTC()
+	resultSet.ProductGroups = assessedGroups
+	resultSet.Session = session
 
 	data := PageResults{}
 	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = session
-	data.Groups = groups
+	data.Groups = groups.ProductsCollection.Products // Problem => Hier steckt nicht mehr drinnen, wie viel %! Brauche also noch ein Array hier drinnen!
 
 	if strings.Contains(lang.Language, `de`) {
 

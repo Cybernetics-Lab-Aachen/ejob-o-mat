@@ -6,9 +6,8 @@ import (
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 )
 
-func initCollections() {
+func StoreRecommendation(result Recommendation) {
 
-	// Get the database:
 	dbSession, db := CustomerDB.DB()
 	defer dbSession.Close()
 
@@ -17,13 +16,6 @@ func initCollections() {
 		return
 	}
 
-	// Get all collections:
-	ocollAnswers := db.C(collAnswers)
 	ocollRecommendations := db.C(collRecommendations)
-
-	// Ensure the indexes:
-	ocollAnswers.EnsureIndexKey(`Session`)
-	ocollAnswers.EnsureIndexKey(`TimeUTC`)
-	ocollRecommendations.EnsureIndexKey(`CreateTimeUTC`)
-	ocollRecommendations.EnsureIndexKey(`Session`)
+	ocollRecommendations.Insert(result)
 }
