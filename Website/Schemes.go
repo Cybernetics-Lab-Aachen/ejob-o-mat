@@ -23,11 +23,13 @@ type PageStart struct {
 }
 
 type PageResults struct {
-	Basis      Basis
-	MainLang   string
-	Groups     []XML.ProductGroup
-	TextHeader string
-	TextMatch  string
+	Basis        Basis
+	LangPos      int
+	Groups       []XML.ProductGroup
+	TextHeader   string
+	TextMatch    string
+	TextGroup    string
+	TextExamples string
 }
 
 type PageQuestion struct {

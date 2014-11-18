@@ -25,14 +25,18 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 
 	if strings.Contains(lang.Language, `de`) {
 
-		data.MainLang = `de`
+		data.LangPos = 0
 		data.TextHeader = `Bitte wählen Sie eine Gruppe um die Details anzuzeigen`
 		data.TextMatch = `Übereinstimmung mit Ihren Antworten`
+		data.TextGroup = `Gruppe`
+		data.TextExamples = `Beispiele für`
 	} else {
 
-		data.MainLang = `en`
+		data.LangPos = 1
 		data.TextHeader = `Please choose a group to show the details`
 		data.TextMatch = `match with your answers`
+		data.TextGroup = `Group`
+		data.TextExamples = `Examples for`
 	}
 
 	Tools.SendChosenLanguage(response, lang)
