@@ -23,13 +23,15 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	resultSet.CreateTimeUTC = time.Now().UTC()
 	resultSet.ProductGroups = assessedGroups
 	resultSet.Session = session
+	DB.StoreRecommendation(resultSet)
 
 	data := PageResults{}
 	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = session
-	data.Groups = groups.ProductsCollection.Products // Problem => Hier steckt nicht mehr drinnen, wie viel %! Brauche also noch ein Array hier drinnen!
+	data.Groups = groups.ProductsCollection.Products
+	data.Recommendation = resultSet // Hier drüber im Templ. iterieren. Enthält Prozente & Pointer auf Datensatz in Groups wg. Texten!
 
 	if strings.Contains(lang.Language, `de`) {
 
@@ -38,6 +40,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		data.TextMatch = `Übereinstimmung mit Ihren Antworten`
 		data.TextGroup = `Gruppe`
 		data.TextExamples = `Beispiele für`
+
 	} else {
 
 		data.LangPos = 1

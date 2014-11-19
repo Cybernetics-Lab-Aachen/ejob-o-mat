@@ -1,6 +1,7 @@
 package Website
 
 import (
+	"github.com/SommerEngineering/Re4EEE/DB"
 	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
@@ -23,13 +24,14 @@ type PageStart struct {
 }
 
 type PageResults struct {
-	Basis        Basis
-	LangPos      int
-	Groups       []XML.ProductGroup
-	TextHeader   string
-	TextMatch    string
-	TextGroup    string
-	TextExamples string
+	Basis          Basis
+	LangPos        int
+	Groups         []XML.ProductGroup
+	Recommendation DB.Recommendation
+	TextHeader     string
+	TextMatch      string
+	TextGroup      string
+	TextExamples   string
 }
 
 type PageQuestion struct {
