@@ -49,9 +49,9 @@ func HandlerQuestion18(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Rollen für Studierende`
-		data.TextQuestionBody = `Benötigen Sie ein E-Learning-Tool, in dem Sie für die Studierenden ggf. Rollen
-		(z.B. Gruppenleiter, Moderator, etc.) vergeben können?`
+		data.TextQuestionTopic = `Lernfortschritt`
+		data.TextQuestionBody = `Möchten Sie in dem E-Learning-Tool den Lernfortschritt Ihrer Studierenden
+		nachverfolgen können?`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -59,9 +59,9 @@ func HandlerQuestion18(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Roles for Students`
-		data.TextQuestionBody = `Do you need an e-learning solution with the possibility to assign roles
-		(e.g. moderator, group leader, etc.) to students?`
+		data.TextQuestionTopic = `Learning Progress`
+		data.TextQuestionBody = `Do you want to track the learning progress of your students inside the
+		e-learning solution?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

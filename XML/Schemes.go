@@ -39,7 +39,6 @@ type SharedProperties struct {
 	SCROMSupport                          string   `xml:"SCROMSupport"`
 	DeploymentNecessary                   string   `xml:"DeploymentNecessary"`
 	VideoContent                          string   `xml:"VideoContent"`
-	HighAvailability                      string   `xml:"HighAvailability"`
 	StudentRoles                          string   `xml:"StudentRoles"`
 	TrackedProgress                       string   `xml:"TrackedProgress"`
 	DisplayEquations                      string   `xml:"DisplayEquations"`

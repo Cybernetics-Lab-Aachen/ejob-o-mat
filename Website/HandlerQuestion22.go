@@ -29,13 +29,13 @@ func HandlerQuestion22(response http.ResponseWriter, request *http.Request) {
 	data.Button1Status = BUTTON_SHOW
 	data.Button2Status = BUTTON_SHOW
 	data.Button3Status = BUTTON_SHOW
-	data.Button4Status = BUTTON_SHOW
+	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
 
-	data.Button1Data = `static`
-	data.Button2Data = `change`
-	data.Button3Data = `interact`
-	data.Button4Data = `*`
+	data.Button1Data = `1`
+	data.Button2Data = `0`
+	data.Button3Data = `*`
+	data.Button4Data = ``
 	data.Button5Data = ``
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
@@ -43,29 +43,25 @@ func HandlerQuestion22(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = `Statisch`
-		data.TextButton2 = `Veränderbar`
-		data.TextButton3 = `Interagierbar`
-		data.TextButton4 = `Egal`
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Egal`
+		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Art der Inhalte`
-		data.TextQuestionBody = `Welcher Art sind Ihre Inhalte für das E-Learning-Tool? Statische Inhalte lassen
-		sich nur konsumieren (z.B. Präsentationen, Videos, Bücher), während veränderbare Inhalte von den Studierenden
-		bearbeitet werden können (z.B. Wikis). Interagierbare Inhalte erlauben die Interaktion zwischen
-		Studierenden und E-Learning-Tool (z.B. eine Simulation).`
+		data.TextQuestionTopic = `Privatnutzung`
+		data.TextQuestionBody = `Sollen Ihre Studierenden in der Lage sein das E-Learning-Tool auch daheim zu
+		nutzen z.B. für Projektarbeiten?`
 	} else {
-		data.TextButton1 = `Static`
-		data.TextButton2 = `Changeable`
-		data.TextButton3 = `Interactable`
-		data.TextButton4 = `Does not matter`
+		data.TextButton1 = `Yes`
+		data.TextButton2 = `No`
+		data.TextButton3 = `Does not matter`
+		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Kind of Content`
-		data.TextQuestionBody = `Which kind of content do you want to provide for the e-learning solution? Static
-		content is just consumable (e.g. presentations, videos, books), wherever changeable content can be edit
-		by the students (e.g. Wikis). Interactable content allows the students to interact with the e-learning
-		solution (e.g. a simulation).`
+		data.TextQuestionTopic = `Home Use`
+		data.TextQuestionBody = `Should it possible for your students to use the e-learning-solution also at home
+		for e.g. a project?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

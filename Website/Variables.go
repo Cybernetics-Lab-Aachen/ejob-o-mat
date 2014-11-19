@@ -11,7 +11,7 @@ const (
 	VERSION         string = `1.0b1`
 	BUTTON_HIDDEN   string = ` buttonhidden`
 	BUTTON_SHOW     string = ``
-	TOTAL_QUESTIONS int    = 27
+	TOTAL_QUESTIONS int    = 25
 )
 
 var (
