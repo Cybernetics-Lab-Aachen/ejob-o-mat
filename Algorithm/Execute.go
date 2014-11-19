@@ -2,14 +2,15 @@ package Algorithm
 
 import (
 	"fmt"
-	"github.com/SommerEngineering/Re4EEE/DB"
+	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 	"github.com/SommerEngineering/Re4EEE/XML"
+	"sort"
 )
 
-func ExecuteAnswers(answers DB.Answers) (result []DB.ProductGroup) {
+func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 
 	data := XML.GetData()
-	groups := make([]DB.ProductGroup, 18)
+	groups := make(Scheme.ProductGroups, 18)
 
 	// Algorithm:
 	for n, productGroup := range data.ProductsCollection.Products {
@@ -41,18 +42,13 @@ func ExecuteAnswers(answers DB.Answers) (result []DB.ProductGroup) {
 		/* 25 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A25Data, productGroup.SharedProperties.TeachingTypeDevelopment)
 		/* 26 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A26Data, productGroup.SharedProperties.TeachingTypeExplorative)
 
-		result := (float64(data.ProductsCollection.Products[n].Score) / 26.0) * 100.0
+		result := (float64(groups[n].Points) / 26.0) * 100.0
 		groups[n].Percent = fmt.Sprintf("%.f", result)
 		groups[n].XMLIndex = n
 		groups[n].Name = productGroup.InternalName
 	}
 
-	// Take the best:
-	/*for _, productGroup := range groups {
-
-		//groups[found] = productGroup
-	}*/
-
+	sort.Sort(groups)
 	result = groups[0:5]
 	return
 }

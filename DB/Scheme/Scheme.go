@@ -1,8 +1,22 @@
-package DB
+package Scheme
 
 import (
 	"time"
 )
+
+func (groups ProductGroups) Len() int {
+	return len(groups)
+}
+
+func (groups ProductGroups) Less(i, j int) bool {
+	return groups[i].Points > groups[j].Points
+}
+
+func (groups ProductGroups) Swap(i, j int) {
+	groups[i], groups[j] = groups[j], groups[i]
+}
+
+type ProductGroups []ProductGroup
 
 type ProductGroup struct {
 	Name     string `bson:"Name"`

@@ -10,6 +10,7 @@ import (
 )
 
 func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
+
 	noText := request.FormValue(`no`)
 	session := request.FormValue(`session`)
 	data := request.FormValue(`a`)

@@ -1,7 +1,7 @@
 package Website
 
 import (
-	"github.com/SommerEngineering/Re4EEE/DB"
+	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
@@ -27,7 +27,7 @@ type PageResults struct {
 	Basis          Basis
 	LangPos        int
 	Groups         []XML.ProductGroup
-	Recommendation DB.Recommendation
+	Recommendation Scheme.Recommendation
 	TextHeader     string
 	TextMatch      string
 	TextGroup      string

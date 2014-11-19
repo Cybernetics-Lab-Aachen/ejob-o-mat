@@ -4,9 +4,10 @@ import (
 	"github.com/SommerEngineering/Ocean/CustomerDB"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
+	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 )
 
-func StoreRecommendation(result Recommendation) {
+func StoreRecommendation(result Scheme.Recommendation) {
 
 	dbSession, db := CustomerDB.DB()
 	defer dbSession.Close()

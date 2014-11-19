@@ -6,6 +6,7 @@ import (
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
 	"github.com/SommerEngineering/Re4EEE/DB"
+	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 	"net/http"
 	"strings"
 	"time"
@@ -33,7 +34,7 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 		data.Basis.Session = readSession
 	} else {
 		data.Basis.Session = Tools.RandomGUID()
-		answers := DB.Answers{}
+		answers := Scheme.Answers{}
 		answers.Session = data.Basis.Session
 		answers.CreateTimeUTC = time.Now().UTC()
 		DB.StoreNewAnswers(answers)

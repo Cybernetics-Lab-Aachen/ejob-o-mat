@@ -5,6 +5,7 @@ import (
 	"github.com/SommerEngineering/Ocean/Tools"
 	"github.com/SommerEngineering/Re4EEE/Algorithm"
 	"github.com/SommerEngineering/Re4EEE/DB"
+	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 	"github.com/SommerEngineering/Re4EEE/XML"
 	"net/http"
 	"strings"
@@ -18,7 +19,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	answers := DB.LoadAnswers(session)
 	assessedGroups := Algorithm.ExecuteAnswers(answers)
 	groups := XML.GetData()
-	resultSet := DB.Recommendation{}
+	resultSet := Scheme.Recommendation{}
 
 	resultSet.CreateTimeUTC = time.Now().UTC()
 	resultSet.ProductGroups = assessedGroups
@@ -31,7 +32,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = session
 	data.Groups = groups.ProductsCollection.Products
-	data.Recommendation = resultSet // Hier drüber im Templ. iterieren. Enthält Prozente & Pointer auf Datensatz in Groups wg. Texten!
+	data.Recommendation = resultSet
 
 	if strings.Contains(lang.Language, `de`) {
 

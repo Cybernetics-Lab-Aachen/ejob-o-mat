@@ -4,10 +4,11 @@ import (
 	"github.com/SommerEngineering/Ocean/CustomerDB"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
+	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 	"gopkg.in/mgo.v2/bson"
 )
 
-func StoreNewAnswers(ans Answers) {
+func StoreNewAnswers(ans Scheme.Answers) {
 
 	// Get the database:
 	dbSession, db := CustomerDB.DB()
@@ -22,7 +23,7 @@ func StoreNewAnswers(ans Answers) {
 	ocollAnswers.Insert(ans)
 }
 
-func UpdateAnswers(ans Answers) {
+func UpdateAnswers(ans Scheme.Answers) {
 
 	// Get the database:
 	dbSession, db := CustomerDB.DB()

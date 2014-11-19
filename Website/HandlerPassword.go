@@ -8,6 +8,7 @@ import (
 )
 
 func HandlerPassword(response http.ResponseWriter, request *http.Request) {
+
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PagePassword{}
 	data.Basis.Name = NAME
