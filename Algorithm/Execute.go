@@ -42,6 +42,7 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 		/* 25 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A25Data, productGroup.SharedProperties.TeachingTypeExplorative)
 
 		groups[n].Name = productGroup.InternalName
+		groups[n].XMLIndex = n
 	}
 
 	//
@@ -50,17 +51,17 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 	sort.Sort(groups)
 	worstPoints := groups[len(groups)-1].Points
 	correctionPoints := worstPoints * -1
-	bestPoints := float64(25 + correctionPoints)
+	bestPointsCorrected := float64(25 + correctionPoints)
+	bestPointsNormal := float64(25)
 
-	if worstPoints < 0 {
-		for n, group := range groups {
-
-			group.Points += correctionPoints
-
-			// Calculate the result as percent:
-			result := (float64(group.Points) / bestPoints) * 100.0
-			group.Percent = fmt.Sprintf("%.f", result)
-			group.XMLIndex = n
+	for n, _ := range groups {
+		if worstPoints < 0 {
+			groups[n].Points += correctionPoints
+			result := (float64(groups[n].Points) / bestPointsCorrected) * 100.0
+			groups[n].Percent = fmt.Sprintf("%.f", result)
+		} else {
+			result := (float64(groups[n].Points) / bestPointsNormal) * 100.0
+			groups[n].Percent = fmt.Sprintf("%.f", result)
 		}
 	}
 
