@@ -21,6 +21,9 @@ type PageStart struct {
 	Basis           Basis
 	TextWelcome     string
 	TextStartButton string
+	TextProject     string
+	TextExecuted    string
+	TextPromoted    string
 }
 
 type PageResults struct {

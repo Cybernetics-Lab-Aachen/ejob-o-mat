@@ -42,20 +42,26 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 
 	if strings.Contains(lang.Language, `de`) {
 		data.TextStartButton = `Fragebogen beginnen`
+		data.TextProject = `Projekt`
+		data.TextExecuted = `Durchgeführt von`
+		data.TextPromoted = `Gefördert von`
 		data.TextWelcome = `Herzlich Willkommen bei ` + NAME + `. ` + NAME + ` ist ein E-Learning-Empfehlungssystem
 		mit dem Fokus auf die MINT-Wissenschaften. Ziel ist es, dass Sie einen Überblick über geeignete Tools erhalten,
 		die Sie in Ihrer Veranstaltung einsetzen können. Wenn Sie mit der Schaltfläche unten den Fragebogen starten,
 		werden Ihnen einige Frage gestellt. ` + NAME + ` wird dann, basierend auf Ihren Antworten, eine geeignete
-		Empfehlung aussprechen.` + NAME + ` wird realisiert in dem Projekt ELLI, welches vom
-		Bundesministereium für xyz gefördert wird.`
+		Empfehlung aussprechen. ` + NAME + ` wird realisiert in dem Projekt ELLI, welches vom
+		Bundesministerium für Bildung und Forschung gefördert wird.`
 	} else {
 		data.TextStartButton = `Start Questionnaire`
-		data.TextWelcome = `Welcome to` + NAME + `. ` + NAME + ` is an e-learning recommendation system with the focus.
+		data.TextProject = `Project`
+		data.TextExecuted = `Executed by`
+		data.TextPromoted = `Promoted by`
+		data.TextWelcome = `Welcome to ` + NAME + `. ` + NAME + ` is an e-learning recommendation system with the focus.
 		to STEAM scieces. The aim of ` + NAME + ` is to provide a overview about suitable tools. Therefore, it should
 		enable you to use these tools at your lectures, etc. If you start the questionnaire by pressing the button below,
 		you will receive a few questions. Afterwards, ` + NAME + ` is then able to recommend e-learning solutions to you,
-		based on your answers.` + NAME + ` is a product from the project ELLI. This project is supported from
-		the federal agency of xyz, Germany.`
+		based on your answers. ` + NAME + ` is a product from the project ELLI. This project is supported from
+		the Federal Ministry of Education and Research, Germany.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)
