@@ -34,7 +34,7 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 	}
 
 	if no+1 > 25 {
-		http.Redirect(response, request, fmt.Sprintf("/results?lang=%s&session=%s", lang, session), 307)
+		http.Redirect(response, request, fmt.Sprintf("/results?lang=%s&session=%s&amount=8", lang, session), 307)
 	} else {
 		http.Redirect(response, request, fmt.Sprintf("/question%d?lang=%s&session=%s", (no+1), lang, session), 307)
 	}

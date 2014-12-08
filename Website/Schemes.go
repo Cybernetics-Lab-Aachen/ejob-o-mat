@@ -27,14 +27,20 @@ type PageStart struct {
 }
 
 type PageResults struct {
-	Basis          Basis
-	LangPos        int
-	Groups         []XML.ProductGroup
-	Recommendation Scheme.Recommendation
-	TextHeader     string
-	TextMatch      string
-	TextGroup      string
-	TextExamples   string
+	Basis            Basis
+	LangPos          int
+	AmountCurrent    int
+	AmountToggle     int
+	Groups           []XML.ProductGroup
+	Recommendation   Scheme.Recommendation
+	TextHeader       string
+	TextHeaderPrefix string
+	TextMatch        string
+	TextGroup        string
+	TextExamples     string
+	TextRestart      string
+	TextAllGroups    string
+	TextOptionen     string
 }
 
 type PageQuestion struct {
