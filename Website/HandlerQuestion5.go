@@ -50,7 +50,9 @@ func HandlerQuestion5(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Interaktion`
-		data.TextQuestionBody = `Sollen die Studierenden ohne Zeitversatz miteinander durch das Produkt interagieren können?`
+		data.TextQuestionBody = `Sollen die Studierende ohne Zeitversatz miteinander durch das Produkt
+		interagieren können? Dies kann ein einfacher Chat zum Austausch von Textnachrichten sein oder
+		eine weiterreichende Interaktion z.B. in einer virtuellen Umgebung.`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -59,7 +61,9 @@ func HandlerQuestion5(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Interaction`
-		data.TextQuestionBody = `Should it possible, that the students are able to interact live altogether through the product?`
+		data.TextQuestionBody = `Should it possible, that the students are able to interact live altogether
+		through the product? Examples are e.g. a simple chat to exchange messages or more advanced interactions
+		e.g. within virtual environments.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

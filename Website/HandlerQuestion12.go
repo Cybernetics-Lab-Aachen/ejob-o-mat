@@ -50,7 +50,9 @@ func HandlerQuestion12(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Cloud`
-		data.TextQuestionBody = `Dürfen die E-Learning-Tools auch in der Cloud laufen?`
+		data.TextQuestionBody = `Dürfen die E-Learning-Tools auch in der Cloud laufen? Häufig laufen Cloud-Anwendungen
+		auf Infrastruktur von z.B. amerikanischen Unternehmen. Daher können in solchen Fällen die Regeln des europäischen
+		Datenschutzes oftmals nicht eingehalten bzw. garantiert werden.`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -59,7 +61,9 @@ func HandlerQuestion12(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Cloud`
-		data.TextQuestionBody = `Is it permitted that the e-learning solutions are cloud-based?`
+		data.TextQuestionBody = `Is it permitted that the e-learning solutions are cloud-based? These kind of
+		solutions often using e.g. infrastructure from American companies. In such cases, it is maybe no possible
+		to guarantee the privacy policies of your country.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

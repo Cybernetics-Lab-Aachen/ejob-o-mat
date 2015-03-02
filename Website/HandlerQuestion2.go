@@ -49,10 +49,10 @@ func HandlerQuestion2(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Assistenz`
+		data.TextQuestionTopic = `Tutoring`
 		data.TextQuestionBody = `Ist es notwendig, dass die Studierende durch das E-Learning-Tool
-		fachlich aktiv unterstützt werden? Das bedeutet, dass das Tool aktiv Hilfen anbietet.
-		Teilweise müssen diese jedoch von Ihnen zuvor hinterlegt werden.`
+		fachlich aktiv unterstützt werden? Das bedeutet, dass das Tool ein Tutoring anbietet.
+		Teilweise ist es erforderlich, dass Sie entsprechende Inhalte zuvor hinterlegen.`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -60,9 +60,9 @@ func HandlerQuestion2(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Assistant`
+		data.TextQuestionTopic = `Tutoring`
 		data.TextQuestionBody = `Is it necessary, that the students are actively supported by the
-		e-learning solutions? That means, the solution provides help for the students. For some
+		e-learning solutions? That means, the solution provides help for the students e.g. tutoring. For some
 		solutions, you have to provide this content beforehand.`
 	}
 

@@ -8,10 +8,10 @@ import (
 
 const (
 	NAME            string = `Re4EEE`
-	VERSION         string = `1.0b1`
+	VERSION         string = `1.0b2`
 	BUTTON_HIDDEN   string = ` buttonhidden`
 	BUTTON_SHOW     string = ``
-	TOTAL_QUESTIONS int    = 25
+	TOTAL_QUESTIONS int    = 24
 )
 
 var (

@@ -50,8 +50,8 @@ func HandlerQuestion6(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Zusammenarbeit`
-		data.TextQuestionBody = `Soll es möglich sein, dass die Studierenden zeitversetzt
-		zusammenarbeiten?`
+		data.TextQuestionBody = `Soll es möglich sein, dass die Studierende zeitversetzt
+		zusammenarbeiten, wie z.B. in Diskussionsforen und Wikis?`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -60,7 +60,8 @@ func HandlerQuestion6(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Work Together`
-		data.TextQuestionBody = `Should it possible that the students are time-shifted able to work together?`
+		data.TextQuestionBody = `Should it possible that the students are able to work together
+		like within e.g. discussion boards and Wikis? This kind of work occurs often time-shifted.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

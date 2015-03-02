@@ -50,9 +50,8 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Einsatzzweck`
-		data.TextQuestionBody = `Suchen Sie ein E-Learning-Tool zur Unterstützung Ihrer Vorlesung,
-		Übung etc. oder eines um die Präsenzveranstaltung zu ersetzen (Stichwort:
-		Flipped Classroom)?`
+		data.TextQuestionBody = `Suchen Sie ein E-Learning-System zur Unterstützung Ihrer Vorlesung,
+		Übung etc. oder eines um die Präsenzveranstaltung zu ersetzen?`
 	} else {
 		data.TextButton1 = `Support Lecture`
 		data.TextButton2 = `Replace on-site attendance`
@@ -62,8 +61,7 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Purpose`
 		data.TextQuestionBody = `Do you want an e-learning solution to support your lecture,
-		exercise, etc. or a solution to replace the on-site attendance (keyword:
-		flipped classroom)?`
+		exercise, etc. or a solution to replace the on-site attendance?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

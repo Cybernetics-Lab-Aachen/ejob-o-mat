@@ -29,13 +29,13 @@ func HandlerQuestion20(response http.ResponseWriter, request *http.Request) {
 	data.Button1Status = BUTTON_SHOW
 	data.Button2Status = BUTTON_SHOW
 	data.Button3Status = BUTTON_SHOW
-	data.Button4Status = BUTTON_HIDDEN
+	data.Button4Status = BUTTON_SHOW
 	data.Button5Status = BUTTON_HIDDEN
 
-	data.Button1Data = `1`
-	data.Button2Data = `0`
-	data.Button3Data = `*`
-	data.Button4Data = ``
+	data.Button1Data = `static`
+	data.Button2Data = `change`
+	data.Button3Data = `interact`
+	data.Button4Data = `*`
 	data.Button5Data = ``
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
@@ -43,24 +43,29 @@ func HandlerQuestion20(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = `Ja`
-		data.TextButton2 = `Nein`
-		data.TextButton3 = `Egal`
-		data.TextButton4 = ``
+		data.TextButton1 = `Statische Inhalte`
+		data.TextButton2 = `Veränderungen möglich`
+		data.TextButton3 = `Interaktion möglich`
+		data.TextButton4 = `Unbekannt`
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Mathematische Eingabe`
-		data.TextQuestionBody = `Sollen Ihre Studierenden mathematische Ausdrücke in dem E-Learning-Tool
-		schreiben können?`
+		data.TextQuestionTopic = `Art der Inhalte`
+		data.TextQuestionBody = `Welcher Art sind Ihre Inhalte für das E-Learning-Tool? Statische Inhalte lassen
+		sich nur konsumieren (z.B. Präsentationen, Videos, Bücher), während veränderbare Inhalte bearbeitet
+		werden können (z.B. Wikis). Inhalte mit möglichen Interaktionen können z.B. eine Simulation oder
+		eine virtuelle Umgebung sein.`
 	} else {
-		data.TextButton1 = `Yes`
-		data.TextButton2 = `No`
-		data.TextButton3 = `Does not matter`
-		data.TextButton4 = ``
+		data.TextButton1 = `Static`
+		data.TextButton2 = `Changes possible`
+		data.TextButton3 = `Interaction possible`
+		data.TextButton4 = `Unknown`
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Write Mathematics`
-		data.TextQuestionBody = `Should it possible for the students to write mathematically e.g. equations?`
+		data.TextQuestionTopic = `Kind of Content`
+		data.TextQuestionBody = `Which kind of content do you want to provide for the e-learning solution? Static
+		content is just consumable (e.g. presentations, videos, books), wherever changeable content can be edit
+		by the students (e.g. Wikis). Examples for content with interactions are e.g. a simulation or a
+		virtual environment.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

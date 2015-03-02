@@ -44,26 +44,32 @@ func HandlerQuestion7(response http.ResponseWriter, request *http.Request) {
 
 	if strings.Contains(lang.Language, `de`) {
 		data.TextButton1 = `Kleingruppen`
-		data.TextButton2 = `Mittel (Dutzende)`
-		data.TextButton3 = `Groß (Tausende)`
-		data.TextButton4 = `Massen (Zehntausende+)`
+		data.TextButton2 = `Mittel (Dutzend(e))`
+		data.TextButton3 = `Groß (Hundert(e))`
+		data.TextButton4 = `Massen (Tausend(e)+)`
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Anzahl Studierende`
-		data.TextQuestionBody = `Welche der vier Größenangaben passt am besten zu Ihrem Szenario?
-		Beachten Sie die angedachte Gruppengröße: Sollen alle Ihre Studierende zusammen das Tool
-		nutzen oder werden die Studierenden in z.B. 4er-Gruppen eingeteilt?`
+		data.TextQuestionTopic = `Anzahl der gleichzeitgen Zugriffe`
+		data.TextQuestionBody = `Wie viele Studierende greifen gleichzeitig auf das E-Learning-System zu?
+		Bedenken Sie dabei, dass z.B. bei einer Gruppenarbeit nur die Anzahl der Gruppen zählt. Beispiel:
+		In Ihrer Lehrveranstaltung befinden sich 1000 Studierende. Variante 1: Alle sollen zugleich das
+		E-Learning nutzen können. Sie wählen "Massen". Variante 2: Sie teilen die Studierende in 100 Gruppen
+		mit jeweils 10 Studierende. Pro Tag kommen 25 Gruppen in Ihren Rechnerpool, pro Stunde etwa 6 Gruppen.
+		Es greifen somit ca. 60 Studierende auf das E-Learning-System zu, Sie wählen somit "Groß".`
 	} else {
 		data.TextButton1 = `Small`
-		data.TextButton2 = `Mid (dozens)`
-		data.TextButton3 = `Huge (thousands)`
-		data.TextButton4 = `Masses (ten-thousends+)`
+		data.TextButton2 = `Mid (dozen(s))`
+		data.TextButton3 = `Huge (hundred(s))`
+		data.TextButton4 = `Masses (thousand(s)+)`
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Count of Students`
-		data.TextQuestionBody = `Which of the four sizes is the best match for your scenario?
-		Consider the conceived group size: Should all your students use the e-learning tool
-		at the same time or do you divide the students into e.g. groups of four students?`
+		data.TextQuestionTopic = `Count of Concurrent Accesses`
+		data.TextQuestionBody = `How many students using the e-learning system concurrently? Please also
+		consider in case of e.g. group work, that instead the amount of groups is necessary. Example: At your
+		lecture you have 1,000 students. Variation 1: All students can access the e-learning system concurrently.
+		In this case, you choose "Masses". Variation 2: You divide the students in 100 groups with 10 students each.
+		Each day, 25 groups are going to the lab, around six groups per hour. In this case, around 60 students
+		accesses concurrently the e-learning system. You choose "Huge".`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

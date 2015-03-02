@@ -50,8 +50,7 @@ func HandlerQuestion3(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Kommentare`
-		data.TextQuestionBody = `Wollen Sie, dass die Studierende Inhalte kommentieren können?
-		Dies bedeutet nicht automatisch, dass die Studierende anonym auftreten.`
+		data.TextQuestionBody = `Wollen Sie, dass die Studierende Inhalte kommentieren können?`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -60,8 +59,7 @@ func HandlerQuestion3(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Comments`
-		data.TextQuestionBody = `Do you want that students are able to comment content? This does
-		not means, that the students are anonymous.`
+		data.TextQuestionBody = `Do you want that students are able to comment content?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

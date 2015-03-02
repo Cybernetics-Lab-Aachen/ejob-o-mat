@@ -50,7 +50,9 @@ func HandlerQuestion13(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Hochschulnetz`
-		data.TextQuestionBody = `Möchten Sie, dass das E-Learning-Tool in Ihrem Hochschulnetz betrieben wird?`
+		data.TextQuestionBody = `Möchten Sie, dass das E-Learning-Tool in Ihrem Hochschulnetz betrieben wird?
+		In diesem Fall können Sie die Regeln des Datenschutzes selber anwenden und den Zugang zu dem
+		E-Learning-System z.B. auf Ihre Studierende beschränken.`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -60,7 +62,8 @@ func HandlerQuestion13(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `University's Network`
 		data.TextQuestionBody = `Do you want that the e-learning solution is running at your local
-		university's network?`
+		university's network? In this case, you are able to apply privacy rules and restrictions e.g.
+		you can restrict the e-learning solution to your students, etc.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

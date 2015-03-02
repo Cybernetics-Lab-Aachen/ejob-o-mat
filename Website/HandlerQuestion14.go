@@ -49,9 +49,9 @@ func HandlerQuestion14(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Klassische Computerprogramme`
-		data.TextQuestionBody = `Könnten Sie auch klassische Computerprogramme einsetzen? Dies erfordert
-		ggf. dass Sie die Software z.B. im Rechnerpool installieren lassen müssen.`
+		data.TextQuestionTopic = `CBT: Computer-Based Training`
+		data.TextQuestionBody = `Im Vergleich zu E-Learning im Web: Könnten Sie auch klassische Computerprogramme
+		einsetzen? Dies erfordert ggf. dass Sie die Software z.B. im Rechnerpool installieren lassen müssen.`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -59,9 +59,9 @@ func HandlerQuestion14(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Classical Computer Programs`
-		data.TextQuestionBody = `Are you able to use classical computer programs? This requires maybe to
-		install the software at your computer pool.`
+		data.TextQuestionTopic = `CBT: Computer-Based Training`
+		data.TextQuestionBody = `Compared to e-learning at the web: Are you able to use classical computer
+		programs? In this case, it is maybe necessary to install the software at your computer pool.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

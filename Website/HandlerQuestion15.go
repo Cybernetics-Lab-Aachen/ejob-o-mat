@@ -49,9 +49,8 @@ func HandlerQuestion15(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `SCORM-Daten`
-		data.TextQuestionBody = `Soll die Software sogenannte SCORM-Daten importieren können? Das SCORM-Format dient dem
-		Austausch von E-Learning-Lerninhalten.`
+		data.TextQuestionTopic = `Klausuren`
+		data.TextQuestionBody = `Ist es erforderlich, dass das E-Learning-Tool dazu verwendet werden kann, um Klausuren durchzuführen?`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -59,9 +58,8 @@ func HandlerQuestion15(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `SCORM Data`
-		data.TextQuestionBody = `Should the software able to import so called SCORM data? This is a format for the exchange
-		of e-learning data.`
+		data.TextQuestionTopic = `Exams`
+		data.TextQuestionBody = `Is it necessary, that the e-learning solution is able to perform proper exams?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

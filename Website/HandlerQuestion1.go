@@ -52,8 +52,8 @@ func HandlerQuestion1(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Klausuren`
-		data.TextQuestionBody = `Ist es erforderlich, dass das E-Learning-Tool dazu verwendet werden kann, um Klausuren durchzuführen?`
+		data.TextQuestionTopic = `Video-Inhalte`
+		data.TextQuestionBody = `Soll die Möglichkeit bestehen, Video-Inhalte über das E-Learning-Tool anzubieten?`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -61,8 +61,8 @@ func HandlerQuestion1(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Exams`
-		data.TextQuestionBody = `Is it necessary, that the e-learning solution is able to perform proper exams?`
+		data.TextQuestionTopic = `Video Content`
+		data.TextQuestionBody = `Should it possible to provide video content with the e-learning solution?`
 	}
 
 	answers.StartTimeQ1 = time.Now().UTC()

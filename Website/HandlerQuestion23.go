@@ -49,9 +49,9 @@ func HandlerQuestion23(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Darbietende Lehrverfahren`
-		data.TextQuestionBody = `Planen Sie darbietende Lehrverfahren wie z.B. Vorträge, Vorlesungen,
-		Demonstrationen, etc. einzusetzen?`
+		data.TextQuestionTopic = `Erarbeitende Lehrverfahren`
+		data.TextQuestionBody = `Planen Sie erarbeitende Lehrverfahren einzusetzen wie z.B. problembasiertes Lernen,
+		angeleitetes Praktikum/Übungen, einen Fachdialog zwischen Studierenden und Lehrenden, etc.?`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
@@ -59,9 +59,9 @@ func HandlerQuestion23(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Presenting Teaching Methods`
-		data.TextQuestionBody = `Do you want to use presenting teaching methods like e.g. talks, lectures,
-		demonstrations, etc.?`
+		data.TextQuestionTopic = `Developing Teaching Methods`
+		data.TextQuestionBody = `Do you want to use developing teaching methods like e.g. problem-based learning,
+		guided traineesheps or practices, a professional dialogue between students and teacher/professor, etc.?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

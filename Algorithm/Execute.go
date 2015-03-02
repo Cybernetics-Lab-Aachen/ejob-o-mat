@@ -15,7 +15,7 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 	// Algorithm:
 	for n, productGroup := range data.ProductsCollection.Products {
 
-		/*  1 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A1Data, productGroup.SharedProperties.Exam)
+		/*  1 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A1Data, productGroup.SharedProperties.VideoContent)
 		/*  2 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A2Data, productGroup.SharedProperties.Assistant)
 		/*  3 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A3Data, productGroup.SharedProperties.UserComments)
 		/*  4 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A4Data, productGroup.SharedProperties.AnonymousUsers)
@@ -29,17 +29,16 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 		/* 12 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A12Data, productGroup.SharedProperties.CloudBased)
 		/* 13 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A13Data, productGroup.SharedProperties.Intranet)
 		/* 14 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A14Data, productGroup.SharedProperties.StandaloneSoftware)
-		/* 15 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A15Data, productGroup.SharedProperties.SCROMSupport)
-		/* 16 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A16Data, productGroup.SharedProperties.VideoContent)
-		/* 17 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A17Data, productGroup.SharedProperties.StudentRoles)
-		/* 18 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A18Data, productGroup.SharedProperties.TrackedProgress)
-		/* 19 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A19Data, productGroup.SharedProperties.DisplayEquations)
-		/* 20 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A20Data, productGroup.SharedProperties.WriteEquations)
-		/* 21 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A21Data, productGroup.SharedProperties.ContentType)
-		/* 22 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A22Data, productGroup.SharedProperties.HomeUse)
-		/* 23 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A23Data, productGroup.SharedProperties.TeachingTypePresentation)
-		/* 24 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A24Data, productGroup.SharedProperties.TeachingTypeDevelopment)
-		/* 25 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A25Data, productGroup.SharedProperties.TeachingTypeExplorative)
+		/* 15 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A15Data, productGroup.SharedProperties.Exam)
+		/* 16 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A16Data, productGroup.SharedProperties.StudentRoles)
+		/* 17 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A17Data, productGroup.SharedProperties.TrackedProgress)
+		/* 18 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A18Data, productGroup.SharedProperties.DisplayEquations)
+		/* 19 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A19Data, productGroup.SharedProperties.WriteEquations)
+		/* 20 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A20Data, productGroup.SharedProperties.ContentType)
+		/* 21 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A21Data, productGroup.SharedProperties.HomeUse)
+		/* 22 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A22Data, productGroup.SharedProperties.TeachingTypePresentation)
+		/* 23 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A23Data, productGroup.SharedProperties.TeachingTypeDevelopment)
+		/* 24 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A24Data, productGroup.SharedProperties.TeachingTypeExplorative)
 
 		groups[n].Name = productGroup.InternalName
 		groups[n].XMLIndex = n

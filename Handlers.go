@@ -40,7 +40,6 @@ func registerHandlers() {
 	Handlers.AddPublicHandler(`/question22`, Website.HandlerQuestion22)
 	Handlers.AddPublicHandler(`/question23`, Website.HandlerQuestion23)
 	Handlers.AddPublicHandler(`/question24`, Website.HandlerQuestion24)
-	Handlers.AddPublicHandler(`/question25`, Website.HandlerQuestion25)
 	Handlers.AddPublicHandler(`/answer`, Website.HandlerAnswer)
 	Handlers.AddPublicHandler(`/results`, Website.HandlerResults)
 

@@ -59,8 +59,7 @@ type Answers struct {
 	A21TimeUTC  time.Time `bson:"A21TimeUTC"`
 	A22TimeUTC  time.Time `bson:"A22TimeUTC"`
 	A23TimeUTC  time.Time `bson:"A23TimeUTC"`
-	A24TimeUTC  time.Time `bson:"A24TimeUTC"`
-	A25TimeUTC  time.Time `bson:"A25TimeUTC"` // Take this time on store A26
+	A24TimeUTC  time.Time `bson:"A24TimeUTC"` // Take this time on store A25
 
 	A1Data  string `bson:"A1Data"`
 	A2Data  string `bson:"A2Data"`
@@ -86,5 +85,4 @@ type Answers struct {
 	A22Data string `bson:"A22Data"`
 	A23Data string `bson:"A23Data"`
 	A24Data string `bson:"A24Data"`
-	A25Data string `bson:"A25Data"`
 }
