@@ -52,7 +52,7 @@ func HandlerQuestion13(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestionTopic = `Hochschulnetz`
 		data.TextQuestionBody = `Möchten Sie, dass das E-Learning-Tool in Ihrem Hochschulnetz betrieben wird?
 		In diesem Fall können Sie die Regeln des Datenschutzes selber anwenden und den Zugang zu dem
-		E-Learning-System z.B. auf Ihre Studierende beschränken.`
+		E-Learning-System z.B. auf Ihre Studierenden beschränken.`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`

@@ -49,9 +49,9 @@ func HandlerQuestion14(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `CBT: Computer-Based Training`
+		data.TextQuestionTopic = `Computer-Based Training (CBT)`
 		data.TextQuestionBody = `Im Vergleich zu E-Learning im Web: Könnten Sie auch klassische Computerprogramme
-		einsetzen? Dies erfordert ggf. dass Sie die Software z.B. im Rechnerpool installieren lassen müssen.`
+		einsetzen? Dies erfordert ggf., dass Sie die Software z.B. im Rechnerpool installieren lassen müssen.`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`

@@ -50,7 +50,7 @@ func HandlerQuestion4(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Anonymität`
-		data.TextQuestionBody = `Dürfen die Studierende auch anonym z.B. unter Verwendung eines
+		data.TextQuestionBody = `Dürfen die Studierenden auch anonym z.B. unter Verwendung eines
 		Pseudonyms auftreten?`
 	} else {
 		data.TextButton1 = `Yes`

@@ -50,7 +50,7 @@ func HandlerQuestion5(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Interaktion`
-		data.TextQuestionBody = `Sollen die Studierende ohne Zeitversatz miteinander durch das Produkt
+		data.TextQuestionBody = `Sollen die Studierenden ohne Zeitversatz miteinander durch das Produkt
 		interagieren können? Dies kann ein einfacher Chat zum Austausch von Textnachrichten sein oder
 		eine weiterreichende Interaktion z.B. in einer virtuellen Umgebung.`
 	} else {

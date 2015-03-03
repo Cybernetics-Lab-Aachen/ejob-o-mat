@@ -51,11 +51,7 @@ func HandlerQuestion7(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Anzahl der gleichzeitgen Zugriffe`
 		data.TextQuestionBody = `Wie viele Studierende greifen gleichzeitig auf das E-Learning-System zu?
-		Bedenken Sie dabei, dass z.B. bei einer Gruppenarbeit nur die Anzahl der Gruppen zählt. Beispiel:
-		In Ihrer Lehrveranstaltung befinden sich 1000 Studierende. Variante 1: Alle sollen zugleich das
-		E-Learning nutzen können. Sie wählen "Massen". Variante 2: Sie teilen die Studierende in 100 Gruppen
-		mit jeweils 10 Studierende. Pro Tag kommen 25 Gruppen in Ihren Rechnerpool, pro Stunde etwa 6 Gruppen.
-		Es greifen somit ca. 60 Studierende auf das E-Learning-System zu, Sie wählen somit "Groß".`
+		Bedenken Sie dabei, dass z.B. bei einer Gruppenarbeit nur die Anzahl der Gruppen zählt.`
 	} else {
 		data.TextButton1 = `Small`
 		data.TextButton2 = `Mid (dozen(s))`
@@ -65,11 +61,7 @@ func HandlerQuestion7(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Count of Concurrent Accesses`
 		data.TextQuestionBody = `How many students using the e-learning system concurrently? Please also
-		consider in case of e.g. group work, that instead the amount of groups is necessary. Example: At your
-		lecture you have 1,000 students. Variation 1: All students can access the e-learning system concurrently.
-		In this case, you choose "Masses". Variation 2: You divide the students in 100 groups with 10 students each.
-		Each day, 25 groups are going to the lab, around six groups per hour. In this case, around 60 students
-		accesses concurrently the e-learning system. You choose "Huge".`
+		consider in case of e.g. group work, that instead the amount of groups is necessary.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

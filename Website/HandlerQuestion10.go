@@ -51,7 +51,7 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Einsatzzweck`
 		data.TextQuestionBody = `Suchen Sie ein E-Learning-System zur Unterstützung Ihrer Vorlesung,
-		Übung etc. oder eines um die Präsenzveranstaltung zu ersetzen?`
+		Übung etc. oder eines, um die Präsenzveranstaltung zu ersetzen?`
 	} else {
 		data.TextButton1 = `Support Lecture`
 		data.TextButton2 = `Replace on-site attendance`

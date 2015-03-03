@@ -50,7 +50,7 @@ func HandlerQuestion2(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Tutoring`
-		data.TextQuestionBody = `Ist es notwendig, dass die Studierende durch das E-Learning-Tool
+		data.TextQuestionBody = `Ist es notwendig, dass die Studierenden durch das E-Learning-Tool
 		fachlich aktiv unterstützt werden? Das bedeutet, dass das Tool ein Tutoring anbietet.
 		Teilweise ist es erforderlich, dass Sie entsprechende Inhalte zuvor hinterlegen.`
 	} else {

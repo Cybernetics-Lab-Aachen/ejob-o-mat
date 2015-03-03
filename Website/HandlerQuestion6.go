@@ -50,7 +50,7 @@ func HandlerQuestion6(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Zusammenarbeit`
-		data.TextQuestionBody = `Soll es möglich sein, dass die Studierende zeitversetzt
+		data.TextQuestionBody = `Soll es möglich sein, dass die Studierenden zeitversetzt
 		zusammenarbeiten, wie z.B. in Diskussionsforen und Wikis?`
 	} else {
 		data.TextButton1 = `Yes`

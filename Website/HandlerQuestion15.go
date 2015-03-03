@@ -50,7 +50,7 @@ func HandlerQuestion15(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Klausuren`
-		data.TextQuestionBody = `Ist es erforderlich, dass das E-Learning-Tool dazu verwendet werden kann, um Klausuren durchzuführen?`
+		data.TextQuestionBody = `Ist es erforderlich, dass das E-Learning-Tool dazu verwendet werden kann, Klausuren durchzuführen?`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
