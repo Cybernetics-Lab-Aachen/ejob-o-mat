@@ -31,6 +31,7 @@ func HandlerQuestion4(response http.ResponseWriter, request *http.Request) {
 	data.Button3Status = BUTTON_SHOW
 	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
+	data.ButtonBackStatus = BUTTON_SHOW
 
 	data.Button1Data = `1`
 	data.Button2Data = `0`
@@ -39,6 +40,7 @@ func HandlerQuestion4(response http.ResponseWriter, request *http.Request) {
 	data.Button5Data = ``
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
+	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
@@ -48,6 +50,7 @@ func HandlerQuestion4(response http.ResponseWriter, request *http.Request) {
 		data.TextButton3 = `Egal`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
+		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Anonymität`
 		data.TextQuestionBody = `Dürfen die Studierenden auch anonym z.B. unter Verwendung eines
@@ -58,6 +61,7 @@ func HandlerQuestion4(response http.ResponseWriter, request *http.Request) {
 		data.TextButton3 = `Does not matter`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
+		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Anonymity`
 		data.TextQuestionBody = `Is it desired that the students are using pseudonyms?`

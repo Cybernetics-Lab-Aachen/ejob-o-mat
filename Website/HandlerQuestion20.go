@@ -31,6 +31,7 @@ func HandlerQuestion20(response http.ResponseWriter, request *http.Request) {
 	data.Button3Status = BUTTON_SHOW
 	data.Button4Status = BUTTON_SHOW
 	data.Button5Status = BUTTON_HIDDEN
+	data.ButtonBackStatus = BUTTON_SHOW
 
 	data.Button1Data = `static`
 	data.Button2Data = `change`
@@ -39,6 +40,7 @@ func HandlerQuestion20(response http.ResponseWriter, request *http.Request) {
 	data.Button5Data = ``
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
+	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
@@ -48,6 +50,7 @@ func HandlerQuestion20(response http.ResponseWriter, request *http.Request) {
 		data.TextButton3 = `Interaktion möglich`
 		data.TextButton4 = `Unbekannt`
 		data.TextButton5 = ``
+		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Art der Inhalte`
 		data.TextQuestionBody = `Welcher Art sind Ihre Inhalte für das E-Learning-Tool? Statische Inhalte lassen
@@ -60,6 +63,7 @@ func HandlerQuestion20(response http.ResponseWriter, request *http.Request) {
 		data.TextButton3 = `Interaction possible`
 		data.TextButton4 = `Unknown`
 		data.TextButton5 = ``
+		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Kind of Content`
 		data.TextQuestionBody = `Which kind of content do you want to provide for the e-learning solution? Static

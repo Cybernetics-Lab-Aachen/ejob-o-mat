@@ -46,6 +46,7 @@ type PageResults struct {
 type PageQuestion struct {
 	Basis             Basis
 	NoQuestion        string
+	PreNoQuestion     string
 	NoQuestions       string
 	Progress          string
 	TextQuestion      string
@@ -56,11 +57,13 @@ type PageQuestion struct {
 	TextButton3       string
 	TextButton4       string
 	TextButton5       string
+	TextBackButton    string
 	Button1Status     string
 	Button2Status     string
 	Button3Status     string
 	Button4Status     string
 	Button5Status     string
+	ButtonBackStatus  string
 	Button1Data       string
 	Button2Data       string
 	Button3Data       string

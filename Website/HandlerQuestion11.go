@@ -31,6 +31,7 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 	data.Button3Status = BUTTON_SHOW
 	data.Button4Status = BUTTON_SHOW
 	data.Button5Status = BUTTON_SHOW
+	data.ButtonBackStatus = BUTTON_SHOW
 
 	data.Button1Data = `none`
 	data.Button2Data = `up10`
@@ -39,6 +40,7 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 	data.Button5Data = `up1000`
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
+	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
@@ -48,6 +50,7 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 		data.TextButton3 = `Bis 25 €`
 		data.TextButton4 = `Bis 100 €`
 		data.TextButton5 = `Bis 1000 €`
+		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Budget`
 		data.TextQuestionBody = `Welches Budget haben Sie für die einmalige Anschaffung pro
@@ -58,6 +61,7 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 		data.TextButton3 = `Up to USD 25`
 		data.TextButton4 = `Up to USD 100`
 		data.TextButton5 = `Up to USD 1000`
+		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Budget`
 		data.TextQuestionBody = `What is your budget for the one-time purchase per student?`

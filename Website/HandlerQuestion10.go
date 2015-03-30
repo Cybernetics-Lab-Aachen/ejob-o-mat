@@ -31,6 +31,7 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 	data.Button3Status = BUTTON_HIDDEN
 	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
+	data.ButtonBackStatus = BUTTON_SHOW
 
 	data.Button1Data = `support4lecture`
 	data.Button2Data = `replace`
@@ -39,6 +40,7 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 	data.Button5Data = ``
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
+	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
@@ -48,6 +50,7 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		data.TextButton3 = ``
 		data.TextButton4 = ``
 		data.TextButton5 = ``
+		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Einsatzzweck`
 		data.TextQuestionBody = `Suchen Sie ein E-Learning-System zur Unterstützung Ihrer Vorlesung,
@@ -58,6 +61,7 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		data.TextButton3 = ``
 		data.TextButton4 = ``
 		data.TextButton5 = ``
+		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Purpose`
 		data.TextQuestionBody = `Do you want an e-learning solution to support your lecture,

@@ -31,6 +31,7 @@ func HandlerQuestion7(response http.ResponseWriter, request *http.Request) {
 	data.Button3Status = BUTTON_SHOW
 	data.Button4Status = BUTTON_SHOW
 	data.Button5Status = BUTTON_HIDDEN
+	data.ButtonBackStatus = BUTTON_SHOW
 
 	data.Button1Data = `small`
 	data.Button2Data = `mid`
@@ -39,6 +40,7 @@ func HandlerQuestion7(response http.ResponseWriter, request *http.Request) {
 	data.Button5Data = ``
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
+	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
@@ -48,6 +50,7 @@ func HandlerQuestion7(response http.ResponseWriter, request *http.Request) {
 		data.TextButton3 = `Groß (Hundert(e))`
 		data.TextButton4 = `Massen (Tausend(e)+)`
 		data.TextButton5 = ``
+		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Anzahl der gleichzeitgen Zugriffe`
 		data.TextQuestionBody = `Wie viele Studierende greifen gleichzeitig auf das E-Learning-System zu?
@@ -58,6 +61,7 @@ func HandlerQuestion7(response http.ResponseWriter, request *http.Request) {
 		data.TextButton3 = `Huge (hundred(s))`
 		data.TextButton4 = `Masses (thousand(s)+)`
 		data.TextButton5 = ``
+		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Count of Concurrent Accesses`
 		data.TextQuestionBody = `How many students using the e-learning system concurrently? Please also
