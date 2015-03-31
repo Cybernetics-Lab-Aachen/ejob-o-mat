@@ -63,7 +63,7 @@ func HandlerQuestion14(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `CBT: Computer-Based Training`
+		data.TextQuestionTopic = `Computer-Based Training (CBT)`
 		data.TextQuestionBody = `Compared to e-learning at the web: Are you able to use classical computer
 		programs? In this case, it is maybe necessary to install the software at your computer pool.`
 	}

@@ -53,9 +53,9 @@ func HandlerQuestion12(response http.ResponseWriter, request *http.Request) {
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Cloud`
-		data.TextQuestionBody = `Dürfen die E-Learning-Tools auch in der Cloud laufen? Häufig laufen Cloud-Anwendungen
+		data.TextQuestionBody = `Dürfen die E-Learning-Tools auch in der "Cloud" laufen? Häufig laufen sogenannte Cloud-Anwendungen
 		auf Infrastruktur von z.B. amerikanischen Unternehmen. Daher können in solchen Fällen die Regeln des europäischen
-		Datenschutzes oftmals nicht eingehalten bzw. garantiert werden.`
+		Datenschutzes nicht eingehalten bzw. garantiert werden.`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`

@@ -54,7 +54,7 @@ func HandlerQuestion21(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Privatnutzung`
 		data.TextQuestionBody = `Sollen Ihre Studierenden in der Lage sein das E-Learning-Tool auch außerhalb
-		der Hoschschule zu nutzen z.B. für Projektarbeiten?`
+		der Hochschule zu nutzen z.B. für Projektarbeiten?`
 	} else {
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`

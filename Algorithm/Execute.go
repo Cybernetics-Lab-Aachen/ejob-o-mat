@@ -50,8 +50,8 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 	sort.Sort(groups)
 	worstPoints := groups[len(groups)-1].Points
 	correctionPoints := worstPoints * -1
-	bestPointsCorrected := float64(25 + correctionPoints)
-	bestPointsNormal := float64(25)
+	bestPointsCorrected := float64(24 + correctionPoints)
+	bestPointsNormal := float64(24)
 
 	for n, _ := range groups {
 		if worstPoints < 0 {

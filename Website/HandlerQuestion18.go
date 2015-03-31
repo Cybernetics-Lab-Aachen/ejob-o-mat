@@ -52,7 +52,7 @@ func HandlerQuestion18(response http.ResponseWriter, request *http.Request) {
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Mathemathische Darstellung`
+		data.TextQuestionTopic = `Mathematische Darstellung`
 		data.TextQuestionBody = `Wollen Sie mathematische Ausdrücke aus z.B. der Höheren Mathematik, Physik,
 		Elektrotechnik, etc. darstellen können?`
 	} else {
