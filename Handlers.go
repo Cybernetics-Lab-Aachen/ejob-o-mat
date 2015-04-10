@@ -41,6 +41,7 @@ func registerHandlers() {
 	Handlers.AddPublicHandler(`/question23`, Website.HandlerQuestion23)
 	Handlers.AddPublicHandler(`/question24`, Website.HandlerQuestion24)
 	Handlers.AddPublicHandler(`/answer`, Website.HandlerAnswer)
+	Handlers.AddPublicHandler(`/answerVR`, Website.HandlerVRAnswers)
 	Handlers.AddPublicHandler(`/results`, Website.HandlerResults)
 
 	// Admin Handlers:
