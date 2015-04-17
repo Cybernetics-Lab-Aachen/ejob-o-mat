@@ -21,7 +21,6 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
@@ -29,15 +28,15 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 	data.Button1Status = BUTTON_SHOW
 	data.Button2Status = BUTTON_SHOW
 	data.Button3Status = BUTTON_SHOW
-	data.Button4Status = BUTTON_SHOW
-	data.Button5Status = BUTTON_SHOW
+	data.Button4Status = BUTTON_HIDDEN
+	data.Button5Status = BUTTON_HIDDEN
 	data.ButtonBackStatus = BUTTON_SHOW
 
-	data.Button1Data = `none`
-	data.Button2Data = `up10`
-	data.Button3Data = `up25`
-	data.Button4Data = `up100`
-	data.Button5Data = `up1000`
+	data.Button1Data = `1`
+	data.Button2Data = `0`
+	data.Button3Data = `*`
+	data.Button4Data = ``
+	data.Button5Data = ``
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
 	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
@@ -45,26 +44,27 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = `Keines`
-		data.TextButton2 = `Bis 10 €`
-		data.TextButton3 = `Bis 25 €`
-		data.TextButton4 = `Bis 100 €`
-		data.TextButton5 = `Bis 1000 €`
+		data.Basis.Name = NAME_DE
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Enthaltung`
+		data.TextButton4 = ``
+		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Budget`
-		data.TextQuestionBody = `Welches Budget haben Sie für die einmalige Anschaffung pro
-		Studierenden?`
+		data.TextQuestionTopic = `Hochschulnetz`
+		data.TextQuestionBody = `Soll das E-Learning-Format einen Betrieb in Ihrem Hochschulnetz ermöglichen?`
 	} else {
-		data.TextButton1 = `None`
-		data.TextButton2 = `Up to USD 10`
-		data.TextButton3 = `Up to USD 25`
-		data.TextButton4 = `Up to USD 100`
-		data.TextButton5 = `Up to USD 1000`
+		data.Basis.Name = NAME_EN
+		data.TextButton1 = `Yes`
+		data.TextButton2 = `No`
+		data.TextButton3 = `Skip question`
+		data.TextButton4 = ``
+		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Budget`
-		data.TextQuestionBody = `What is your budget for the one-time purchase per student?`
+		data.TextQuestionTopic = `University Network`
+		data.TextQuestionBody = `Should the e-learning format enable to operate inside of your local university network?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

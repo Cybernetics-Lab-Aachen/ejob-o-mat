@@ -21,7 +21,6 @@ func HandlerQuestion12(response http.ResponseWriter, request *http.Request) {
 
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
@@ -45,29 +44,27 @@ func HandlerQuestion12(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
+		data.Basis.Name = NAME_DE
 		data.TextButton1 = `Ja`
 		data.TextButton2 = `Nein`
-		data.TextButton3 = `Egal`
+		data.TextButton3 = `Enthaltung`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Cloud`
-		data.TextQuestionBody = `Dürfen die E-Learning-Tools auch in der "Cloud" laufen? Häufig laufen sogenannte Cloud-Anwendungen
-		auf Infrastruktur von z.B. amerikanischen Unternehmen. Daher können in solchen Fällen die Regeln des europäischen
-		Datenschutzes nicht eingehalten bzw. garantiert werden.`
+		data.TextQuestionTopic = `Test- und Prüfungsformate`
+		data.TextQuestionBody = `Soll das E-Learning-Format Tests oder Prüfungen ermöglichen?`
 	} else {
+		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
-		data.TextButton3 = `Does not matter`
+		data.TextButton3 = `Skip question`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Cloud`
-		data.TextQuestionBody = `Is it permitted that the e-learning solutions are cloud-based? These kind of
-		solutions often using e.g. infrastructure from American companies. In such cases, it is maybe no possible
-		to guarantee the privacy policies of your country.`
+		data.TextQuestionTopic = `Assessments`
+		data.TextQuestionBody = `Should the e-learning format provide a functionality for assessments?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

@@ -21,7 +21,6 @@ func HandlerQuestion3(response http.ResponseWriter, request *http.Request) {
 
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
@@ -45,25 +44,27 @@ func HandlerQuestion3(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
+		data.Basis.Name = NAME_DE
 		data.TextButton1 = `Ja`
 		data.TextButton2 = `Nein`
-		data.TextButton3 = `Egal`
+		data.TextButton3 = `Enthaltung`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Kommentare`
-		data.TextQuestionBody = `Wollen Sie, dass die Studierenden Inhalte kommentieren können?`
+		data.TextQuestionBody = `Soll das E-Learning-Format Kommentare der Studierenden ermöglichen?`
 	} else {
+		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
-		data.TextButton3 = `Does not matter`
+		data.TextButton3 = `Skip question`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Comments`
-		data.TextQuestionBody = `Do you want that students are able to comment content?`
+		data.TextQuestionBody = `Should the e-learning format provide the possibility to comment by the students?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

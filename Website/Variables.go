@@ -7,11 +7,12 @@ import (
 )
 
 const (
-	NAME            string = `Re4EEE`
+	NAME_DE         string = `elearn-o-mat.net`
+	NAME_EN         string = `elearning-finder.net`
 	VERSION         string = `1.0b2`
 	BUTTON_HIDDEN   string = ` buttonhidden`
 	BUTTON_SHOW     string = ``
-	TOTAL_QUESTIONS int    = 24
+	TOTAL_QUESTIONS int    = 18
 )
 
 var (

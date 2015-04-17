@@ -21,7 +21,6 @@ func HandlerQuestion15(response http.ResponseWriter, request *http.Request) {
 
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
@@ -45,25 +44,27 @@ func HandlerQuestion15(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
+		data.Basis.Name = NAME_DE
 		data.TextButton1 = `Ja`
 		data.TextButton2 = `Nein`
-		data.TextButton3 = `Egal`
+		data.TextButton3 = `Enthaltung`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Klausuren`
-		data.TextQuestionBody = `Ist es erforderlich, dass das E-Learning-Tool dazu verwendet werden kann, Klausuren durchzuführen?`
+		data.TextQuestionTopic = `Mathematische Eingabe`
+		data.TextQuestionBody = `Soll das E-Learning-Format das Schreiben von mathematischen Ausdrücken ermöglichen?`
 	} else {
+		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
-		data.TextButton3 = `Does not matter`
+		data.TextButton3 = `Skip question`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Exams`
-		data.TextQuestionBody = `Is it necessary, that the e-learning solution is able to perform proper exams?`
+		data.TextQuestionTopic = `Writing of Mathematics`
+		data.TextQuestionBody = `Should the e-learning format provide a functionality for writing mathematically e.g. equations?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

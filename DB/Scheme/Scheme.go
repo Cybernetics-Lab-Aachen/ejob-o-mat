@@ -53,13 +53,7 @@ type Answers struct {
 	A15TimeUTC  time.Time `bson:"A15TimeUTC"`
 	A16TimeUTC  time.Time `bson:"A16TimeUTC"`
 	A17TimeUTC  time.Time `bson:"A17TimeUTC"`
-	A18TimeUTC  time.Time `bson:"A18TimeUTC"`
-	A19TimeUTC  time.Time `bson:"A19TimeUTC"`
-	A20TimeUTC  time.Time `bson:"A20TimeUTC"`
-	A21TimeUTC  time.Time `bson:"A21TimeUTC"`
-	A22TimeUTC  time.Time `bson:"A22TimeUTC"`
-	A23TimeUTC  time.Time `bson:"A23TimeUTC"`
-	A24TimeUTC  time.Time `bson:"A24TimeUTC"` // Take this time on store A25
+	A18TimeUTC  time.Time `bson:"A18TimeUTC"` // Take this time on store A25
 
 	A1Data  string `bson:"A1Data"`
 	A2Data  string `bson:"A2Data"`
@@ -79,10 +73,4 @@ type Answers struct {
 	A16Data string `bson:"A16Data"`
 	A17Data string `bson:"A17Data"`
 	A18Data string `bson:"A18Data"`
-	A19Data string `bson:"A19Data"`
-	A20Data string `bson:"A20Data"`
-	A21Data string `bson:"A21Data"`
-	A22Data string `bson:"A22Data"`
-	A23Data string `bson:"A23Data"`
-	A24Data string `bson:"A24Data"`
 }

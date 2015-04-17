@@ -21,7 +21,6 @@ func HandlerQuestion8(response http.ResponseWriter, request *http.Request) {
 
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
@@ -45,27 +44,27 @@ func HandlerQuestion8(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
+		data.Basis.Name = NAME_DE
 		data.TextButton1 = `Ja`
 		data.TextButton2 = `Nein`
-		data.TextButton3 = `Egal`
+		data.TextButton3 = `Enthaltung`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Downloads`
-		data.TextQuestionBody = `Möchten Sie Dateien zum Download für die Studierenden durch
-		das E-Learning-System anbieten?`
+		data.TextQuestionTopic = `Lernziele`
+		data.TextQuestionBody = `Soll das E-Learning-Format das Einsehen der Lernziele ermöglichen?`
 	} else {
+		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
-		data.TextButton3 = `Does not matter`
+		data.TextButton3 = `Skip question`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Downloads`
-		data.TextQuestionBody = `Should it possible to provide files for the students through the
-		e-learning solution?`
+		data.TextQuestionTopic = `Learning Objectives`
+		data.TextQuestionBody = `Should the e-learning format provide a functionality to display the learning objectives?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

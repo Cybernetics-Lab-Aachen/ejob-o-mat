@@ -21,21 +21,20 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
 
 	data.Button1Status = BUTTON_SHOW
 	data.Button2Status = BUTTON_SHOW
-	data.Button3Status = BUTTON_HIDDEN
+	data.Button3Status = BUTTON_SHOW
 	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
 	data.ButtonBackStatus = BUTTON_SHOW
 
-	data.Button1Data = `support4lecture`
-	data.Button2Data = `replace`
-	data.Button3Data = ``
+	data.Button1Data = `1`
+	data.Button2Data = `0`
+	data.Button3Data = `*`
 	data.Button4Data = ``
 	data.Button5Data = ``
 
@@ -45,27 +44,27 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = `Vorlesung/Übung etc. unterstützen`
-		data.TextButton2 = `Präsenzveranstaltung ersetzen`
-		data.TextButton3 = ``
+		data.Basis.Name = NAME_DE
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Enthaltung`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Einsatzzweck`
-		data.TextQuestionBody = `Suchen Sie ein E-Learning-System zur Unterstützung Ihrer Vorlesung,
-		Übung etc. oder eines, um die Präsenzveranstaltung zu ersetzen?`
+		data.TextQuestionTopic = `Cloud`
+		data.TextQuestionBody = `Darf das E-Learning-Format nach den Statuten Ihrer Hochschule als Cloud-Dienst angeboten werden?`
 	} else {
-		data.TextButton1 = `Support Lecture`
-		data.TextButton2 = `Replace on-site attendance`
-		data.TextButton3 = ``
+		data.Basis.Name = NAME_EN
+		data.TextButton1 = `Yes`
+		data.TextButton2 = `No`
+		data.TextButton3 = `Skip question`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Purpose`
-		data.TextQuestionBody = `Do you want an e-learning solution to support your lecture,
-		exercise, etc. or a solution to replace the on-site attendance?`
+		data.TextQuestionTopic = `Cloud`
+		data.TextQuestionBody = `Do the bylaws of your university allow an e-learning format provided by a cloud service?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

@@ -21,7 +21,6 @@ func HandlerQuestion7(response http.ResponseWriter, request *http.Request) {
 
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
@@ -29,14 +28,14 @@ func HandlerQuestion7(response http.ResponseWriter, request *http.Request) {
 	data.Button1Status = BUTTON_SHOW
 	data.Button2Status = BUTTON_SHOW
 	data.Button3Status = BUTTON_SHOW
-	data.Button4Status = BUTTON_SHOW
+	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
 	data.ButtonBackStatus = BUTTON_SHOW
 
-	data.Button1Data = `small`
-	data.Button2Data = `mid`
-	data.Button3Data = `huge`
-	data.Button4Data = `masses`
+	data.Button1Data = `1`
+	data.Button2Data = `0`
+	data.Button3Data = `*`
+	data.Button4Data = ``
 	data.Button5Data = ``
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
@@ -45,27 +44,27 @@ func HandlerQuestion7(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
-		data.TextButton1 = `Kleingruppen`
-		data.TextButton2 = `Mittel (Dutzend(e))`
-		data.TextButton3 = `Groß (Hundert(e))`
-		data.TextButton4 = `Massen (Tausend(e)+)`
+		data.Basis.Name = NAME_DE
+		data.TextButton1 = `Ja`
+		data.TextButton2 = `Nein`
+		data.TextButton3 = `Enthaltung`
+		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Anzahl der gleichzeitgen Zugriffe`
-		data.TextQuestionBody = `Wie viele Studierende greifen gleichzeitig auf das E-Learning-System zu?
-		Bedenken Sie dabei, dass z.B. bei einer Gruppenarbeit nur die Anzahl der Gruppen zählt.`
+		data.TextQuestionTopic = `Downloads`
+		data.TextQuestionBody = `Soll das E-Learning-Format einen Dateidownload ermöglichen?`
 	} else {
-		data.TextButton1 = `Small`
-		data.TextButton2 = `Mid (dozen(s))`
-		data.TextButton3 = `Huge (hundred(s))`
-		data.TextButton4 = `Masses (thousand(s)+)`
+		data.Basis.Name = NAME_EN
+		data.TextButton1 = `Yes`
+		data.TextButton2 = `No`
+		data.TextButton3 = `Skip question`
+		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Count of Concurrent Accesses`
-		data.TextQuestionBody = `How many students using the e-learning system concurrently? Please also
-		consider in case of e.g. group work, that instead the amount of groups is necessary.`
+		data.TextQuestionTopic = `Downloads`
+		data.TextQuestionBody = `Should the e-learning format provide a functionality for file downloads?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

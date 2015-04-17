@@ -49,7 +49,6 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	}
 
 	data := PageResults{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = session
@@ -63,10 +62,11 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 			data.TextAllGroups = `Alle Gruppen anzeigen`
 			data.AmountToggle = -1
 		} else {
-			data.TextAllGroups = `Top 8 anzeigen`
-			data.AmountToggle = 8
+			data.TextAllGroups = `Top 6 anzeigen`
+			data.AmountToggle = 6
 		}
 
+		data.Basis.Name = NAME_DE
 		data.LangPos = 0
 		data.TextMatch = `Übereinstimmung mit Ihren Antworten`
 		data.TextGroup = `Gruppe`
@@ -76,7 +76,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		data.TextRestart = `Den Fragebogen erneut starten`
 		data.TextHeader = `Unten sehen Sie eine Empfehlung für verschiedene Gruppen von E-Learning-Systemen, basierend
 		auf Ihren Antworten. Bitte wählen Sie eine Gruppe um unten die Details inkl. Beispiele zu sehen. Sie sehen
-		zunächst nur die Top 8 aller E-Learning-Gruppen: Mit der nachfolgenden Schaltfläche (siehe Optionen) können Sie
+		zunächst nur die Top sechs aller E-Learning-Gruppen: Mit der nachfolgenden Schaltfläche (siehe Optionen) können Sie
 		auch alle Gruppenergebnisse einsehen.`
 
 	} else {
@@ -85,10 +85,11 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 			data.TextAllGroups = `Show all groups`
 			data.AmountToggle = -1
 		} else {
-			data.TextAllGroups = `Show top 8`
-			data.AmountToggle = 8
+			data.TextAllGroups = `Show top 6`
+			data.AmountToggle = 6
 		}
 
+		data.Basis.Name = NAME_EN
 		data.LangPos = 1
 		data.TextMatch = `match with your answers`
 		data.TextGroup = `Group`

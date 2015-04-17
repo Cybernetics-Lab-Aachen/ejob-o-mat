@@ -24,7 +24,6 @@ func HandlerQuestion1(response http.ResponseWriter, request *http.Request) {
 	answers := DB.LoadAnswers(readSession)
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
@@ -48,25 +47,27 @@ func HandlerQuestion1(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
+		data.Basis.Name = NAME_DE
 		data.TextButton1 = `Ja`
 		data.TextButton2 = `Nein`
-		data.TextButton3 = `Egal`
+		data.TextButton3 = `Enthaltung`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Video-Inhalte`
-		data.TextQuestionBody = `Soll die Möglichkeit bestehen, Video-Inhalte über das E-Learning-Tool anzubieten?`
+		data.TextQuestionBody = `Soll das E-Learning-Format Videoinhalte ermöglichen?`
 	} else {
+		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
-		data.TextButton3 = `Does not matter`
+		data.TextButton3 = `Skip question`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Video Content`
-		data.TextQuestionBody = `Should it possible to provide video content with the e-learning solution?`
+		data.TextQuestionBody = `Should the e-learning format provide a functionality to display video content?`
 	}
 
 	answers.StartTimeQ1 = time.Now().UTC()

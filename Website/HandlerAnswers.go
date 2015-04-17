@@ -35,8 +35,8 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 		DB.UpdateAnswers(answers)
 	}
 
-	if no+1 > 24 {
-		http.Redirect(response, request, fmt.Sprintf("/results?lang=%s&session=%s&amount=8", lang, session), 307)
+	if no+1 > TOTAL_QUESTIONS {
+		http.Redirect(response, request, fmt.Sprintf("/results?lang=%s&session=%s&amount=6", lang, session), 307)
 	} else {
 		http.Redirect(response, request, fmt.Sprintf("/question%d?lang=%s&session=%s", (no+1), lang, session), 307)
 	}
@@ -92,51 +92,39 @@ func HandlerVRAnswers(response http.ResponseWriter, request *http.Request) {
 	answer.A1Data = a1
 	answer.A2Data = a2
 	answer.A3Data = a3
-	answer.A4Data = `*`
-	answer.A5Data = a4
-	answer.A6Data = a5
-	answer.A7Data = a6
-	answer.A8Data = a7
-	answer.A9Data = a8
-	answer.A10Data = a9
-	answer.A11Data = `*`
-	answer.A12Data = a10
-	answer.A13Data = a11
-	answer.A14Data = `*`
-	answer.A15Data = a12
-	answer.A16Data = a13
-	answer.A17Data = `*`
-	answer.A18Data = a14
-	answer.A19Data = a15
-	answer.A20Data = `*`
-	answer.A21Data = `*`
-	answer.A22Data = a16
-	answer.A23Data = a17
-	answer.A24Data = a18
+	answer.A4Data = a4
+	answer.A5Data = a5
+	answer.A6Data = a6
+	answer.A7Data = a7
+	answer.A8Data = a8
+	answer.A9Data = a9
+	answer.A10Data = a10
+	answer.A11Data = a11
+	answer.A12Data = a12
+	answer.A13Data = a13
+	answer.A14Data = a14
+	answer.A15Data = a15
+	answer.A16Data = a16
+	answer.A17Data = a17
+	answer.A18Data = a18
 	answer.A1TimeUTC, _ = time.Parse(time.RFC1123, a1T)
 	answer.A2TimeUTC, _ = time.Parse(time.RFC1123, a2T)
 	answer.A3TimeUTC, _ = time.Parse(time.RFC1123, a3T)
-	answer.A4TimeUTC, _ = time.Parse(time.RFC1123, a3T)
-	answer.A5TimeUTC, _ = time.Parse(time.RFC1123, a4T)
-	answer.A6TimeUTC, _ = time.Parse(time.RFC1123, a5T)
-	answer.A7TimeUTC, _ = time.Parse(time.RFC1123, a6T)
-	answer.A8TimeUTC, _ = time.Parse(time.RFC1123, a7T)
-	answer.A9TimeUTC, _ = time.Parse(time.RFC1123, a8T)
-	answer.A10TimeUTC, _ = time.Parse(time.RFC1123, a9T)
-	answer.A11TimeUTC, _ = time.Parse(time.RFC1123, a9T)
-	answer.A12TimeUTC, _ = time.Parse(time.RFC1123, a10T)
-	answer.A13TimeUTC, _ = time.Parse(time.RFC1123, a11T)
-	answer.A14TimeUTC, _ = time.Parse(time.RFC1123, a11T)
-	answer.A15TimeUTC, _ = time.Parse(time.RFC1123, a12T)
-	answer.A16TimeUTC, _ = time.Parse(time.RFC1123, a13T)
-	answer.A17TimeUTC, _ = time.Parse(time.RFC1123, a13T)
-	answer.A18TimeUTC, _ = time.Parse(time.RFC1123, a14T)
-	answer.A19TimeUTC, _ = time.Parse(time.RFC1123, a15T)
-	answer.A20TimeUTC, _ = time.Parse(time.RFC1123, a15T)
-	answer.A21TimeUTC, _ = time.Parse(time.RFC1123, a15T)
-	answer.A22TimeUTC, _ = time.Parse(time.RFC1123, a16T)
-	answer.A23TimeUTC, _ = time.Parse(time.RFC1123, a17T)
-	answer.A24TimeUTC, _ = time.Parse(time.RFC1123, a18T)
+	answer.A4TimeUTC, _ = time.Parse(time.RFC1123, a4T)
+	answer.A5TimeUTC, _ = time.Parse(time.RFC1123, a5T)
+	answer.A6TimeUTC, _ = time.Parse(time.RFC1123, a6T)
+	answer.A7TimeUTC, _ = time.Parse(time.RFC1123, a7T)
+	answer.A8TimeUTC, _ = time.Parse(time.RFC1123, a8T)
+	answer.A9TimeUTC, _ = time.Parse(time.RFC1123, a9T)
+	answer.A10TimeUTC, _ = time.Parse(time.RFC1123, a10T)
+	answer.A11TimeUTC, _ = time.Parse(time.RFC1123, a11T)
+	answer.A12TimeUTC, _ = time.Parse(time.RFC1123, a12T)
+	answer.A13TimeUTC, _ = time.Parse(time.RFC1123, a13T)
+	answer.A14TimeUTC, _ = time.Parse(time.RFC1123, a14T)
+	answer.A15TimeUTC, _ = time.Parse(time.RFC1123, a15T)
+	answer.A16TimeUTC, _ = time.Parse(time.RFC1123, a16T)
+	answer.A17TimeUTC, _ = time.Parse(time.RFC1123, a17T)
+	answer.A18TimeUTC, _ = time.Parse(time.RFC1123, a18T)
 
 	DB.StoreNewAnswers(answer)
 

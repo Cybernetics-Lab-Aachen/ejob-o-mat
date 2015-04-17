@@ -20,7 +20,7 @@ func kindConditionalPresence(answer, productValue string) (diff int) {
 			diff = 1
 		}
 	case `*`:
-		diff = 1
+		diff = 0
 	}
 
 	return

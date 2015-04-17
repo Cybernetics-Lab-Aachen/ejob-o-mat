@@ -16,7 +16,7 @@ func kindConditionalPossibilityStrict(answer, productValue string) (diff int) {
 			diff = -2
 		}
 	case `*`:
-		diff = 1
+		diff = 0
 	}
 
 	return

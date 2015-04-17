@@ -21,7 +21,6 @@ func HandlerQuestion13(response http.ResponseWriter, request *http.Request) {
 
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
@@ -45,29 +44,27 @@ func HandlerQuestion13(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
+		data.Basis.Name = NAME_DE
 		data.TextButton1 = `Ja`
 		data.TextButton2 = `Nein`
-		data.TextButton3 = `Egal`
+		data.TextButton3 = `Enthaltung`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Hochschulnetz`
-		data.TextQuestionBody = `Möchten Sie, dass das E-Learning-Tool in Ihrem Hochschulnetz betrieben wird?
-		In diesem Fall können Sie die Regeln des Datenschutzes selber anwenden und den Zugang zu dem
-		E-Learning-System z.B. auf Ihre Studierenden beschränken.`
+		data.TextQuestionTopic = `Rollen für Studierende`
+		data.TextQuestionBody = `Soll das E-Learning-Format Rollen (z.B. Gruppenleiter, Moderator, etc.) für die Studierenden ermöglichen?`
 	} else {
+		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
-		data.TextButton3 = `Does not matter`
+		data.TextButton3 = `Skip question`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `University's Network`
-		data.TextQuestionBody = `Do you want that the e-learning solution is running at your local
-		university's network? In this case, you are able to apply privacy rules and restrictions e.g.
-		you can restrict the e-learning solution to your students, etc.`
+		data.TextQuestionTopic = `Roles for Students`
+		data.TextQuestionBody = `Should the e-learning format provide a functionality for students' roles (e.g. moderator, group leader, etc.)?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

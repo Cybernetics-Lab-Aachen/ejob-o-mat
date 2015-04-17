@@ -21,7 +21,6 @@ func HandlerQuestion18(response http.ResponseWriter, request *http.Request) {
 
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
@@ -45,27 +44,27 @@ func HandlerQuestion18(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
+		data.Basis.Name = NAME_DE
 		data.TextButton1 = `Ja`
 		data.TextButton2 = `Nein`
-		data.TextButton3 = `Egal`
+		data.TextButton3 = `Enthaltung`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Mathematische Darstellung`
-		data.TextQuestionBody = `Wollen Sie mathematische Ausdrücke aus z.B. der Höheren Mathematik, Physik,
-		Elektrotechnik, etc. darstellen können?`
+		data.TextQuestionTopic = `Explorative Lehrverfahren`
+		data.TextQuestionBody = `Soll das E-Learning-Format explorative Lehrverfahren wie z.B. Projektarbeiten, Experimente, Planspiele, etc. ermöglichen?`
 	} else {
+		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
-		data.TextButton3 = `Does not matter`
+		data.TextButton3 = `Skip question`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Present Mathematics`
-		data.TextQuestionBody = `Do you need to show e.g. equations for e.g. further mathematics, physics,
-		electrical engineering, etc.?`
+		data.TextQuestionTopic = `Explorative Teaching Methods`
+		data.TextQuestionBody = `Should the e-learning format be enabled for explorative teaching methods like e.g. projects, experiments, simulation games, etc.?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

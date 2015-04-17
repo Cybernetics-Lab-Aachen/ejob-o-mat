@@ -21,7 +21,6 @@ func HandlerQuestion2(response http.ResponseWriter, request *http.Request) {
 
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
-	data.Basis.Name = NAME
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
@@ -45,29 +44,27 @@ func HandlerQuestion2(response http.ResponseWriter, request *http.Request) {
 	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
 
 	if strings.Contains(lang.Language, `de`) {
+		data.Basis.Name = NAME_DE
 		data.TextButton1 = `Ja`
 		data.TextButton2 = `Nein`
-		data.TextButton3 = `Egal`
+		data.TextButton3 = `Enthaltung`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Tutoring`
-		data.TextQuestionBody = `Ist es notwendig, dass die Studierenden durch das E-Learning-Tool
-		fachlich aktiv unterstützt werden? Das bedeutet, dass das Tool ein Tutoring anbietet.
-		Teilweise ist es erforderlich, dass Sie entsprechende Inhalte zuvor hinterlegen.`
+		data.TextQuestionBody = `Soll das E-Learning-Format Tutoring ermöglichen?`
 	} else {
+		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
-		data.TextButton3 = `Does not matter`
+		data.TextButton3 = `Skip question`
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Tutoring`
-		data.TextQuestionBody = `Is it necessary, that the students are actively supported by the
-		e-learning solutions? That means, the solution provides help for the students e.g. tutoring. For some
-		solutions, you have to provide this content beforehand.`
+		data.TextQuestionBody = `Should the e-learning format provide a functionality for tutoring?`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

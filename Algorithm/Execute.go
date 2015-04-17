@@ -10,7 +10,7 @@ import (
 func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 
 	data := XML.GetData()
-	groups := make(Scheme.ProductGroups, 18)
+	groups := make(Scheme.ProductGroups, 16)
 
 	// Algorithm:
 	for n, productGroup := range data.ProductsCollection.Products {
@@ -18,27 +18,21 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 		/*  1 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A1Data, productGroup.SharedProperties.VideoContent)
 		/*  2 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A2Data, productGroup.SharedProperties.Assistant)
 		/*  3 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A3Data, productGroup.SharedProperties.UserComments)
-		/*  4 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A4Data, productGroup.SharedProperties.AnonymousUsers)
-		/*  5 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A5Data, productGroup.SharedProperties.LiveCollaboration)
-		/*  6 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A6Data, productGroup.SharedProperties.CommunityCollaboration)
-		/*  7 */ groups[n].Points = groups[n].Points + kindAppropriateCountStudents(answers.A7Data, productGroup.SharedProperties.AppropriateCountStudents)
-		/*  8 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A8Data, productGroup.SharedProperties.Downloads)
-		/*  9 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A9Data, productGroup.SharedProperties.Possibility2DeclareLearningObjectives)
-		/* 10 */ groups[n].Points = groups[n].Points + kindOperationType(answers.A10Data, productGroup.SharedProperties.OperationType)
-		/* 11 */ groups[n].Points = groups[n].Points + kindCosts(answers.A11Data, productGroup.SharedProperties.Costs, productGroup.SharedProperties.AlsoFreeProducts)
-		/* 12 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A12Data, productGroup.SharedProperties.CloudBased)
-		/* 13 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A13Data, productGroup.SharedProperties.Intranet)
-		/* 14 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A14Data, productGroup.SharedProperties.StandaloneSoftware)
-		/* 15 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A15Data, productGroup.SharedProperties.Exam)
-		/* 16 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A16Data, productGroup.SharedProperties.StudentRoles)
-		/* 17 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A17Data, productGroup.SharedProperties.TrackedProgress)
-		/* 18 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A18Data, productGroup.SharedProperties.DisplayEquations)
-		/* 19 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A19Data, productGroup.SharedProperties.WriteEquations)
-		/* 20 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A20Data, productGroup.SharedProperties.ContentType)
-		/* 21 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A21Data, productGroup.SharedProperties.HomeUse)
-		/* 22 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A22Data, productGroup.SharedProperties.TeachingTypePresentation)
-		/* 23 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A23Data, productGroup.SharedProperties.TeachingTypeDevelopment)
-		/* 24 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A24Data, productGroup.SharedProperties.TeachingTypeExplorative)
+		/*  4 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A4Data, productGroup.SharedProperties.LiveCollaboration)
+		/*  5 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A5Data, productGroup.SharedProperties.CommunityCollaboration)
+		/*  6 */ groups[n].Points = groups[n].Points + kindAppropriateCountStudents(answers.A6Data, productGroup.SharedProperties.AppropriateCountStudents)
+		/*  7 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A7Data, productGroup.SharedProperties.Downloads)
+		/*  8 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A8Data, productGroup.SharedProperties.Possibility2DeclareLearningObjectives)
+		/*  9 */ groups[n].Points = groups[n].Points + kindOperationType(answers.A9Data, productGroup.SharedProperties.OperationType)
+		/* 10 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A10Data, productGroup.SharedProperties.CloudBased)
+		/* 11 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A11Data, productGroup.SharedProperties.Intranet)
+		/* 12 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A12Data, productGroup.SharedProperties.Exam)
+		/* 13 */ groups[n].Points = groups[n].Points + kindConditionalPresence(answers.A13Data, productGroup.SharedProperties.StudentRoles)
+		/* 14 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A14Data, productGroup.SharedProperties.DisplayEquations)
+		/* 15 */ groups[n].Points = groups[n].Points + kindConditionalYesNo(answers.A15Data, productGroup.SharedProperties.WriteEquations)
+		/* 16 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A16Data, productGroup.SharedProperties.TeachingTypePresentation)
+		/* 17 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A17Data, productGroup.SharedProperties.TeachingTypeDevelopment)
+		/* 18 */ groups[n].Points = groups[n].Points + kindConditionalPossibility(answers.A18Data, productGroup.SharedProperties.TeachingTypeExplorative)
 
 		groups[n].Name = productGroup.InternalName
 		groups[n].XMLIndex = n
@@ -50,8 +44,8 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 	sort.Sort(groups)
 	worstPoints := groups[len(groups)-1].Points
 	correctionPoints := worstPoints * -1
-	bestPointsCorrected := float64(24 + correctionPoints)
-	bestPointsNormal := float64(24)
+	bestPointsCorrected := float64(18 + correctionPoints)
+	bestPointsNormal := float64(18)
 
 	for n, _ := range groups {
 		if worstPoints < 0 {
