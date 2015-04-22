@@ -74,10 +74,22 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		data.TextOptionen = `Optionen`
 		data.TextHeaderPrefix = `Ihre E-Learning-Empfehlung`
 		data.TextRestart = `Den Fragebogen erneut starten`
-		data.TextHeader = `Unten sehen Sie eine Empfehlung für verschiedene Gruppen von E-Learning-Systemen, basierend
-		auf Ihren Antworten. Bitte wählen Sie eine Gruppe um unten die Details inkl. Beispiele zu sehen. Sie sehen
-		zunächst nur die Top sechs aller E-Learning-Gruppen: Mit der nachfolgenden Schaltfläche (siehe Optionen) können Sie
-		auch alle Gruppenergebnisse einsehen.`
+
+		data.TextHeader1 = `Unten sehen Sie eine Empfehlung für verschiedene Gruppen von E-Learning-Systemen, basierend auf
+		Ihren Antworten. Bitte wählen Sie eine Gruppe, um Beispiele sehen zu können. Zunächst sehen Sie nur die Top Sechs
+		aller E-Learning-Gruppen: Mit der nachfolgenden Schaltfläche (siehe Optionen) können Sie auch alle
+		Gruppenergebnisse einsehen.`
+
+		data.TextHeader2 = `Bitte beachten Sie, dass nur Beispiele in den Gruppen dargestellt werden. Die Aufzählung hat keinen
+		Anspruch auf Vollständigkeit. Möglicherweise existiert in Ihrer Hochschule eine E-Learning-Strategie: Bitte erkundigen
+		Sie sich, inwieweit Sie die hier vorgeschlagenen Formate einsetzen können und dürfen. Einige der aufgeführten Formate
+		benutzen "die Cloud". Das bedeutet, dass sie Dienste von Dritten einsetzen. Bitte halten Sie aus diesen Gründen
+		Rücksprache mit Ihrem Datenschutzbeauftragten, der Sie zu diesen Themen beraten kann.`
+
+		data.TextHeader3 = `Einige der hier vorgestellten Formate sind kostenpflichtig, andere Formate sind dagegen ohne Kosten
+		frei erhältlich. Für viele kostenpflichtige Formate können kostenlose Alternativen gefunden werden. Bei dem Einsatz
+		einiger Formate können Folgekosten entstehen. Beachten Sie außerdem, dass die Studierenden in einigen Formaten anonym
+		auftreten können. Sollten Sie dies nicht wünschen, prüfen Sie bitte geeignete Gegenmaßnahmen.`
 
 	} else {
 
@@ -97,9 +109,19 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		data.TextExamples = `Examples for`
 		data.TextHeaderPrefix = `Your E-Learning Recommendation`
 		data.TextRestart = `Restart the questionnaire`
-		data.TextHeader = `Please find below your e-learning recommendation, based on your answers. Please choose a
+		data.TextHeader1 = `Please find below your e-learning recommendation, based on your answers. Please choose a
 		group to show the details with the examples. Initially, just the top 8 groups are visible. With the options
 		below, you can access also the results of all groups.`
+
+		data.TextHeader2 = `Please consider that the examples at the groups are only a small extract and not a
+		complete listing. It is possible that your university provides an e-learning strategy: Please ensure,
+		that you can use the formats within the examples. Some formats are using cloud services. Please consider
+		the privacy policy of your university to ensure, that you can use these formats. Several formats are only
+		available as paid version; others are free. Please enquire, because it is possible that both charges for
+		the usage. Finally, it is possible that the students are anonymous within formats. If this is unwanted,
+		please plan countermeasures.`
+
+		data.TextHeader3 = ``
 	}
 
 	Tools.SendChosenLanguage(response, lang)

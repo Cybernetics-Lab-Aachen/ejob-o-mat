@@ -31,6 +31,7 @@ func HandlerQuestion9(response http.ResponseWriter, request *http.Request) {
 	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
 	data.ButtonBackStatus = BUTTON_SHOW
+	data.ButtonInfoStatus = BUTTON_HIDDEN
 
 	data.Button1Data = `support4lecture`
 	data.Button2Data = `replace`
@@ -54,6 +55,9 @@ func HandlerQuestion9(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Einsatzzweck`
 		data.TextQuestionBody = `Soll das E-Learning-Format Ihre Vorlesung, Übung etc. unterstützen oder die Präsenzveranstaltung ersetzen?`
+		data.QuestionInfoHeader = `Zusätzliche Hinweise`
+		data.QuestionInfoClose = `Schließen`
+		data.QuestionInfoText = ``
 	} else {
 		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Support Lecture`
@@ -65,6 +69,9 @@ func HandlerQuestion9(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Purpose`
 		data.TextQuestionBody = `Should the e-learning format support your lecture, exercise, etc. or should it replace the on-site attendance?`
+		data.QuestionInfoHeader = `Additional Information`
+		data.QuestionInfoClose = `Close`
+		data.QuestionInfoText = ``
 	}
 
 	Tools.SendChosenLanguage(response, lang)

@@ -31,6 +31,7 @@ func HandlerQuestion12(response http.ResponseWriter, request *http.Request) {
 	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
 	data.ButtonBackStatus = BUTTON_SHOW
+	data.ButtonInfoStatus = BUTTON_HIDDEN
 
 	data.Button1Data = `1`
 	data.Button2Data = `0`
@@ -54,6 +55,9 @@ func HandlerQuestion12(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Test- und Prüfungsformate`
 		data.TextQuestionBody = `Soll das E-Learning-Format Tests oder Prüfungen ermöglichen?`
+		data.QuestionInfoHeader = `Zusätzliche Hinweise`
+		data.QuestionInfoClose = `Schließen`
+		data.QuestionInfoText = ``
 	} else {
 		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
@@ -65,6 +69,9 @@ func HandlerQuestion12(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Assessments`
 		data.TextQuestionBody = `Should the e-learning format provide a functionality for assessments?`
+		data.QuestionInfoHeader = `Additional Information`
+		data.QuestionInfoClose = `Close`
+		data.QuestionInfoText = ``
 	}
 
 	Tools.SendChosenLanguage(response, lang)

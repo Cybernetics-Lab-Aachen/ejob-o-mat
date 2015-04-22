@@ -31,6 +31,7 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
 	data.ButtonBackStatus = BUTTON_SHOW
+	data.ButtonInfoStatus = BUTTON_SHOW
 
 	data.Button1Data = `1`
 	data.Button2Data = `0`
@@ -54,6 +55,10 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Cloud`
 		data.TextQuestionBody = `Darf das E-Learning-Format nach den Statuten Ihrer Hochschule als Cloud-Dienst angeboten werden?`
+		data.QuestionInfoHeader = `Zusätzliche Hinweise`
+		data.QuestionInfoClose = `Schließen`
+		data.QuestionInfoText = `Häufig laufen sogenannte Cloud-Dienste auf Infrastrukturen von z.B. amerikanischen Unternehmen.
+		Daher können in solchen Fällen die Regeln des europäischen Datenschutzes nicht eingehalten bzw. garantiert werden.`
 	} else {
 		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
@@ -65,6 +70,10 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Cloud`
 		data.TextQuestionBody = `Do the bylaws of your university allow an e-learning format provided by a cloud service?`
+		data.QuestionInfoHeader = `Additional Information`
+		data.QuestionInfoClose = `Close`
+		data.QuestionInfoText = `These kinds of services often use e.g. infrastructure from American companies. In such
+		cases, it maybe not possible to guarantee the privacy policies of your country.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

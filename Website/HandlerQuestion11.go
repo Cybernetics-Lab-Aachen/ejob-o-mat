@@ -31,6 +31,7 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
 	data.ButtonBackStatus = BUTTON_SHOW
+	data.ButtonInfoStatus = BUTTON_SHOW
 
 	data.Button1Data = `1`
 	data.Button2Data = `0`
@@ -54,6 +55,10 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Hochschulnetz`
 		data.TextQuestionBody = `Soll das E-Learning-Format einen Betrieb in Ihrem Hochschulnetz ermöglichen?`
+		data.QuestionInfoHeader = `Zusätzliche Hinweise`
+		data.QuestionInfoClose = `Schließen`
+		data.QuestionInfoText = `In diesem Fall können Sie die Regeln des Datenschutzes selber anwenden und
+		den Zugang zu dem E-Learning-Format z.B. auf Ihre Studierenden beschränken.`
 	} else {
 		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
@@ -65,6 +70,10 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `University Network`
 		data.TextQuestionBody = `Should the e-learning format enable to operate inside of your local university network?`
+		data.QuestionInfoHeader = `Additional Information`
+		data.QuestionInfoClose = `Close`
+		data.QuestionInfoText = `In this case, you are able to apply privacy rules and restrictions e.g. you can restrict
+		the e-learning format to your students only.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

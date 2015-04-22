@@ -31,6 +31,7 @@ func HandlerQuestion5(response http.ResponseWriter, request *http.Request) {
 	data.Button4Status = BUTTON_HIDDEN
 	data.Button5Status = BUTTON_HIDDEN
 	data.ButtonBackStatus = BUTTON_SHOW
+	data.ButtonInfoStatus = BUTTON_SHOW
 
 	data.Button1Data = `1`
 	data.Button2Data = `0`
@@ -54,6 +55,9 @@ func HandlerQuestion5(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Asynchrone Interaktion`
 		data.TextQuestionBody = `Soll das E-Learning-Format eine zeitlich asynchrone Interaktion ermöglichen?`
+		data.QuestionInfoHeader = `Zusätzliche Hinweise`
+		data.QuestionInfoClose = `Schließen`
+		data.QuestionInfoText = `Dies können z.B. Diskussionsforen und Wikis sein, in denen die Studierenden zeitlich unabhängig voneinander interagieren.`
 	} else {
 		data.Basis.Name = NAME_EN
 		data.TextButton1 = `Yes`
@@ -65,6 +69,9 @@ func HandlerQuestion5(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Asynchronous Interaction`
 		data.TextQuestionBody = `Should the e-learning format provide a functionality for asynchronous interaction?`
+		data.QuestionInfoHeader = `Additional Information`
+		data.QuestionInfoClose = `Close`
+		data.QuestionInfoText = `Examples are e.g. discussion boards and Wikis, in which the work occurs time-shifted.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

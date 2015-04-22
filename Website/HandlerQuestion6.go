@@ -31,6 +31,7 @@ func HandlerQuestion6(response http.ResponseWriter, request *http.Request) {
 	data.Button4Status = BUTTON_SHOW
 	data.Button5Status = BUTTON_HIDDEN
 	data.ButtonBackStatus = BUTTON_SHOW
+	data.ButtonInfoStatus = BUTTON_HIDDEN
 
 	data.Button1Data = `small`
 	data.Button2Data = `mid`
@@ -45,26 +46,32 @@ func HandlerQuestion6(response http.ResponseWriter, request *http.Request) {
 
 	if strings.Contains(lang.Language, `de`) {
 		data.Basis.Name = NAME_DE
-		data.TextButton1 = `Kleingruppen`
-		data.TextButton2 = `Mittel (Dutzend(e))`
-		data.TextButton3 = `Groß (Hundert(e))`
-		data.TextButton4 = `Massen (Tausend(e)+)`
+		data.TextButton1 = `1 bis 12`
+		data.TextButton2 = `13 bis 48`
+		data.TextButton3 = `49 bis 500`
+		data.TextButton4 = `mehr als 500`
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Anzahl der Zugriffe`
 		data.TextQuestionBody = `Wie viele Studierende besuchen Ihren Kurs bzw. Ihre Veranstaltung?`
+		data.QuestionInfoHeader = `Zusätzliche Hinweise`
+		data.QuestionInfoClose = `Schließen`
+		data.QuestionInfoText = ``
 	} else {
 		data.Basis.Name = NAME_EN
-		data.TextButton1 = `Small`
-		data.TextButton2 = `Mid (dozen(s))`
-		data.TextButton3 = `Huge (hundred(s))`
-		data.TextButton4 = `Masses (thousand(s)+)`
+		data.TextButton1 = `1 til 12`
+		data.TextButton2 = `13 til 48`
+		data.TextButton3 = `49 til 500`
+		data.TextButton4 = `more than 500`
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Count of Accesses`
+		data.TextQuestionTopic = `Amount of Accesses`
 		data.TextQuestionBody = `How many students are in your course?`
+		data.QuestionInfoHeader = `Additional Information`
+		data.QuestionInfoClose = `Close`
+		data.QuestionInfoText = ``
 	}
 
 	Tools.SendChosenLanguage(response, lang)
