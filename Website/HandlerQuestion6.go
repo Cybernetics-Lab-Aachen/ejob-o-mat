@@ -52,6 +52,7 @@ func HandlerQuestion6(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = `mehr als 500`
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
+		data.TextImportant = `Diese Aussage ist mir besonderst wichtig`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Anzahl der Zugriffe`
 		data.TextQuestionBody = `Wie viele Studierende besuchen Ihren Kurs bzw. Ihre Veranstaltung?`
@@ -66,6 +67,7 @@ func HandlerQuestion6(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = `more than 500`
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
+		data.TextImportant = `This statement is important for me`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Amount of Accesses`
 		data.TextQuestionBody = `How many students are in your course?`

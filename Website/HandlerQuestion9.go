@@ -52,6 +52,7 @@ func HandlerQuestion9(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
+		data.TextImportant = `Diese Aussage ist mir besonderst wichtig`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Einsatzzweck`
 		data.TextQuestionBody = `Soll das E-Learning-Format Ihre Vorlesung, Übung etc. unterstützen oder die Präsenzveranstaltung ersetzen?`
@@ -66,6 +67,7 @@ func HandlerQuestion9(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
+		data.TextImportant = `This statement is important for me`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Purpose`
 		data.TextQuestionBody = `Should the e-learning format support your lecture, exercise, etc. or should it replace the on-site attendance?`

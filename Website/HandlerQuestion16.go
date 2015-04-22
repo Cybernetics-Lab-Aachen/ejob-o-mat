@@ -52,6 +52,7 @@ func HandlerQuestion16(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
+		data.TextImportant = `Diese Aussage ist mir besonderst wichtig`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Darbietende Lehrverfahren`
 		data.TextQuestionBody = `Soll das E-Learning-Format darbietende Lehrverfahren wie z.B. Vorträge, Vorlesungen, Demonstrationen, etc. ermöglichen?`
@@ -66,6 +67,7 @@ func HandlerQuestion16(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
+		data.TextImportant = `This statement is important for me`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `Presenting Teaching Methods`
 		data.TextQuestionBody = `Should the e-learning format be enabled for presenting teaching methods like e.g. talks, lectures, demonstrations, etc.?`

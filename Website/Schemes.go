@@ -63,6 +63,7 @@ type PageQuestion struct {
 	TextButton4        string
 	TextButton5        string
 	TextBackButton     string
+	TextImportant      string
 	Button1Status      string
 	Button2Status      string
 	Button3Status      string

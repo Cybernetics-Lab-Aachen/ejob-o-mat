@@ -73,4 +73,23 @@ type Answers struct {
 	A16Data string `bson:"A16Data"`
 	A17Data string `bson:"A17Data"`
 	A18Data string `bson:"A18Data"`
+
+	A1Weight  byte `bson:"A1Weight"`
+	A2Weight  byte `bson:"A2Weight"`
+	A3Weight  byte `bson:"A3Weight"`
+	A4Weight  byte `bson:"A4Weight"`
+	A5Weight  byte `bson:"A5Weight"`
+	A6Weight  byte `bson:"A6Weight"`
+	A7Weight  byte `bson:"A7Weight"`
+	A8Weight  byte `bson:"A8Weight"`
+	A9Weight  byte `bson:"A9Weight"`
+	A10Weight byte `bson:"A10Weight"`
+	A11Weight byte `bson:"A11Weight"`
+	A12Weight byte `bson:"A12Weight"`
+	A13Weight byte `bson:"A13Weight"`
+	A14Weight byte `bson:"A14Weight"`
+	A15Weight byte `bson:"A15Weight"`
+	A16Weight byte `bson:"A16Weight"`
+	A17Weight byte `bson:"A17Weight"`
+	A18Weight byte `bson:"A18Weight"`
 }

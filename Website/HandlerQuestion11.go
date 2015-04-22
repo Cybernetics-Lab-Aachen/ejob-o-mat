@@ -52,6 +52,7 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
+		data.TextImportant = `Diese Aussage ist mir besonderst wichtig`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Hochschulnetz`
 		data.TextQuestionBody = `Soll das E-Learning-Format einen Betrieb in Ihrem Hochschulnetz ermöglichen?`
@@ -67,6 +68,7 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Previous question`
+		data.TextImportant = `This statement is important for me`
 		data.TextQuestion = `Question`
 		data.TextQuestionTopic = `University Network`
 		data.TextQuestionBody = `Should the e-learning format enable to operate inside of your local university network?`

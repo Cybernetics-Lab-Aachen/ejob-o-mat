@@ -16,9 +16,15 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 	noText := request.FormValue(`no`)
 	session := request.FormValue(`session`)
 	data := request.FormValue(`a`)
+	important := request.FormValue(`important`)
 	lang := request.FormValue(`lang`)
 	answers := DB.LoadAnswers(session)
 	no := 0
+	weight := 1
+
+	if important == `important` {
+		weight = 2
+	}
 
 	if value, errValue := strconv.Atoi(noText); errValue != nil {
 		no = 0
@@ -28,10 +34,16 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 		// Store the new answer:
 		re := reflect.ValueOf(&answers)
 		element := re.Elem()
+
 		field := element.FieldByName(fmt.Sprintf("A%dTimeUTC", no))
 		field.Set(reflect.ValueOf(time.Now().UTC()))
+
 		field = element.FieldByName(fmt.Sprintf("A%dData", no))
 		field.SetString(data)
+
+		field = element.FieldByName(fmt.Sprintf("A%dWeight", no))
+		field.Set(reflect.ValueOf(byte(weight)))
+
 		DB.UpdateAnswers(answers)
 	}
 
