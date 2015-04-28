@@ -33,10 +33,10 @@ func HandlerQuestion6(response http.ResponseWriter, request *http.Request) {
 	data.ButtonBackStatus = BUTTON_SHOW
 	data.ButtonInfoStatus = BUTTON_HIDDEN
 
-	data.Button1Data = `small`
-	data.Button2Data = `mid`
-	data.Button3Data = `huge`
-	data.Button4Data = `masses`
+	data.Button1Data = `1`
+	data.Button2Data = `2`
+	data.Button3Data = `3`
+	data.Button4Data = `4`
 	data.Button5Data = ``
 
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)

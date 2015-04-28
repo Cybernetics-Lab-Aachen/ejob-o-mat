@@ -20,7 +20,7 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 		/*  3 */ groups[n].Points = groups[n].Points + (kindConditionalPossibility(answers.A3Data, productGroup.SharedProperties.UserComments) * int(answers.A3Weight))
 		/*  4 */ groups[n].Points = groups[n].Points + (kindConditionalPresence(answers.A4Data, productGroup.SharedProperties.SynchronousInteraction) * int(answers.A4Weight))
 		/*  5 */ groups[n].Points = groups[n].Points + (kindConditionalPresence(answers.A5Data, productGroup.SharedProperties.AsynchronousInteraction) * int(answers.A5Weight))
-		/*  6 */ groups[n].Points = groups[n].Points + (kindAppropriateCountStudents(answers.A6Data, productGroup.SharedProperties.AmountAccesses) * int(answers.A6Weight))
+		/*  6 */ groups[n].Points = groups[n].Points + (kindAmountAccesses(answers.A6Data, productGroup.SharedProperties.MinAmountAccesses, productGroup.SharedProperties.MaxAmountAccesses) * int(answers.A6Weight))
 		/*  7 */ groups[n].Points = groups[n].Points + (kindConditionalPresence(answers.A7Data, productGroup.SharedProperties.Downloads) * int(answers.A7Weight))
 		/*  8 */ groups[n].Points = groups[n].Points + (kindConditionalYesNo(answers.A8Data, productGroup.SharedProperties.ShowLearningObjectives) * int(answers.A8Weight))
 		/*  9 */ groups[n].Points = groups[n].Points + (kindOperationType(answers.A9Data, productGroup.SharedProperties.Purpose) * int(answers.A9Weight))

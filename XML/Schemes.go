@@ -26,7 +26,8 @@ type SharedProperties struct {
 	UserComments             string   `xml:"UserComments"`
 	SynchronousInteraction   string   `xml:"SynchronousInteraction"`
 	AsynchronousInteraction  string   `xml:"AsynchronousInteraction"`
-	AmountAccesses           string   `xml:"AmountAccesses"`
+	MinAmountAccesses        string   `xml:"MinAmountAccesses"`
+	MaxAmountAccesses        string   `xml:"MaxAmountAccesses"`
 	Downloads                string   `xml:"Downloads"`
 	ShowLearningObjectives   string   `xml:"ShowLearningObjectives"`
 	Purpose                  string   `xml:"Purpose"`
