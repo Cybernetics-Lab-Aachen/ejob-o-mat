@@ -44,8 +44,8 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 	sort.Sort(groups)
 	worstPoints := groups[len(groups)-1].Points
 	correctionPoints := worstPoints * -1
-	bestPointsCorrected := float64(18 + correctionPoints)
-	bestPointsNormal := float64(18)
+	bestPointsNormal := float64(int(answers.A1Weight) + int(answers.A2Weight) + int(answers.A3Weight) + int(answers.A4Weight) + int(answers.A5Weight) + int(answers.A6Weight) + int(answers.A7Weight) + int(answers.A8Weight) + int(answers.A9Weight) + int(answers.A10Weight) + int(answers.A11Weight) + int(answers.A12Weight) + int(answers.A13Weight) + int(answers.A14Weight) + int(answers.A15Weight) + int(answers.A16Weight) + int(answers.A17Weight) + int(answers.A18Weight))
+	bestPointsCorrected := bestPointsNormal + float64(correctionPoints)
 
 	for n, _ := range groups {
 		if worstPoints < 0 {

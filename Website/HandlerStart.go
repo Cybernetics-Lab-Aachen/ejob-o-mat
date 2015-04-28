@@ -59,12 +59,12 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 		data.TextProject = `Project`
 		data.TextExecuted = `Executed by`
 		data.TextPromoted = `Promoted by`
-		data.TextWelcome = `Welcome to ` + nameENPlain + `. ` + nameENPlain + ` is an e-learning recommendation system with the focus.
-		to STEAM scieces. The aim of ` + nameENPlain + ` is to provide a overview about suitable tools. Therefore, it should
-		enable you to use these tools at your lectures, etc. If you start the questionnaire by pressing the button below,
-		you will receive a few questions. Afterwards, ` + nameENPlain + ` is then able to recommend e-learning solutions to you,
-		based on your answers. ` + nameENPlain + ` is a product from the project ELLI (Excellent teaching and learning in
-		engineering sciences). This project is supported from the Federal Ministry of Education and Research, Germany.`
+		data.TextWelcome = `Welcome to ` + NAME_EN + `. The ` + nameENPlain + ` is an e-learning recommendation system
+		with focus on STEM sciences. Our aim is to provide you with an overview about suitable tools which you can use
+		e.g. in your courses, lectures, etc. As soon as you start the questionnaire by pressing the button below, you
+		will receive a few questions. Afterwards, the ` + nameENPlain + ` will be able to recommend e-learning formats for
+		you, based on your answers. The ` + nameENPlain + ` is part of the project ELLI. This project is supported by
+		the Federal Ministry of Education and Research, Germany.`
 	}
 
 	Tools.SendChosenLanguage(response, lang)

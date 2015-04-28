@@ -109,17 +109,18 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		data.TextExamples = `Examples for`
 		data.TextHeaderPrefix = `Your E-Learning Recommendation`
 		data.TextRestart = `Restart the questionnaire`
-		data.TextHeader1 = `Please find below your e-learning recommendation, based on your answers. Please choose a
-		group to show the details with the examples. Initially, just the top 8 groups are visible. With the options
-		below, you can access also the results of all groups.`
+		data.TextHeader1 = `Below you can find your e-learning recommendation, based on your answers. Please
+		choose a group to view the respective examples. Initially, just the top six groups are visible. With
+		the options below, you can access the results of all groups.`
 
-		data.TextHeader2 = `Please consider that the examples at the groups are only a small extract and not a
-		complete listing. It is possible that your university provides an e-learning strategy: Please ensure,
-		that you can use the formats within the examples. Some formats are using cloud services. Please consider
-		the privacy policy of your university to ensure, that you can use these formats. Several formats are only
-		available as paid version; others are free. Please enquire, because it is possible that both charges for
-		the usage. Finally, it is possible that the students are anonymous within formats. If this is unwanted,
-		please plan countermeasures.`
+		data.TextHeader2 = `Please consider that the examples below are only a restricted amount and not a
+		complete listing of results. It is possible that your university provides an e-learning strategy:
+		Please make sure that you can use the given formats. Some formats are using cloud services. Please
+		consider the privacy policy of your university to ensure that you can use these formats. Several
+		formats are only available at a charge; others are free. Please enquire information about possible
+		fees at your institution and consider that also products free of charge can be linked to other costs.
+		Finally, it is possible that the format of choice treats students anonymously. If this is not wanted,
+		please consider countermeasures.`
 
 		data.TextHeader3 = ``
 	}
