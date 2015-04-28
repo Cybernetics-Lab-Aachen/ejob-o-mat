@@ -20,34 +20,25 @@ type ExampleGroup struct {
 }
 
 type SharedProperties struct {
-	XMLName                               xml.Name `xml:"SharedProperties"`
-	Exam                                  string   `xml:"Exam"`
-	Assistant                             string   `xml:"Assistant"`
-	UserComments                          string   `xml:"UserComments"`
-	AnonymousUsers                        string   `xml:"AnonymousUsers"`
-	LiveCollaboration                     string   `xml:"LiveCollaboration"`
-	CommunityCollaboration                string   `xml:"CommunityCollaboration"`
-	AppropriateCountStudents              string   `xml:"AppropriateCountStudents"`
-	Downloads                             string   `xml:"Downloads"`
-	Possibility2DeclareLearningObjectives string   `xml:"Possibility2DeclareLearningObjectives"`
-	OperationType                         string   `xml:"OperationType"`
-	Costs                                 string   `xml:"Costs"`
-	AlsoFreeProducts                      string   `xml:"AlsoFreeProducts"`
-	CloudBased                            string   `xml:"CloudBased"`
-	Intranet                              string   `xml:"Intranet"`
-	StandaloneSoftware                    string   `xml:"StandaloneSoftware"`
-	SCROMSupport                          string   `xml:"SCROMSupport"`
-	DeploymentNecessary                   string   `xml:"DeploymentNecessary"`
-	VideoContent                          string   `xml:"VideoContent"`
-	StudentRoles                          string   `xml:"StudentRoles"`
-	TrackedProgress                       string   `xml:"TrackedProgress"`
-	DisplayEquations                      string   `xml:"DisplayEquations"`
-	WriteEquations                        string   `xml:"WriteEquations"`
-	ContentType                           string   `xml:"ContentType"`
-	HomeUse                               string   `xml:"HomeUse"`
-	TeachingTypePresentation              string   `xml:"TeachingTypePresentation"`
-	TeachingTypeDevelopment               string   `xml:"TeachingTypeDevelopment"`
-	TeachingTypeExplorative               string   `xml:"TeachingTypeExplorative"`
+	XMLName                  xml.Name `xml:"SharedProperties"`
+	Assessments              string   `xml:"Assessments"`
+	Tutoring                 string   `xml:"Tutoring"`
+	UserComments             string   `xml:"UserComments"`
+	SynchronousInteraction   string   `xml:"SynchronousInteraction"`
+	AsynchronousInteraction  string   `xml:"AsynchronousInteraction"`
+	AmountAccesses           string   `xml:"AmountAccesses"`
+	Downloads                string   `xml:"Downloads"`
+	ShowLearningObjectives   string   `xml:"ShowLearningObjectives"`
+	Purpose                  string   `xml:"Purpose"`
+	CloudBased               string   `xml:"CloudBased"`
+	Intranet                 string   `xml:"Intranet"`
+	VideoContent             string   `xml:"VideoContent"`
+	StudentRoles             string   `xml:"StudentRoles"`
+	DisplayEquations         string   `xml:"DisplayEquations"`
+	WriteEquations           string   `xml:"WriteEquations"`
+	TeachingTypePresentation string   `xml:"TeachingTypePresentation"`
+	TeachingTypeDevelopment  string   `xml:"TeachingTypeDevelopment"`
+	TeachingTypeExplorative  string   `xml:"TeachingTypeExplorative"`
 }
 
 type Description struct {
