@@ -4,6 +4,10 @@ import (
 	"time"
 )
 
+var (
+	CURRENT_VERSION byte = 1
+)
+
 func (groups ProductGroups) Len() int {
 	return len(groups)
 }
@@ -26,12 +30,14 @@ type ProductGroup struct {
 }
 
 type Recommendation struct {
+	SchemeVersion byte           `bson:"Version"`
 	CreateTimeUTC time.Time      `bson:"CreateTimeUTC"`
 	Session       string         `bson:"Session"`
 	ProductGroups []ProductGroup `bson:"ProductGroups"`
 }
 
 type Answers struct {
+	SchemeVersion byte      `bson:"Version"`
 	CreateTimeUTC time.Time `bson:"CreateTimeUTC"`
 	Session       string    `bson:"Session"`
 

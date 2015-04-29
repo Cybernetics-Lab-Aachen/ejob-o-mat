@@ -34,6 +34,7 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	} else {
 		data.Basis.Session = Tools.RandomGUID()
 		answers := Scheme.Answers{}
+		answers.SchemeVersion = Scheme.CURRENT_VERSION
 		answers.Session = data.Basis.Session
 		answers.CreateTimeUTC = time.Now().UTC()
 		DB.StoreNewAnswers(answers)

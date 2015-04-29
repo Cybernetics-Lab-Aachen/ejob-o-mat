@@ -32,6 +32,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		resultSet.ProductGroups = assessedGroups
 		resultSet.CreateTimeUTC = time.Now().UTC()
 		resultSet.Session = session
+		resultSet.SchemeVersion = Scheme.CURRENT_VERSION
 		DB.StoreRecommendation(resultSet)
 
 	} else {
