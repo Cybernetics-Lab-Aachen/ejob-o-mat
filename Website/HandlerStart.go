@@ -43,6 +43,7 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	if strings.Contains(lang.Language, `de`) {
 		var nameDEPlain = strings.Replace(NAME_DE, `.net`, ``, 1)
 		data.Basis.Name = NAME_DE
+		data.Basis.Logo = LOGO_DE
 		data.TextStartButton = `Fragebogen beginnen`
 		data.TextProject = `Projekt`
 		data.TextExecuted = `Durchgeführt von`
@@ -57,6 +58,7 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 		var nameENPlain = strings.Replace(NAME_EN, `.net`, ``, 1)
 		data.TextStartButton = `Start Questionnaire`
 		data.Basis.Name = NAME_EN
+		data.Basis.Logo = LOGO_UK
 		data.TextProject = `Project`
 		data.TextExecuted = `Executed by`
 		data.TextPromoted = `Promoted by`

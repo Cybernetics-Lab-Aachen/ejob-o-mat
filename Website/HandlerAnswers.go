@@ -148,6 +148,6 @@ func HandlerVRAnswers(response http.ResponseWriter, request *http.Request) {
 	DB.StoreRecommendation(resultSet)
 
 	for _, entry := range resultSet.ProductGroups {
-		fmt.Fprintf(response, "%s#%s\n", entry.Name, entry.Percent)
+		fmt.Fprintf(response, "%s#%d\n", entry.Name, entry.Percent)
 	}
 }

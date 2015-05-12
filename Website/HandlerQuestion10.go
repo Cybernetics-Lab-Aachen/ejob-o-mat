@@ -42,10 +42,11 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
 	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
-	data.Progress = fmt.Sprintf("%d", (int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)))
+	data.Progress = int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)
 
 	if strings.Contains(lang.Language, `de`) {
 		data.Basis.Name = NAME_DE
+		data.Basis.Logo = LOGO_DE
 		data.TextButton1 = `Ja`
 		data.TextButton2 = `Nein`
 		data.TextButton3 = `Enthaltung`
@@ -62,6 +63,7 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		Daher können in solchen Fällen die Regeln des europäischen Datenschutzes nicht eingehalten bzw. garantiert werden.`
 	} else {
 		data.Basis.Name = NAME_EN
+		data.Basis.Logo = LOGO_UK
 		data.TextButton1 = `Yes`
 		data.TextButton2 = `No`
 		data.TextButton3 = `Skip question`

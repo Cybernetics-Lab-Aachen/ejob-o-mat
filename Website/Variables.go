@@ -9,9 +9,13 @@ import (
 const (
 	NAME_DE         string = `elearn-o-mat.net`
 	NAME_EN         string = `elearning-finder.net`
+	LOGO_DE         string = `logoDE`
+	LOGO_UK         string = `logoUK`
 	VERSION         string = `1.0b2`
 	BUTTON_HIDDEN   string = ` buttonhidden`
 	BUTTON_SHOW     string = ``
+	PROGRESS_DONE   string = ` progressitemdone`
+	PROGRESS_NDONE  string = ``
 	TOTAL_QUESTIONS int    = 18
 )
 

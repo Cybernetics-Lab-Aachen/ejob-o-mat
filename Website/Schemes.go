@@ -9,6 +9,7 @@ type Basis struct {
 	Name    string
 	Version string
 	Lang    string
+	Logo    string
 	Session string
 }
 
@@ -43,6 +44,7 @@ type PageResults struct {
 	TextRestart      string
 	TextAllGroups    string
 	TextOptionen     string
+	TextResults      string
 }
 
 type PageQuestion struct {
@@ -50,7 +52,7 @@ type PageQuestion struct {
 	NoQuestion         string
 	PreNoQuestion      string
 	NoQuestions        string
-	Progress           string
+	Progress           int
 	TextQuestion       string
 	QuestionInfoText   string
 	QuestionInfoHeader string

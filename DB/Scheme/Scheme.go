@@ -25,7 +25,7 @@ type ProductGroups []ProductGroup
 type ProductGroup struct {
 	Name     string `bson:"Name"`
 	Points   int    `bson:"Points"`
-	Percent  string `bson:"Percent"`
+	Percent  int    `bson:"Percent"`
 	XMLIndex int    `bson:"XMLIndex"`
 }
 

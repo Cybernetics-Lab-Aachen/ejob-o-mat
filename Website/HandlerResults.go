@@ -68,9 +68,11 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		}
 
 		data.Basis.Name = NAME_DE
+		data.Basis.Logo = LOGO_DE
 		data.LangPos = 0
+		data.TextResults = `Ergebnisse`
 		data.TextMatch = `Übereinstimmung mit Ihren Antworten`
-		data.TextGroup = `Gruppe`
+		data.TextGroup = `Format`
 		data.TextExamples = `Beispiele für`
 		data.TextOptionen = `Optionen`
 		data.TextHeaderPrefix = `Ihre E-Learning-Empfehlung`
@@ -103,9 +105,11 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		}
 
 		data.Basis.Name = NAME_EN
+		data.Basis.Logo = LOGO_UK
 		data.LangPos = 1
+		data.TextResults = `Results`
 		data.TextMatch = `match with your answers`
-		data.TextGroup = `Group`
+		data.TextGroup = `Format`
 		data.TextOptionen = `Options`
 		data.TextExamples = `Examples for`
 		data.TextHeaderPrefix = `Your E-Learning Recommendation`

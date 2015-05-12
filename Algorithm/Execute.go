@@ -1,7 +1,6 @@
 package Algorithm
 
 import (
-	"fmt"
 	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 	"github.com/SommerEngineering/Re4EEE/XML"
 	"sort"
@@ -51,10 +50,10 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 		if worstPoints < 0 {
 			groups[n].Points += correctionPoints
 			result := (float64(groups[n].Points) / bestPointsCorrected) * 100.0
-			groups[n].Percent = fmt.Sprintf("%.f", result)
+			groups[n].Percent = int(result)
 		} else {
 			result := (float64(groups[n].Points) / bestPointsNormal) * 100.0
-			groups[n].Percent = fmt.Sprintf("%.f", result)
+			groups[n].Percent = int(result)
 		}
 	}
 
