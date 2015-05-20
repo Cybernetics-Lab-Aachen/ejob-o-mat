@@ -22,6 +22,7 @@ func HandlerQuestion16(response http.ResponseWriter, request *http.Request) {
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
 	data.Basis.Version = VERSION
+	data.Progress = 16
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = readSession
 
@@ -42,7 +43,6 @@ func HandlerQuestion16(response http.ResponseWriter, request *http.Request) {
 	data.NoQuestion = fmt.Sprintf(`%d`, noQuestion)
 	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
-	data.Progress = int((float32(noQuestion) / float32(TOTAL_QUESTIONS)) * 100.0)
 
 	if strings.Contains(lang.Language, `de`) {
 		data.Basis.Name = NAME_DE

@@ -37,6 +37,7 @@ func registerHandlers() {
 	Handlers.AddPublicHandler(`/answer`, Website.HandlerAnswer)
 	Handlers.AddPublicHandler(`/answerVR`, Website.HandlerVRAnswers)
 	Handlers.AddPublicHandler(`/results`, Website.HandlerResults)
+	Handlers.AddPublicHandler(`/impressum`, Website.HandlerImpressum)
 
 	// Admin Handlers:
 	Handlers.AddAdminHandler(`/book`, Website.HandlerBook)

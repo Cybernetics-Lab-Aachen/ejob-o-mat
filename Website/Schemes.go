@@ -27,6 +27,11 @@ type PageStart struct {
 	TextPromoted    string
 }
 
+type PageImpressum struct {
+	Basis              Basis
+	TextPrefix4English string
+}
+
 type PageResults struct {
 	Basis            Basis
 	LangPos          int
