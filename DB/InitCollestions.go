@@ -20,6 +20,7 @@ func initCollections() {
 	// Get all collections:
 	ocollAnswers := db.C(collAnswers)
 	ocollRecommendations := db.C(collRecommendations)
+	ocollFeedback := db.C(collFeedback)
 
 	// Ensure the indexes:
 	ocollAnswers.EnsureIndexKey(`Version`)
@@ -31,4 +32,7 @@ func initCollections() {
 	ocollRecommendations.EnsureIndexKey(`Session`)
 	ocollRecommendations.EnsureIndexKey(`CreateTimeUTC`)
 	ocollRecommendations.EnsureIndexKey(`Version`, `CreateTimeUTC`)
+
+	ocollFeedback.EnsureIndexKey(`Session`)
+	ocollFeedback.EnsureIndexKey(`Rating`)
 }

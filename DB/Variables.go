@@ -11,4 +11,5 @@ var (
 const (
 	collAnswers         = `Answers`
 	collRecommendations = `Recommendations`
+	collFeedback        = `Feedback`
 )

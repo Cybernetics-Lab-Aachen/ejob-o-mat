@@ -27,6 +27,17 @@ type PageStart struct {
 	TextPromoted    string
 }
 
+type PageFeedback struct {
+	Basis            Basis
+	TextFeedback     string
+	TextYourFeedback string
+	TextYourRating   string
+	TextRatingLeft   string
+	TextRatingRight  string
+	TextSubmit       string
+	SourceLocation   string
+}
+
 type PageImpressum struct {
 	Basis              Basis
 	TextPrefix4English string

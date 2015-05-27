@@ -14,7 +14,7 @@ func HandlerQuestion6(response http.ResponseWriter, request *http.Request) {
 	noQuestion := 6
 	readSession := request.FormValue(`session`)
 	if readSession == `` {
-		defer http.Redirect(response, request, "/", 307)
+		defer http.Redirect(response, request, "/", 302)
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelSECURITY, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameUSER, `A request without session.`)
 		return
 	}
@@ -53,7 +53,7 @@ func HandlerQuestion6(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = `mehr als 500`
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
-		data.TextImportant = `Diese Aussage ist mir besonderst wichtig`
+		data.TextImportant = `Diese Aussage ist mir besonders wichtig`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Anzahl der Zugriffe`
 		data.TextQuestionBody = `Wie viele Studierende besuchen Ihren Kurs bzw. Ihre Veranstaltung?`

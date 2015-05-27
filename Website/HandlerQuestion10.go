@@ -14,7 +14,7 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 	noQuestion := 10
 	readSession := request.FormValue(`session`)
 	if readSession == `` {
-		defer http.Redirect(response, request, "/", 307)
+		defer http.Redirect(response, request, "/", 302)
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelSECURITY, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameUSER, `A request without session.`)
 		return
 	}
@@ -53,7 +53,7 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
-		data.TextImportant = `Diese Aussage ist mir besonderst wichtig`
+		data.TextImportant = `Diese Aussage ist mir besonders wichtig`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Cloud`
 		data.TextQuestionBody = `Darf das E-Learning-Format nach den Statuten Ihrer Hochschule als Cloud-Dienst angeboten werden?`

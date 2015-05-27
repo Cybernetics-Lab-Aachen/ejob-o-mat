@@ -14,7 +14,7 @@ func HandlerQuestion14(response http.ResponseWriter, request *http.Request) {
 	noQuestion := 14
 	readSession := request.FormValue(`session`)
 	if readSession == `` {
-		defer http.Redirect(response, request, "/", 307)
+		defer http.Redirect(response, request, "/", 302)
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelSECURITY, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameUSER, `A request without session.`)
 		return
 	}
@@ -53,10 +53,10 @@ func HandlerQuestion14(response http.ResponseWriter, request *http.Request) {
 		data.TextButton4 = ``
 		data.TextButton5 = ``
 		data.TextBackButton = `Vorherige Frage`
-		data.TextImportant = `Diese Aussage ist mir besonderst wichtig`
+		data.TextImportant = `Diese Aussage ist mir besonders wichtig`
 		data.TextQuestion = `Frage`
 		data.TextQuestionTopic = `Mathematische Darstellung`
-		data.TextQuestionBody = `Soll das E-Learning-Format mathematische Ausdrücke aus z.B. der Höheren Mathematik, Physik, Elektrotechnik, etc. ermöglichen?`
+		data.TextQuestionBody = `Soll das E-Learning-Format die Darstellung mathematischer Ausdrücke z.B. der Höheren Mathematik, Physik, Elektrotechnik, etc. ermöglichen?`
 		data.QuestionInfoHeader = `Zusätzliche Hinweise`
 		data.QuestionInfoClose = `Schließen`
 		data.QuestionInfoText = ``

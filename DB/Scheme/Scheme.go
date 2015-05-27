@@ -99,3 +99,10 @@ type Answers struct {
 	A17Weight byte `bson:"A17Weight"`
 	A18Weight byte `bson:"A18Weight"`
 }
+
+type Feedback struct {
+	Text           string `bson:"Text"`
+	Rating         byte   `bson:"Rating"`
+	Session        string `bson:"Session"`
+	SourceLocation string `bson:"SourceLocation"`
+}

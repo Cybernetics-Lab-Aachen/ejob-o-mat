@@ -14,7 +14,7 @@ func registerHandlers() {
 	defer Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameSTARTUP, `Register now all app handlers done.`)
 
 	// Public Handlers:
-	Handlers.AddPublicHandler(`/`, Website.HandlerPassword)
+	Handlers.AddPublicHandler(`/`, Website.HandlerRedirect)
 	Handlers.AddPublicHandler(`/start`, Website.HandlerStart)
 	Handlers.AddPublicHandler(`/question1`, Website.HandlerQuestion1)
 	Handlers.AddPublicHandler(`/question2`, Website.HandlerQuestion2)
@@ -38,6 +38,8 @@ func registerHandlers() {
 	Handlers.AddPublicHandler(`/answerVR`, Website.HandlerVRAnswers)
 	Handlers.AddPublicHandler(`/results`, Website.HandlerResults)
 	Handlers.AddPublicHandler(`/impressum`, Website.HandlerImpressum)
+	Handlers.AddPublicHandler(`/feedback`, Website.HandlerFeedback)
+	Handlers.AddPublicHandler(`/writeFeedback`, Website.HandlerReceiveFeedback)
 
 	// Admin Handlers:
 	Handlers.AddAdminHandler(`/book`, Website.HandlerBook)
@@ -46,6 +48,5 @@ func registerHandlers() {
 }
 
 func testHandler(response http.ResponseWriter, request *http.Request) {
-
 	fmt.Fprintf(response, `Test: %s`, "TEST")
 }
