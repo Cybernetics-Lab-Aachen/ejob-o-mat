@@ -40,6 +40,8 @@ func registerHandlers() {
 	Handlers.AddPublicHandler(`/impressum`, Website.HandlerImpressum)
 	Handlers.AddPublicHandler(`/feedback`, Website.HandlerFeedback)
 	Handlers.AddPublicHandler(`/writeFeedback`, Website.HandlerReceiveFeedback)
+	Handlers.AddPublicHandler(`/version`, Website.HandlerVersion)
+	Handlers.AddPublicHandler(`/ping`, Website.HandlerPing)
 
 	// Admin Handlers:
 	Handlers.AddAdminHandler(`/book`, Website.HandlerBook)
