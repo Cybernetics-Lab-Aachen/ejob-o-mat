@@ -16,7 +16,6 @@ import (
 )
 
 func HandlerResults(response http.ResponseWriter, request *http.Request) {
-
 	session := request.FormValue(`session`)
 	amountText := request.FormValue(`amount`)
 	lang := Tools.GetRequestLanguage(request)[0]
@@ -24,6 +23,16 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	groups := XML.GetData()
 	amountValue := -1
 	resultSet := Scheme.Recommendation{}
+
+	if len(session) != 36 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if amountText != `` && len(amountText) > 2 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
 
 	if !DB.CheckRecommendation(session) {
 

@@ -15,6 +15,11 @@ func HandlerFeedback(response http.ResponseWriter, request *http.Request) {
 	data.Basis.Lang = lang.Language
 	data.SourceLocation = request.Referer()
 
+	if readSession != `` && len(readSession) != 36 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
 	if readSession != `` {
 		data.Basis.Session = readSession
 	} else {

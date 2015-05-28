@@ -12,7 +12,6 @@ import (
 )
 
 func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
-
 	noText := request.FormValue(`no`)
 	session := request.FormValue(`session`)
 	data := request.FormValue(`a`)
@@ -21,6 +20,26 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 	answers := DB.LoadAnswers(session)
 	no := 0
 	weight := 1
+
+	if len(lang) > 6 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(session) != 36 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(noText) > 2 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(data) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
 
 	if important == `important` {
 		weight = 2
@@ -55,7 +74,6 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 }
 
 func HandlerVRAnswers(response http.ResponseWriter, request *http.Request) {
-
 	session := request.FormValue(`session`)
 	creationTimeUTC := request.FormValue(`creationTimeUTC`)
 
@@ -96,6 +114,196 @@ func HandlerVRAnswers(response http.ResponseWriter, request *http.Request) {
 	a16T := request.FormValue(`a16T`)
 	a17T := request.FormValue(`a17T`)
 	a18T := request.FormValue(`a18T`)
+
+	if len(session) != 36 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(creationTimeUTC) != 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a1) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a2) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a3) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a4) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a5) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a6) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a7) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a8) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a9) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a10) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a11) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a12) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a13) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a14) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a15) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a16) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a17) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a18) > 16 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a1T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a2T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a3T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a4T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a5T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a6T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a7T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a8T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a9T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a10T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a11T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a12T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a13T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a14T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a15T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a16T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a17T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
+	if len(a18T) > 45 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
 
 	answer := Scheme.Answers{}
 	answer.CreateTimeUTC, _ = time.Parse(time.RFC1123, creationTimeUTC)

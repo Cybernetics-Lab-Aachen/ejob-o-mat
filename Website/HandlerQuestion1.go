@@ -21,6 +21,11 @@ func HandlerQuestion1(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	if len(readSession) != 36 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
 	answers := DB.LoadAnswers(readSession)
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}

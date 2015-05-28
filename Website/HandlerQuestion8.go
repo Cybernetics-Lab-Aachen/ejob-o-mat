@@ -19,6 +19,11 @@ func HandlerQuestion8(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	if len(readSession) != 36 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageQuestion{}
 	data.Basis.Version = VERSION

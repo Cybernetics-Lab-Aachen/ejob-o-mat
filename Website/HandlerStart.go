@@ -17,6 +17,11 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 
+	if readSession != `` && len(readSession) != 36 {
+		response.WriteHeader(http.StatusNotFound)
+		return
+	}
+
 	if readSession != `` {
 		data.Basis.Session = readSession
 	} else {
