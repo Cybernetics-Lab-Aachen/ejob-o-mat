@@ -13,7 +13,7 @@ const (
 	NAME_EN_PLAIN   string = `elearning-finder`
 	LOGO_DE         string = `logoDE`
 	LOGO_UK         string = `logoUK`
-	VERSION         string = `1.0`
+	VERSION         string = `1.1`
 	BUTTON_HIDDEN   string = ` buttonhidden`
 	BUTTON_SHOW     string = ``
 	PROGRESS_DONE   string = ` progressitemdone`
