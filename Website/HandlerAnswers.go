@@ -2,6 +2,8 @@ package Website
 
 import (
 	"fmt"
+	"github.com/SommerEngineering/Ocean/Log"
+	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Re4EEE/Algorithm"
 	"github.com/SommerEngineering/Re4EEE/DB"
 	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
@@ -27,6 +29,7 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 	}
 
 	if len(session) != 36 {
+		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, session)
 		response.WriteHeader(http.StatusNotFound)
 		return
 	}
@@ -116,6 +119,7 @@ func HandlerVRAnswers(response http.ResponseWriter, request *http.Request) {
 	a18T := request.FormValue(`a18T`)
 
 	if len(session) != 36 {
+		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, session)
 		response.WriteHeader(http.StatusNotFound)
 		return
 	}

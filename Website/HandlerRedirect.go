@@ -1,12 +1,15 @@
 package Website
 
 import (
+	"github.com/SommerEngineering/Ocean/Log"
+	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"net/http"
 )
 
 func HandlerRedirect(response http.ResponseWriter, request *http.Request) {
 	readSession := request.FormValue(`session`)
 	if readSession != `` && len(readSession) != 36 {
+		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, readSession)
 		response.WriteHeader(http.StatusNotFound)
 		return
 	}

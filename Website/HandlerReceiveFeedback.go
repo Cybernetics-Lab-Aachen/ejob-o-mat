@@ -23,6 +23,7 @@ func HandlerReceiveFeedback(response http.ResponseWriter, request *http.Request)
 	}
 
 	if len(session) != 36 {
+		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, session)
 		response.WriteHeader(http.StatusNotFound)
 		return
 	}
