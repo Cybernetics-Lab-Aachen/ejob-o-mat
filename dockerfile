@@ -7,15 +7,13 @@ ENV GOPATH /go
 # Update the operating system and install base tools e.g. Git:
 RUN apt-get update && \
 	apt-get upgrade -y && \
-	apt-get install -y git && \
-	apt-get install -y wget && \
+	apt-get install -y git wget zip && \
 	
 	# Install the MongoDB clients:
 	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
 	echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
 	apt-get update && \
-	apt-get install -y mongodb-org-tools && \
-	apt-get install -y mongodb-org-shell && \
+	apt-get install -y mongodb-org-tools mongodb-org-shell && \
 
 	# Create the Go workspace:
 	mkdir /go && \
@@ -68,15 +66,18 @@ RUN export PATH=$PATH:/usr/local/go/bin && \
 	cp /go/src/github.com/SommerEngineering/Re4EEE/setConfiguration.sh /home/setConfiguration.sh && \
 	cp /go/src/github.com/SommerEngineering/Re4EEE/configureCustomerDB.sh /home/configureCustomerDB.sh && \
 	cp /go/src/github.com/SommerEngineering/Re4EEE/uploadStaticData.sh /home/uploadStaticData.sh && \
-	
-	# Copy also the static data to the home folder:
-	cp /go/src/github.com/SommerEngineering/Re4EEE/staticFiles.zip /home/staticFiles.zip && \
-	cp /go/src/github.com/SommerEngineering/Re4EEE/templates.zip /home/templates.zip && \
-	cp /go/src/github.com/SommerEngineering/Re4EEE/web.zip /home/web.zip && \
     
+	# Zip static data and move them to the home folder:
+	cd staticFiles && \
+	zip -r /home/staticFiles.zip . && \
+	cd ../templates && \
+	zip -r /home/templates.zip . && \
+	cd ../web && \
+	zip -r /home/web.zip . && \
+	cd .. && \
+	
 	# Uninstall Git and tools:
-	apt-get remove -y git && \
-	apt-get remove -y wget && \
+	apt-get remove -y git wget zip && \
 	apt-get autoremove -y && \
 	
 	# Delete Go:

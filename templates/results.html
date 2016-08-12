@@ -1,0 +1,160 @@
+{{define "results"}}
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+{{$langPos := .LangPos}}
+{{$groups := .Groups}}
+<html data-wf-site="531b6f81d93d2b40520007fd" data-wf-page="545f2bc5123e576a2d69aa40">
+<head>
+  <meta charset="utf-8">
+  <title>{{.Basis.Name}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <style>
+	@font-face { font-family: 'Open Sans', sans-serif; font-weight: 700; font-style: normal; src: url('/staticFiles/fonts/OpenSans-Bold.ttf'); }
+	@font-face { font-family: 'Open Sans', sans-serif; font-weight: 400; font-style: normal; src: url('/staticFiles/fonts/OpenSans-Regular.ttf'); } 
+	@font-face { font-family: 'Open Sans', sans-serif; font-weight: 700; font-style: italic; src: url('/staticFiles/fonts/OpenSans-BoldItalic.ttf'); }
+	@font-face { font-family: 'Open Sans', sans-serif; font-weight: 400; font-style: italic; src: url('/staticFiles/fonts/OpenSans-Italic.ttf'); } 
+	@font-face { font-family: 'Open Sans', sans-serif; src: url('/staticFiles/fonts/OpenSans-Regular.ttf'); } 
+  </style>
+  <link rel="stylesheet" type="text/css" href="/staticFiles/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/staticFiles/css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="/staticFiles/css/re4eee.webflow.css">
+  <script type="text/javascript" src="/staticFiles/js/modernizr.js"></script>
+</head>
+<body>
+	<div class="w-row">
+    <div class="w-col w-col-2 w-col-stack w-hidden-medium w-hidden-small w-hidden-tiny"></div>
+    <div class="w-col w-col-8 w-col-stack">
+      <div class="w-container qresult">
+        <div class="w-hidden-main mobilelogocontainer">
+			<a href="/?lang={{.Basis.Lang}}"><img src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
+        </div>
+        <div class="headerbox">
+          <div class="headerboxsubtitlecontainer">
+            <h1 class="headerboxsubtitle">{{.Basis.Name}}</h1>
+          </div>
+          <div class="line"></div>
+          <div class="headerboxtitlecontainer">
+            <h1 class="headerboxtitle">{{.TextHeaderPrefix}}</h1>
+          </div>
+        </div>
+        <div class="w-tabs resulttabs" data-duration-in="500" data-duration-out="500">
+          <div class="resultheaderprefix">
+            <div class="textbox">
+              <p class="resultheaderprefixtext">{{.TextHeader1}}</p>
+              <p class="resultheaderprefixtext">{{.TextHeader2}}</p>
+              <p class="resultheaderprefixtext">{{.TextHeader3}}</p>
+            </div>
+            <div class="buttonbox buttonboxresult">
+				<a class="button buttonhuge buttonhugesmalltext" href="/start?lang={{.Basis.Lang}}">{{.TextRestart}}</a>
+				<a class="button buttonhuge buttonhugesmalltext" href="/results?lang={{.Basis.Lang}}&session={{.Basis.Session}}&amount={{.AmountToggle}}">{{.TextAllGroups}}</a>
+            </div>
+          </div>
+          <div class="subheadline">
+            <div>{{.TextResults}}:</div>
+          </div>
+		  
+		  <div class="w-tab-menu resultmenu">
+			{{range .Recommendation.ProductGroups}}
+			  {{$data := (index $groups .XMLIndex).GroupName.Names}}
+			  <a class="w-tab-link w--current w-inline-block button buttonhuge buttonresult" data-w-tab="{{(index $data $langPos).Text}}">
+			    <div class="resultnamegroup">
+					<strong class="resultpercent">{{.Percent}}%&nbsp;</strong>{{(index $data $langPos).Text}}
+				</div>
+			  </a>
+			{{end}}
+		  </div>
+		  
+		  <div class="w-tab-content resultcontentarea">
+        
+		  {{$textMatch := .TextMatch}}
+		  {{$textGroup := .TextGroup}}
+		  {{$textExamples := .TextExamples}}
+
+		  {{range .Recommendation.ProductGroups}}
+			{{$dataGroup := index $groups .XMLIndex}}
+			<div class="w-tab-pane" data-w-tab="{{(index $dataGroup.GroupName.Names $langPos).Text}}">
+			  <div class="divresult">
+				<div class="subheadline">
+					<div>
+						{{$textGroup}}: <span class="formatname">{{(index $dataGroup.GroupName.Names $langPos).Text}}</span>
+					</div>
+				</div>
+				<div class="progressbox">
+				  <div class="progressitem progressresultpercentage percentagefirst{{.GetProgressState 1}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 2}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 3}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 4}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 5}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 6}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 7}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 8}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 9}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 10}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 11}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 12}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 13}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 14}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 15}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 16}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 17}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 18}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 19}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 20}}"></div>
+				</div>
+					
+				<div class="headerbox headerresult">
+				  <div class="line"></div>
+				  <div class="headerboxtitlecontainer headerboxresulttitlecontainer">
+					<h1 class="headerboxtitle headerboxresulttitle">{{.Percent}}%&nbsp;<span class="matchingtext">{{$textMatch}}</span></h1>
+				  </div>
+				</div>
+				
+				{{range $dataGroup.ExampleGroup}}
+				<div class="examplegroup">
+				  <h3 class="headerexamplegroup">{{$textExamples}} {{(index .GroupName.Names $langPos).Text}}</h3>
+				  
+				  {{range .GroupProducts}}
+				  <div class="w-clearfix exampleproduct">
+					<div class="w-clearfix productnameblock">
+					  <h4 class="productname">{{(index .ProductName.Names $langPos).Text}}</h4>
+					</div>
+					<div class="productlinkbox">
+						<a class="productlink" href="{{.Website}}" target="_blank">{{.Website}}</a>
+					</div>
+					<p class="producttext">{{(index .ProductDescription.Descriptions $langPos).Text}}</p>
+				  </div>
+				  {{end}}
+				  
+				</div>
+				{{end}}
+				
+
+			  </div>
+			</div>
+		  {{end}}
+		  
+        </div>
+        <div class="w-container containerlogo">
+			<img src="/staticFiles/images/footer.png">
+        </div>
+      </div>
+     </div>
+	</div>
+    <div class="w-col w-col-2 w-col-stack">
+      <div class="rightcolumncontainer">
+	  <a href="/?lang={{.Basis.Lang}}"><img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
+        <div>
+			<a href="http://www.elearn-o-mat.net/results?lang=de&session={{.Basis.Session}}&amount={{.AmountCurrent}}"><img class="flag" src="/staticFiles/images/flagDE.gif"></a>
+			<a href="http://www.elearning-finder.net/results?lang=en&session={{.Basis.Session}}&amount={{.AmountCurrent}}"><img class="flag lastflag" src="/staticFiles/images/flagUK.gif"></a>
+        </div>
+		<a class="button buttonsmall" href="/feedback?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&nbsp;&nbsp;Feedback&nbsp;&nbsp;</a>
+		<a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}">Impressum</a>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/framework/jQuery/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="/staticFiles/js/webflow.js"></script>
+</body>
+</html>
+{{end}}

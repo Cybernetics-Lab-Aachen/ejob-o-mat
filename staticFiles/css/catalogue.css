@@ -1,0 +1,356 @@
+/*
+==========>	Header
+*/
+
+/* Main setting for screens */
+/* Sets also the size of the group text */
+@media screen {
+	ProductsGroup {
+	  position:absolute;
+	  top:40px;
+	  left:40px;
+	  right:40px;
+	  width: 210mm; /* DIN A4 */
+	  background-color:#FFFFFF;
+	}
+}
+
+/* Main settings for printing */
+@media print {
+	ProductsGroup {
+	  position:absolute;
+	  top:0mm;
+	  left:0mm;
+	  right:0mm;
+	  width: 210mm; /* DIN A4 */
+	  background-color:#FFFFFF;
+	}
+
+	/* More printing settings */
+	@page {
+		size:210mm 297mm;
+	}
+
+	@page :header {
+		content: ,"Seite " decimal(pageno) " von " decimal(pages),;
+	}
+
+	@page :footer {
+		content: ,,,;
+	}
+}
+
+ProductGroup {
+	  display: block;
+	  border-style: solid;
+	  border-width: medium;
+	  border-radius: 6px;
+	  text-align: center;
+	  padding:10px;
+	  font-size: 16pt;
+	  font-weight: bold;
+	  color: #000000;
+	  margin-bottom: 40px;
+	  page-break-after:always;
+}
+
+
+/* Change the basis setting for all children of the main */
+ProductGroup > * {
+	display: block;
+	text-align: left;
+	font-size: 12pt;
+	font-weight: normal;
+	color: #000000;
+}
+
+/* Print the name of this group */
+ProductGroup:before {
+  content: "Gruppe: " attr(internalName);
+}
+
+/* Prints a line below the name of the group */
+ProductGroup > Names {
+	padding: 10px;
+	margin: 10px;
+	border-top-width: medium;
+	border-top-style: solid;
+}
+
+
+
+
+
+
+
+
+/*
+==========>	Descriptions of the group
+*/
+
+/* Does not display at all */
+ProductGroup > Descriptions > Description {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+==========>	Properties
+*/
+
+/* Header */
+ProductGroup > SharedProperties:before {
+	content: "Eigenschaften dieser Gruppe";
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14pt;
+	padding-bottom: 40px;
+}
+
+ProductGroup > SharedProperties > * {
+	display: block;
+	text-indent: 20px;
+}
+
+ProductGroup > SharedProperties > Exam:before {
+	content: "\2022  Durchführung von Klausuren? "
+}
+
+ProductGroup > SharedProperties > Assistant:before {
+	content: "\2022  Automatische Assistenz für Studierende? "
+}
+
+ProductGroup > SharedProperties > UserComments:before {
+	content: "\2022  Können Studierende schriftlich kommentieren? "
+}
+
+ProductGroup > SharedProperties > AnonymousUsers:before {
+	content: "\2022  Können Studierende anonym auftreten? "
+}
+
+ProductGroup > SharedProperties > LiveCollaboration:before {
+	content: "\2022  Können die Studierenden live zusammenarbeiten (unterstüzt durch das Produkt)? "
+}
+
+ProductGroup > SharedProperties > CommunityCollaboration:before {
+	content: "\2022  Können die Studierenden zeitversetzt zusammenarbeiten (unterstüzt durch das Produkt)? "
+}
+
+ProductGroup > SharedProperties > AppropriateCountStudents:before {
+	content: "\2022  Für wie viele Studierende kann das Produkt eingesetzt werden? "
+}
+
+ProductGroup > SharedProperties > Downloads:before {
+	content: "\2022  Können durch das Produkt Downloads angeboten werden? "
+}
+
+ProductGroup > SharedProperties > Possibility2DeclareLearningObjectives:before {
+	content: "\2022  Können die Lernziele direkt angegeben werden, sodass das Produkt diese den Studierenden anzeigt? "
+}
+
+ProductGroup > SharedProperties > OperationType:before {
+	content: "\2022  Soll das Produkt eine Veranstaltung unterstützen oder die Präsenzveranstaltung erseten? "
+}
+
+ProductGroup > SharedProperties > Costs:before {
+	content: "\2022  Wie hoch sind durchschnittlich die Kosten pro Studierenden? "
+}
+
+ProductGroup > SharedProperties > AlsoFreeProducts:before {
+	content: "\2022  Gibt es auch kostenfreie Produkte? "
+}
+
+ProductGroup > SharedProperties > CloudBased:before {
+	content: "\2022  Werden die Produkte i.d.R. in der Cloud betrieben? "
+}
+
+ProductGroup > SharedProperties > Intranet:before {
+	content: "\2022  Können die Produkte im eigenen Hochschulnetz betrieben werden? "
+}
+
+ProductGroup > SharedProperties > StandaloneSoftware:before {
+	content: "\2022  Sind die Produkte klassische Software-Programme für Client-PCs? "
+}
+
+ProductGroup > SharedProperties > SCROMSupport:before {
+	content: "\2022  Können SCROM-Daten importiert werden? "
+}
+
+ProductGroup > SharedProperties > DeploymentNecessary:before {
+	content: "\2022  Müssen die Produkte auf jedem Client-PC installiert werden? "
+}
+
+ProductGroup > SharedProperties > VideoContent:before {
+	content: "\2022  Können Videoinhalte angeboten werden? "
+}
+
+ProductGroup > SharedProperties > HighAvailability:before {
+	content: "\2022  Bieten die Produkte eine Hochverfügbarkeit? "
+}
+
+ProductGroup > SharedProperties > StudentRoles:before {
+	content: "\2022  Gibt es die Möglichkeit Studierenden Rollen zuzuteilen (Moderator, Gruppenleiter)? "
+}
+
+ProductGroup > SharedProperties > TrackedProgress:before {
+	content: "\2022  Kann der Lernfortschritt der Studierenden verfolgt werden? "
+}
+
+ProductGroup > SharedProperties > DisplayEquations:before {
+	content: "\2022  Können mathematische Formeln dargestellt werden? "
+}
+
+ProductGroup > SharedProperties > WriteEquations:before {
+	content: "\2022  Können die Studierenden mathematische Formeln schreiben? "
+}
+
+ProductGroup > SharedProperties > ContentType:before {
+	content: "\2022  Welcher Art ist der Inhalt? "
+}
+
+ProductGroup > SharedProperties > HomeUse:before {
+	content: "\2022  Können die Studierenden die Produkte auch daheim nutzen? "
+}
+
+ProductGroup > SharedProperties > TeachingTypePresentation:before {
+	content: "\2022  Werden darbietende Lehrverfahren unterstüzt? "
+}
+
+ProductGroup > SharedProperties > TeachingTypeDevelopment:before {
+	content: "\2022  Werden erarbeitende Lehrverfahren unterstüzt? "
+}
+
+ProductGroup > SharedProperties > TeachingTypeExplorative:before {
+	content: "\2022  Werden explorative Lehrverfahren unterstüzt? "
+}
+
+/* Distance to next */
+ProductGroup > SharedProperties {
+	padding-bottom: 40px;
+}
+
+
+
+/*
+==========>	Example Groups
+*/
+
+/* Line and settings for header */
+ProductGroup > ExampleGroup {
+	counter-increment: groups;
+	text-align: center;
+	border-top-width: medium;
+	border-top-style: solid;
+	padding-top: 10px;
+}
+
+/* Reset text align for children */
+ProductGroup > ExampleGroup > ExampleProduct {
+	text-align: left;
+}
+
+/* Header */
+ProductGroup > ExampleGroup:before {
+	content: "Beispiele #" counter(groups);
+	font-size: 16pt;
+	font-weight: bold;
+}
+
+/* Do not show the descrption */
+ProductGroup > ExampleGroup > Descriptions > Description > Text {
+	display: none;
+}
+
+/* Settings for the names of this group */
+ProductGroup > ExampleGroup > Names > Name {
+	display: block;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+/* Prefix for the group title */
+ProductGroup > ExampleGroup > Names > Name[language="de"]:before {
+  content: "Deutsch: " attr(text);
+}
+
+/* Prefix for the group title */
+ProductGroup > ExampleGroup > Names > Name[language="en"]:before {
+  content: "Englisch: " attr(text);
+}
+
+/* Line below the header */
+ProductGroup > ExampleGroup > ExampleProduct {
+	display: block;
+	margin-top: 10px;
+	border-top-width: medium;
+	border-top-style: solid;
+}
+
+
+
+
+
+
+/*
+==========>	Example Groups
+*/
+
+/* Product header */
+ExampleProduct:before {
+	content: "Produkt: " attr(internalName) " \21D2 Website: " attr(website);
+	font-weight: bold;
+	font-size: 12pt;
+	display: block;
+	margin-top: 10px;
+}
+
+/* Product name */
+ExampleProduct > Names > Name[language="de"]:after {
+	content: "Deutscher Produktname: " attr(text)
+}
+
+/* Product name */
+ExampleProduct > Names > Name[language="en"]:after {
+	content: "Englischer Produktname: " attr(text)
+}
+
+/* Product name settings */
+ExampleProduct > Names > Name {
+	display: block;
+	font-weight: bold;
+}
+
+/* Text prefix */
+ExampleProduct > Descriptions > Description[language="de"]:before {
+	content: "Deutsch: "
+}
+
+/* Text prefix */
+ExampleProduct > Descriptions > Description[language="en"]:before {
+	content: "Englisch: "
+}
+
+/* Text prefix settings */
+ExampleProduct > Descriptions > Description {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+/* Product text */
+ExampleProduct > Descriptions > Description > Text {
+	font-weight: normal;
+	display: block;
+	text-align: justify;
+	padding: 10px;
+}
