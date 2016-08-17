@@ -1,10 +1,10 @@
 package Scheme
 
-func (pg ProductGroup) GetProgressState(pos int) string {
-	scaledPoints := float64(pg.Percent) / 5.0 // 5% := 1 full point (at the UI)
-
-	if int(scaledPoints) >= pos {
+func (pg ProductGroup) GetProgressState(influence int) string {
+	if influence > 0 {
 		return ` progressitemdone`
+	} else if influence < 0 {
+		return ` progressitemundone`
 	} else {
 		return ``
 	}

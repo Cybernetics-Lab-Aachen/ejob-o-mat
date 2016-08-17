@@ -1,37 +1,51 @@
 package Algorithm
 
 import (
+	"sort"
+
 	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 	"github.com/SommerEngineering/Re4EEE/XML"
-	"sort"
 )
 
-func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
+func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups, influence [][]int) {
 
 	data := XML.GetData()
-	groups := make(Scheme.ProductGroups, 16)
+
+	numProducts := len(data.ProductsCollection.Products)
+
+	groups := make(Scheme.ProductGroups, numProducts)
+
+	influence = make([][]int, numProducts)
 
 	// Algorithm:
 	for n, productGroup := range data.ProductsCollection.Products {
+		//Calculate points per question for a product
+		influence[n] = make([]int, 18)
 
-		/*  1 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A1Data, productGroup.SharedProperties.VideoContent) * int(answers.A1Weight))
-		/*  2 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A2Data, productGroup.SharedProperties.Tutoring) * int(answers.A2Weight))
-		/*  3 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A3Data, productGroup.SharedProperties.UserComments) * int(answers.A3Weight))
-		/*  4 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A4Data, productGroup.SharedProperties.SynchronousInteraction) * int(answers.A4Weight))
-		/*  5 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A5Data, productGroup.SharedProperties.AsynchronousInteraction) * int(answers.A5Weight))
-		/*  6 */ groups[n].Points = groups[n].Points + (kindAmountAccesses(answers.A6Data, productGroup.SharedProperties.MinAmountAccesses, productGroup.SharedProperties.MaxAmountAccesses) * int(answers.A6Weight))
-		/*  7 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A7Data, productGroup.SharedProperties.Downloads) * int(answers.A7Weight))
-		/*  8 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A8Data, productGroup.SharedProperties.ShowLearningObjectives) * int(answers.A8Weight))
-		/*  9 */ groups[n].Points = groups[n].Points + (kindOperationType(answers.A9Data, productGroup.SharedProperties.Purpose) * int(answers.A9Weight))
-		/* 10 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A10Data, productGroup.SharedProperties.CloudBased) * int(answers.A10Weight))
-		/* 11 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A11Data, productGroup.SharedProperties.Intranet) * int(answers.A11Weight))
-		/* 12 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A12Data, productGroup.SharedProperties.Assessments) * int(answers.A12Weight))
-		/* 13 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A13Data, productGroup.SharedProperties.StudentRoles) * int(answers.A13Weight))
-		/* 14 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A14Data, productGroup.SharedProperties.DisplayEquations) * int(answers.A14Weight))
-		/* 15 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A15Data, productGroup.SharedProperties.WriteEquations) * int(answers.A15Weight))
-		/* 16 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A16Data, productGroup.SharedProperties.TeachingTypePresentation) * int(answers.A16Weight))
-		/* 17 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A17Data, productGroup.SharedProperties.TeachingTypeDevelopment) * int(answers.A17Weight))
-		/* 18 */ groups[n].Points = groups[n].Points + (kindCommon(answers.A18Data, productGroup.SharedProperties.TeachingTypeExplorative) * int(answers.A18Weight))
+		/*  1 */ influence[n][0] = kindCommon(answers.A1Data, productGroup.SharedProperties.VideoContent) * int(answers.A1Weight)
+		/*  2 */ influence[n][1] = kindCommon(answers.A2Data, productGroup.SharedProperties.Tutoring) * int(answers.A2Weight)
+		/*  3 */ influence[n][2] = kindCommon(answers.A3Data, productGroup.SharedProperties.UserComments) * int(answers.A3Weight)
+		/*  4 */ influence[n][3] = kindCommon(answers.A4Data, productGroup.SharedProperties.SynchronousInteraction) * int(answers.A4Weight)
+		/*  5 */ influence[n][4] = kindCommon(answers.A5Data, productGroup.SharedProperties.AsynchronousInteraction) * int(answers.A5Weight)
+		/*  6 */ influence[n][5] = kindAmountAccesses(answers.A6Data, productGroup.SharedProperties.MinAmountAccesses, productGroup.SharedProperties.MaxAmountAccesses) * int(answers.A6Weight)
+		/*  7 */ influence[n][6] = kindCommon(answers.A7Data, productGroup.SharedProperties.Downloads) * int(answers.A7Weight)
+		/*  8 */ influence[n][7] = kindCommon(answers.A8Data, productGroup.SharedProperties.ShowLearningObjectives) * int(answers.A8Weight)
+		/*  9 */ influence[n][8] = kindOperationType(answers.A9Data, productGroup.SharedProperties.Purpose) * int(answers.A9Weight)
+		/* 10 */ influence[n][9] = kindCommon(answers.A10Data, productGroup.SharedProperties.CloudBased) * int(answers.A10Weight)
+		/* 11 */ influence[n][10] = kindCommon(answers.A11Data, productGroup.SharedProperties.Intranet) * int(answers.A11Weight)
+		/* 12 */ influence[n][11] = kindCommon(answers.A12Data, productGroup.SharedProperties.Assessments) * int(answers.A12Weight)
+		/* 13 */ influence[n][12] = kindCommon(answers.A13Data, productGroup.SharedProperties.StudentRoles) * int(answers.A13Weight)
+		/* 14 */ influence[n][13] = kindCommon(answers.A14Data, productGroup.SharedProperties.DisplayEquations) * int(answers.A14Weight)
+		/* 15 */ influence[n][14] = kindCommon(answers.A15Data, productGroup.SharedProperties.WriteEquations) * int(answers.A15Weight)
+		/* 16 */ influence[n][15] = kindCommon(answers.A16Data, productGroup.SharedProperties.TeachingTypePresentation) * int(answers.A16Weight)
+		/* 17 */ influence[n][16] = kindCommon(answers.A17Data, productGroup.SharedProperties.TeachingTypeDevelopment) * int(answers.A17Weight)
+		/* 18 */ influence[n][17] = kindCommon(answers.A18Data, productGroup.SharedProperties.TeachingTypeExplorative) * int(answers.A18Weight)
+
+		//Total points
+		//for i := range influence[n] {
+		for i, v := range influence[n] {
+			groups[n].Points += v
+		}
 
 		groups[n].Name = productGroup.InternalName
 		groups[n].XMLIndex = n

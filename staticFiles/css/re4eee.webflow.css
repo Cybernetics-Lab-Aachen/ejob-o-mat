@@ -617,6 +617,9 @@ p {
 .progressitem.progressitemdone {
   background-color: #8dc63f;
 }
+.progressitem.progressitemundone {
+  background-color: #CC0000;
+}
 .progressitem.progressresultpercentage {
   margin-left: 22px;
 }

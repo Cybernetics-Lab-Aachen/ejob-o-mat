@@ -34,6 +34,7 @@ type Recommendation struct {
 	CreateTimeUTC time.Time      `bson:"CreateTimeUTC"`
 	Session       string         `bson:"Session"`
 	ProductGroups []ProductGroup `bson:"ProductGroups"`
+	Influence     [][]int        `bson:"Influence"`
 }
 
 type Answers struct {

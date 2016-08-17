@@ -36,10 +36,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	}
 
 	if !DB.CheckRecommendation(session) {
-
-		assessedGroups := Algorithm.ExecuteAnswers(answers)
-
-		resultSet.ProductGroups = assessedGroups
+		resultSet.ProductGroups, resultSet.Influence = Algorithm.ExecuteAnswers(answers)
 		resultSet.CreateTimeUTC = time.Now().UTC()
 		resultSet.Session = session
 		resultSet.SchemeVersion = Scheme.CURRENT_VERSION
