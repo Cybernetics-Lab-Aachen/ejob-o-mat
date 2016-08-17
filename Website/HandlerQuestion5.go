@@ -8,6 +8,7 @@ import (
 	"github.com/SommerEngineering/Ocean/Tools"
 	"net/http"
 	"strings"
+	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
 func HandlerQuestion5(response http.ResponseWriter, request *http.Request) {
@@ -50,6 +51,8 @@ func HandlerQuestion5(response http.ResponseWriter, request *http.Request) {
 	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
 
+	questionGroup := XML.GetData().QuestionsCollection.Questions[noQuestion-1]
+
 	if strings.Contains(lang.Language, `de`) {
 		data.Basis.Name = NAME_DE
 		data.Basis.Logo = LOGO_DE
@@ -61,11 +64,11 @@ func HandlerQuestion5(response http.ResponseWriter, request *http.Request) {
 		data.TextBackButton = `Vorherige Frage`
 		data.TextImportant = `Diese Aussage ist mir besonders wichtig`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Asynchrone Interaktion`
-		data.TextQuestionBody = `Soll das E-Learning-Format eine zeitlich asynchrone Interaktion ermöglichen?`
+		data.TextQuestionTopic = questionGroup.Topics[0].Text
+		data.TextQuestionBody = questionGroup.QuestionBodies[0].Text
 		data.QuestionInfoHeader = `Zusätzliche Hinweise`
 		data.QuestionInfoClose = `Schließen`
-		data.QuestionInfoText = `Dies können z.B. Diskussionsforen und Wikis sein, in denen die Studierenden zeitlich unabhängig voneinander interagieren.`
+		data.QuestionInfoText = questionGroup.Hints[0].Text
 	} else {
 		data.Basis.Name = NAME_EN
 		data.Basis.Logo = LOGO_UK
@@ -77,11 +80,11 @@ func HandlerQuestion5(response http.ResponseWriter, request *http.Request) {
 		data.TextBackButton = `Previous question`
 		data.TextImportant = `This statement is important for me`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Asynchronous Interaction`
-		data.TextQuestionBody = `Should the e-learning format provide a functionality for asynchronous interaction?`
+		data.TextQuestionTopic = questionGroup.Topics[1].Text
+		data.TextQuestionBody = questionGroup.QuestionBodies[1].Text
 		data.QuestionInfoHeader = `Additional Information`
 		data.QuestionInfoClose = `Close`
-		data.QuestionInfoText = `Examples are e.g. discussion boards and Wikis, in which the work occurs time-shifted.`
+		data.QuestionInfoText = questionGroup.Hints[1].Text
 	}
 
 	Tools.SendChosenLanguage(response, lang)

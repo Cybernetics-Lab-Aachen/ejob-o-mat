@@ -8,6 +8,7 @@ import (
 	"github.com/SommerEngineering/Ocean/Tools"
 	"net/http"
 	"strings"
+	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
 func HandlerQuestion15(response http.ResponseWriter, request *http.Request) {
@@ -50,6 +51,8 @@ func HandlerQuestion15(response http.ResponseWriter, request *http.Request) {
 	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
 
+	questionGroup := XML.GetData().QuestionsCollection.Questions[noQuestion-1]
+
 	if strings.Contains(lang.Language, `de`) {
 		data.Basis.Name = NAME_DE
 		data.Basis.Logo = LOGO_DE
@@ -61,8 +64,8 @@ func HandlerQuestion15(response http.ResponseWriter, request *http.Request) {
 		data.TextBackButton = `Vorherige Frage`
 		data.TextImportant = `Diese Aussage ist mir besonders wichtig`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Mathematische Eingabe`
-		data.TextQuestionBody = `Soll das E-Learning-Format das Schreiben mathematischer Ausdrücke z.B. der Höheren Mathematik, Physik, Elektrotechnik, etc. ermöglichen?`
+		data.TextQuestionTopic = questionGroup.Topics[0].Text
+		data.TextQuestionBody = questionGroup.QuestionBodies[0].Text
 		data.QuestionInfoHeader = `Zusätzliche Hinweise`
 		data.QuestionInfoClose = `Schließen`
 		data.QuestionInfoText = ``
@@ -77,8 +80,8 @@ func HandlerQuestion15(response http.ResponseWriter, request *http.Request) {
 		data.TextBackButton = `Previous question`
 		data.TextImportant = `This statement is important for me`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Writing of Mathematics`
-		data.TextQuestionBody = `Should the e-learning format provide a functionality for writing mathematically e.g. equations?`
+		data.TextQuestionTopic = questionGroup.Topics[1].Text
+		data.TextQuestionBody = questionGroup.QuestionBodies[1].Text
 		data.QuestionInfoHeader = `Additional Information`
 		data.QuestionInfoClose = `Close`
 		data.QuestionInfoText = ``

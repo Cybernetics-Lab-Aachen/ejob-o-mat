@@ -8,6 +8,7 @@ import (
 	"github.com/SommerEngineering/Ocean/Tools"
 	"net/http"
 	"strings"
+	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
 func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
@@ -50,6 +51,8 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
 
+	questionGroup := XML.GetData().QuestionsCollection.Questions[noQuestion-1]
+
 	if strings.Contains(lang.Language, `de`) {
 		data.Basis.Name = NAME_DE
 		data.Basis.Logo = LOGO_DE
@@ -61,12 +64,11 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		data.TextBackButton = `Vorherige Frage`
 		data.TextImportant = `Diese Aussage ist mir besonders wichtig`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Cloud`
-		data.TextQuestionBody = `Darf das E-Learning-Format nach den Statuten Ihrer Hochschule als Cloud-Dienst angeboten werden?`
+		data.TextQuestionTopic = questionGroup.Topics[0].Text
+		data.TextQuestionBody = questionGroup.QuestionBodies[0].Text
 		data.QuestionInfoHeader = `Zusätzliche Hinweise`
 		data.QuestionInfoClose = `Schließen`
-		data.QuestionInfoText = `Häufig laufen sogenannte Cloud-Dienste auf Infrastrukturen von z.B. amerikanischen Unternehmen.
-		Daher können in solchen Fällen die Regeln des europäischen Datenschutzes nicht eingehalten bzw. garantiert werden.`
+		data.QuestionInfoText = questionGroup.Hints[0].Text
 	} else {
 		data.Basis.Name = NAME_EN
 		data.Basis.Logo = LOGO_UK
@@ -78,12 +80,11 @@ func HandlerQuestion10(response http.ResponseWriter, request *http.Request) {
 		data.TextBackButton = `Previous question`
 		data.TextImportant = `This statement is important for me`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `Cloud`
-		data.TextQuestionBody = `Do the bylaws of your university allow an e-learning format provided by a cloud service?`
+		data.TextQuestionTopic = questionGroup.Topics[1].Text
+		data.TextQuestionBody = questionGroup.QuestionBodies[1].Text
 		data.QuestionInfoHeader = `Additional Information`
 		data.QuestionInfoClose = `Close`
-		data.QuestionInfoText = `These kinds of services often use e.g. infrastructure from American companies. In such
-		cases, it maybe not possible to guarantee the privacy policies of your country.`
+		data.QuestionInfoText = questionGroup.Hints[1].Text
 	}
 
 	Tools.SendChosenLanguage(response, lang)

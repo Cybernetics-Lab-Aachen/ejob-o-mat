@@ -6,91 +6,227 @@
 		<QuestionGroup internalName="Question1">
 			<Topic language="de" text="Video-Inhalte" />
 			<Topic language="en" text="Video Content" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format Videoinhalte ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide a functionality to display video content?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question2">
 			<Topic language="de" text="Tutoring" />
 			<Topic language="en" text="Tutoring" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format Tutoring ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide a functionality for tutoring?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question3">
 			<Topic language="de" text="Kommentare" />
 			<Topic language="en" text="Comments" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format Kommentare der Studierenden ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide the possibility to comment by the students?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question4">
 			<Topic language="de" text="Synchrone Interaktion" />
 			<Topic language="en" text="Synchronised Interaction" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format eine zeitlich synchrone Interaktion ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide a functionality for synchronised interaction?
+			</QuestionBody>
+			<Hint language="de">
+				Dies kann ein einfacher Chat zum Austausch von Textnachrichten sein oder eine weiterreichende Interaktion z.B. in einer virtuellen Umgebung.
+			</Hint>
+			<Hint language="en">
+				Examples are e.g. a simple chat to exchange messages or more advanced interactions e.g. within virtual environments.
+			</Hint>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question5">
 			<Topic language="de" text="Asynchrone Interaktion" />
 			<Topic language="en" text="Asynchronous Interaction" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format eine zeitlich asynchrone Interaktion ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide a functionality for asynchronous interaction?
+			</QuestionBody>
+			<Hint language="de">
+				Dies können z.B. Diskussionsforen und Wikis sein, in denen die Studierenden zeitlich unabhängig voneinander interagieren.
+			</Hint>
+			<Hint language="en">
+				Examples are e.g. discussion boards and Wikis, in which the work occurs time-shifted.
+			</Hint>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question6">
 			<Topic language="de" text="Anzahl der Zugriffe" />
 			<Topic language="en" text="Amount of Accesses" />
+			<QuestionBody language="de">
+				Wie viele Studierende besuchen Ihren Kurs bzw. Ihre Veranstaltung?
+			</QuestionBody>
+			<QuestionBody language="en">
+				How many students are in your course?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question7">
 			<Topic language="de" text="Downloads" />
 			<Topic language="en" text="Downloads" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format einen Dateidownload ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide a functionality for file downloads?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question8">
 			<Topic language="de" text="Lernziele" />
 			<Topic language="en" text="Learning Objectives" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format das Einsehen der Lernziele ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide a functionality to display the learning objectives?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question9">
 			<Topic language="de" text="Einsatzzweck" />
 			<Topic language="en" text="Purpose" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format Ihre Vorlesung, Übung etc. unterstützen oder die Präsenzveranstaltung ersetzen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format support your lecture, exercise, etc. or should it replace the on-site attendance?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question10">
 			<Topic language="de" text="Cloud" />
 			<Topic language="en" text="Cloud" />
+			<QuestionBody language="de">
+				Darf das E-Learning-Format nach den Statuten Ihrer Hochschule als Cloud-Dienst angeboten werden?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Do the bylaws of your university allow an e-learning format provided by a cloud service?
+			</QuestionBody>
+			<Hint language="de">
+				Häufig laufen sogenannte Cloud-Dienste auf Infrastrukturen von z.B. amerikanischen Unternehmen.
+				Daher können in solchen Fällen die Regeln des europäischen Datenschutzes nicht eingehalten bzw. garantiert werden.
+			</Hint>
+			<Hint language="en">
+				These kinds of services often use e.g. infrastructure from American companies. In such
+				cases, it maybe not possible to guarantee the privacy policies of your country.
+			</Hint>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question11">
 			<Topic language="de" text="Hochschulnetz" />
 			<Topic language="en" text="University Network" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format einen Betrieb in Ihrem Hochschulnetz ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format enable to operate inside of your local university network?
+			</QuestionBody>
+			<Hint language="de">
+				In diesem Fall können Sie die Regeln des Datenschutzes selber anwenden und
+				den Zugang zu dem E-Learning-Format z.B. auf Ihre Studierenden beschränken.
+			</Hint>
+			<Hint language="en">
+				In this case, you are able to apply privacy rules and restrictions e.g. you can restrict
+				the e-learning format to your students only.
+			</Hint>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question12">
 			<Topic language="de" text="Test- und Prüfungsformate" />
 			<Topic language="en" text="Assessments" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format Tests oder Prüfungen ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide a functionality for assessments?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question13">
 			<Topic language="de" text="Rollen für Studierende" />
 			<Topic language="en" text="Roles for Students" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format Rollen (z.B. Gruppenleiter, Moderator, etc.) für die Studierenden ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide a functionality for students' roles (e.g. moderator, group leader, etc.)?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question14">
 			<Topic language="de" text="Mathematische Darstellung" />
 			<Topic language="en" text="Presentation of Mathematics" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format die Darstellung mathematischer Ausdrücke z.B. der Höheren Mathematik, Physik, Elektrotechnik, etc. ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide a functionality to show e.g. equations for e.g. further mathematics, physics, electrical engineering, etc.?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question15">
 			<Topic language="de" text="Mathematische Eingabe" />
 			<Topic language="en" text="Writing of Mathematics" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format das Schreiben mathematischer Ausdrücke z.B. der Höheren Mathematik, Physik, Elektrotechnik, etc. ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format provide a functionality for writing mathematically e.g. equations?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question16">
 			<Topic language="de" text="Darbietende Lehrverfahren" />
 			<Topic language="en" text="Presenting Teaching Methods" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format darbietende Lehrverfahren wie z.B. Vorträge, Vorlesungen, Demonstrationen, etc. ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format be enabled for presenting teaching methods like e.g. talks, lectures, demonstrations, etc.?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question17">
 			<Topic language="de" text="Erarbeitende Lehrverfahren" />
 			<Topic language="en" text="Developing Teaching Methods" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format erarbeitende Lehrverfahren wie z.B. problembasiertes Lernen, angeleitetes Praktikum/Übungen, einen Fachdialog zwischen Studierenden und Lehrenden, etc. ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format be enabled for developing teaching methods like e.g. problem-based learning, guided traineeships or practices, a professional dialogue between students and teacher/professor, etc.?
+			</QuestionBody>
 		</QuestionGroup>
 		
 		<QuestionGroup internalName="Question18">
 			<Topic language="de" text="Explorative Lehrverfahren" />
 			<Topic language="en" text="Explorative Teaching Methods" />
+			<QuestionBody language="de">
+				Soll das E-Learning-Format explorative Lehrverfahren wie z.B. Projektarbeiten, Experimente, Planspiele, etc. ermöglichen?
+			</QuestionBody>
+			<QuestionBody language="en">
+				Should the e-learning format be enabled for explorative teaching methods like e.g. projects, experiments, simulation games, etc.?
+			</QuestionBody>
 		</QuestionGroup>
 		
 	</QuestionsGroup>

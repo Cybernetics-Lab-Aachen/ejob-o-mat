@@ -8,6 +8,7 @@ import (
 	"github.com/SommerEngineering/Ocean/Tools"
 	"net/http"
 	"strings"
+	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
 func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
@@ -50,6 +51,8 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 	data.PreNoQuestion = fmt.Sprintf(`%d`, noQuestion-1)
 	data.NoQuestions = totalQuestions
 
+	questionGroup := XML.GetData().QuestionsCollection.Questions[noQuestion-1]
+
 	if strings.Contains(lang.Language, `de`) {
 		data.Basis.Name = NAME_DE
 		data.Basis.Logo = LOGO_DE
@@ -61,12 +64,11 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 		data.TextBackButton = `Vorherige Frage`
 		data.TextImportant = `Diese Aussage ist mir besonders wichtig`
 		data.TextQuestion = `Frage`
-		data.TextQuestionTopic = `Hochschulnetz`
-		data.TextQuestionBody = `Soll das E-Learning-Format einen Betrieb in Ihrem Hochschulnetz ermöglichen?`
+		data.TextQuestionTopic = questionGroup.Topics[0].Text
+		data.TextQuestionBody = questionGroup.QuestionBodies[0].Text
 		data.QuestionInfoHeader = `Zusätzliche Hinweise`
 		data.QuestionInfoClose = `Schließen`
-		data.QuestionInfoText = `In diesem Fall können Sie die Regeln des Datenschutzes selber anwenden und
-		den Zugang zu dem E-Learning-Format z.B. auf Ihre Studierenden beschränken.`
+		data.QuestionInfoText = questionGroup.Hints[0].Text
 	} else {
 		data.Basis.Name = NAME_EN
 		data.Basis.Logo = LOGO_UK
@@ -78,12 +80,11 @@ func HandlerQuestion11(response http.ResponseWriter, request *http.Request) {
 		data.TextBackButton = `Previous question`
 		data.TextImportant = `This statement is important for me`
 		data.TextQuestion = `Question`
-		data.TextQuestionTopic = `University Network`
-		data.TextQuestionBody = `Should the e-learning format enable to operate inside of your local university network?`
+		data.TextQuestionTopic = questionGroup.Topics[1].Text
+		data.TextQuestionBody = questionGroup.QuestionBodies[1].Text
 		data.QuestionInfoHeader = `Additional Information`
 		data.QuestionInfoClose = `Close`
-		data.QuestionInfoText = `In this case, you are able to apply privacy rules and restrictions e.g. you can restrict
-		the e-learning format to your students only.`
+		data.QuestionInfoText = questionGroup.Hints[1].Text
 	}
 
 	Tools.SendChosenLanguage(response, lang)

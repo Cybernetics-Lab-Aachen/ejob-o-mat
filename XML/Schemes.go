@@ -90,13 +90,27 @@ type QuestionsGroup struct {
 }
 
 type QuestionGroup struct {
-	XMLName      xml.Name `xml:"QuestionGroup"`
-	InternalName string   `xml:"internalName,attr"`
-	Topics       []Topic  `xml:"Topic"`
+	XMLName        xml.Name       `xml:"QuestionGroup"`
+	InternalName   string         `xml:"internalName,attr"`
+	Topics         []Topic        `xml:"Topic"`
+	QuestionBodies []QuestionBody `xml:"QuestionBody"`
+	Hints          []QuestionHint `xml:"Hint"`
 }
 
 type Topic struct {
 	XMLName  xml.Name `xml:"Topic"`
 	Language string   `xml:"language,attr"`
 	Text     string   `xml:"text,attr"`
+}
+
+type QuestionBody struct {
+	XMLName  xml.Name `xml:"QuestionBody"`
+	Language string   `xml:"language,attr"`
+	Text     string   `xml:",chardata"`
+}
+
+type QuestionHint struct {
+	XMLName  xml.Name `xml:"Hint"`
+	Language string   `xml:"language,attr"`
+	Text     string   `xml:",chardata"`
 }
