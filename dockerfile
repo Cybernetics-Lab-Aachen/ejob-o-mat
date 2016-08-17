@@ -17,11 +17,11 @@ RUN apt-get update && \
 
 	# Create the Go workspace:
 	mkdir /go && \
-    mkdir /go/src && \
-    mkdir /go/bin && \
-    mkdir /go/pkg && \
-    cd /go && \
-	
+	mkdir /go/src && \
+	mkdir /go/bin && \
+	mkdir /go/pkg && \
+	cd /go && \
+
 	# Install current Go:
 	wget --no-check-certificate -O go.tar.gz https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz && \
 	tar -C /usr/local -xzf go.tar.gz && \
@@ -30,43 +30,47 @@ RUN apt-get update && \
 # Create the project directories:	
 RUN cd /go && \
 	mkdir src/github.com && \
-    mkdir src/github.com/SommerEngineering && \
-    mkdir src/github.com/SommerEngineering/Re4EEE
+	mkdir src/github.com/SommerEngineering && \
+	mkdir src/github.com/SommerEngineering/Re4EEE
 
 # Define some variables that the user can adjust for every container:
 ENV dbHost=127.0.0.1 \
-    dbPassword= \
+	dbPassword= \
 	dbUser=Re4EEE \
 	projectName=Re4EEE
 
-# Insert all files from the repo (but from the current directory, not from Git):
-ADD / /go/src/github.com/SommerEngineering/Re4EEE/	
-	
 # Set up the project:
 RUN export PATH=$PATH:/usr/local/go/bin && \
 
 	# Install libraries for Re4EEE and Ocean:
 	cd /go/src/github.com/SommerEngineering/Re4EEE && \
-    
+
 	# Ocean:
 	go get github.com/SommerEngineering/Ocean && \
-    
+
 	# Generator for UUIDs:
 	go get github.com/twinj/uuid && \
 	
 	# Database driver:
-	go get gopkg.in/mgo.v2 && \
-    
+	go get gopkg.in/mgo.v2 
+
+# Insert all files from the repo (but from the current directory, not from Git):
+ADD / /go/src/github.com/SommerEngineering/Re4EEE/	
+	
+# Compile and Setup
+RUN	export PATH=$PATH:/usr/local/go/bin && \
+	cd /go/src/github.com/SommerEngineering/Re4EEE && \
+
 	# Compile the Re4EEE:
 	go install && \
-    
+
 	# Copy the final binary and the runtime scripts to the home folder:
 	cp /go/bin/Re4EEE /home && \
 	cp /go/src/github.com/SommerEngineering/Re4EEE/run.sh /home/run.sh && \
 	cp /go/src/github.com/SommerEngineering/Re4EEE/setConfiguration.sh /home/setConfiguration.sh && \
 	cp /go/src/github.com/SommerEngineering/Re4EEE/configureCustomerDB.sh /home/configureCustomerDB.sh && \
 	cp /go/src/github.com/SommerEngineering/Re4EEE/uploadStaticData.sh /home/uploadStaticData.sh && \
-    
+
 	# Zip static data and move them to the home folder:
 	cd staticFiles && \
 	zip -r /home/staticFiles.zip . && \
@@ -75,22 +79,22 @@ RUN export PATH=$PATH:/usr/local/go/bin && \
 	cd ../web && \
 	zip -r /home/web.zip . && \
 	cd .. && \
-	
+
 	# Uninstall Git and tools:
 	apt-get remove -y git wget zip && \
 	apt-get autoremove -y && \
-	
+
 	# Delete Go:
 	rm -r -f /usr/local/go && \
-	
+
 	# Delete the entire Go workspace:
 	cd /home && \
 	rm -r -f /go && \
-	
+
 	# Create the configuration file:
 	touch /home/configuration.json && \
 	touch /home/project.name && \
-	
+
 	# Make the scripts executable:
 	chmod 0777 /home/run.sh && \
 	chmod 0777 /home/setConfiguration.sh && \
