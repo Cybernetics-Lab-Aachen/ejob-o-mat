@@ -64,6 +64,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = session
 	data.Groups = groups.ProductsCollection.Products
+	data.Questions = groups.QuestionsCollection.Questions
 	data.Recommendation = resultSet
 	data.AmountCurrent = amountValue
 

@@ -79,6 +79,24 @@ type ProductsGroup struct {
 }
 
 type Data struct {
-	XMLName            xml.Name      `xml:"xml"`
-	ProductsCollection ProductsGroup ``
+	XMLName             xml.Name       `xml:"xml"`
+	ProductsCollection  ProductsGroup  ``
+	QuestionsCollection QuestionsGroup `xml:"QuestionsGroup"`
+}
+
+type QuestionsGroup struct {
+	XMLName   xml.Name        `xml:"QuestionsGroup"`
+	Questions []QuestionGroup `xml:"QuestionGroup"`
+}
+
+type QuestionGroup struct {
+	XMLName      xml.Name `xml:"QuestionGroup"`
+	InternalName string   `xml:"internalName,attr"`
+	Topics       []Topic  `xml:"Topic"`
+}
+
+type Topic struct {
+	XMLName  xml.Name `xml:"Topic"`
+	Language string   `xml:"language,attr"`
+	Text     string   `xml:"text,attr"`
 }

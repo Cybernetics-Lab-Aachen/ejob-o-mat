@@ -49,6 +49,7 @@ type PageResults struct {
 	AmountCurrent    int
 	AmountToggle     int
 	Groups           []XML.ProductGroup
+	Questions        []XML.QuestionGroup
 	Recommendation   Scheme.Recommendation
 	TextHeader1      string
 	TextHeader2      string

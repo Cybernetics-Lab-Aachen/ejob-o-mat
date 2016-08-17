@@ -1,6 +1,99 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/css" href="/staticFiles/css/catalogue.css" ?>
 <xml>
+	<QuestionsGroup>
+	
+		<QuestionGroup internalName="Question1">
+			<Topic language="de" text="Video-Inhalte" />
+			<Topic language="en" text="Video Content" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question2">
+			<Topic language="de" text="Tutoring" />
+			<Topic language="en" text="Tutoring" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question3">
+			<Topic language="de" text="Kommentare" />
+			<Topic language="en" text="Comments" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question4">
+			<Topic language="de" text="Synchrone Interaktion" />
+			<Topic language="en" text="Synchronised Interaction" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question5">
+			<Topic language="de" text="Asynchrone Interaktion" />
+			<Topic language="en" text="Asynchronous Interaction" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question6">
+			<Topic language="de" text="Anzahl der Zugriffe" />
+			<Topic language="en" text="Amount of Accesses" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question7">
+			<Topic language="de" text="Downloads" />
+			<Topic language="en" text="Downloads" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question8">
+			<Topic language="de" text="Lernziele" />
+			<Topic language="en" text="Learning Objectives" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question9">
+			<Topic language="de" text="Einsatzzweck" />
+			<Topic language="en" text="Purpose" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question10">
+			<Topic language="de" text="Cloud" />
+			<Topic language="en" text="Cloud" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question11">
+			<Topic language="de" text="Hochschulnetz" />
+			<Topic language="en" text="University Network" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question12">
+			<Topic language="de" text="Test- und Prüfungsformate" />
+			<Topic language="en" text="Assessments" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question13">
+			<Topic language="de" text="Rollen für Studierende" />
+			<Topic language="en" text="Roles for Students" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question14">
+			<Topic language="de" text="Mathematische Darstellung" />
+			<Topic language="en" text="Presentation of Mathematics" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question15">
+			<Topic language="de" text="Mathematische Eingabe" />
+			<Topic language="en" text="Writing of Mathematics" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question16">
+			<Topic language="de" text="Darbietende Lehrverfahren" />
+			<Topic language="en" text="Presenting Teaching Methods" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question17">
+			<Topic language="de" text="Erarbeitende Lehrverfahren" />
+			<Topic language="en" text="Developing Teaching Methods" />
+		</QuestionGroup>
+		
+		<QuestionGroup internalName="Question18">
+			<Topic language="de" text="Explorative Lehrverfahren" />
+			<Topic language="en" text="Explorative Teaching Methods" />
+		</QuestionGroup>
+		
+	</QuestionsGroup>
     <ProductsGroup>
         
         <ProductGroup internalName="ARS (Audience Response Systems)">

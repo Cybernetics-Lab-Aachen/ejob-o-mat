@@ -3,6 +3,7 @@
 <!-- This site was created in Webflow. http://www.webflow.com-->
 {{$langPos := .LangPos}}
 {{$groups := .Groups}}
+{{$questions := .Questions}}
 <html data-wf-site="531b6f81d93d2b40520007fd" data-wf-page="545f2bc5123e576a2d69aa40">
 <head>
   <meta charset="utf-8">
@@ -81,26 +82,24 @@
 					</div>
 				</div>
 				<div class="progressbox">
-				  <div class="progressitem progressresultpercentage percentagefirst{{.GetProgressState 1}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 2}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 3}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 4}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 5}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 6}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 7}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 8}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 9}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 10}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 11}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 12}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 13}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 14}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 15}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 16}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 17}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 18}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 19}}"></div>
-				  <div class="progressitem progressresultpercentage{{.GetProgressState 20}}"></div>
+				  <div class="progressitem progressresultpercentage percentagefirst{{.GetProgressState 1}}" title="{{(index (index $questions 0).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 2}}" title="{{(index (index $questions 1).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 3}}" title="{{(index (index $questions 2).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 4}}" title="{{(index (index $questions 3).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 5}}" title="{{(index (index $questions 4).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 6}}" title="{{(index (index $questions 5).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 7}}" title="{{(index (index $questions 6).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 8}}" title="{{(index (index $questions 7).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 9}}" title="{{(index (index $questions 8).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 10}}" title="{{(index (index $questions 9).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 11}}" title="{{(index (index $questions 10).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 12}}" title="{{(index (index $questions 11).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 13}}" title="{{(index (index $questions 12).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 14}}" title="{{(index (index $questions 13).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 15}}" title="{{(index (index $questions 14).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 16}}" title="{{(index (index $questions 15).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 17}}" title="{{(index (index $questions 16).Topics $langPos).Text}}"></div>
+				  <div class="progressitem progressresultpercentage{{.GetProgressState 18}}" title="{{(index (index $questions 17).Topics $langPos).Text}}"></div>
 				</div>
 					
 				<div class="headerbox headerresult">
