@@ -43,7 +43,7 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups, influe
 
 		//Total points
 		//for i := range influence[n] {
-		for i, v := range influence[n] {
+		for _, v := range influence[n] {
 			groups[n].Points += v
 		}
 
