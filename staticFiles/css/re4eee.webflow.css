@@ -623,6 +623,9 @@ p {
 .progressitem.progressresultpercentage {
   margin-left: 22px;
 }
+.progressitem.progressresultpercentage.percentagefirst {
+  margin-left: 0px;
+}
 .optionbox {
   margin-top: 20px;
   text-align: center;
