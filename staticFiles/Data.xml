@@ -3133,12 +3133,83 @@
 
 	<ResultStrings>
 		<GoodInfluence>
-			<String language="de" text="Positiver Einfluss" />
-			<String language="en" text="Positive influence" />
+			<String language="de">Positiver Einfluss</String>
+			<String language="en">Positive influence</String>
 		</GoodInfluence>
+		
 		<BadInfluence>
-			<String language="de" text="Negativer Einfluss" />
-			<String language="en" text="Negative influence" />
+			<String language="de">Negativer Einfluss</String>
+			<String language="en">Negative influence</String>
 		</BadInfluence>
+		
+		<TextResults>
+			<String language="de">Ergebnisse</String>
+			<String language="en">Results</String>
+		</TextResults>
+		
+		<TextMatch>
+			<String language="de">Übereinstimmung mit Ihren Antworten</String>
+			<String language="en">match with your answers</String>
+		</TextMatch>
+		
+		<TextGroup>
+			<String language="de">Format</String>
+			<String language="en">Format</String>
+		</TextGroup>
+		
+		<TextExamples>
+			<String language="de">Beispiele für</String>
+			<String language="en">Examples for</String>
+		</TextExamples>
+		
+		<TextOptionen>
+			<String language="de">Optionen</String>
+			<String language="en">Options</String>
+		</TextOptionen>
+		
+		<TextHeaderPrefix>
+			<String language="de">Ihre E-Learning-Empfehlung</String>
+			<String language="en">Your E-Learning Recommendation</String>
+		</TextHeaderPrefix>
+		
+		<TextRestart>
+			<String language="de">Den Fragebogen erneut starten</String>
+			<String language="en">Restart the questionnaire</String>
+		</TextRestart>
+		
+		<TextHeader1>
+			<String language="de">Unten sehen Sie eine Empfehlung für verschiedene Gruppen von E-Learning-Systemen, basierend auf
+		Ihren Antworten. Bitte wählen Sie eine Gruppe, um Beispiele sehen zu können. Zunächst sehen Sie nur die Top Sechs
+		aller E-Learning-Gruppen: Mit der nachfolgenden Schaltfläche (siehe Optionen) können Sie auch alle
+		Gruppenergebnisse einsehen.</String>
+			<String language="en">Below you can find your e-learning recommendation, based on your answers. Please
+		choose a group to view the respective examples. Initially, just the top six groups are visible. With
+		the options below, you can access the results of all groups.</String>
+		</TextHeader1>
+		
+		<TextHeader2>
+			<String language="de">Bitte beachten Sie, dass nur Beispiele in den Gruppen dargestellt werden. Die Aufzählung hat keinen
+		Anspruch auf Vollständigkeit. Möglicherweise existiert in Ihrer Hochschule eine E-Learning-Strategie: Bitte erkundigen
+		Sie sich, inwieweit Sie die hier vorgeschlagenen Formate einsetzen können und dürfen. Einige der aufgeführten Formate
+		benutzen "die Cloud". Das bedeutet, dass sie Dienste von Dritten einsetzen. Bitte halten Sie aus diesen Gründen
+		Rücksprache mit Ihrem Datenschutzbeauftragten, der Sie zu diesen Themen beraten kann.</String>
+			<String language="en">Please consider that the examples below are only a restricted amount and not a
+		complete listing of results. It is possible that your university provides an e-learning strategy:
+		Please make sure that you can use the given formats. Some formats are using cloud services. Please
+		consider the privacy policy of your university to ensure that you can use these formats. Several
+		formats are only available at a charge; others are free. Please enquire information about possible
+		fees at your institution and consider that also products free of charge can be linked to other costs.
+		Finally, it is possible that the format of choice treats students anonymously. If this is not wanted,
+		please consider countermeasures.</String>
+		</TextHeader2>
+		
+		<TextHeader3>
+			<String language="de">Einige der hier vorgestellten Formate sind kostenpflichtig, andere Formate sind dagegen ohne Kosten
+		frei erhältlich. Für viele kostenpflichtige Formate können kostenlose Alternativen gefunden werden. Bei dem Einsatz
+		einiger Formate können Folgekosten entstehen. Beachten Sie außerdem, dass die Studierenden in einigen Formaten anonym
+		auftreten können. Sollten Sie dies nicht wünschen, prüfen Sie bitte geeignete Gegenmaßnahmen.</String>
+			<String language="en"></String>
+		</TextHeader3>
+		
 	</ResultStrings
 </xml>

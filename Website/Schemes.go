@@ -44,25 +44,15 @@ type PageImpressum struct {
 }
 
 type PageResults struct {
-	Basis            Basis
-	LangPos          int
-	AmountCurrent    int
-	AmountToggle     int
-	Groups           []XML.ProductGroup
-	Questions        []XML.QuestionGroup
-	Recommendation   Scheme.Recommendation
-	TextHeader1      string
-	TextHeader2      string
-	TextHeader3      string
-	TextHeaderPrefix string
-	TextMatch        string
-	TextGroup        string
-	TextExamples     string
-	TextRestart      string
-	TextAllGroups    string
-	TextOptionen     string
-	TextResults      string
-	Strings          XML.ResultStrings
+	Basis          Basis
+	LangPos        int
+	AmountCurrent  int
+	AmountToggle   int
+	Groups         []XML.ProductGroup
+	Questions      []XML.QuestionGroup
+	Recommendation Scheme.Recommendation
+	TextAllGroups  string
+	Strings        XML.ResultStrings
 }
 
 type PageQuestion struct {

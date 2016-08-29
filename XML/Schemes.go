@@ -82,6 +82,7 @@ type Data struct {
 	XMLName             xml.Name       `xml:"xml"`
 	ProductsCollection  ProductsGroup  ``
 	QuestionsCollection QuestionsGroup `xml:"QuestionsGroup"`
+	ResultStrings       ResultStrings  `xml:"ResultStrings"`
 }
 
 type QuestionsGroup struct {
@@ -116,13 +117,23 @@ type QuestionHint struct {
 }
 
 type ResultStrings struct {
-	XMLName       xml.Name `xml:"ResultStrings"`
-	GoodInfluence []String `xml:"GoodInfluence>String"`
-	BadInfluence  []String `xml:"BadInfluence>String"`
+	XMLName          xml.Name `xml:"ResultStrings"`
+	GoodInfluence    []String `xml:"GoodInfluence>String"`
+	BadInfluence     []String `xml:"BadInfluence>String"`
+	TextHeader1      []String `xml:"TextHeader1>String"`
+	TextHeader2      []String `xml:"TextHeader2>String"`
+	TextHeader3      []String `xml:"TextHeader3>String"`
+	TextHeaderPrefix []String `xml:"TextHeaderPrefix>String"`
+	TextMatch        []String `xml:"TextMatch>String"`
+	TextGroup        []String `xml:"TextGroup>String"`
+	TextExamples     []String `xml:"TextExamples>String"`
+	TextRestart      []String `xml:"TextRestart>String"`
+	TextOptionen     []String `xml:"TextOptionen>String"`
+	TextResults      []String `xml:"TextResults>String"`
 }
 
 type String struct {
 	XMLName  xml.Name `xml:"String"`
 	Language string   `xml:"language,attr"`
-	Text     string   `xml:"text,attr"`
+	Text     string   `xml:",chardata"`
 }

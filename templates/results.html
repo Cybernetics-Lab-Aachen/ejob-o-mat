@@ -5,6 +5,7 @@
 {{$langPos := .LangPos}}
 {{$groups := .Groups}}
 {{$questions := .Questions}}
+{{$strings := .Strings}}
 <html data-wf-site="531b6f81d93d2b40520007fd" data-wf-page="545f2bc5123e576a2d69aa40">
 <head>
   <meta charset="utf-8">
@@ -37,23 +38,23 @@
           </div>
           <div class="line"></div>
           <div class="headerboxtitlecontainer">
-            <h1 class="headerboxtitle">{{.TextHeaderPrefix}}</h1>
+            <h1 class="headerboxtitle">{{$data.Lang $strings.TextHeaderPrefix}}</h1>
           </div>
         </div>
         <div class="w-tabs resulttabs" data-duration-in="500" data-duration-out="500">
           <div class="resultheaderprefix">
             <div class="textbox">
-              <p class="resultheaderprefixtext">{{.TextHeader1}}</p>
-              <p class="resultheaderprefixtext">{{.TextHeader2}}</p>
-              <p class="resultheaderprefixtext">{{.TextHeader3}}</p>
+              <p class="resultheaderprefixtext">{{$data.Lang $strings.TextHeader1}}</p>
+              <p class="resultheaderprefixtext">{{$data.Lang $strings.TextHeader2}}</p>
+              <p class="resultheaderprefixtext">{{$data.Lang $strings.TextHeader3}}</p>
             </div>
             <div class="buttonbox buttonboxresult">
-				<a class="button buttonhuge buttonhugesmalltext" href="/start?lang={{.Basis.Lang}}">{{.TextRestart}}</a>
+				<a class="button buttonhuge buttonhugesmalltext" href="/start?lang={{.Basis.Lang}}">{{$data.Lang $strings.TextRestart}}</a>
 				<a class="button buttonhuge buttonhugesmalltext" href="/results?lang={{.Basis.Lang}}&session={{.Basis.Session}}&amount={{.AmountToggle}}">{{.TextAllGroups}}</a>
             </div>
           </div>
           <div class="subheadline">
-            <div>{{.TextResults}}:</div>
+            <div>{{$data.Lang $strings.TextResults}}:</div>
           </div>
 		  
 		  <div class="w-tab-menu resultmenu">
@@ -76,26 +77,26 @@
 			  <div class="divresult">
 				<div class="subheadline">
 					<div>
-						{{$data.TextGroup}}: <span class="formatname">{{$groupName}}</span>
+						{{$data.Lang $strings.TextGroup}}: <span class="formatname">{{$groupName}}</span>
 					</div>
 				</div>
 				
 				<div class="progressbox">
 				{{range $i, $influence := index $data.Recommendation.Influence .XMLIndex}}
-				  <div class="progressitem progressresultpercentage{{if not $i}} percentagefirst{{end}}{{$data.GetProgressState $influence}}" title="{{(index (index $questions $i).Topics $langPos).Text}}{{if gt $influence 0}}: {{(index $data.Strings.GoodInfluence $langPos).Text}}{{else if lt $influence 0}}: {{(index $data.Strings.BadInfluence $langPos).Text}}{{end}}"></div>
+				  <div class="progressitem progressresultpercentage{{if not $i}} percentagefirst{{end}}{{$data.GetProgressState $influence}}" title="{{(index (index $questions $i).Topics $langPos).Text}}{{if gt $influence 0}}: {{$data.Lang $strings.GoodInfluence}}{{else if lt $influence 0}}: {{$data.Lang $strings.BadInfluence}}{{end}}"></div>
 				{{end}}
 				</div>
 					
 				<div class="headerbox headerresult">
 				  <div class="line"></div>
 				  <div class="headerboxtitlecontainer headerboxresulttitlecontainer">
-					<h1 class="headerboxtitle headerboxresulttitle">{{.Percent}}%&nbsp;<span class="matchingtext">{{$data.TextMatch}}</span></h1>
+					<h1 class="headerboxtitle headerboxresulttitle">{{.Percent}}%&nbsp;<span class="matchingtext">{{$data.Lang $strings.TextMatch}}</span></h1>
 				  </div>
 				</div>
 				
 				{{range $dataGroup.ExampleGroup}}
 				<div class="examplegroup">
-				  <h3 class="headerexamplegroup">{{$data.TextExamples}} {{(index .GroupName.Names $langPos).Text}}</h3>
+				  <h3 class="headerexamplegroup">{{$data.Lang $strings.TextExamples}} {{(index .GroupName.Names $langPos).Text}}</h3>
 				  
 				  {{range .GroupProducts}}
 				  <div class="w-clearfix exampleproduct">

@@ -79,30 +79,6 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		data.Basis.Name = NAME_DE
 		data.Basis.Logo = LOGO_DE
 		data.LangPos = 0
-		data.TextResults = `Ergebnisse`
-		data.TextMatch = `Übereinstimmung mit Ihren Antworten`
-		data.TextGroup = `Format`
-		data.TextExamples = `Beispiele für`
-		data.TextOptionen = `Optionen`
-		data.TextHeaderPrefix = `Ihre E-Learning-Empfehlung`
-		data.TextRestart = `Den Fragebogen erneut starten`
-
-		data.TextHeader1 = `Unten sehen Sie eine Empfehlung für verschiedene Gruppen von E-Learning-Systemen, basierend auf
-		Ihren Antworten. Bitte wählen Sie eine Gruppe, um Beispiele sehen zu können. Zunächst sehen Sie nur die Top Sechs
-		aller E-Learning-Gruppen: Mit der nachfolgenden Schaltfläche (siehe Optionen) können Sie auch alle
-		Gruppenergebnisse einsehen.`
-
-		data.TextHeader2 = `Bitte beachten Sie, dass nur Beispiele in den Gruppen dargestellt werden. Die Aufzählung hat keinen
-		Anspruch auf Vollständigkeit. Möglicherweise existiert in Ihrer Hochschule eine E-Learning-Strategie: Bitte erkundigen
-		Sie sich, inwieweit Sie die hier vorgeschlagenen Formate einsetzen können und dürfen. Einige der aufgeführten Formate
-		benutzen "die Cloud". Das bedeutet, dass sie Dienste von Dritten einsetzen. Bitte halten Sie aus diesen Gründen
-		Rücksprache mit Ihrem Datenschutzbeauftragten, der Sie zu diesen Themen beraten kann.`
-
-		data.TextHeader3 = `Einige der hier vorgestellten Formate sind kostenpflichtig, andere Formate sind dagegen ohne Kosten
-		frei erhältlich. Für viele kostenpflichtige Formate können kostenlose Alternativen gefunden werden. Bei dem Einsatz
-		einiger Formate können Folgekosten entstehen. Beachten Sie außerdem, dass die Studierenden in einigen Formaten anonym
-		auftreten können. Sollten Sie dies nicht wünschen, prüfen Sie bitte geeignete Gegenmaßnahmen.`
-
 	} else {
 
 		if amountValue > 0 {
@@ -116,27 +92,6 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		data.Basis.Name = NAME_EN
 		data.Basis.Logo = LOGO_UK
 		data.LangPos = 1
-		data.TextResults = `Results`
-		data.TextMatch = `match with your answers`
-		data.TextGroup = `Format`
-		data.TextOptionen = `Options`
-		data.TextExamples = `Examples for`
-		data.TextHeaderPrefix = `Your E-Learning Recommendation`
-		data.TextRestart = `Restart the questionnaire`
-		data.TextHeader1 = `Below you can find your e-learning recommendation, based on your answers. Please
-		choose a group to view the respective examples. Initially, just the top six groups are visible. With
-		the options below, you can access the results of all groups.`
-
-		data.TextHeader2 = `Please consider that the examples below are only a restricted amount and not a
-		complete listing of results. It is possible that your university provides an e-learning strategy:
-		Please make sure that you can use the given formats. Some formats are using cloud services. Please
-		consider the privacy policy of your university to ensure that you can use these formats. Several
-		formats are only available at a charge; others are free. Please enquire information about possible
-		fees at your institution and consider that also products free of charge can be linked to other costs.
-		Finally, it is possible that the format of choice treats students anonymously. If this is not wanted,
-		please consider countermeasures.`
-
-		data.TextHeader3 = ``
 	}
 
 	Tools.SendChosenLanguage(response, lang)
@@ -155,4 +110,8 @@ func (data PageResults) GetProgressState(influence int) string {
 
 func (data PageResults) GetGroupName(xmlIndex int) string {
 	return data.Groups[xmlIndex].GroupName.Names[data.LangPos].Text
+}
+
+func (data PageResults) Lang(strings []XML.String) string {
+	return strings[data.LangPos].Text
 }
