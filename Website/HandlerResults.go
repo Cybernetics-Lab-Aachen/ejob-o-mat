@@ -151,3 +151,7 @@ func (data PageResults) GetProgressState(influence int) string {
 		return ``
 	}
 }
+
+func (data PageResults) GetGroupName(xmlIndex int) string {
+	return data.Groups[xmlIndex].GroupName.Names[data.LangPos].Text
+}
