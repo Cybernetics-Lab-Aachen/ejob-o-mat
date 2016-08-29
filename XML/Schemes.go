@@ -114,3 +114,15 @@ type QuestionHint struct {
 	Language string   `xml:"language,attr"`
 	Text     string   `xml:",chardata"`
 }
+
+type ResultStrings struct {
+	XMLName       xml.Name `xml:"ResultStrings"`
+	GoodInfluence []String `xml:"GoodInfluence>String"`
+	BadInfluence  []String `xml:"BadInfluence>String"`
+}
+
+type String struct {
+	XMLName  xml.Name `xml:"String"`
+	Language string   `xml:"language,attr"`
+	Text     string   `xml:"text,attr"`
+}

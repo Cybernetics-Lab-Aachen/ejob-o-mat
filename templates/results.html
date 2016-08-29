@@ -81,8 +81,8 @@
 				</div>
 				
 				<div class="progressbox">
-				{{range $i, $influence := index $data.Recommendation.Influence .XMLIndex}} 
-				  <div class="progressitem progressresultpercentage{{if not $i}} percentagefirst{{end}}{{$data.GetProgressState $influence}}" title="{{(index (index $questions $i).Topics $langPos).Text}}"></div>
+				{{range $i, $influence := index $data.Recommendation.Influence .XMLIndex}}
+				  <div class="progressitem progressresultpercentage{{if not $i}} percentagefirst{{end}}{{$data.GetProgressState $influence}}" title="{{(index (index $questions $i).Topics $langPos).Text}}{{if gt $influence 0}}: {{(index $data.Strings.GoodInfluence $langPos).Text}}{{else if lt $influence 0}}: {{(index $data.Strings.BadInfluence $langPos).Text}}{{end}}"></div>
 				{{end}}
 				</div>
 					

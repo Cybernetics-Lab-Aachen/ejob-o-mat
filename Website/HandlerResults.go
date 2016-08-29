@@ -64,6 +64,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	data.Questions = groups.QuestionsCollection.Questions
 	data.Recommendation = resultSet
 	data.AmountCurrent = amountValue
+	data.Strings = groups.ResultStrings
 
 	if strings.Contains(lang.Language, `de`) {
 

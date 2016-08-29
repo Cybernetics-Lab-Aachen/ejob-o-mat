@@ -3130,4 +3130,15 @@
         </ProductGroup>
 
     </ProductsGroup>
+
+	<ResultStrings>
+		<GoodInfluence>
+			<String language="de" text="Positiver Einfluss" />
+			<String language="en" text="Positive influence" />
+		</GoodInfluence>
+		<BadInfluence>
+			<String language="de" text="Negativer Einfluss" />
+			<String language="en" text="Negative influence" />
+		</BadInfluence>
+	</ResultStrings
 </xml>

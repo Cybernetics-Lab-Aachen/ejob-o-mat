@@ -62,6 +62,7 @@ type PageResults struct {
 	TextAllGroups    string
 	TextOptionen     string
 	TextResults      string
+	Strings          XML.ResultStrings
 }
 
 type PageQuestion struct {
