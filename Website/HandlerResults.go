@@ -141,3 +141,13 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	Tools.SendChosenLanguage(response, lang)
 	Templates.ProcessHTML(`results`, response, data)
 }
+
+func (data PageResults) GetProgressState(influence int) string {
+	if influence > 0 {
+		return ` progressitemdone`
+	} else if influence < 0 {
+		return ` progressitemundone`
+	} else {
+		return ``
+	}
+}
