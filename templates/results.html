@@ -73,6 +73,7 @@
 		  {{range .Recommendation.ProductGroups}}
 			{{$dataGroup := index $groups .XMLIndex}}
 			{{$groupName := $data.GetGroupName .XMLIndex}}
+			{{$influences := .AnswerInfluences}}
 			<div class="w-tab-pane" data-w-tab="{{$groupName}}">
 			  <div class="divresult">
 				<div class="subheadline">
@@ -82,9 +83,11 @@
 				</div>
 				
 				<div class="progressbox">
-				{{range $i, $influence := index $data.Recommendation.Influence .XMLIndex}}
-				  <div class="progressitem progressresultpercentage{{if not $i}} percentagefirst{{end}}{{$data.GetProgressState $influence}}" title="{{(index (index $questions $i).Topics $langPos).Text}}{{if gt $influence 0}}: {{$data.Lang $strings.GoodInfluence}}{{else if lt $influence 0}}: {{$data.Lang $strings.BadInfluence}}{{end}}"></div>
-				{{end}}
+					{{range $i, $question := $questions}}
+						{{$influence := index $influences $question.InternalName}}
+						<div class="progressitem progressresultpercentage{{if not $i}} percentagefirst{{end}}{{$data.GetProgressState $influence}}"
+								title="{{(index $question.Topics $langPos).Text}}{{if gt $influence 0}}: {{$data.Lang $strings.GoodInfluence}}{{else if lt $influence 0}}: {{$data.Lang $strings.BadInfluence}}{{end}}"></div>
+					{{end}}
 				</div>
 					
 				<div class="headerbox headerresult">

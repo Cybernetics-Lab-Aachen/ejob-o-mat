@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-func kindAmountAccesses(answer, minString, maxString string) (diff int) {
+func kindAmountAccesses(answer, minString, maxString string) (diff int8) {
 
 	min := 1
 	max := 4

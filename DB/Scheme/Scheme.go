@@ -23,10 +23,11 @@ func (groups ProductGroups) Swap(i, j int) {
 type ProductGroups []ProductGroup
 
 type ProductGroup struct {
-	Name     string `bson:"Name"`
-	Points   int    `bson:"Points"`
-	Percent  int    `bson:"Percent"`
-	XMLIndex int    `bson:"XMLIndex"`
+	Name             string          `bson:"Name"`
+	Points           int             `bson:"Points"`
+	Percent          int             `bson:"Percent"`
+	XMLIndex         int             `bson:"XMLIndex"`
+	AnswerInfluences map[string]int8 `bson:"AnswerInfluences"`
 }
 
 type Recommendation struct {
@@ -34,7 +35,6 @@ type Recommendation struct {
 	CreateTimeUTC time.Time      `bson:"CreateTimeUTC"`
 	Session       string         `bson:"Session"`
 	ProductGroups []ProductGroup `bson:"ProductGroups"`
-	Influence     [][]int        `bson:"Influence"`
 }
 
 type Answers struct {

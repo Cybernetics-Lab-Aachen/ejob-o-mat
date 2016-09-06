@@ -1,6 +1,6 @@
 package Algorithm
 
-func kindCommon(answer, productValue string) (diff int) {
+func kindCommon(answer, productValue string) (diff int8) {
 
 	switch ans := answer; ans {
 	case `0`:

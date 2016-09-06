@@ -7,7 +7,7 @@ import (
 	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
-func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups, influence [][]int) {
+func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 
 	data := XML.GetData()
 
@@ -15,36 +15,35 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups, influe
 
 	groups := make(Scheme.ProductGroups, numProducts)
 
-	influence = make([][]int, numProducts)
-
 	// Algorithm:
 	for n, productGroup := range data.ProductsCollection.Products {
 		//Calculate points per question for a product
-		influence[n] = make([]int, 18)
+		groups[n].AnswerInfluences = make(map[string]int8)
+		influence := groups[n].AnswerInfluences
 
-		/*  1 */ influence[n][0] = kindCommon(answers.A1Data, productGroup.SharedProperties.VideoContent) * int(answers.A1Weight)
-		/*  2 */ influence[n][1] = kindCommon(answers.A2Data, productGroup.SharedProperties.Tutoring) * int(answers.A2Weight)
-		/*  3 */ influence[n][2] = kindCommon(answers.A3Data, productGroup.SharedProperties.UserComments) * int(answers.A3Weight)
-		/*  4 */ influence[n][3] = kindCommon(answers.A4Data, productGroup.SharedProperties.SynchronousInteraction) * int(answers.A4Weight)
-		/*  5 */ influence[n][4] = kindCommon(answers.A5Data, productGroup.SharedProperties.AsynchronousInteraction) * int(answers.A5Weight)
-		/*  6 */ influence[n][5] = kindAmountAccesses(answers.A6Data, productGroup.SharedProperties.MinAmountAccesses, productGroup.SharedProperties.MaxAmountAccesses) * int(answers.A6Weight)
-		/*  7 */ influence[n][6] = kindCommon(answers.A7Data, productGroup.SharedProperties.Downloads) * int(answers.A7Weight)
-		/*  8 */ influence[n][7] = kindCommon(answers.A8Data, productGroup.SharedProperties.ShowLearningObjectives) * int(answers.A8Weight)
-		/*  9 */ influence[n][8] = kindOperationType(answers.A9Data, productGroup.SharedProperties.Purpose) * int(answers.A9Weight)
-		/* 10 */ influence[n][9] = kindCommon(answers.A10Data, productGroup.SharedProperties.CloudBased) * int(answers.A10Weight)
-		/* 11 */ influence[n][10] = kindCommon(answers.A11Data, productGroup.SharedProperties.Intranet) * int(answers.A11Weight)
-		/* 12 */ influence[n][11] = kindCommon(answers.A12Data, productGroup.SharedProperties.Assessments) * int(answers.A12Weight)
-		/* 13 */ influence[n][12] = kindCommon(answers.A13Data, productGroup.SharedProperties.StudentRoles) * int(answers.A13Weight)
-		/* 14 */ influence[n][13] = kindCommon(answers.A14Data, productGroup.SharedProperties.DisplayEquations) * int(answers.A14Weight)
-		/* 15 */ influence[n][14] = kindCommon(answers.A15Data, productGroup.SharedProperties.WriteEquations) * int(answers.A15Weight)
-		/* 16 */ influence[n][15] = kindCommon(answers.A16Data, productGroup.SharedProperties.TeachingTypePresentation) * int(answers.A16Weight)
-		/* 17 */ influence[n][16] = kindCommon(answers.A17Data, productGroup.SharedProperties.TeachingTypeDevelopment) * int(answers.A17Weight)
-		/* 18 */ influence[n][17] = kindCommon(answers.A18Data, productGroup.SharedProperties.TeachingTypeExplorative) * int(answers.A18Weight)
+		/*  1 */ influence["Question0"] = kindCommon(answers.A1Data, productGroup.SharedProperties.VideoContent) * int8(answers.A1Weight)
+		/*  2 */ influence["Question2"] = kindCommon(answers.A2Data, productGroup.SharedProperties.Tutoring) * int8(answers.A2Weight)
+		/*  3 */ influence["Question3"] = kindCommon(answers.A3Data, productGroup.SharedProperties.UserComments) * int8(answers.A3Weight)
+		/*  4 */ influence["Question4"] = kindCommon(answers.A4Data, productGroup.SharedProperties.SynchronousInteraction) * int8(answers.A4Weight)
+		/*  5 */ influence["Question5"] = kindCommon(answers.A5Data, productGroup.SharedProperties.AsynchronousInteraction) * int8(answers.A5Weight)
+		/*  6 */ influence["Question6"] = kindAmountAccesses(answers.A6Data, productGroup.SharedProperties.MinAmountAccesses, productGroup.SharedProperties.MaxAmountAccesses) * int8(answers.A6Weight)
+		/*  7 */ influence["Question7"] = kindCommon(answers.A7Data, productGroup.SharedProperties.Downloads) * int8(answers.A7Weight)
+		/*  8 */ influence["Question8"] = kindCommon(answers.A8Data, productGroup.SharedProperties.ShowLearningObjectives) * int8(answers.A8Weight)
+		/*  9 */ influence["Question9"] = kindOperationType(answers.A9Data, productGroup.SharedProperties.Purpose) * int8(answers.A9Weight)
+		/* 10 */ influence["Question10"] = kindCommon(answers.A10Data, productGroup.SharedProperties.CloudBased) * int8(answers.A10Weight)
+		/* 11 */ influence["Question11"] = kindCommon(answers.A11Data, productGroup.SharedProperties.Intranet) * int8(answers.A11Weight)
+		/* 12 */ influence["Question12"] = kindCommon(answers.A12Data, productGroup.SharedProperties.Assessments) * int8(answers.A12Weight)
+		/* 13 */ influence["Question13"] = kindCommon(answers.A13Data, productGroup.SharedProperties.StudentRoles) * int8(answers.A13Weight)
+		/* 14 */ influence["Question14"] = kindCommon(answers.A14Data, productGroup.SharedProperties.DisplayEquations) * int8(answers.A14Weight)
+		/* 15 */ influence["Question15"] = kindCommon(answers.A15Data, productGroup.SharedProperties.WriteEquations) * int8(answers.A15Weight)
+		/* 16 */ influence["Question16"] = kindCommon(answers.A16Data, productGroup.SharedProperties.TeachingTypePresentation) * int8(answers.A16Weight)
+		/* 17 */ influence["Question17"] = kindCommon(answers.A17Data, productGroup.SharedProperties.TeachingTypeDevelopment) * int8(answers.A17Weight)
+		/* 18 */ influence["Question18"] = kindCommon(answers.A18Data, productGroup.SharedProperties.TeachingTypeExplorative) * int8(answers.A18Weight)
 
 		//Total points
 		//for i := range influence[n] {
-		for _, v := range influence[n] {
-			groups[n].Points += v
+		for _, v := range influence {
+			groups[n].Points += int(v)
 		}
 
 		groups[n].Name = productGroup.InternalName

@@ -353,7 +353,7 @@ func HandlerVRAnswers(response http.ResponseWriter, request *http.Request) {
 	DB.StoreNewAnswers(answer)
 
 	resultSet := Scheme.Recommendation{}
-	assessedGroups, _ := Algorithm.ExecuteAnswers(answer)
+	assessedGroups := Algorithm.ExecuteAnswers(answer)
 	resultSet.ProductGroups = assessedGroups
 	resultSet.CreateTimeUTC = time.Now().UTC()
 	resultSet.Session = session

@@ -1,6 +1,6 @@
 package Algorithm
 
-func kindOperationType(answer, productValue string) (diff int) {
+func kindOperationType(answer, productValue string) (diff int8) {
 
 	switch ans := answer; ans {
 	case `support4lecture`:

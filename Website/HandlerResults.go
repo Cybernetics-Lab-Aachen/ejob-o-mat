@@ -36,7 +36,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	}
 
 	if !DB.CheckRecommendation(session) {
-		resultSet.ProductGroups, resultSet.Influence = Algorithm.ExecuteAnswers(answers)
+		resultSet.ProductGroups = Algorithm.ExecuteAnswers(answers)
 		resultSet.CreateTimeUTC = time.Now().UTC()
 		resultSet.Session = session
 		resultSet.SchemeVersion = Scheme.CURRENT_VERSION
@@ -98,7 +98,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	Templates.ProcessHTML(`results`, response, data)
 }
 
-func (data PageResults) GetProgressState(influence int) string {
+func (data PageResults) GetProgressState(influence int8) string {
 	if influence > 0 {
 		return ` progressitemdone`
 	} else if influence < 0 {
