@@ -21,7 +21,7 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 		groups[n].AnswerInfluences = make(map[string]int8)
 		influence := groups[n].AnswerInfluences
 
-		/*  1 */ influence["Question0"] = kindCommon(answers.A1Data, productGroup.SharedProperties.VideoContent) * int8(answers.A1Weight)
+		/*  1 */ influence["Question1"] = kindCommon(answers.A1Data, productGroup.SharedProperties.VideoContent) * int8(answers.A1Weight)
 		/*  2 */ influence["Question2"] = kindCommon(answers.A2Data, productGroup.SharedProperties.Tutoring) * int8(answers.A2Weight)
 		/*  3 */ influence["Question3"] = kindCommon(answers.A3Data, productGroup.SharedProperties.UserComments) * int8(answers.A3Weight)
 		/*  4 */ influence["Question4"] = kindCommon(answers.A4Data, productGroup.SharedProperties.SynchronousInteraction) * int8(answers.A4Weight)
