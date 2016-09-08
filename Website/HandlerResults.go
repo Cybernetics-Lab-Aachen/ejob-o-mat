@@ -65,6 +65,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	data.Recommendation = resultSet
 	data.AmountCurrent = amountValue
 	data.Strings = groups.ResultStrings
+	data.Answers = answers
 
 	if strings.Contains(lang.Language, `de`) {
 
@@ -114,4 +115,30 @@ func (data PageResults) GetGroupName(xmlIndex int) string {
 
 func (data PageResults) Lang(strings []XML.String) string {
 	return strings[data.LangPos].Text
+}
+
+func (data PageResults) FormatAnswer(answer string) string {
+	switch answer {
+	case `1`:
+		return data.Lang(data.Strings.AnswerYes)
+	case `0`:
+		return data.Lang(data.Strings.AnswerNo)
+	case `*`:
+		return data.Lang(data.Strings.AnswerSkipped)
+	case `studentCount1`:
+		return data.Lang(data.Strings.AnswerStudentCount1)
+	case `studentCount2`:
+		return data.Lang(data.Strings.AnswerStudentCount2)
+	case `studentCount3`:
+		return data.Lang(data.Strings.AnswerStudentCount3)
+	case `studentCount4`:
+		return data.Lang(data.Strings.AnswerStudentCount4)
+	case `support4lecture`:
+		return data.Lang(data.Strings.AnswerSupportLecture)
+	case `replace`:
+		return data.Lang(data.Strings.AnswerReplaceLecture)
+	}
+
+	Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameREQUEST, `Unknown answer!`, answer)
+	return ``
 }

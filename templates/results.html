@@ -86,7 +86,7 @@
 					{{range $i, $question := $questions}}
 						{{$influence := index $influences $question.InternalName}}
 						<div class="progressitem progressresultpercentage{{if not $i}} percentagefirst{{end}}{{$data.GetProgressState $influence}}"
-								title="{{(index $question.Topics $langPos).Text}}{{if gt $influence 0}}: {{$data.Lang $strings.GoodInfluence}}{{else if lt $influence 0}}: {{$data.Lang $strings.BadInfluence}}{{end}}"></div>
+								title="{{(index $question.Topics $langPos).Text}}: {{$data.FormatAnswer ($data.Answers.GetByInternalName $question.InternalName)}}{{if gt $influence 0}} -> {{$data.Lang $strings.GoodInfluence}}{{else if lt $influence 0}} -> {{$data.Lang $strings.BadInfluence}}{{end}}"></div>
 					{{end}}
 				</div>
 					

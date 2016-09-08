@@ -3211,5 +3211,50 @@
 			<String language="en"></String>
 		</TextHeader3>
 		
+		<AnswerYes>
+			<String language="de">Ja</String>
+			<String language="en">Yes</String>
+		</AnswerYes>
+		
+		<AnswerNo>
+			<String language="de">Nein</String>
+			<String language="en">No</String>
+		</AnswerNo>
+		
+		<AnswerStudentCount1>
+			<String language="de">1 bis 12</String>
+			<String language="en">1 til 12</String>
+		</AnswerStudentCount1>
+		
+		<AnswerStudentCount2>
+			<String language="de">13 bis 48</String>
+			<String language="en">13 til 48</String>
+		</AnswerStudentCount2>
+		
+		<AnswerStudentCount3>
+			<String language="de">49 bis 500</String>
+			<String language="en">49 til 500</String>
+		</AnswerStudentCount3>
+		
+		<AnswerStudentCount4>
+			<String language="de">mehr als 500</String>
+			<String language="en">more than 500</String>
+		</AnswerStudentCount4>
+		
+		<AnswerSkipped>
+			<String language="de">Übersprungen</String>
+			<String language="en">Skipped</String>
+		</AnswerSkipped>
+		
+		<AnswerSupportLecture>
+			<String language="de">Vorlesung/Übung etc. unterstützen</String>
+			<String language="en">Support Lecture</String>
+		</AnswerSupportLecture>
+		
+		<AnswerReplaceLecture>
+			<String language="de">Präsenzveranstaltung ersetzen</String>
+			<String language="en">Replace on-site attendance</String>
+		</AnswerReplaceLecture>
+		
 	</ResultStrings
 </xml>

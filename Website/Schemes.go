@@ -53,6 +53,7 @@ type PageResults struct {
 	Recommendation Scheme.Recommendation
 	TextAllGroups  string
 	Strings        XML.ResultStrings
+	Answers        Scheme.Answers
 }
 
 type PageQuestion struct {

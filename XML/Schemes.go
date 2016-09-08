@@ -117,19 +117,28 @@ type QuestionHint struct {
 }
 
 type ResultStrings struct {
-	XMLName          xml.Name `xml:"ResultStrings"`
-	GoodInfluence    []String `xml:"GoodInfluence>String"`
-	BadInfluence     []String `xml:"BadInfluence>String"`
-	TextHeader1      []String `xml:"TextHeader1>String"`
-	TextHeader2      []String `xml:"TextHeader2>String"`
-	TextHeader3      []String `xml:"TextHeader3>String"`
-	TextHeaderPrefix []String `xml:"TextHeaderPrefix>String"`
-	TextMatch        []String `xml:"TextMatch>String"`
-	TextGroup        []String `xml:"TextGroup>String"`
-	TextExamples     []String `xml:"TextExamples>String"`
-	TextRestart      []String `xml:"TextRestart>String"`
-	TextOptionen     []String `xml:"TextOptionen>String"`
-	TextResults      []String `xml:"TextResults>String"`
+	XMLName              xml.Name `xml:"ResultStrings"`
+	GoodInfluence        []String `xml:"GoodInfluence>String"`
+	BadInfluence         []String `xml:"BadInfluence>String"`
+	TextHeader1          []String `xml:"TextHeader1>String"`
+	TextHeader2          []String `xml:"TextHeader2>String"`
+	TextHeader3          []String `xml:"TextHeader3>String"`
+	TextHeaderPrefix     []String `xml:"TextHeaderPrefix>String"`
+	TextMatch            []String `xml:"TextMatch>String"`
+	TextGroup            []String `xml:"TextGroup>String"`
+	TextExamples         []String `xml:"TextExamples>String"`
+	TextRestart          []String `xml:"TextRestart>String"`
+	TextOptionen         []String `xml:"TextOptionen>String"`
+	TextResults          []String `xml:"TextResults>String"`
+	AnswerYes            []String `xml:"AnswerYes>String"`
+	AnswerNo             []String `xml:"AnswerNo>String"`
+	AnswerSkipped        []String `xml:"AnswerSkipped>String"`
+	AnswerSupportLecture []String `xml:"AnswerSupportLecture>String"`
+	AnswerReplaceLecture []String `xml:"AnswerReplaceLecture>String"`
+	AnswerStudentCount1  []String `xml:"AnswerStudentCount1>String"`
+	AnswerStudentCount2  []String `xml:"AnswerStudentCount2>String"`
+	AnswerStudentCount3  []String `xml:"AnswerStudentCount3>String"`
+	AnswerStudentCount4  []String `xml:"AnswerStudentCount4>String"`
 }
 
 type String struct {

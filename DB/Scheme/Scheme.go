@@ -101,6 +101,48 @@ type Answers struct {
 	A18Weight byte `bson:"A18Weight"`
 }
 
+func (answers Answers) GetByInternalName(name string) string {
+	switch name {
+	case `Question1`:
+		return answers.A1Data
+	case `Question2`:
+		return answers.A2Data
+	case `Question3`:
+		return answers.A3Data
+	case `Question4`:
+		return answers.A4Data
+	case `Question5`:
+		return answers.A5Data
+	case `Question6`:
+		return answers.A6Data
+	case `Question7`:
+		return answers.A7Data
+	case `Question8`:
+		return answers.A8Data
+	case `Question9`:
+		return answers.A9Data
+	case `Question10`:
+		return answers.A10Data
+	case `Question11`:
+		return answers.A11Data
+	case `Question12`:
+		return answers.A12Data
+	case `Question13`:
+		return answers.A13Data
+	case `Question14`:
+		return answers.A14Data
+	case `Question15`:
+		return answers.A15Data
+	case `Question16`:
+		return answers.A16Data
+	case `Question17`:
+		return answers.A17Data
+	case `Question18`:
+		return answers.A18Data
+	}
+	return ``
+}
+
 type Feedback struct {
 	Text           string `bson:"Text"`
 	Rating         byte   `bson:"Rating"`

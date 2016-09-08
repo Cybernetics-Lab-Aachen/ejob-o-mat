@@ -29,7 +29,7 @@ func kindAmountAccesses(answer, minString, maxString string) (diff int8) {
 		max = value
 	}
 
-	if value, errValue := strconv.Atoi(answer); errValue != nil {
+	if value, errValue := strconv.Atoi(answer[12:]); errValue != nil {
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityLow, LM.ImpactLow, LM.MessageNamePARSE, `Was not able to parse the answer value for this product.`, fmt.Sprintf("Wrong value='%s'", answer))
 		diff = 0
 		return
