@@ -7,10 +7,10 @@ import (
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
 	"github.com/SommerEngineering/Re4EEE/DB"
+	"github.com/SommerEngineering/Re4EEE/XML"
 	"net/http"
 	"strings"
 	"time"
-	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
 func HandlerQuestion1(response http.ResponseWriter, request *http.Request) {
