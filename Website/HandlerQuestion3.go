@@ -67,7 +67,6 @@ func HandlerQuestion3(response http.ResponseWriter, request *http.Request) {
 		data.TextQuestionTopic = `Kommentare`
 		data.TextQuestionTopic = questionGroup.Topics[0].Text
 		data.TextQuestionBody = questionGroup.QuestionBodies[0].Text
-		data.TextQuestionBody = `Soll das E-Learning-Format Kommentare der Studierenden ermöglichen?`
 		data.QuestionInfoHeader = `Zusätzliche Hinweise`
 		data.QuestionInfoClose = `Schließen`
 		data.QuestionInfoText = ``
