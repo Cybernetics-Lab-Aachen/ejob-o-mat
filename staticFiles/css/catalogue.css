@@ -6,29 +6,29 @@
 /* Sets also the size of the group text */
 @media screen {
 	ProductsGroup {
-	  position:absolute;
-	  top:40px;
-	  left:40px;
-	  right:40px;
-	  width: 210mm; /* DIN A4 */
-	  background-color:#FFFFFF;
+		position: absolute;
+		top: 40px;
+		left: 40px;
+		right: 40px;
+		width: 210mm; /* DIN A4 */
+		background-color: #FFFFFF;
 	}
 }
 
 /* Main settings for printing */
 @media print {
 	ProductsGroup {
-	  position:absolute;
-	  top:0mm;
-	  left:0mm;
-	  right:0mm;
-	  width: 210mm; /* DIN A4 */
-	  background-color:#FFFFFF;
+		position: absolute;
+		top: 0mm;
+		left: 0mm;
+		right: 0mm;
+		width: 210mm; /* DIN A4 */
+		background-color: #FFFFFF;
 	}
 
 	/* More printing settings */
 	@page {
-		size:210mm 297mm;
+		size: 210mm 297mm;
 	}
 
 	@page :header {
@@ -41,17 +41,17 @@
 }
 
 ProductGroup {
-	  display: block;
-	  border-style: solid;
-	  border-width: medium;
-	  border-radius: 6px;
-	  text-align: center;
-	  padding:10px;
-	  font-size: 16pt;
-	  font-weight: bold;
-	  color: #000000;
-	  margin-bottom: 40px;
-	  page-break-after:always;
+	display: block;
+	border-style: solid;
+	border-width: medium;
+	border-radius: 6px;
+	text-align: center;
+	padding: 10px;
+	font-size: 16pt;
+	font-weight: bold;
+	color: #000000;
+	margin-bottom: 40px;
+	page-break-after: always;
 }
 
 
@@ -66,7 +66,7 @@ ProductGroup > * {
 
 /* Print the name of this group */
 ProductGroup:before {
-  content: "Gruppe: " attr(internalName);
+	content: "Gruppe: " attr(internalName);
 }
 
 /* Prints a line below the name of the group */
@@ -279,12 +279,12 @@ ProductGroup > ExampleGroup > Names > Name {
 
 /* Prefix for the group title */
 ProductGroup > ExampleGroup > Names > Name[language="de"]:before {
-  content: "Deutsch: " attr(text);
+	content: "Deutsch: " attr(text);
 }
 
 /* Prefix for the group title */
 ProductGroup > ExampleGroup > Names > Name[language="en"]:before {
-  content: "Englisch: " attr(text);
+	content: "Englisch: " attr(text);
 }
 
 /* Line below the header */
