@@ -14,39 +14,43 @@
   <script type="text/javascript" src="/staticFiles/js/modernizr.js"></script>
 </head>
 <body>
-	<div class="w-row">
+  <div class="w-row">
     <div class="w-col w-col-2 w-col-stack w-hidden-medium w-hidden-small w-hidden-tiny"></div>
     <div class="w-col w-col-8 w-col-stack">
       <div class="w-container maincontainer">
-        <div class="w-hidden-main mobilelogocontainer"><img src="/staticFiles/images/{{.Basis.Logo}}.gif">
+        <div class="w-hidden-main mobilelogocontainer">
+          <img src="/staticFiles/images/{{.Basis.Logo}}.gif">
         </div>
         <div class="headerbox">
           <div class="headerboxsubtitlecontainer">
-            <h1 class="headerboxsubtitle"> </h1>
+            <h1 class="headerboxsubtitle"></h1>
           </div>
           <div class="line"></div>
           <div class="headerboxtitlecontainer">
             <h1 class="headerboxtitle">{{.Basis.Name}}</h1>
           </div>
-        </div><img class="imagetitle" src="/staticFiles/images/home.gif" alt="E-Learning Image">
+        </div>
+        <img class="imagetitle" src="/staticFiles/images/home.gif" alt="E-Learning Image">
         <div class="textbox textboxstart">
           <p>{{.TextWelcome}}</p>
         </div>
-        <div class="buttonbox buttonboxstart"><a class="button" href="/question1?lang={{.Basis.Lang}}&session={{.Basis.Session}}">{{.TextStartButton}}</a>
+        <div class="buttonbox buttonboxstart">
+          <a class="button" href="/question1?lang={{.Basis.Lang}}&session={{.Basis.Session}}">{{.TextStartButton}}</a>
         </div>
         <div class="w-container containerlogo">
-			<img src="/staticFiles/images/footer.png">
+          <img src="/staticFiles/images/footer.png">
         </div>
       </div>
     </div>
     <div class="w-col w-col-2 w-col-stack rightcolumn">
-      <div class="rightcolumncontainer"><img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif">
+      <div class="rightcolumncontainer">
+        <img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif">
         <div>
-			<a href="http://www.elearn-o-mat.net/start?lang=de&session={{.Basis.Session}}"><img class="flag" src="/staticFiles/images/flagDE.gif"></a>
-			<a href="http://www.elearning-finder.net/start?lang=en&session={{.Basis.Session}}"><img class="flag lastflag" src="/staticFiles/images/flagUK.gif"></a>
+          <a href="http://www.elearn-o-mat.net/start?lang=de&session={{.Basis.Session}}"><img class="flag" src="/staticFiles/images/flagDE.gif"></a>
+          <a href="http://www.elearning-finder.net/start?lang=en&session={{.Basis.Session}}"><img class="flag lastflag" src="/staticFiles/images/flagUK.gif"></a>
         </div>
-		<a class="button buttonsmall" href="/feedback?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&nbsp;&nbsp;Feedback&nbsp;&nbsp;</a>
-		<a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}&session={{.Basis.Session}}">Impressum</a>
+        <a class="button buttonsmall" href="/feedback?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&nbsp;&nbsp;Feedback&nbsp;&nbsp;</a>
+        <a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}&session={{.Basis.Session}}">Impressum</a>
       </div>
     </div>
   </div>

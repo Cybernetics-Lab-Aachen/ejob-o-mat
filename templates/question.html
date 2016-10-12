@@ -8,7 +8,7 @@
   <title>{{.Basis.Name}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
-    <style>
+  <style>
     @font-face { font-family: 'Open Sans', sans-serif; font-weight: 700; font-style: normal; src: url('/staticFiles/fonts/OpenSans-Bold.ttf'); }
     @font-face { font-family: 'Open Sans', sans-serif; font-weight: 400; font-style: normal; src: url('/staticFiles/fonts/OpenSans-Regular.ttf'); } 
     @font-face { font-family: 'Open Sans', sans-serif; font-weight: 700; font-style: italic; src: url('/staticFiles/fonts/OpenSans-BoldItalic.ttf'); }
@@ -21,12 +21,12 @@
   <script type="text/javascript" src="/staticFiles/js/modernizr.js"></script>
 </head>
 <body>
-    <div class="w-row">
+  <div class="w-row">
     <div class="w-col w-col-2 w-col-stack w-hidden-medium w-hidden-small w-hidden-tiny"></div>
     <div class="w-col w-col-8 w-col-stack">
       <div class="w-container qcontainer">
         <div class="w-hidden-main mobilelogocontainer">
-            <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}"><img src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
+          <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}"><img src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
         </div>
         <div class="headerbox">
           <div class="headerboxsubtitlecontainer">
@@ -64,47 +64,44 @@
           <a class="button infoboxclose" href="#" data-ix="hideinfo">{{.QuestionInfoClose}}</a>
         </div>
         <div class="w-form">
-            <form id="answer" name="answer" data-name="answer" method="post" action="/answer">
-                <input type="hidden" name="lang" value="{{.Basis.Lang}}">
-                <input type="hidden" name="session" value="{{.Basis.Session}}">
-                <input type="hidden" name="no" value="{{.NoQuestion}}">
-                <div class="divbuttons">
-                    <button class="button buttonhuge{{.Button1Status}}" type="submit" name="a" value="{{.Button1Data}}">{{.TextButton1}}</button>
-                    <button class="button buttonhuge{{.Button2Status}}" type="submit" name="a" value="{{.Button2Data}}">{{.TextButton2}}</button>
-                    <button class="button buttonhuge{{.Button3Status}}" type="submit" name="a" value="{{.Button3Data}}">{{.TextButton3}}</button>
-                    <button class="button buttonhuge{{.Button4Status}}" type="submit" name="a" value="{{.Button4Data}}">{{.TextButton4}}</button>
-                    <button class="button buttonhuge{{.Button5Status}}" type="submit" name="a" value="{{.Button5Data}}">{{.TextButton5}}</button>
+          <form id="answer" name="answer" data-name="answer" method="post" action="/answer">
+            <input type="hidden" name="lang" value="{{.Basis.Lang}}">
+            <input type="hidden" name="session" value="{{.Basis.Session}}">
+            <input type="hidden" name="no" value="{{.NoQuestion}}">
+            <div class="divbuttons">
+              <button class="button buttonhuge{{.Button1Status}}" type="submit" name="a" value="{{.Button1Data}}">{{.TextButton1}}</button>
+              <button class="button buttonhuge{{.Button2Status}}" type="submit" name="a" value="{{.Button2Data}}">{{.TextButton2}}</button>
+              <button class="button buttonhuge{{.Button3Status}}" type="submit" name="a" value="{{.Button3Data}}">{{.TextButton3}}</button>
+              <button class="button buttonhuge{{.Button4Status}}" type="submit" name="a" value="{{.Button4Data}}">{{.TextButton4}}</button>
+              <button class="button buttonhuge{{.Button5Status}}" type="submit" name="a" value="{{.Button5Data}}">{{.TextButton5}}</button>
+            </div>
+            <div class="optionbox">
+              <a class="button buttonsymbol{{.ButtonBackStatus}}" href="/question{{.PreNoQuestion}}?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&lt;</a> <a class="button buttonsymbol{{.ButtonInfoStatus}}" href="#" data-ix="showinfo">?</a>
+              <div class="importantbox">
+                <div class="w-checkbox w-clearfix importantelement">
+                  <input class="w-checkbox-input checkbox" id="important" type="checkbox" name="important" data-name="important" value="important">
+                  <label class="w-form-label checkboxtext" for="important">{{.TextImportant}}</label>
                 </div>
-                <div class="optionbox">
-                    <a class="button buttonsymbol{{.ButtonBackStatus}}" href="/question{{.PreNoQuestion}}?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&lt;</a>
-                    <a class="button buttonsymbol{{.ButtonInfoStatus}}" href="#" data-ix="showinfo">?</a>
-                    <div class="importantbox">
-                        <div class="w-checkbox w-clearfix importantelement">
-                            <input class="w-checkbox-input checkbox" id="important" type="checkbox" name="important" data-name="important" value="important">
-                            <label class="w-form-label checkboxtext" for="important">{{.TextImportant}}</label>
-                        </div>
-                    </div>
-                </div>
+              </div>
+            </div>
           </form>
-          <div class="w-form-done">
-          </div>
-          <div class="w-form-fail">
-          </div>
+          <div class="w-form-done"></div>
+          <div class="w-form-fail"></div>
         </div>
         <div class="w-container containerlogo">
-            <img src="/staticFiles/images/footer.png">
+          <img src="/staticFiles/images/footer.png">
         </div>
       </div>
     </div>
     <div class="w-col w-col-2 w-col-stack">
       <div class="rightcolumncontainer">
-      <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}"><img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
+        <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}"><img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
         <div>
-            <a href="http://www.elearn-o-mat.net/question{{.NoQuestion}}?lang=de&session={{.Basis.Session}}"><img class="flag" src="/staticFiles/images/flagDE.gif"></a>
-            <a href="http://www.elearning-finder.net/question{{.NoQuestion}}?lang=en&session={{.Basis.Session}}"><img class="flag lastflag" src="/staticFiles/images/flagUK.gif"></a>
+          <a href="http://www.elearn-o-mat.net/question{{.NoQuestion}}?lang=de&session={{.Basis.Session}}"><img class="flag" src="/staticFiles/images/flagDE.gif"></a>
+          <a href="http://www.elearning-finder.net/question{{.NoQuestion}}?lang=en&session={{.Basis.Session}}"><img class="flag lastflag" src="/staticFiles/images/flagUK.gif"></a>
         </div>
-		<a class="button buttonsmall" href="/feedback?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&nbsp;&nbsp;Feedback&nbsp;&nbsp;</a>
-		<a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}&session={{.Basis.Session}}">Impressum</a>
+        <a class="button buttonsmall" href="/feedback?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&nbsp;&nbsp;Feedback&nbsp;&nbsp;</a>
+        <a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}&session={{.Basis.Session}}">Impressum</a>
       </div>
     </div>
   </div>

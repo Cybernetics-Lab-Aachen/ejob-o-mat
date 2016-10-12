@@ -5,13 +5,13 @@
 <html data-wf-site="531b6f81d93d2b40520007fd" data-wf-page="5565760c92498adb2bec5bbd">
 <head>
   <meta charset="utf-8">
-  <title>{{.Basis.Name}}</title> 
+  <title>{{.Basis.Name}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
   <link rel="stylesheet" type="text/css" href="/staticFiles/css/normalize.css">
   <link rel="stylesheet" type="text/css" href="/staticFiles/css/webflow.css">
   <link rel="stylesheet" type="text/css" href="/staticFiles/css/re4eee.webflow.css">
-  <script type="text/javascript" src="/staticFiles/js/modernizr.js"></script> 
+  <script type="text/javascript" src="/staticFiles/js/modernizr.js"></script>
 </head>
 <body>
   <div class="w-row">
@@ -19,11 +19,11 @@
     <div class="w-col w-col-8 w-col-stack">
       <div class="w-container">
         <div class="w-hidden-main mobilelogocontainer">
-			<a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}"><img src="/staticFiles/images/{{.Basis.Logo}}.gif"></a> 
+          <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}"><img src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
         </div>
         <div class="headerbox">
           <div class="headerboxsubtitlecontainer">
-            <h1 class="headerboxsubtitle">{{.Basis.Name}}</h1> 
+            <h1 class="headerboxsubtitle">{{.Basis.Name}}</h1>
           </div>
           <div class="line"></div>
           <div class="headerboxtitlecontainer">
@@ -33,9 +33,9 @@
         <p class="textbox">{{.TextFeedback}}</p>
         <div class="w-form">
           <form id="feedback" name="feedback" data-name="feedback" method="post" action="/writeFeedback">
-			<input type="hidden" name="lang" value="{{.Basis.Lang}}">
-            <input type="hidden" name="session" value="{{.Basis.Session}}"> 
-			<input type="hidden" name="sourceLocation" value="{{.SourceLocation}}"> 
+            <input type="hidden" name="lang" value="{{.Basis.Lang}}">
+            <input type="hidden" name="session" value="{{.Basis.Session}}">
+            <input type="hidden" name="sourceLocation" value="{{.SourceLocation}}">
             <label class="feedbacksubtopic" for="field">{{.TextYourFeedback}}</label>
             <textarea class="w-input feedbackbox" id="text" placeholder="" name="text"></textarea>
             <label class="feedbacksubtopic">{{.TextYourRating}}</label>
@@ -69,23 +69,24 @@
             <p>Oops! Something went wrong while submitting the form</p>
           </div>
         </div>
-        <div class="w-container containerlogo"><img src="/staticFiles/images/footer.png"> 
-        </div> 
+        <div class="w-container containerlogo">
+          <img src="/staticFiles/images/footer.png">
+        </div>
       </div>
     </div>
     <div class="w-col w-col-2 w-col-stack">
       <div class="rightcolumncontainer">
-	  <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}"><img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
+        <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}"><img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
         <div>
-			<a href="http://www.elearn-o-mat.net/feedback?lang=de&session={{.Basis.Session}}"><img class="flag" src="/staticFiles/images/flagDE.gif"></a>
-			<a href="http://www.elearning-finder.net/feedback?lang=en&session={{.Basis.Session}}"><img class="flag lastflag" src="/staticFiles/images/flagUK.gif"></a>
+          <a href="http://www.elearn-o-mat.net/feedback?lang=de&session={{.Basis.Session}}"><img class="flag" src="/staticFiles/images/flagDE.gif"></a>
+          <a href="http://www.elearning-finder.net/feedback?lang=en&session={{.Basis.Session}}"><img class="flag lastflag" src="/staticFiles/images/flagUK.gif"></a>
         </div>
-		<a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}&session={{.Basis.Session}}">Impressum</a>
-      </div>  
+        <a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}&session={{.Basis.Session}}">Impressum</a>
+      </div>
     </div>
   </div>
   <script type="text/javascript" src="/framework/jQuery/jquery-2.1.1.min.js"></script>
-  <script type="text/javascript" src="/staticFiles/js/webflow.js"></script> 
+  <script type="text/javascript" src="/staticFiles/js/webflow.js"></script>
 </body>
 </html>
 {{end}}
