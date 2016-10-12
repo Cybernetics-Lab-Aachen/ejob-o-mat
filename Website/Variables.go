@@ -19,6 +19,8 @@ const (
 	PROGRESS_DONE   string = ` progressitemdone`
 	PROGRESS_NDONE  string = ``
 	TOTAL_QUESTIONS int    = 18
+	LANG_DE         int    = 0
+	LANG_EN         int    = 1
 )
 
 var (

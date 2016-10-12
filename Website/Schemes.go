@@ -68,23 +68,14 @@ type PageQuestion struct {
 	QuestionInfoClose  string
 	TextQuestionTopic  string
 	TextQuestionBody   string
-	TextButton1        string
-	TextButton2        string
-	TextButton3        string
-	TextButton4        string
-	TextButton5        string
 	TextBackButton     string
 	TextImportant      string
-	Button1Status      string
-	Button2Status      string
-	Button3Status      string
-	Button4Status      string
-	Button5Status      string
 	ButtonBackStatus   string
 	ButtonInfoStatus   string
-	Button1Data        string
-	Button2Data        string
-	Button3Data        string
-	Button4Data        string
-	Button5Data        string
+	Buttons            []PageQuestionButton
+}
+
+type PageQuestionButton struct {
+	Text string
+	Data string
 }

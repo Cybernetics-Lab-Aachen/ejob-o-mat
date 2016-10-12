@@ -12,6 +12,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format provide a functionality to display video content?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question2">
@@ -23,6 +35,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format provide a functionality for tutoring?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question3">
@@ -34,6 +58,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format provide the possibility to comment by the students?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question4">
@@ -51,6 +87,18 @@
 			<Hint language="en">
 				Examples are e.g. a simple chat to exchange messages or more advanced interactions e.g. within virtual environments.
 			</Hint>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question5">
@@ -68,6 +116,18 @@
 			<Hint language="en">
 				Examples are e.g. discussion boards and Wikis, in which the work occurs time-shifted.
 			</Hint>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question6">
@@ -79,6 +139,22 @@
 			<QuestionBody language="en">
 				How many students are in your course?
 			</QuestionBody>
+			<Button data="studentCount1">
+				<TextButton language="de" text="1 bis 12" />
+				<TextButton language="en" text="1 til 12" />
+			</Button>
+			<Button data="studentCount2">
+				<TextButton language="de" text="13 bis 48" />
+				<TextButton language="en" text="13 til 48" />
+			</Button>
+			<Button data="studentCount3">
+				<TextButton language="de" text="49 bis 500" />
+				<TextButton language="en" text="49 til 500" />
+			</Button>
+			<Button data="studentCount4">
+				<TextButton language="de" text="mehr als 500" />
+				<TextButton language="en" text="more than 500" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question7">
@@ -90,6 +166,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format provide a functionality for file downloads?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question8">
@@ -101,6 +189,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format provide a functionality to display the learning objectives?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question9">
@@ -112,6 +212,14 @@
 			<QuestionBody language="en">
 				Should the e-learning format support your lecture, exercise, etc. or should it replace the on-site attendance?
 			</QuestionBody>
+			<Button data="support4lecture">
+				<TextButton language="de" text="Vorlesung/Übung etc. unterstützen" />
+				<TextButton language="en" text="Support Lecture" />
+			</Button>
+			<Button data="replace">
+				<TextButton language="de" text="Präsenzveranstaltung ersetzen" />
+				<TextButton language="en" text="Replace on-site attendance" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question10">
@@ -131,6 +239,18 @@
 				These kinds of services often use e.g. infrastructure from American companies. In such
 				cases, it maybe not possible to guarantee the privacy policies of your country.
 			</Hint>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question11">
@@ -150,6 +270,18 @@
 				In this case, you are able to apply privacy rules and restrictions e.g. you can restrict
 				the e-learning format to your students only.
 			</Hint>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question12">
@@ -161,6 +293,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format provide a functionality for assessments?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question13">
@@ -172,6 +316,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format provide a functionality for students' roles (e.g. moderator, group leader, etc.)?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question14">
@@ -183,6 +339,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format provide a functionality to show e.g. equations for e.g. further mathematics, physics, electrical engineering, etc.?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question15">
@@ -194,6 +362,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format provide a functionality for writing mathematically e.g. equations?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question16">
@@ -205,6 +385,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format be enabled for presenting teaching methods like e.g. talks, lectures, demonstrations, etc.?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question17">
@@ -216,6 +408,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format be enabled for developing teaching methods like e.g. problem-based learning, guided traineeships or practices, a professional dialogue between students and teacher/professor, etc.?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 		<QuestionGroup internalName="Question18">
@@ -227,6 +431,18 @@
 			<QuestionBody language="en">
 				Should the e-learning format be enabled for explorative teaching methods like e.g. projects, experiments, simulation games, etc.?
 			</QuestionBody>
+			<Button data="1">
+				<TextButton language="de" text="Ja" />
+				<TextButton language="en" text="Yes" />
+			</Button>
+			<Button data="0">
+				<TextButton language="de" text="Nein" />
+				<TextButton language="en" text="No" />
+			</Button>
+			<Button data="*">
+				<TextButton language="de" text="Enthaltung" />
+				<TextButton language="en" text="Skip question" />
+			</Button>
 		</QuestionGroup>
 
 	</QuestionsGroup>
@@ -3142,6 +3358,33 @@
 
 	</ProductsGroup>
 
+	<QuestionStrings>
+		<TextBackButton>
+			<String language="de">Vorherige Frage</String>
+			<String language="en">Previous question</String>
+		</TextBackButton>
+
+		<TextImportant>
+			<String language="de">Diese Aussage ist mir besonders wichtig</String>
+			<String language="en">This statement is important for me</String>
+		</TextImportant>
+
+		<TextQuestion>
+			<String language="de">Frage</String>
+			<String language="en">Question</String>
+		</TextQuestion>
+
+		<QuestionInfoHeader>
+			<String language="de">Zusätzliche Hinweise</String>
+			<String language="en">Additional Information</String>
+		</QuestionInfoHeader>
+
+		<QuestionInfoClose>
+			<String language="de">Schließen</String>
+			<String language="en">Close</String>
+		</QuestionInfoClose>
+	</QuestionStrings>
+	
 	<ResultStrings>
 		<GoodInfluence>
 			<String language="de">Positiver Einfluss</String>

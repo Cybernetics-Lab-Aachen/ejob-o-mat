@@ -79,7 +79,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 
 		data.Basis.Name = NAME_DE
 		data.Basis.Logo = LOGO_DE
-		data.LangPos = 0
+		data.LangPos = LANG_DE
 	} else {
 
 		if amountValue > 0 {
@@ -92,7 +92,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 
 		data.Basis.Name = NAME_EN
 		data.Basis.Logo = LOGO_UK
-		data.LangPos = 1
+		data.LangPos = LANG_EN
 	}
 
 	Tools.SendChosenLanguage(response, lang)

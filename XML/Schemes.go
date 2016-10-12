@@ -79,10 +79,11 @@ type ProductsGroup struct {
 }
 
 type Data struct {
-	XMLName             xml.Name       `xml:"xml"`
-	ProductsCollection  ProductsGroup  ``
-	QuestionsCollection QuestionsGroup `xml:"QuestionsGroup"`
-	ResultStrings       ResultStrings  `xml:"ResultStrings"`
+	XMLName             xml.Name        `xml:"xml"`
+	ProductsCollection  ProductsGroup   ``
+	QuestionsCollection QuestionsGroup  `xml:"QuestionsGroup"`
+	QuestionStrings     QuestionStrings `xml:"QuestionStrings"`
+	ResultStrings       ResultStrings   `xml:"ResultStrings"`
 }
 
 type QuestionsGroup struct {
@@ -91,11 +92,12 @@ type QuestionsGroup struct {
 }
 
 type QuestionGroup struct {
-	XMLName        xml.Name       `xml:"QuestionGroup"`
-	InternalName   string         `xml:"internalName,attr"`
-	Topics         []Topic        `xml:"Topic"`
-	QuestionBodies []QuestionBody `xml:"QuestionBody"`
-	Hints          []QuestionHint `xml:"Hint"`
+	XMLName        xml.Name         `xml:"QuestionGroup"`
+	InternalName   string           `xml:"internalName,attr"`
+	Topics         []Topic          `xml:"Topic"`
+	QuestionBodies []QuestionBody   `xml:"QuestionBody"`
+	Hints          []QuestionHint   `xml:"Hint"`
+	Buttons        []QuestionButton `xml:"Button"`
 }
 
 type Topic struct {
@@ -114,6 +116,27 @@ type QuestionHint struct {
 	XMLName  xml.Name `xml:"Hint"`
 	Language string   `xml:"language,attr"`
 	Text     string   `xml:",chardata"`
+}
+
+type QuestionButton struct {
+	XMLName xml.Name     `xml:"Button"`
+	Data    string       `xml:"data,attr"`
+	Texts   []TextButton `xml:"TextButton"`
+}
+
+type TextButton struct {
+	XMLName  xml.Name `xml:"TextButton"`
+	Language string   `xml:"language,attr"`
+	Text     string   `xml:"text,attr"`
+}
+
+type QuestionStrings struct {
+	XMLName            xml.Name `xml:"QuestionStrings"`
+	TextBackButton     []String `xml:"TextBackButton>String"`
+	TextImportant      []String `xml:"TextImportant>String"`
+	TextQuestion       []String `xml:"TextQuestion>String"`
+	QuestionInfoHeader []String `xml:"QuestionInfoHeader>String"`
+	QuestionInfoClose  []String `xml:"QuestionInfoClose>String"`
 }
 
 type ResultStrings struct {
