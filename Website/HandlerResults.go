@@ -44,6 +44,12 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 
 	} else {
 		resultSet = DB.LoadRecommendation(session)
+
+		//Check for old session. Can't work with outdated data.
+		if resultSet.SchemeVersion < Scheme.CURRENT_VERSION {
+			http.Redirect(response, request, `/start`, 302)
+			return
+		}
 	}
 
 	if value, errConv := strconv.Atoi(amountText); errConv != nil {

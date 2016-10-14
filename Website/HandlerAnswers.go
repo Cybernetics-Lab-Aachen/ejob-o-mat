@@ -44,6 +44,12 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	//Check for old session. Can't work with outdated data.
+	if answers.SchemeVersion < Scheme.CURRENT_VERSION {
+		http.Redirect(response, request, `/start`, 302)
+		return
+	}
+
 	if important == `important` {
 		weight = 2
 	}

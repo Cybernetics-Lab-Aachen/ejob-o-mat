@@ -5,7 +5,8 @@ import (
 )
 
 var (
-	CURRENT_VERSION byte = 1
+	// Version 2: Storing answer influence
+	CURRENT_VERSION byte = 2
 )
 
 func (groups ProductGroups) Len() int {
