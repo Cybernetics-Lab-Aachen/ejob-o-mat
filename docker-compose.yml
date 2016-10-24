@@ -1,0 +1,15 @@
+version: '2'
+services:
+  re4eee:
+    build: .
+    ports:
+      - '80:40000'
+      - '50000:50000'
+    environment:
+      dbHost: MY_MONGODB
+      dbPassword: MY_PASSWORD
+      dbUser: Re4EEE
+      projectName: Re4EEE
+    external_links:
+     - MY_MONGODB
+    network_mode: "bridge"

@@ -1,50 +1,14 @@
-# Use a Ubuntu server as basis:
-FROM ubuntu:14.04
+FROM golang
 
-# Set the gopath in order to use Go:
-ENV GOPATH /go
-
-# Update the operating system and install base tools e.g. Git:
-RUN apt-get update && \
-	apt-get upgrade -y && \
-	apt-get install -y git wget zip && \
-	
-	# Install the MongoDB clients:
-	apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
-	echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
+# Update the operating system and install base tools:
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
+	echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
 	apt-get update && \
-	apt-get install -y mongodb-org-tools mongodb-org-shell && \
+	apt-get upgrade -y && \
+	apt-get install -y zip mongodb-org-tools mongodb-org-shell
 
-	# Create the Go workspace:
-	mkdir /go && \
-	mkdir /go/src && \
-	mkdir /go/bin && \
-	mkdir /go/pkg && \
-	cd /go && \
-
-	# Install current Go:
-	wget --no-check-certificate -O go.tar.gz https://storage.googleapis.com/golang/go1.5.3.linux-amd64.tar.gz && \
-	tar -C /usr/local -xzf go.tar.gz && \
-	rm go.tar.gz
-
-# Create the project directories:	
-RUN cd /go && \
-	mkdir src/github.com && \
-	mkdir src/github.com/SommerEngineering && \
-	mkdir src/github.com/SommerEngineering/Re4EEE
-
-# Define some variables that the user can adjust for every container:
-ENV dbHost=127.0.0.1 \
-	dbPassword= \
-	dbUser=Re4EEE \
-	projectName=Re4EEE
-
-# Set up the project:
-RUN export PATH=$PATH:/usr/local/go/bin && \
-
-	# Install libraries for Re4EEE and Ocean:
-	cd /go/src/github.com/SommerEngineering/Re4EEE && \
-
+# Install libraries for Re4EEE and Ocean:
+RUN \
 	# Ocean:
 	go get github.com/SommerEngineering/Ocean && \
 
@@ -55,11 +19,10 @@ RUN export PATH=$PATH:/usr/local/go/bin && \
 	go get gopkg.in/mgo.v2 
 
 # Insert all files from the repo (but from the current directory, not from Git):
-ADD / /go/src/github.com/SommerEngineering/Re4EEE/	
-	
+ADD . /go/src/github.com/SommerEngineering/Re4EEE/
+
 # Compile and Setup
-RUN	export PATH=$PATH:/usr/local/go/bin && \
-	cd /go/src/github.com/SommerEngineering/Re4EEE && \
+RUN	cd /go/src/github.com/SommerEngineering/Re4EEE && \
 
 	# Compile the Re4EEE:
 	go install && \
@@ -78,17 +41,11 @@ RUN	export PATH=$PATH:/usr/local/go/bin && \
 	zip -r /home/templates.zip . && \
 	cd ../web && \
 	zip -r /home/web.zip . && \
-	cd .. && \
 
-	# Uninstall Git and tools:
-	apt-get remove -y git wget zip && \
-	apt-get autoremove -y && \
-
-	# Delete Go:
-	rm -r -f /usr/local/go && \
+	# Uninstall tools:
+	apt-get autoremove -y zip && \
 
 	# Delete the entire Go workspace:
-	cd /home && \
 	rm -r -f /go && \
 
 	# Create the configuration file:
@@ -114,4 +71,4 @@ EXPOSE 40000 50000
 WORKDIR /home
 
 # The default command to run, if a container starts:
-CMD ./run.sh
+CMD ["./run.sh"]
