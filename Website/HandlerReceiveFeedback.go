@@ -10,12 +10,15 @@ import (
 	"strings"
 )
 
+//HandlerImpressum stores the feedback and redirects back to where the user came from.
 func HandlerReceiveFeedback(response http.ResponseWriter, request *http.Request) {
 	session := request.FormValue(`session`)
 	text := request.FormValue(`text`)
 	sourceLocation := request.FormValue(`sourceLocation`)
 	ratingRAW := request.FormValue(`rating`)
 	rating := byte(255)
+
+	//Validate input
 
 	if len(text) > 2048 {
 		response.WriteHeader(http.StatusNotFound)
@@ -28,12 +31,7 @@ func HandlerReceiveFeedback(response http.ResponseWriter, request *http.Request)
 		return
 	}
 
-	if len(sourceLocation) == 0 {
-		response.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	if len(sourceLocation) > 1024 {
+	if len(sourceLocation) == 0 || len(sourceLocation) > 1024 {
 		response.WriteHeader(http.StatusNotFound)
 		return
 	}
@@ -54,12 +52,13 @@ func HandlerReceiveFeedback(response http.ResponseWriter, request *http.Request)
 		rating = byte(value)
 	}
 
+	//Store feedback
 	feedback := Scheme.Feedback{}
 	feedback.Rating = rating
 	feedback.Session = session
 	feedback.Text = text
 	feedback.SourceLocation = sourceLocation
-
 	DB.StoreFeedback(feedback)
+	
 	http.Redirect(response, request, sourceLocation, 302)
 }

@@ -12,6 +12,7 @@ import (
 	"time"
 )
 
+//HandlerStart displays the start page
 func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	readSession := request.FormValue(`session`)
 	lang := Tools.GetRequestLanguage(request)[0]
@@ -25,9 +26,11 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	//Check if a session exists
 	if readSession != `` {
 		data.Basis.Session = readSession
 	} else {
+		//Create new session
 		data.Basis.Session = Tools.RandomGUID()
 		answers := Scheme.Answers{}
 		answers.SchemeVersion = Scheme.CURRENT_VERSION

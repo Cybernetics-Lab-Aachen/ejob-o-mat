@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+//HandlerImpressum displays the impressum.
 func HandlerImpressum(response http.ResponseWriter, request *http.Request) {
 	readSession := request.FormValue(`session`)
 	lang := Tools.GetRequestLanguage(request)[0]

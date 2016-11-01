@@ -1,14 +1,13 @@
 package main
 
 import (
-	"fmt"
 	"github.com/SommerEngineering/Ocean/Handlers"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Re4EEE/Website"
-	"net/http"
 )
 
+//registerHandlers registers all request handlers for Re4EEE.
 func registerHandlers() {
 	Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameSTARTUP, `Register now all app handlers.`)
 	defer Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameSTARTUP, `Register now all app handlers done.`)
@@ -40,15 +39,9 @@ func registerHandlers() {
 	Handlers.AddPublicHandler(`/impressum`, Website.HandlerImpressum)
 	Handlers.AddPublicHandler(`/feedback`, Website.HandlerFeedback)
 	Handlers.AddPublicHandler(`/writeFeedback`, Website.HandlerReceiveFeedback)
-	Handlers.AddPublicHandler(`/Re4EEEVersion`, Website.HandlerVersion)
 	Handlers.AddPublicHandler(`/ping`, Website.HandlerPing)
 
 	// Admin Handlers:
 	Handlers.AddAdminHandler(`/book`, Website.HandlerBook)
 	Handlers.AddAdminHandler(`/Re4EEEVersion`, Website.HandlerVersion)
-	Handlers.AddAdminHandler(`/test`, testHandler)
-}
-
-func testHandler(response http.ResponseWriter, request *http.Request) {
-	fmt.Fprintf(response, `Test: %s`, "TEST")
 }

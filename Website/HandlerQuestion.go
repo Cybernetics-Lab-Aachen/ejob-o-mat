@@ -15,6 +15,7 @@ import (
 	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
+//HandlerQuestion displays the current question.
 func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	readSession := request.FormValue(`session`)
 
@@ -102,7 +103,7 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 
 	//Store questionaire start time (time of first question)
 	if noQuestion == 1 {
-		answers,_ := DB.LoadAnswers(readSession)
+		answers, _ := DB.LoadAnswers(readSession)
 		answers.StartTimeQ1 = time.Now().UTC()
 		DB.UpdateAnswers(answers)
 	}
@@ -110,4 +111,13 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	// Finally, execute the template
 	Tools.SendChosenLanguage(response, lang)
 	Templates.ProcessHTML(`question`, response, data)
+}
+
+//GetProgressState returns the css class representing the progress.
+func (pg PageQuestion) GetProgressState(pos int) string {
+	if pg.Progress >= pos {
+		return ` progressitemdone`
+	} else {
+		return ``
+	}
 }

@@ -15,6 +15,7 @@ import (
 	"time"
 )
 
+//HandlerStart displays the results of the questionnaire
 func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	session := request.FormValue(`session`)
 	amountText := request.FormValue(`amount`)
@@ -30,11 +31,18 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
+	// Validate input
 	if amountText != `` && len(amountText) > 2 {
 		response.WriteHeader(http.StatusNotFound)
 		return
 	}
+	if value, errConv := strconv.Atoi(amountText); errConv != nil {
+		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameREQUEST, `Cannot read the amount value!`, amountText, errConv.Error())
+	} else {
+		amountValue = value
+	}
 
+	// Load/calculate recommendations
 	if !DB.CheckRecommendation(session) {
 		resultSet.ProductGroups = Algorithm.ExecuteAnswers(answers)
 		resultSet.CreateTimeUTC = time.Now().UTC()
@@ -45,23 +53,19 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	} else {
 		resultSet = DB.LoadRecommendation(session)
 
-		//Check for old session. Can't work with outdated data.
+		// Check for old session. Can't work with outdated data.
 		if resultSet.SchemeVersion < Scheme.CURRENT_VERSION {
 			http.Redirect(response, request, `/start`, 302)
 			return
 		}
 	}
 
-	if value, errConv := strconv.Atoi(amountText); errConv != nil {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameREQUEST, `Cannot read the amount value!`, amountText, errConv.Error())
-	} else {
-		amountValue = value
-	}
-
+	// Reduce number of shown product groups, if requested
 	if amountValue >= 1 {
 		resultSet.ProductGroups = resultSet.ProductGroups[0:amountValue]
 	}
 
+	// Prepare localized strings
 	data := PageResults{}
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
@@ -101,10 +105,12 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		data.LangPos = LANG_EN
 	}
 
+	// Finally, execute the template
 	Tools.SendChosenLanguage(response, lang)
 	Templates.ProcessHTML(`results`, response, data)
 }
 
+//GetProgressState returns the css class representing the progress.
 func (data PageResults) GetProgressState(influence int8) string {
 	if influence > 0 {
 		return ` progressitemdone`
@@ -115,14 +121,17 @@ func (data PageResults) GetProgressState(influence int8) string {
 	}
 }
 
+//GetProgressState returns the localized name of a product group by its index.
 func (data PageResults) GetGroupName(xmlIndex int) string {
 	return data.Groups[xmlIndex].GroupName.Names[data.LangPos].Text
 }
 
+//GetProgressState returns the localized string using the language id.
 func (data PageResults) Lang(strings []XML.String) string {
 	return strings[data.LangPos].Text
 }
 
+//GetProgressState returns localized string for a given answer by it's internal representation.
 func (data PageResults) FormatAnswer(answer string) string {
 	switch answer {
 	case `1`:
