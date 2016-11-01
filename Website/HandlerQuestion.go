@@ -102,7 +102,7 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 
 	//Store questionaire start time (time of first question)
 	if noQuestion == 1 {
-		answers := DB.LoadAnswers(readSession)
+		answers,_ := DB.LoadAnswers(readSession)
 		answers.StartTimeQ1 = time.Now().UTC()
 		DB.UpdateAnswers(answers)
 	}

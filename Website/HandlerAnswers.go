@@ -19,7 +19,7 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 	data := request.FormValue(`a`)
 	important := request.FormValue(`important`)
 	lang := request.FormValue(`lang`)
-	answers := DB.LoadAnswers(session)
+	answers, loadAnswersError := DB.LoadAnswers(session)
 	no := 0
 	weight := 1
 
@@ -28,9 +28,9 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	if len(session) != 36 {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, session)
-		response.WriteHeader(http.StatusNotFound)
+	// Check if session exists, otherwise redirect to start page
+	if loadAnswersError {
+		http.Redirect(response, request, `/start`, 302)
 		return
 	}
 
