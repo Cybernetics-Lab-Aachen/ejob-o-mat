@@ -4,12 +4,23 @@ services:
     build: .
     ports:
       - '80:40000'
-      - '50000:50000'
+      - '127.0.0.1:30011:50000'
+    restart: always
     environment:
-      dbHost: MY_MONGODB
-      dbPassword: MY_PASSWORD
+      dbHost: mongo
+      dbPassword: USER_PASS
       dbUser: Re4EEE
       projectName: Re4EEE
-    external_links:
-     - MY_MONGODB
-    network_mode: "bridge"
+    depends_on:
+      - mongo
+  mongo:
+    build: 'https://github.com/SommerEngineering/mongodb.git'
+    volumes:
+      - /data/db
+    restart: always
+    environment:
+      dbHost: some-mongo
+      rootPwd: ROOT_PASS
+      dataPwd: USER_PASS
+      dataUser: Re4EEE
+      dataName: Re4EEE
