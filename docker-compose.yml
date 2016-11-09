@@ -16,7 +16,7 @@ services:
   mongo:
     build: 'https://github.com/SommerEngineering/mongodb.git'
     volumes:
-      - /data/db
+      - 'mongodb:/data/db'
     restart: always
     environment:
       dbHost: some-mongo
@@ -24,3 +24,5 @@ services:
       dataPwd: USER_PASS
       dataUser: Re4EEE
       dataName: Re4EEE
+volumes:
+    mongodb: {}
