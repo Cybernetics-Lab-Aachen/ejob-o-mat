@@ -6,23 +6,27 @@ import (
 
 var (
 	// Version 2: Storing answer influence
+	// Increse this version counter every time the database layout changes
 	CURRENT_VERSION byte = 2
 )
 
-func (groups ProductGroups) Len() int {
+// ProductGroupsByPoints implements sort.Interface for []ProductGroup based on
+// the Points field.
+type ProductGroupsByPoints []ProductGroup
+
+func (groups ProductGroupsByPoints) Len() int {
 	return len(groups)
 }
 
-func (groups ProductGroups) Less(i, j int) bool {
+func (groups ProductGroupsByPoints) Less(i, j int) bool {
 	return groups[i].Points > groups[j].Points
 }
 
-func (groups ProductGroups) Swap(i, j int) {
+func (groups ProductGroupsByPoints) Swap(i, j int) {
 	groups[i], groups[j] = groups[j], groups[i]
 }
 
-type ProductGroups []ProductGroup
-
+//ProductGroup Stores the display data (points, recommendation percentage, etc.) for a product group.
 type ProductGroup struct {
 	Name             string          `bson:"Name"`
 	Points           int             `bson:"Points"`
@@ -31,6 +35,7 @@ type ProductGroup struct {
 	AnswerInfluences map[string]int8 `bson:"AnswerInfluences"`
 }
 
+//Recommendation stores the product group ranking calculated by the algorithm for the given answers.
 type Recommendation struct {
 	SchemeVersion byte           `bson:"Version"`
 	CreateTimeUTC time.Time      `bson:"CreateTimeUTC"`
@@ -38,6 +43,7 @@ type Recommendation struct {
 	ProductGroups []ProductGroup `bson:"ProductGroups"`
 }
 
+//Answers stores the answer, time and weight for each question.
 type Answers struct {
 	SchemeVersion byte      `bson:"Version"`
 	CreateTimeUTC time.Time `bson:"CreateTimeUTC"`
@@ -100,8 +106,11 @@ type Answers struct {
 	A16Weight byte `bson:"A16Weight"`
 	A17Weight byte `bson:"A17Weight"`
 	A18Weight byte `bson:"A18Weight"`
+
+	//TODO Replace heap of fields with array/map
 }
 
+//GetByInternalName returns the given answer to a question by its internal question name.
 func (answers Answers) GetByInternalName(name string) string {
 	switch name {
 	case `Question1`:

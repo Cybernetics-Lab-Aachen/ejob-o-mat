@@ -8,7 +8,7 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
-// Returns the answers for this session and whether an error occurred
+//LoadAnswers returns the answers for this session from db and whether an error occurred.
 func LoadAnswers(session string) (Scheme.Answers, bool) {
 	answers := Scheme.Answers{}
 
@@ -16,17 +16,18 @@ func LoadAnswers(session string) (Scheme.Answers, bool) {
 	dbSession, db := CustomerDB.DB()
 	defer dbSession.Close()
 
-	if db == nil {
+	if db == nil { // Database not found
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameDATABASE, `Was not able to get the customer database.`)
 		return answers, true
 	}
 
 	selector := bson.D{{"Session", session}}
-	ocollAnswers := db.C(collAnswers)
-	if err := ocollAnswers.Find(selector).One(&answers); err != nil {
+
+	// Select answers from db
+	if err := db.C(collAnswers).Find(selector).One(&answers); err != nil {
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameDATABASE, `Was not able to find this session in the database.`, session, err.Error())
 		return answers, true
 	}
 
-	return answers, false
+	return answers, false // Everything went ok
 }

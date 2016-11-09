@@ -7,16 +7,17 @@ import (
 	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 )
 
+//StoreFeedback stores feedback in the database
 func StoreFeedback(result Scheme.Feedback) {
 
 	dbSession, db := CustomerDB.DB()
 	defer dbSession.Close()
 
-	if db == nil {
+	if db == nil { // Database not found
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameDATABASE, `Was not able to get the customer database.`)
 		return
 	}
 
-	ocollFeedback := db.C(collFeedback)
-	ocollFeedback.Insert(result)
+	// Insert feedback
+	db.C(collFeedback).Insert(result)
 }

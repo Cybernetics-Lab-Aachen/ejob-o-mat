@@ -6,13 +6,14 @@ import (
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 )
 
+//initCollections initializes collection and ensures presencs of index keys.
 func initCollections() {
 
 	// Get the database:
 	dbSession, db := CustomerDB.DB()
 	defer dbSession.Close()
 
-	if db == nil {
+	if db == nil { // Database not found
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameDATABASE, `Was not able to get the customer database.`)
 		return
 	}

@@ -8,35 +8,36 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
+// StoreNewAnswers creates a new answers record for this session in the db.
 func StoreNewAnswers(ans Scheme.Answers) {
 
 	// Get the database:
 	dbSession, db := CustomerDB.DB()
 	defer dbSession.Close()
 
-	if db == nil {
+	if db == nil { // Database not found
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameDATABASE, `Was not able to get the customer database.`)
 		return
 	}
 
-	ocollAnswers := db.C(collAnswers)
-	ocollAnswers.Insert(ans)
+	// Insert answers
+	db.C(collAnswers).Insert(ans)
 }
 
+// StoreNewAnswers updates an existing answers record.
 func UpdateAnswers(ans Scheme.Answers) {
 
 	// Get the database:
 	dbSession, db := CustomerDB.DB()
 	defer dbSession.Close()
 
-	if db == nil {
+	if db == nil { // Database not found
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameDATABASE, `Was not able to get the customer database.`)
 		return
 	}
 
-	session := ans.Session
-	selector := bson.D{{"Session", session}}
+	selector := bson.D{{"Session", ans.Session}}
 
-	ocollAnswers := db.C(collAnswers)
-	ocollAnswers.Update(selector, ans)
+	// Update answers
+	db.C(collAnswers).Update(selector, ans)
 }

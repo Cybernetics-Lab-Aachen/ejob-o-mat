@@ -7,11 +7,14 @@ import (
 	"strconv"
 )
 
+//kindAmountAccesses calculates the influence of an answer given to a amount of accesses question.
 func kindAmountAccesses(answer, minString, maxString string) (diff int8) {
 
 	min := 1
 	max := 4
 	ans := 0
+
+	//Parse strings
 
 	if value, errValue := strconv.Atoi(minString); errValue != nil {
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityLow, LM.ImpactLow, LM.MessageNamePARSE, `Was not able to parse the min value for this product.`, fmt.Sprintf("Wrong value='%s'", minString))
@@ -37,6 +40,7 @@ func kindAmountAccesses(answer, minString, maxString string) (diff int8) {
 		ans = value
 	}
 
+	// Check if answer lies inside supported interval
 	if ans >= min && ans <= max {
 		diff = 1
 	} else {

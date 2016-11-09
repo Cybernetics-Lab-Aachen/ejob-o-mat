@@ -7,13 +7,13 @@ import (
 	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
-func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
+func ExecuteAnswers(answers Scheme.Answers) []Scheme.ProductGroup {
 
 	data := XML.GetData()
 
 	numProducts := len(data.ProductsCollection.Products)
 
-	groups := make(Scheme.ProductGroups, numProducts)
+	groups := make([]Scheme.ProductGroup, numProducts)
 
 	// Algorithm:
 	for n, productGroup := range data.ProductsCollection.Products {
@@ -21,6 +21,7 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 		groups[n].AnswerInfluences = make(map[string]int8)
 		influence := groups[n].AnswerInfluences
 
+		// Calculate influences of each answer
 		/*  1 */ influence["Question1"] = kindCommon(answers.A1Data, productGroup.SharedProperties.VideoContent) * int8(answers.A1Weight)
 		/*  2 */ influence["Question2"] = kindCommon(answers.A2Data, productGroup.SharedProperties.Tutoring) * int8(answers.A2Weight)
 		/*  3 */ influence["Question3"] = kindCommon(answers.A3Data, productGroup.SharedProperties.UserComments) * int8(answers.A3Weight)
@@ -41,35 +42,33 @@ func ExecuteAnswers(answers Scheme.Answers) (result Scheme.ProductGroups) {
 		/* 18 */ influence["Question18"] = kindCommon(answers.A18Data, productGroup.SharedProperties.TeachingTypeExplorative) * int8(answers.A18Weight)
 
 		//Total points
-		//for i := range influence[n] {
 		for _, v := range influence {
 			groups[n].Points += int(v)
 		}
 
 		groups[n].Name = productGroup.InternalName
-		groups[n].XMLIndex = n
+		groups[n].XMLIndex = n //TODO Use id/internal name instead of XMLIndex, as it might not be consistent when question are added or removed
 	}
 
 	//
 	// Re-align the results to respect the range from 0-100%:
 	//
-	sort.Sort(groups)
+	sort.Sort(Scheme.ProductGroupsByPoints(groups))
 	worstPoints := groups[len(groups)-1].Points
-	correctionPoints := worstPoints * -1
 	bestPointsNormal := float64(int(answers.A1Weight) + int(answers.A2Weight) + int(answers.A3Weight) + int(answers.A4Weight) + int(answers.A5Weight) + int(answers.A6Weight) + int(answers.A7Weight) + int(answers.A8Weight) + int(answers.A9Weight) + int(answers.A10Weight) + int(answers.A11Weight) + int(answers.A12Weight) + int(answers.A13Weight) + int(answers.A14Weight) + int(answers.A15Weight) + int(answers.A16Weight) + int(answers.A17Weight) + int(answers.A18Weight))
-	bestPointsCorrected := bestPointsNormal + float64(correctionPoints)
 
 	for n := range groups {
 		if worstPoints < 0 {
-			groups[n].Points += correctionPoints
-			result := (float64(groups[n].Points) / bestPointsCorrected) * 100.0
-			groups[n].Percent = int(result)
+			groups[n].Points -= worstPoints // Normalize points so that worst has zero points
+			// percent = (points - worst) / (maxPoints - worst) * 100
+			percent := float64(groups[n].Points) / (bestPointsNormal - float64(worstPoints)) * 100.0
+			groups[n].Percent = int(percent)
 		} else {
-			result := (float64(groups[n].Points) / bestPointsNormal) * 100.0
-			groups[n].Percent = int(result)
+			// percent = points / maxPoints * 100
+			percent := float64(groups[n].Points) / bestPointsNormal * 100.0
+			groups[n].Percent = int(percent)
 		}
 	}
 
-	result = groups //[0-6]
-	return
+	return groups
 }
