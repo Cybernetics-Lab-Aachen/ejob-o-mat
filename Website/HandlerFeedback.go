@@ -1,8 +1,6 @@
 package Website
 
 import (
-	"github.com/SommerEngineering/Ocean/Log"
-	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
 	"net/http"
@@ -11,27 +9,14 @@ import (
 
 //HandlerFeedback displays the feedback form
 func HandlerFeedback(response http.ResponseWriter, request *http.Request) {
-	readSession := request.FormValue(`session`)
 	lang := Tools.GetRequestLanguage(request)[0]
-	
+
 	// Prepare data for html template
 	data := PageFeedback{}
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
+	data.Basis.Session = request.FormValue(`session`) // Not validation session here, just passign it on for storing
 	data.SourceLocation = request.Referer()
-
-	if readSession != `` && len(readSession) != 36 {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, readSession)
-		response.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	// Create session if neccessary
-	if readSession != `` {
-		data.Basis.Session = readSession
-	} else {
-		data.Basis.Session = Tools.RandomGUID()
-	}
 
 	//Prepare localized strings
 	if strings.Contains(lang.Language, `de`) {

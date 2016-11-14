@@ -1,8 +1,6 @@
 package Website
 
 import (
-	"github.com/SommerEngineering/Ocean/Log"
-	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
 	"net/http"
@@ -11,23 +9,11 @@ import (
 
 //HandlerImpressum displays the impressum.
 func HandlerImpressum(response http.ResponseWriter, request *http.Request) {
-	readSession := request.FormValue(`session`)
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageImpressum{}
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
-
-	if readSession != `` && len(readSession) != 36 {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, readSession)
-		response.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	if readSession != `` {
-		data.Basis.Session = readSession
-	} else {
-		data.Basis.Session = Tools.RandomGUID()
-	}
+	data.Basis.Session = request.FormValue(`session`) // No session validation neccessary, as session is not used here except for passing it on.
 
 	if strings.Contains(lang.Language, `de`) {
 		data.Basis.Name = NAME_DE

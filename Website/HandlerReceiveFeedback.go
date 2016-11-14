@@ -12,7 +12,7 @@ import (
 
 //HandlerImpressum stores the feedback and redirects back to where the user came from.
 func HandlerReceiveFeedback(response http.ResponseWriter, request *http.Request) {
-	session := request.FormValue(`session`)
+	session := request.FormValue(`session`) // Not validating sesion here, just storing it
 	text := request.FormValue(`text`)
 	sourceLocation := request.FormValue(`sourceLocation`)
 	ratingRAW := request.FormValue(`rating`)
@@ -25,18 +25,8 @@ func HandlerReceiveFeedback(response http.ResponseWriter, request *http.Request)
 		return
 	}
 
-	if len(session) != 36 {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, session)
-		response.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	if len(sourceLocation) == 0 || len(sourceLocation) > 1024 {
-		response.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	if !strings.HasPrefix(sourceLocation, `http://`) {
+	//Validate sourceLocation
+	if len(sourceLocation) == 0 || len(sourceLocation) > 1024 || !strings.HasPrefix(sourceLocation, `http://`) {
 		response.WriteHeader(http.StatusNotFound)
 		return
 	}
