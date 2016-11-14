@@ -4,6 +4,10 @@
 echo "Try to write the configuration file:"
 ./setConfiguration.sh
 
+# Configure the customerDB and loggingDB:
+echo "Try to configure the customerDB and loggingDB:"
+./configureCustomerDB.sh
+
 # Try to upload the static data:
 echo "Try to upload the static files in to the database:"
 ./uploadStaticData.sh

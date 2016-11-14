@@ -1,6 +1,7 @@
 package Website
 
 import (
+	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Ocean/Templates"
@@ -70,6 +71,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = session
+	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
 	data.Groups = groups.ProductsCollection.Products
 	data.Questions = groups.QuestionsCollection.Questions
 	data.Recommendation = resultSet

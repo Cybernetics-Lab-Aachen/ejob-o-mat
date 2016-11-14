@@ -11,6 +11,7 @@ services:
       dbPassword: USER_PASS
       dbUser: Re4EEE
       projectName: Re4EEE
+      SITE_VERIFICATION_TOKEN: 'SITE_VERIFICATION_TOKEN'
     depends_on:
       - mongo
   mongo:

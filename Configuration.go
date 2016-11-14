@@ -10,4 +10,5 @@ func registerAllAppConfigurationParameters() {
 	defer Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameSTARTUP, `Register now all app configuration parameters done.`)
 
 	ConfigurationDB.CheckSingleConfigurationPresentsAndAddIfMissing(`BetaPassword`, `ELLI`)
+	ConfigurationDB.CheckSingleConfigurationPresentsAndAddIfMissing(`SiteVerificationToken`, `ELLI`)
 }

@@ -6,11 +6,12 @@ import (
 )
 
 type Basis struct {
-	Name    string
-	Version string
-	Lang    string
-	Logo    string
-	Session string
+	Name                  string
+	Version               string
+	Lang                  string
+	Logo                  string
+	Session               string
+	SiteVerificationToken string
 }
 
 type PagePassword struct {

@@ -1,6 +1,7 @@
 package Website
 
 import (
+	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
 	"net/http"
@@ -14,6 +15,7 @@ func HandlerImpressum(response http.ResponseWriter, request *http.Request) {
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = request.FormValue(`session`) // No session validation neccessary, as session is not used here except for passing it on.
+	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
 
 	if strings.Contains(lang.Language, `de`) {
 		data.Basis.Name = NAME_DE

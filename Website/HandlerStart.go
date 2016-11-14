@@ -2,6 +2,7 @@ package Website
 
 import (
 	"fmt"
+	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
 	"github.com/SommerEngineering/Re4EEE/DB"
@@ -18,6 +19,7 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	data := PageStart{}
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
+	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
 
 	// Check if sesion is valid
 	if readSession != `` {

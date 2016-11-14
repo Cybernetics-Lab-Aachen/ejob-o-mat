@@ -1,6 +1,7 @@
 package Website
 
 import (
+	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
 	"net/http"
@@ -16,6 +17,7 @@ func HandlerFeedback(response http.ResponseWriter, request *http.Request) {
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = request.FormValue(`session`) // Not validation session here, just passign it on for storing
+	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
 	data.SourceLocation = request.Referer()
 
 	//Prepare localized strings

@@ -7,6 +7,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Ocean/Templates"
@@ -43,6 +44,7 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	data := PageQuestion{}
 	data.Basis.Session = readSession
 	data.Basis.Version = VERSION
+	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
 
 	//Read question number
 	data.Progress = noQuestion
