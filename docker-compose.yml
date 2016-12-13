@@ -4,7 +4,7 @@ services:
     build: .
     ports:
       - '80:40000'
-      - '127.0.0.1:30011:50000'
+      - '127.0.0.1:50000:50000'
     restart: always
     environment:
       dbHost: mongo
