@@ -1,0 +1,111 @@
+{{define "question"}}
+<!DOCTYPE html>
+<!-- This site was created in Webflow. http://www.webflow.com-->
+<!-- Last Published: Wed Apr 22 2015 10:58:09 GMT+0000 (UTC) -->
+<html data-wf-site="531b6f81d93d2b40520007fd" data-wf-page="545f1da270c9479e25495333">
+<head>
+  <meta charset="utf-8">
+  <title>{{.Basis.Name}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <meta name="google-site-verification" content="{{.Basis.SiteVerificationToken}}">
+  <style>
+    @font-face { font-family: 'Open Sans', sans-serif; font-weight: 700; font-style: normal; src: url('/staticFiles/fonts/OpenSans-Bold.ttf'); }
+    @font-face { font-family: 'Open Sans', sans-serif; font-weight: 400; font-style: normal; src: url('/staticFiles/fonts/OpenSans-Regular.ttf'); } 
+    @font-face { font-family: 'Open Sans', sans-serif; font-weight: 700; font-style: italic; src: url('/staticFiles/fonts/OpenSans-BoldItalic.ttf'); }
+    @font-face { font-family: 'Open Sans', sans-serif; font-weight: 400; font-style: italic; src: url('/staticFiles/fonts/OpenSans-Italic.ttf'); } 
+    @font-face { font-family: 'Open Sans', sans-serif; src: url('/staticFiles/fonts/OpenSans-Regular.ttf'); } 
+  </style>
+  <link rel="stylesheet" type="text/css" href="/staticFiles/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/staticFiles/css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="/staticFiles/css/re4eee.webflow.css">
+  <script type="text/javascript" src="/staticFiles/js/modernizr.js"></script>
+</head>
+<body>
+  <div class="w-row">
+    <div class="w-col w-col-2 w-col-stack w-hidden-medium w-hidden-small w-hidden-tiny"></div>
+    <div class="w-col w-col-8 w-col-stack">
+      <div class="w-container qcontainer">
+        <div class="w-hidden-main mobilelogocontainer">
+          <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}"><img src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
+        </div>
+        <div class="headerbox">
+          <div class="headerboxsubtitlecontainer">
+            <h1 class="headerboxsubtitle">{{.Basis.Name}}</h1>
+          </div>
+          <div class="line"></div>
+          <div class="headerboxtitlecontainer">
+            <h1 class="headerboxtitle">{{.TextQuestion}} {{.NoQuestion}}/{{.NoQuestions}}: {{.TextQuestionTopic}}</h1>
+          </div>
+        </div>
+        <p class="textbox">{{.TextQuestionBody}}</p>
+        <div class="progressbox">
+          <div class="progressitem progressitemfirst{{.GetProgressState 1}}"></div>
+          <div class="progressitem{{.GetProgressState 2}}"></div>
+          <div class="progressitem{{.GetProgressState 3}}"></div>
+          <div class="progressitem{{.GetProgressState 4}}"></div>
+          <div class="progressitem{{.GetProgressState 5}}"></div>
+          <div class="progressitem{{.GetProgressState 6}}"></div>
+          <div class="progressitem{{.GetProgressState 7}}"></div>
+          <div class="progressitem{{.GetProgressState 8}}"></div>
+          <div class="progressitem{{.GetProgressState 9}}"></div>
+          <div class="progressitem{{.GetProgressState 10}}"></div>
+          <div class="progressitem{{.GetProgressState 11}}"></div>
+          <div class="progressitem{{.GetProgressState 12}}"></div>
+          <div class="progressitem{{.GetProgressState 13}}"></div>
+          <div class="progressitem{{.GetProgressState 14}}"></div>
+          <div class="progressitem{{.GetProgressState 15}}"></div>
+          <div class="progressitem{{.GetProgressState 16}}"></div>
+          <div class="progressitem{{.GetProgressState 17}}"></div>
+          <div class="progressitem{{.GetProgressState 18}}"></div>
+        </div>
+        <div class="infobox">
+          <div class="infoboxheader">{{.QuestionInfoHeader}}</div>
+          <p class="infoboxtext">{{.QuestionInfoText}}</p>
+          <a class="button infoboxclose" href="#" data-ix="hideinfo">{{.QuestionInfoClose}}</a>
+        </div>
+        <div class="w-form">
+          <form id="answer" name="answer" data-name="answer" method="post" action="/answer">
+            <input type="hidden" name="lang" value="{{.Basis.Lang}}">
+            <input type="hidden" name="session" value="{{.Basis.Session}}">
+            <input type="hidden" name="no" value="{{.NoQuestion}}">
+            <div class="divbuttons">
+              {{range .Buttons}}
+                <button class="button buttonhuge" type="submit" name="a" value="{{.Data}}">{{.Text}}</button>
+              {{end}}
+            </div>
+            <div class="optionbox">
+              <a class="button buttonsymbol{{.ButtonBackStatus}}" href="/question{{.PreNoQuestion}}?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&lt;</a> <a class="button buttonsymbol{{.ButtonInfoStatus}}" href="#" data-ix="showinfo">?</a>
+              <div class="importantbox">
+                <div class="w-checkbox w-clearfix importantelement">
+                  <input class="w-checkbox-input checkbox" id="important" type="checkbox" name="important" data-name="important" value="important">
+                  <label class="w-form-label checkboxtext" for="important">{{.TextImportant}}</label>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="w-form-done"></div>
+          <div class="w-form-fail"></div>
+        </div>
+        <div class="w-container containerlogo">
+          <img src="/staticFiles/images/footer.png">
+        </div>
+      </div>
+    </div>
+    <div class="w-col w-col-2 w-col-stack">
+      <div class="rightcolumncontainer">
+        <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}"><img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif"></a>
+        <div>
+          <a href="http://www.elearn-o-mat.net/question{{.NoQuestion}}?lang=de&session={{.Basis.Session}}"><img class="flag" src="/staticFiles/images/flagDE.gif"></a>
+          <a href="http://www.elearning-finder.net/question{{.NoQuestion}}?lang=en&session={{.Basis.Session}}"><img class="flag lastflag" src="/staticFiles/images/flagUK.gif"></a>
+        </div>
+        <a class="button buttonsmall" href="/feedback?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&nbsp;&nbsp;Feedback&nbsp;&nbsp;</a>
+        <a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}&session={{.Basis.Session}}">Impressum</a>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/framework/jQuery/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="/staticFiles/js/webflow.js"></script>
+</body>
+</html>
+{{end}}

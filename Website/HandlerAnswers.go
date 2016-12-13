@@ -13,37 +13,36 @@ import (
 	"time"
 )
 
+//HandlerAnswer stores the given answer and redirects to the next question or results page.
 func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 	noText := request.FormValue(`no`)
 	session := request.FormValue(`session`)
 	data := request.FormValue(`a`)
 	important := request.FormValue(`important`)
 	lang := request.FormValue(`lang`)
-	answers := DB.LoadAnswers(session)
+	answers, loadAnswersError := DB.LoadAnswers(session)
 	no := 0
 	weight := 1
 
-	if len(lang) > 6 {
+	//Validate input
+	if len(lang) > 6 || len(noText) > 2 || len(data) > 16 {
 		response.WriteHeader(http.StatusNotFound)
 		return
 	}
 
-	if len(session) != 36 {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, session)
-		response.WriteHeader(http.StatusNotFound)
+	// Check if session exists, otherwise redirect to start page
+	if loadAnswersError {
+		http.Redirect(response, request, `/start`, 302)
 		return
 	}
 
-	if len(noText) > 2 {
-		response.WriteHeader(http.StatusNotFound)
+	//Check for old session. Can't work with outdated data.
+	if answers.SchemeVersion < Scheme.CURRENT_VERSION {
+		http.Redirect(response, request, `/start`, 302)
 		return
 	}
 
-	if len(data) > 16 {
-		response.WriteHeader(http.StatusNotFound)
-		return
-	}
-
+	//Check if question is marked as important
 	if important == `important` {
 		weight = 2
 	}
@@ -70,12 +69,14 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 	}
 
 	if no+1 > TOTAL_QUESTIONS {
+		// Last questions already answered
 		http.Redirect(response, request, fmt.Sprintf("/results?lang=%s&session=%s&amount=6", lang, session), 302)
 	} else {
 		http.Redirect(response, request, fmt.Sprintf("/question%d?lang=%s&session=%s", (no+1), lang, session), 302)
 	}
 }
 
+//HandlerVRAnswers stores all answers at once and displays the recommendations.
 func HandlerVRAnswers(response http.ResponseWriter, request *http.Request) {
 	session := request.FormValue(`session`)
 	creationTimeUTC := request.FormValue(`creationTimeUTC`)

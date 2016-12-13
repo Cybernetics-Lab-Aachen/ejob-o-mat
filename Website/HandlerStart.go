@@ -1,8 +1,8 @@
 package Website
 
 import (
-	"github.com/SommerEngineering/Ocean/Log"
-	LM "github.com/SommerEngineering/Ocean/Log/Meta"
+	"fmt"
+	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
 	"github.com/SommerEngineering/Re4EEE/DB"
@@ -12,28 +12,38 @@ import (
 	"time"
 )
 
+//HandlerStart displays the start page
 func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	readSession := request.FormValue(`session`)
 	lang := Tools.GetRequestLanguage(request)[0]
 	data := PageStart{}
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
+	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
 
-	if readSession != `` && len(readSession) != 36 {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, readSession)
-		response.WriteHeader(http.StatusNotFound)
-		return
+	// Check if sesion is valid
+	if readSession != `` {
+		answers, loadAnswersError := DB.LoadAnswers(readSession)
+		if loadAnswersError || !answers.StartTimeQ1.IsZero() { // Session doesn't exist or questionnaire was already started
+			readSession = `` // Forfeit session
+		}
 	}
 
+	//Check if a session exists
 	if readSession != `` {
 		data.Basis.Session = readSession
 	} else {
+		//Create new session
 		data.Basis.Session = Tools.RandomGUID()
 		answers := Scheme.Answers{}
 		answers.SchemeVersion = Scheme.CURRENT_VERSION
 		answers.Session = data.Basis.Session
 		answers.CreateTimeUTC = time.Now().UTC()
 		DB.StoreNewAnswers(answers)
+
+		//Redirect so created session shows up in address bar
+		http.Redirect(response, request, fmt.Sprintf(`/start?lang=%s&session=%s`, data.Basis.Lang, data.Basis.Session), 302)
+		return
 	}
 
 	if strings.Contains(lang.Language, `de`) {

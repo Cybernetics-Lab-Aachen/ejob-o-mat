@@ -1,6 +1,7 @@
 package Algorithm
 
-func kindCommon(answer, productValue string) (diff int) {
+//kindCommon calculates the influence of an answer given to a yes/no question.
+func kindCommon(answer, productValue string) (diff int8) {
 
 	switch ans := answer; ans {
 	case `0`:

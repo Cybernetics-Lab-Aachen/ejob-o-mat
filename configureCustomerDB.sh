@@ -36,4 +36,7 @@ mongo Re4EEE --host ${dbHost} --username ${dbUser} --password ${dbPassword} --ev
 mongo Re4EEE --host ${dbHost} --username ${dbUser} --password ${dbPassword} --eval "db.Configuration.update({Name: 'LogUseConsoleLogging'},{\$set: {Value: 'true'}});"
 mongo Re4EEE --host ${dbHost} --username ${dbUser} --password ${dbPassword} --eval "db.Configuration.update({Name: 'LogUseDatabaseLogging'},{\$set: {Value: 'true'}});"
 
+# Configure site verification token:
+mongo Re4EEE --host ${dbHost} --username ${dbUser} --password ${dbPassword} --eval "db.Configuration.update({Name: 'SiteVerificationToken'},{\$set: {Value: '${SITE_VERIFICATION_TOKEN}'}});"
+
 echo "Configure the customerDB and loggingDB... done."

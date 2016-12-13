@@ -7,29 +7,24 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
-func CheckRecommendation(session string) (existing bool) {
+// CheckRecommendation returns whether recommendation already exists in database.
+func CheckRecommendation(session string) bool {
 
 	dbSession, db := CustomerDB.DB()
 	defer dbSession.Close()
 
-	if db == nil {
+	if db == nil { // Database not found
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameDATABASE, `Was not able to get the customer database.`)
-		return
+		return false
 	}
 
 	selector := bson.D{{"Session", session}}
-	ocollRecommendations := db.C(collRecommendations)
 
-	if n, errN := ocollRecommendations.Find(selector).Count(); errN != nil {
+	// Select number of recommendations
+	if n, errN := db.C(collRecommendations).Find(selector).Count(); errN != nil {
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameDATABASE, `Was not able to check the recommendations.`, errN.Error())
-		existing = false
+		return false
 	} else {
-		if n > 0 {
-			existing = true
-		} else {
-			existing = false
-		}
+		return n > 0 // whether there is a recommendation
 	}
-
-	return
 }

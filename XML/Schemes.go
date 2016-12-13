@@ -79,6 +79,93 @@ type ProductsGroup struct {
 }
 
 type Data struct {
-	XMLName            xml.Name      `xml:"xml"`
-	ProductsCollection ProductsGroup ``
+	XMLName             xml.Name        `xml:"xml"`
+	ProductsCollection  ProductsGroup   ``
+	QuestionsCollection QuestionsGroup  `xml:"QuestionsGroup"`
+	QuestionStrings     QuestionStrings `xml:"QuestionStrings"`
+	ResultStrings       ResultStrings   `xml:"ResultStrings"`
+}
+
+type QuestionsGroup struct {
+	XMLName   xml.Name        `xml:"QuestionsGroup"`
+	Questions []QuestionGroup `xml:"QuestionGroup"`
+}
+
+type QuestionGroup struct {
+	XMLName        xml.Name         `xml:"QuestionGroup"`
+	InternalName   string           `xml:"internalName,attr"`
+	Topics         []Topic          `xml:"Topic"`
+	QuestionBodies []QuestionBody   `xml:"QuestionBody"`
+	Hints          []QuestionHint   `xml:"Hint"`
+	Buttons        []QuestionButton `xml:"Button"`
+}
+
+type Topic struct {
+	XMLName  xml.Name `xml:"Topic"`
+	Language string   `xml:"language,attr"`
+	Text     string   `xml:"text,attr"`
+}
+
+type QuestionBody struct {
+	XMLName  xml.Name `xml:"QuestionBody"`
+	Language string   `xml:"language,attr"`
+	Text     string   `xml:",chardata"`
+}
+
+type QuestionHint struct {
+	XMLName  xml.Name `xml:"Hint"`
+	Language string   `xml:"language,attr"`
+	Text     string   `xml:",chardata"`
+}
+
+type QuestionButton struct {
+	XMLName xml.Name     `xml:"Button"`
+	Data    string       `xml:"data,attr"`
+	Texts   []TextButton `xml:"TextButton"`
+}
+
+type TextButton struct {
+	XMLName  xml.Name `xml:"TextButton"`
+	Language string   `xml:"language,attr"`
+	Text     string   `xml:"text,attr"`
+}
+
+type QuestionStrings struct {
+	XMLName            xml.Name `xml:"QuestionStrings"`
+	TextBackButton     []String `xml:"TextBackButton>String"`
+	TextImportant      []String `xml:"TextImportant>String"`
+	TextQuestion       []String `xml:"TextQuestion>String"`
+	QuestionInfoHeader []String `xml:"QuestionInfoHeader>String"`
+	QuestionInfoClose  []String `xml:"QuestionInfoClose>String"`
+}
+
+type ResultStrings struct {
+	XMLName              xml.Name `xml:"ResultStrings"`
+	GoodInfluence        []String `xml:"GoodInfluence>String"`
+	BadInfluence         []String `xml:"BadInfluence>String"`
+	TextHeader1          []String `xml:"TextHeader1>String"`
+	TextHeader2          []String `xml:"TextHeader2>String"`
+	TextHeader3          []String `xml:"TextHeader3>String"`
+	TextHeaderPrefix     []String `xml:"TextHeaderPrefix>String"`
+	TextMatch            []String `xml:"TextMatch>String"`
+	TextGroup            []String `xml:"TextGroup>String"`
+	TextExamples         []String `xml:"TextExamples>String"`
+	TextRestart          []String `xml:"TextRestart>String"`
+	TextOptionen         []String `xml:"TextOptionen>String"`
+	TextResults          []String `xml:"TextResults>String"`
+	AnswerYes            []String `xml:"AnswerYes>String"`
+	AnswerNo             []String `xml:"AnswerNo>String"`
+	AnswerSkipped        []String `xml:"AnswerSkipped>String"`
+	AnswerSupportLecture []String `xml:"AnswerSupportLecture>String"`
+	AnswerReplaceLecture []String `xml:"AnswerReplaceLecture>String"`
+	AnswerStudentCount1  []String `xml:"AnswerStudentCount1>String"`
+	AnswerStudentCount2  []String `xml:"AnswerStudentCount2>String"`
+	AnswerStudentCount3  []String `xml:"AnswerStudentCount3>String"`
+	AnswerStudentCount4  []String `xml:"AnswerStudentCount4>String"`
+}
+
+type String struct {
+	XMLName  xml.Name `xml:"String"`
+	Language string   `xml:"language,attr"`
+	Text     string   `xml:",chardata"`
 }

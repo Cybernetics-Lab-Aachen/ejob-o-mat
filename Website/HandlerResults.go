@@ -1,6 +1,7 @@
 package Website
 
 import (
+	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Ocean/Templates"
@@ -15,31 +16,36 @@ import (
 	"time"
 )
 
+//HandlerStart displays the results of the questionnaire
 func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	session := request.FormValue(`session`)
 	amountText := request.FormValue(`amount`)
 	lang := Tools.GetRequestLanguage(request)[0]
-	answers := DB.LoadAnswers(session)
+	answers, loadAnswersError := DB.LoadAnswers(session)
 	groups := XML.GetData()
 	amountValue := -1
 	resultSet := Scheme.Recommendation{}
 
-	if len(session) != 36 {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, session)
-		response.WriteHeader(http.StatusNotFound)
+	// Check if session exists, otherwise redirect to start page
+	if loadAnswersError {
+		http.Redirect(response, request, `/start`, 302)
 		return
 	}
 
+	// Validate input
 	if amountText != `` && len(amountText) > 2 {
 		response.WriteHeader(http.StatusNotFound)
 		return
 	}
+	if value, errConv := strconv.Atoi(amountText); errConv != nil {
+		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameREQUEST, `Cannot read the amount value!`, amountText, errConv.Error())
+	} else {
+		amountValue = value
+	}
 
+	// Load/calculate recommendations
 	if !DB.CheckRecommendation(session) {
-
-		assessedGroups := Algorithm.ExecuteAnswers(answers)
-
-		resultSet.ProductGroups = assessedGroups
+		resultSet.ProductGroups = Algorithm.ExecuteAnswers(answers)
 		resultSet.CreateTimeUTC = time.Now().UTC()
 		resultSet.Session = session
 		resultSet.SchemeVersion = Scheme.CURRENT_VERSION
@@ -47,25 +53,31 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 
 	} else {
 		resultSet = DB.LoadRecommendation(session)
+
+		// Check for old session. Can't work with outdated data.
+		if resultSet.SchemeVersion < Scheme.CURRENT_VERSION {
+			http.Redirect(response, request, `/start`, 302)
+			return
+		}
 	}
 
-	if value, errConv := strconv.Atoi(amountText); errConv != nil {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameREQUEST, `Cannot read the amount value!`, amountText, errConv.Error())
-	} else {
-		amountValue = value
-	}
-
+	// Reduce number of shown product groups, if requested
 	if amountValue >= 1 {
 		resultSet.ProductGroups = resultSet.ProductGroups[0:amountValue]
 	}
 
+	// Prepare localized strings
 	data := PageResults{}
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = session
+	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
 	data.Groups = groups.ProductsCollection.Products
+	data.Questions = groups.QuestionsCollection.Questions
 	data.Recommendation = resultSet
 	data.AmountCurrent = amountValue
+	data.Strings = groups.ResultStrings
+	data.Answers = answers
 
 	if strings.Contains(lang.Language, `de`) {
 
@@ -79,31 +91,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 
 		data.Basis.Name = NAME_DE
 		data.Basis.Logo = LOGO_DE
-		data.LangPos = 0
-		data.TextResults = `Ergebnisse`
-		data.TextMatch = `Übereinstimmung mit Ihren Antworten`
-		data.TextGroup = `Format`
-		data.TextExamples = `Beispiele für`
-		data.TextOptionen = `Optionen`
-		data.TextHeaderPrefix = `Ihre E-Learning-Empfehlung`
-		data.TextRestart = `Den Fragebogen erneut starten`
-
-		data.TextHeader1 = `Unten sehen Sie eine Empfehlung für verschiedene Gruppen von E-Learning-Systemen, basierend auf
-		Ihren Antworten. Bitte wählen Sie eine Gruppe, um Beispiele sehen zu können. Zunächst sehen Sie nur die Top Sechs
-		aller E-Learning-Gruppen: Mit der nachfolgenden Schaltfläche (siehe Optionen) können Sie auch alle
-		Gruppenergebnisse einsehen.`
-
-		data.TextHeader2 = `Bitte beachten Sie, dass nur Beispiele in den Gruppen dargestellt werden. Die Aufzählung hat keinen
-		Anspruch auf Vollständigkeit. Möglicherweise existiert in Ihrer Hochschule eine E-Learning-Strategie: Bitte erkundigen
-		Sie sich, inwieweit Sie die hier vorgeschlagenen Formate einsetzen können und dürfen. Einige der aufgeführten Formate
-		benutzen "die Cloud". Das bedeutet, dass sie Dienste von Dritten einsetzen. Bitte halten Sie aus diesen Gründen
-		Rücksprache mit Ihrem Datenschutzbeauftragten, der Sie zu diesen Themen beraten kann.`
-
-		data.TextHeader3 = `Einige der hier vorgestellten Formate sind kostenpflichtig, andere Formate sind dagegen ohne Kosten
-		frei erhältlich. Für viele kostenpflichtige Formate können kostenlose Alternativen gefunden werden. Bei dem Einsatz
-		einiger Formate können Folgekosten entstehen. Beachten Sie außerdem, dass die Studierenden in einigen Formaten anonym
-		auftreten können. Sollten Sie dies nicht wünschen, prüfen Sie bitte geeignete Gegenmaßnahmen.`
-
+		data.LangPos = LANG_DE
 	} else {
 
 		if amountValue > 0 {
@@ -116,30 +104,58 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 
 		data.Basis.Name = NAME_EN
 		data.Basis.Logo = LOGO_UK
-		data.LangPos = 1
-		data.TextResults = `Results`
-		data.TextMatch = `match with your answers`
-		data.TextGroup = `Format`
-		data.TextOptionen = `Options`
-		data.TextExamples = `Examples for`
-		data.TextHeaderPrefix = `Your E-Learning Recommendation`
-		data.TextRestart = `Restart the questionnaire`
-		data.TextHeader1 = `Below you can find your e-learning recommendation, based on your answers. Please
-		choose a group to view the respective examples. Initially, just the top six groups are visible. With
-		the options below, you can access the results of all groups.`
-
-		data.TextHeader2 = `Please consider that the examples below are only a restricted amount and not a
-		complete listing of results. It is possible that your university provides an e-learning strategy:
-		Please make sure that you can use the given formats. Some formats are using cloud services. Please
-		consider the privacy policy of your university to ensure that you can use these formats. Several
-		formats are only available at a charge; others are free. Please enquire information about possible
-		fees at your institution and consider that also products free of charge can be linked to other costs.
-		Finally, it is possible that the format of choice treats students anonymously. If this is not wanted,
-		please consider countermeasures.`
-
-		data.TextHeader3 = ``
+		data.LangPos = LANG_EN
 	}
 
+	// Finally, execute the template
 	Tools.SendChosenLanguage(response, lang)
 	Templates.ProcessHTML(`results`, response, data)
+}
+
+//GetProgressState returns the css class representing the progress.
+func (data PageResults) GetProgressState(influence int8) string {
+	if influence > 0 {
+		return ` progressitemdone`
+	} else if influence < 0 {
+		return ` progressitemundone`
+	} else {
+		return ``
+	}
+}
+
+//GetProgressState returns the localized name of a product group by its index.
+func (data PageResults) GetGroupName(xmlIndex int) string {
+	return data.Groups[xmlIndex].GroupName.Names[data.LangPos].Text
+}
+
+//GetProgressState returns the localized string using the language id.
+func (data PageResults) Lang(strings []XML.String) string {
+	return strings[data.LangPos].Text
+}
+
+//GetProgressState returns localized string for a given answer by it's internal representation.
+func (data PageResults) FormatAnswer(answer string) string {
+	switch answer {
+	case `1`:
+		return data.Lang(data.Strings.AnswerYes)
+	case `0`:
+		return data.Lang(data.Strings.AnswerNo)
+	case `*`:
+		return data.Lang(data.Strings.AnswerSkipped)
+	case `studentCount1`:
+		return data.Lang(data.Strings.AnswerStudentCount1)
+	case `studentCount2`:
+		return data.Lang(data.Strings.AnswerStudentCount2)
+	case `studentCount3`:
+		return data.Lang(data.Strings.AnswerStudentCount3)
+	case `studentCount4`:
+		return data.Lang(data.Strings.AnswerStudentCount4)
+	case `support4lecture`:
+		return data.Lang(data.Strings.AnswerSupportLecture)
+	case `replace`:
+		return data.Lang(data.Strings.AnswerReplaceLecture)
+	}
+
+	Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameREQUEST, `Unknown answer!`, answer)
+	return ``
 }

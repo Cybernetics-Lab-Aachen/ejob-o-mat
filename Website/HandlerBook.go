@@ -10,6 +10,7 @@ import (
 	"net/http"
 )
 
+//HandlerBook sends Data.xml file.
 func HandlerBook(response http.ResponseWriter, request *http.Request) {
 
 	Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameREQUEST, `Someone has requested the whole data source.`, request.RemoteAddr)

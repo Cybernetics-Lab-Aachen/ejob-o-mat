@@ -6,11 +6,12 @@ import (
 )
 
 type Basis struct {
-	Name    string
-	Version string
-	Lang    string
-	Logo    string
-	Session string
+	Name                  string
+	Version               string
+	Lang                  string
+	Logo                  string
+	Session               string
+	SiteVerificationToken string
 }
 
 type PagePassword struct {
@@ -44,23 +45,16 @@ type PageImpressum struct {
 }
 
 type PageResults struct {
-	Basis            Basis
-	LangPos          int
-	AmountCurrent    int
-	AmountToggle     int
-	Groups           []XML.ProductGroup
-	Recommendation   Scheme.Recommendation
-	TextHeader1      string
-	TextHeader2      string
-	TextHeader3      string
-	TextHeaderPrefix string
-	TextMatch        string
-	TextGroup        string
-	TextExamples     string
-	TextRestart      string
-	TextAllGroups    string
-	TextOptionen     string
-	TextResults      string
+	Basis          Basis
+	LangPos        int
+	AmountCurrent  int
+	AmountToggle   int
+	Groups         []XML.ProductGroup
+	Questions      []XML.QuestionGroup
+	Recommendation Scheme.Recommendation
+	TextAllGroups  string
+	Strings        XML.ResultStrings
+	Answers        Scheme.Answers
 }
 
 type PageQuestion struct {
@@ -75,23 +69,14 @@ type PageQuestion struct {
 	QuestionInfoClose  string
 	TextQuestionTopic  string
 	TextQuestionBody   string
-	TextButton1        string
-	TextButton2        string
-	TextButton3        string
-	TextButton4        string
-	TextButton5        string
 	TextBackButton     string
 	TextImportant      string
-	Button1Status      string
-	Button2Status      string
-	Button3Status      string
-	Button4Status      string
-	Button5Status      string
 	ButtonBackStatus   string
 	ButtonInfoStatus   string
-	Button1Data        string
-	Button2Data        string
-	Button3Data        string
-	Button4Data        string
-	Button5Data        string
+	Buttons            []PageQuestionButton
+}
+
+type PageQuestionButton struct {
+	Text string
+	Data string
 }

@@ -1,34 +1,26 @@
 package Website
 
 import (
-	"github.com/SommerEngineering/Ocean/Log"
-	LM "github.com/SommerEngineering/Ocean/Log/Meta"
+	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
 	"net/http"
 	"strings"
 )
 
+//HandlerFeedback displays the feedback form
 func HandlerFeedback(response http.ResponseWriter, request *http.Request) {
-	readSession := request.FormValue(`session`)
 	lang := Tools.GetRequestLanguage(request)[0]
+
+	// Prepare data for html template
 	data := PageFeedback{}
 	data.Basis.Version = VERSION
 	data.Basis.Lang = lang.Language
+	data.Basis.Session = request.FormValue(`session`) // Not validation session here, just passign it on for storing
+	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
 	data.SourceLocation = request.Referer()
 
-	if readSession != `` && len(readSession) != 36 {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, readSession)
-		response.WriteHeader(http.StatusNotFound)
-		return
-	}
-
-	if readSession != `` {
-		data.Basis.Session = readSession
-	} else {
-		data.Basis.Session = Tools.RandomGUID()
-	}
-
+	//Prepare localized strings
 	if strings.Contains(lang.Language, `de`) {
 		data.Basis.Name = NAME_DE
 		data.Basis.Logo = LOGO_DE
@@ -49,6 +41,7 @@ func HandlerFeedback(response http.ResponseWriter, request *http.Request) {
 		data.TextFeedback = `Here you have the possibility to provide feedback for us. We are very interested on your opinion about the ` + NAME_EN_PLAIN + `. Thank you very much for your support and using of the ` + NAME_EN_PLAIN + `.`
 	}
 
+	// Execute the template
 	Tools.SendChosenLanguage(response, lang)
 	Templates.ProcessHTML(`feedback`, response, data)
 }

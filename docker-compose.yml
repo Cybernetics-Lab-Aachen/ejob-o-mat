@@ -1,0 +1,29 @@
+version: '2'
+services:
+  re4eee:
+    build: .
+    ports:
+      - '80:40000'
+      - '127.0.0.1:30011:50000'
+    restart: always
+    environment:
+      dbHost: mongo
+      dbPassword: USER_PASS
+      dbUser: Re4EEE
+      projectName: Re4EEE
+      SITE_VERIFICATION_TOKEN: 'SITE_VERIFICATION_TOKEN'
+    depends_on:
+      - mongo
+  mongo:
+    build: 'https://github.com/SommerEngineering/mongodb.git'
+    volumes:
+      - 'mongodb:/data/db'
+    restart: always
+    environment:
+      dbHost: some-mongo
+      rootPwd: ROOT_PASS
+      dataPwd: USER_PASS
+      dataUser: Re4EEE
+      dataName: Re4EEE
+volumes:
+    mongodb: {}

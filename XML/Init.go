@@ -7,6 +7,7 @@ import (
 	"github.com/SommerEngineering/Ocean/StaticFiles"
 )
 
+//init parses the Data.xml file and stores its representation in memory.
 func init() {
 
 	Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameSTARTUP, `Init the XML component.`)
