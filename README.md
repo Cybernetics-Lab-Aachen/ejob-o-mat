@@ -32,4 +32,4 @@ Please change `ROOT_PASS` and `USER_PASS` in `docker-compose.yml` locally to pro
 All sources are available under a BSD 2-clause license and can be used for any purposes, also commercial usage. The author does not provide any support.
 
 # Contact
-In order to get in contact with the author, please write a mail to thorsten.sommer@ima-zlw-ifu.rwth-aachen.de Please notice, that the author does not provide any support.
+In order to get in contact with the author, please write a mail to thorsten.sommer@ima-zlw-ifu.rwth-aachen.de Please notice, that the author cannot provide support.
