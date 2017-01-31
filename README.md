@@ -1,10 +1,12 @@
 # About
-This repository contains all sources for the e-learning recommendation system elearning-finder.net and elearn-o-mat.net. This work is part of the project "ELLI – Excellent Teaching and Learning in Engineering Sciences" and was funded by the federal ministry of education and research, Germany. 
+This repository contains all sources for the e-learning recommendation system elearning-finder.net and elearn-o-mat.net. This work is part of the project "ELLI – Excellent Teaching and Learning in Engineering Sciences" and was funded by the federal ministry of education and research, Germany.
 
 # Installation
 To set up the project, a clone of the repository is necessary. Afterwards, two options for running the recommendation system are available: Run as Docker container or run as Docker Compose service. In order to run the system as Docker container, a MongoDB database instance must be ready. For the Docker Compose solution, this precondition is not necessary: The necessary database gets started automatically.
 
 ## Run with Docker Container
+[![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/elli2/re4eee/)
+
 First of all, the Docker container must be build. In order to do so, perform the following command:
 
 ```
