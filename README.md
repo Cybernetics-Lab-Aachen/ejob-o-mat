@@ -7,7 +7,7 @@ To set up the project, a clone of the repository is necessary. Afterwards, two o
 ## Run with Docker Container
 [![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/elli2/re4eee/)
 
-[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/)
+[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/SommerEngineering/Re4EEE)
 
 First of all, the Docker container must be build. In order to do so, perform the following command:
 
