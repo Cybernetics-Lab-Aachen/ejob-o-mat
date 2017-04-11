@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-//HandlerImpressum stores the feedback and redirects back to where the user came from.
+// HandlerReceiveFeedback stores the feedback and redirects back to where the user came from.
 func HandlerReceiveFeedback(response http.ResponseWriter, request *http.Request) {
 	session := request.FormValue(`session`) // Not validating sesion here, just storing it
 	text := request.FormValue(`text`)
@@ -49,6 +49,6 @@ func HandlerReceiveFeedback(response http.ResponseWriter, request *http.Request)
 	feedback.Text = text
 	feedback.SourceLocation = sourceLocation
 	DB.StoreFeedback(feedback)
-	
+
 	http.Redirect(response, request, sourceLocation, 302)
 }

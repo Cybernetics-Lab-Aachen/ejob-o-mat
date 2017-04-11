@@ -24,7 +24,7 @@ func StoreNewAnswers(ans Scheme.Answers) {
 	db.C(collAnswers).Insert(ans)
 }
 
-// StoreNewAnswers updates an existing answers record.
+// UpdateAnswers updates an existing answers record.
 func UpdateAnswers(ans Scheme.Answers) {
 
 	// Get the database:

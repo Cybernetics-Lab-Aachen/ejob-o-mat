@@ -55,13 +55,13 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	//Detect language
 	lang := Tools.GetRequestLanguage(request)[0]
 	data.Basis.Lang = lang.Language
-	var langId int
+	var langID int
 	if strings.Contains(lang.Language, `de`) {
-		langId = LANG_DE
+		langID = LANG_DE
 		data.Basis.Name = NAME_DE
 		data.Basis.Logo = LOGO_DE
 	} else {
-		langId = LANG_EN
+		langID = LANG_EN
 		data.Basis.Name = NAME_EN
 		data.Basis.Logo = LOGO_UK
 	}
@@ -71,18 +71,18 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	questionGroup := groups.QuestionsCollection.Questions[data.Progress-1]
 	strings := groups.QuestionStrings
 
-	data.TextBackButton = strings.TextBackButton[langId].Text
-	data.TextImportant = strings.TextImportant[langId].Text
-	data.TextQuestion = strings.TextQuestion[langId].Text
-	data.QuestionInfoHeader = strings.QuestionInfoHeader[langId].Text
-	data.QuestionInfoClose = strings.QuestionInfoClose[langId].Text
+	data.TextBackButton = strings.TextBackButton[langID].Text
+	data.TextImportant = strings.TextImportant[langID].Text
+	data.TextQuestion = strings.TextQuestion[langID].Text
+	data.QuestionInfoHeader = strings.QuestionInfoHeader[langID].Text
+	data.QuestionInfoClose = strings.QuestionInfoClose[langID].Text
 
-	data.TextQuestionTopic = questionGroup.Topics[langId].Text
-	data.TextQuestionBody = questionGroup.QuestionBodies[langId].Text
+	data.TextQuestionTopic = questionGroup.Topics[langID].Text
+	data.TextQuestionBody = questionGroup.QuestionBodies[langID].Text
 
 	//Show additional information if available
 	if questionGroup.Hints != nil {
-		data.QuestionInfoText = questionGroup.Hints[langId].Text
+		data.QuestionInfoText = questionGroup.Hints[langID].Text
 		data.ButtonInfoStatus = BUTTON_SHOW
 	} else { //Otherwise disable info button
 		data.QuestionInfoText = ``
@@ -100,7 +100,7 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	data.Buttons = make([]PageQuestionButton, len(questionGroup.Buttons))
 	for i, button := range questionGroup.Buttons {
 		data.Buttons[i].Data = button.Data
-		data.Buttons[i].Text = button.Texts[langId].Text
+		data.Buttons[i].Text = button.Texts[langID].Text
 	}
 
 	//Store questionaire start time (time of first question)
@@ -116,10 +116,9 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 }
 
 //GetProgressState returns the css class representing the progress.
-func (pg PageQuestion) GetProgressState(pos int) string {
+func (pg PageQuestion) GetProgressState(pos int) (ret string) {
 	if pg.Progress >= pos {
-		return ` progressitemdone`
-	} else {
-		return ``
+		ret = ` progressitemdone`
 	}
+	return
 }

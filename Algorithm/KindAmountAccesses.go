@@ -7,7 +7,7 @@ import (
 	"strconv"
 )
 
-//kindAmountAccesses calculates the influence of an answer given to a amount of accesses question.
+// kindAmountAccesses calculates the influence of an answer given to a amount of accesses question.
 func kindAmountAccesses(answer, minString, maxString string) (diff int8) {
 
 	min := 1

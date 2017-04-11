@@ -6,5 +6,5 @@ import (
 
 var (
 	senderName LM.Sender = `XML`
-	data       Data      = Data{} // Representation of Data.xml in memory
+	data                 = Data{} // Representation of Data.xml in memory
 )

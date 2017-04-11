@@ -16,7 +16,7 @@ import (
 	"time"
 )
 
-//HandlerStart displays the results of the questionnaire
+// HandlerResults displays the results of the questionnaire
 func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	session := request.FormValue(`session`)
 	amountText := request.FormValue(`amount`)
@@ -112,7 +112,7 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	Templates.ProcessHTML(`results`, response, data)
 }
 
-//GetProgressState returns the css class representing the progress.
+// GetProgressState returns the css class representing the progress.
 func (data PageResults) GetProgressState(influence int8) string {
 	if influence > 0 {
 		return ` progressitemdone`
@@ -123,17 +123,17 @@ func (data PageResults) GetProgressState(influence int8) string {
 	}
 }
 
-//GetProgressState returns the localized name of a product group by its index.
+// GetGroupName returns the localized name of a product group by its index.
 func (data PageResults) GetGroupName(xmlIndex int) string {
 	return data.Groups[xmlIndex].GroupName.Names[data.LangPos].Text
 }
 
-//GetProgressState returns the localized string using the language id.
+// Lang returns the localized string using the language id.
 func (data PageResults) Lang(strings []XML.String) string {
 	return strings[data.LangPos].Text
 }
 
-//GetProgressState returns localized string for a given answer by it's internal representation.
+// FormatAnswer returns localized string for a given answer by it's internal representation.
 func (data PageResults) FormatAnswer(answer string) string {
 	switch answer {
 	case `1`:

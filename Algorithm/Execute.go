@@ -7,6 +7,7 @@ import (
 	"github.com/SommerEngineering/Re4EEE/XML"
 )
 
+// ExecuteAnswers calculates a recommendation basen on given answers
 func ExecuteAnswers(answers Scheme.Answers) []Scheme.ProductGroup {
 
 	data := XML.GetData()

@@ -7,7 +7,7 @@ import (
 	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 )
 
-//StoreFeedback stores feedback in the database
+// StoreRecommendation stores a recommendation in the database
 func StoreRecommendation(result Scheme.Recommendation) {
 
 	dbSession, db := CustomerDB.DB()
