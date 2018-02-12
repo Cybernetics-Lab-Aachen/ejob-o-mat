@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameSTARTUP, `Re4EEE is starting.`)
+	Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameSTARTUP, `ejob-o-mat is starting.`)
 	System.InitHandlers()
 	registerHandlers()
 	registerAllAppConfigurationParameters()

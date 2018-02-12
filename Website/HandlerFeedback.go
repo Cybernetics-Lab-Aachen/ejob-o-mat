@@ -1,11 +1,12 @@
 package Website
 
 import (
+	"net/http"
+	"strings"
+
 	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
-	"net/http"
-	"strings"
 )
 
 //HandlerFeedback displays the feedback form

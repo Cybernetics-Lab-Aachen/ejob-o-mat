@@ -2,15 +2,16 @@ package Website
 
 import (
 	"fmt"
-	"github.com/SommerEngineering/Ocean/Log"
-	LM "github.com/SommerEngineering/Ocean/Log/Meta"
-	"github.com/SommerEngineering/Re4EEE/Algorithm"
-	"github.com/SommerEngineering/Re4EEE/DB"
-	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 	"net/http"
 	"reflect"
 	"strconv"
 	"time"
+
+	"github.com/SommerEngineering/Ocean/Log"
+	LM "github.com/SommerEngineering/Ocean/Log/Meta"
+	"github.com/SommerEngineering/ejob-o-mat/Algorithm"
+	"github.com/SommerEngineering/ejob-o-mat/DB"
+	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
 )
 
 //HandlerAnswer stores the given answer and redirects to the next question or results page.

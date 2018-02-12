@@ -1,13 +1,14 @@
 package Website
 
 import (
-	"github.com/SommerEngineering/Ocean/Log"
-	LM "github.com/SommerEngineering/Ocean/Log/Meta"
-	"github.com/SommerEngineering/Re4EEE/DB"
-	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 	"net/http"
 	"strconv"
 	"strings"
+
+	"github.com/SommerEngineering/Ocean/Log"
+	LM "github.com/SommerEngineering/Ocean/Log/Meta"
+	"github.com/SommerEngineering/ejob-o-mat/DB"
+	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
 )
 
 // HandlerReceiveFeedback stores the feedback and redirects back to where the user came from.

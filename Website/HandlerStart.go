@@ -2,14 +2,15 @@ package Website
 
 import (
 	"fmt"
-	"github.com/SommerEngineering/Ocean/ConfigurationDB"
-	"github.com/SommerEngineering/Ocean/Templates"
-	"github.com/SommerEngineering/Ocean/Tools"
-	"github.com/SommerEngineering/Re4EEE/DB"
-	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
 	"net/http"
 	"strings"
 	"time"
+
+	"github.com/SommerEngineering/Ocean/ConfigurationDB"
+	"github.com/SommerEngineering/Ocean/Templates"
+	"github.com/SommerEngineering/Ocean/Tools"
+	"github.com/SommerEngineering/ejob-o-mat/DB"
+	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
 )
 
 //HandlerStart displays the start page

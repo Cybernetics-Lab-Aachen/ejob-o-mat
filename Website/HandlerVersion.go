@@ -2,9 +2,10 @@ package Website
 
 import (
 	"fmt"
+	"net/http"
+
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
-	"net/http"
 )
 
 //HandlerVersion displays the current website version.

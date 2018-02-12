@@ -1,6 +1,6 @@
 version: '2'
 services:
-  re4eee:
+  ejob-o-mat:
     build: .
     ports:
       - '80:40000'
@@ -9,8 +9,8 @@ services:
     environment:
       dbHost: mongo
       dbPassword: USER_PASS
-      dbUser: Re4EEE
-      projectName: Re4EEE
+      dbUser: ejob-o-mat
+      projectName: ejob-o-mat
       SITE_VERIFICATION_TOKEN: 'SITE_VERIFICATION_TOKEN'
     depends_on:
       - mongo
@@ -23,7 +23,7 @@ services:
       dbHost: some-mongo
       rootPwd: ROOT_PASS
       dataPwd: USER_PASS
-      dataUser: Re4EEE
-      dataName: Re4EEE
+      dataUser: ejob-o-mat
+      dataName: ejob-o-mat
 volumes:
     mongodb: {}

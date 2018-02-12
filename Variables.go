@@ -5,5 +5,5 @@ import (
 )
 
 var (
-	senderName LM.Sender = `Re4EEE`
+	senderName LM.Sender = `ejob-o-mat`
 )

@@ -4,7 +4,7 @@ import (
 	"github.com/SommerEngineering/Ocean/CustomerDB"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
-	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
+	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
 	"gopkg.in/mgo.v2/bson"
 )
 

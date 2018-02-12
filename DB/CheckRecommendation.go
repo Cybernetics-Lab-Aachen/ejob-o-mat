@@ -21,10 +21,10 @@ func CheckRecommendation(session string) bool {
 	selector := bson.D{{"Session", session}}
 
 	// Select number of recommendations
-	if n, errN := db.C(collRecommendations).Find(selector).Count(); errN != nil {
+	n, errN := db.C(collRecommendations).Find(selector).Count()
+	if errN != nil {
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameDATABASE, `Was not able to check the recommendations.`, errN.Error())
 		return false
-	} else {
-		return n > 0 // whether there is a recommendation
 	}
+	return n > 0 // whether there is a recommendation
 }

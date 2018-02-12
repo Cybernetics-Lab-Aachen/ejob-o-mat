@@ -1,9 +1,10 @@
 package Website
 
 import (
+	"net/http"
+
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
-	"net/http"
 )
 
 //HandlerRedirect redirects to start page while keeping the session, if present.

@@ -4,10 +4,10 @@ import (
 	"github.com/SommerEngineering/Ocean/Handlers"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
-	"github.com/SommerEngineering/Re4EEE/Website"
+	"github.com/SommerEngineering/ejob-o-mat/Website"
 )
 
-//registerHandlers registers all request handlers for Re4EEE.
+//registerHandlers registers all request handlers for ejob-o-mat.
 func registerHandlers() {
 	Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameSTARTUP, `Register now all app handlers.`)
 	defer Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameSTARTUP, `Register now all app handlers done.`)
@@ -43,5 +43,5 @@ func registerHandlers() {
 
 	// Admin Handlers:
 	Handlers.AddAdminHandler(`/book`, Website.HandlerBook)
-	Handlers.AddAdminHandler(`/Re4EEEVersion`, Website.HandlerVersion)
+	Handlers.AddAdminHandler(`/Version`, Website.HandlerVersion)
 }

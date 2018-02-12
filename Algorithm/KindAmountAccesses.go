@@ -2,9 +2,10 @@ package Algorithm
 
 import (
 	"fmt"
+	"strconv"
+
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
-	"strconv"
 )
 
 // kindAmountAccesses calculates the influence of an answer given to a amount of accesses question.

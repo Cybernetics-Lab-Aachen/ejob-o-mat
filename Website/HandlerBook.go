@@ -2,12 +2,13 @@ package Website
 
 import (
 	"fmt"
+	"net/http"
+
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Ocean/MimeTypes"
 	"github.com/SommerEngineering/Ocean/StaticFiles"
 	"github.com/SommerEngineering/Ocean/Tools"
-	"net/http"
 )
 
 //HandlerBook sends Data.xml file.

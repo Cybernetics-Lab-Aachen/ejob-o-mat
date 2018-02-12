@@ -1,8 +1,8 @@
 package Website
 
 import (
-	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
-	"github.com/SommerEngineering/Re4EEE/XML"
+	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
+	"github.com/SommerEngineering/ejob-o-mat/XML"
 )
 
 type Basis struct {

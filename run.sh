@@ -13,7 +13,7 @@ echo "Try to upload the static files in to the database:"
 ./uploadStaticData.sh
 
 # Try to start the app:
-./Re4EEE
+./ejob-o-mat
 
 OUT=$?
 if [ $OUT -eq 1 ];then
@@ -30,5 +30,5 @@ elif [ $OUT -eq 2 ]; then
    ./uploadStaticData.sh
    
    # Start the app:
-   ./Re4EEE
+   ./ejob-o-mat
 fi

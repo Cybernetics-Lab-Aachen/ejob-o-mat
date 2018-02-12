@@ -1,19 +1,20 @@
 package Website
 
 import (
+	"net/http"
+	"strconv"
+	"strings"
+	"time"
+
 	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
-	"github.com/SommerEngineering/Re4EEE/Algorithm"
-	"github.com/SommerEngineering/Re4EEE/DB"
-	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
-	"github.com/SommerEngineering/Re4EEE/XML"
-	"net/http"
-	"strconv"
-	"strings"
-	"time"
+	"github.com/SommerEngineering/ejob-o-mat/Algorithm"
+	"github.com/SommerEngineering/ejob-o-mat/DB"
+	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
+	"github.com/SommerEngineering/ejob-o-mat/XML"
 )
 
 // HandlerResults displays the results of the questionnaire

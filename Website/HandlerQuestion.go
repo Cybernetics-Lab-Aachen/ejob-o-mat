@@ -12,8 +12,8 @@ import (
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
-	"github.com/SommerEngineering/Re4EEE/DB"
-	"github.com/SommerEngineering/Re4EEE/XML"
+	"github.com/SommerEngineering/ejob-o-mat/DB"
+	"github.com/SommerEngineering/ejob-o-mat/XML"
 )
 
 //HandlerQuestion displays the current question.

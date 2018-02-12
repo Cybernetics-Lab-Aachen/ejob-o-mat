@@ -3,8 +3,8 @@ package Algorithm
 import (
 	"sort"
 
-	"github.com/SommerEngineering/Re4EEE/DB/Scheme"
-	"github.com/SommerEngineering/Re4EEE/XML"
+	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
+	"github.com/SommerEngineering/ejob-o-mat/XML"
 )
 
 // ExecuteAnswers calculates a recommendation basen on given answers
