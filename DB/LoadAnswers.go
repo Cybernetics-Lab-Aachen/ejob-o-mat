@@ -9,8 +9,8 @@ import (
 )
 
 //LoadAnswers returns the answers for this session from db and whether an error occurred.
-func LoadAnswers(session string) (Scheme.Answers, bool) {
-	answers := Scheme.Answers{}
+func LoadAnswers(session string) (Scheme.Survey, bool) {
+	survey := Scheme.Survey{}
 
 	// Get the database:
 	dbSession, db := CustomerDB.DB()
@@ -18,16 +18,16 @@ func LoadAnswers(session string) (Scheme.Answers, bool) {
 
 	if db == nil { // Database not found
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameDATABASE, `Was not able to get the customer database.`)
-		return answers, true
+		return survey, true
 	}
 
-	selector := bson.D{{"Session", session}}
+	selector := bson.D{{Name: "Session", Value: session}}
 
 	// Select answers from db
-	if err := db.C(collAnswers).Find(selector).One(&answers); err != nil {
+	if err := db.C(collAnswers).Find(selector).One(&survey); err != nil {
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameDATABASE, `Was not able to find this session in the database.`, session, err.Error())
-		return answers, true
+		return survey, true
 	}
 
-	return answers, false // Everything went ok
+	return survey, false // Everything went ok
 }

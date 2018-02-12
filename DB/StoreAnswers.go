@@ -1,6 +1,8 @@
 package DB
 
 import (
+	"time"
+
 	"github.com/SommerEngineering/Ocean/CustomerDB"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
@@ -9,7 +11,7 @@ import (
 )
 
 // StoreNewAnswers creates a new answers record for this session in the db.
-func StoreNewAnswers(ans Scheme.Answers) {
+func StoreNewAnswers(session string) {
 
 	// Get the database:
 	dbSession, db := CustomerDB.DB()
@@ -21,11 +23,15 @@ func StoreNewAnswers(ans Scheme.Answers) {
 	}
 
 	// Insert answers
-	db.C(collAnswers).Insert(ans)
+	db.C(collAnswers).Insert(Scheme.Survey{
+		SchemeVersion: Scheme.CurrentVersion,
+		Session:       session,
+		CreateTimeUTC: time.Now().UTC(),
+	})
 }
 
 // UpdateAnswers updates an existing answers record.
-func UpdateAnswers(ans Scheme.Answers) {
+func UpdateAnswers(survey Scheme.Survey) {
 
 	// Get the database:
 	dbSession, db := CustomerDB.DB()
@@ -36,8 +42,8 @@ func UpdateAnswers(ans Scheme.Answers) {
 		return
 	}
 
-	selector := bson.D{{"Session", ans.Session}}
+	selector := bson.D{{Name: "Session", Value: survey.Session}}
 
 	// Update answers
-	db.C(collAnswers).Update(selector, ans)
+	db.C(collAnswers).Update(selector, survey)
 }

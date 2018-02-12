@@ -34,7 +34,6 @@ func registerHandlers() {
 	Handlers.AddPublicHandler(`/question17`, Website.HandlerQuestion)
 	Handlers.AddPublicHandler(`/question18`, Website.HandlerQuestion)
 	Handlers.AddPublicHandler(`/answer`, Website.HandlerAnswer)
-	Handlers.AddPublicHandler(`/answerVR`, Website.HandlerVRAnswers)
 	Handlers.AddPublicHandler(`/results`, Website.HandlerResults)
 	Handlers.AddPublicHandler(`/impressum`, Website.HandlerImpressum)
 	Handlers.AddPublicHandler(`/feedback`, Website.HandlerFeedback)

@@ -4,13 +4,11 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
-	"time"
 
 	"github.com/SommerEngineering/Ocean/ConfigurationDB"
 	"github.com/SommerEngineering/Ocean/Templates"
 	"github.com/SommerEngineering/Ocean/Tools"
 	"github.com/SommerEngineering/ejob-o-mat/DB"
-	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
 )
 
 //HandlerStart displays the start page
@@ -36,11 +34,7 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	} else {
 		//Create new session
 		data.Basis.Session = Tools.RandomGUID()
-		answers := Scheme.Answers{}
-		answers.SchemeVersion = Scheme.CURRENT_VERSION
-		answers.Session = data.Basis.Session
-		answers.CreateTimeUTC = time.Now().UTC()
-		DB.StoreNewAnswers(answers)
+		DB.StoreNewAnswers(data.Basis.Session)
 
 		//Redirect so created session shows up in address bar
 		http.Redirect(response, request, fmt.Sprintf(`/start?lang=%s&session=%s`, data.Basis.Lang, data.Basis.Session), 302)

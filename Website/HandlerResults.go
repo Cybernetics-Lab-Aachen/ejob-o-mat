@@ -46,17 +46,17 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 
 	// Load/calculate recommendations
 	if !DB.CheckRecommendation(session) {
-		resultSet.ProductGroups = Algorithm.ExecuteAnswers(answers)
+		resultSet.ProductGroups = Algorithm.ExecuteAnswers(answers.Answers)
 		resultSet.CreateTimeUTC = time.Now().UTC()
 		resultSet.Session = session
-		resultSet.SchemeVersion = Scheme.CURRENT_VERSION
+		resultSet.SchemeVersion = Scheme.CurrentVersion
 		DB.StoreRecommendation(resultSet)
 
 	} else {
 		resultSet = DB.LoadRecommendation(session)
 
 		// Check for old session. Can't work with outdated data.
-		if resultSet.SchemeVersion < Scheme.CURRENT_VERSION {
+		if resultSet.SchemeVersion < Scheme.CurrentVersion {
 			http.Redirect(response, request, `/start`, 302)
 			return
 		}
