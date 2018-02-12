@@ -1,10 +1,13 @@
 package main
 
 import (
+	"strconv"
+
 	"github.com/SommerEngineering/Ocean/Handlers"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/ejob-o-mat/Website"
+	"github.com/SommerEngineering/ejob-o-mat/XML"
 )
 
 //registerHandlers registers all request handlers for ejob-o-mat.
@@ -15,24 +18,9 @@ func registerHandlers() {
 	// Public Handlers:
 	Handlers.AddPublicHandler(`/`, Website.HandlerRedirect)
 	Handlers.AddPublicHandler(`/start`, Website.HandlerStart)
-	Handlers.AddPublicHandler(`/question1`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question2`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question3`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question4`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question5`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question6`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question7`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question8`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question9`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question10`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question11`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question12`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question13`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question14`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question15`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question16`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question17`, Website.HandlerQuestion)
-	Handlers.AddPublicHandler(`/question18`, Website.HandlerQuestion)
+	for i := 0; i < len(XML.Questions); i++ { // Register handlers for all questions
+		Handlers.AddPublicHandler("/question"+strconv.Itoa(i), Website.HandlerQuestion)
+	}
 	Handlers.AddPublicHandler(`/answer`, Website.HandlerAnswer)
 	Handlers.AddPublicHandler(`/results`, Website.HandlerResults)
 	Handlers.AddPublicHandler(`/impressum`, Website.HandlerImpressum)

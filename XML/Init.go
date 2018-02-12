@@ -2,6 +2,7 @@ package XML
 
 import (
 	"encoding/xml"
+
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/Ocean/StaticFiles"
@@ -16,7 +17,12 @@ func init() {
 	xmlData := StaticFiles.FindAndReadFile(`Data.xml`)
 	if errParse := xml.Unmarshal(xmlData, &data); errParse != nil {
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNamePARSE, `Was not able to parse the XML data.`, errParse.Error())
-	} else {
-		Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameINIT, `The XML data file was parsed without issues.`)
+		return
+	}
+	Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameINIT, `The XML data file was parsed without issues.`)
+
+	Questions = make(map[string]QuestionGroup)
+	for _, question := range data.QuestionsCollection.Questions {
+		Questions[question.InternalName] = question
 	}
 }

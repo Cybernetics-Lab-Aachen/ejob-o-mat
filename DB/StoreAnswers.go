@@ -1,12 +1,14 @@
 package DB
 
 import (
+	"math/rand"
 	"time"
 
 	"github.com/SommerEngineering/Ocean/CustomerDB"
 	"github.com/SommerEngineering/Ocean/Log"
 	LM "github.com/SommerEngineering/Ocean/Log/Meta"
 	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
+	"github.com/SommerEngineering/ejob-o-mat/XML"
 	"gopkg.in/mgo.v2/bson"
 )
 
@@ -22,11 +24,22 @@ func StoreNewAnswers(session string) {
 		return
 	}
 
+	// Create slice of all question
+	questions := make([]string, 0, len(XML.Questions))
+	for questionName := range XML.Questions {
+		questions = append(questions, questionName)
+	}
+	for i := range questions { // Shuffle questions (Fisher–Yates shuffle)
+		j := rand.Intn(i + 1)
+		questions[i], questions[j] = questions[j], questions[i]
+	}
+
 	// Insert answers
 	db.C(collAnswers).Insert(Scheme.Survey{
 		SchemeVersion: Scheme.CurrentVersion,
 		Session:       session,
 		CreateTimeUTC: time.Now().UTC(),
+		Questions:     questions,
 	})
 }
 

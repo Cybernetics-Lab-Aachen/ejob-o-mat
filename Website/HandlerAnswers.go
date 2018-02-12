@@ -8,6 +8,7 @@ import (
 
 	"github.com/SommerEngineering/ejob-o-mat/DB"
 	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
+	"github.com/SommerEngineering/ejob-o-mat/XML"
 )
 
 //HandlerAnswer stores the given answer and redirects to the next question or results page.
@@ -17,7 +18,7 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 	data := request.FormValue(`a`)
 	important := request.FormValue(`important`)
 	lang := request.FormValue(`lang`)
-	answers, loadAnswersError := DB.LoadAnswers(session)
+	survey, loadSurveyError := DB.LoadAnswers(session)
 	no := 0
 	weight := 1
 
@@ -28,13 +29,13 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 	}
 
 	// Check if session exists, otherwise redirect to start page
-	if loadAnswersError {
+	if loadSurveyError {
 		http.Redirect(response, request, `/start`, 302)
 		return
 	}
 
 	//Check for old session. Can't work with outdated data.
-	if answers.SchemeVersion < Scheme.CurrentVersion {
+	if survey.SchemeVersion < Scheme.CurrentVersion {
 		http.Redirect(response, request, `/start`, 302)
 		return
 	}
@@ -50,15 +51,14 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 		no = value
 
 		// Store the new answer:
-		answers.Answers["Question"+strconv.Itoa(int(no))] = Scheme.Answer{TimeUTC: time.Now().UTC(), Data: data, Weight: byte(weight)}
-
-		DB.UpdateAnswers(answers)
+		survey.Answers[survey.Questions[no]] = Scheme.Answer{TimeUTC: time.Now().UTC(), Data: data, Weight: byte(weight)}
+		DB.UpdateAnswers(survey)
 	}
 
-	if no+1 > TOTAL_QUESTIONS {
+	if no+1 >= len(XML.Questions) {
 		// Last questions already answered
 		http.Redirect(response, request, fmt.Sprintf("/results?lang=%s&session=%s&amount=6", lang, session), 302)
 	} else {
-		http.Redirect(response, request, fmt.Sprintf("/question%d?lang=%s&session=%s", (no+1), lang, session), 302)
+		http.Redirect(response, request, fmt.Sprintf("/question%d?lang=%s&session=%s", no+1, lang, session), 302)
 	}
 }

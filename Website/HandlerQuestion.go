@@ -18,23 +18,23 @@ import (
 
 //HandlerQuestion displays the current question.
 func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
-	readSession := request.FormValue(`session`)
+	session := request.FormValue(`session`)
 
 	// Check if session is valid
-	if readSession == `` {
+	if session == `` {
 		defer http.Redirect(response, request, "/", 302)
 		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelSECURITY, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameUSER, `A request without session.`)
 		return
 	}
-	if len(readSession) != 36 {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, readSession)
+	if len(session) != 36 {
+		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityCritical, LM.ImpactCritical, LM.MessageNameSTATE, `Session's length was not valid!`, session)
 		response.WriteHeader(http.StatusNotFound)
 		return
 	}
 
 	//Get question number
 	noQuestion, _ := strconv.Atoi(request.URL.Path[9:]) //Extract 14 from e.g. "/question14"
-	if noQuestion < 1 || noQuestion > TOTAL_QUESTIONS {
+	if noQuestion < 0 || noQuestion >= len(XML.Questions) {
 		//This should never happen, as this function only handles valid questions, but one never knows ...
 		response.WriteHeader(http.StatusNotFound)
 		return
@@ -42,7 +42,7 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 
 	// Prepare data for html template
 	data := PageQuestion{}
-	data.Basis.Session = readSession
+	data.Basis.Session = session
 	data.Basis.Version = VERSION
 	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
 
@@ -50,7 +50,7 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	data.Progress = noQuestion
 	data.NoQuestion = fmt.Sprintf(`%d`, data.Progress)
 	data.PreNoQuestion = fmt.Sprintf(`%d`, data.Progress-1)
-	data.NoQuestions = totalQuestions
+	data.NoQuestions = fmt.Sprintf("%d", len(XML.Questions))
 
 	//Detect language
 	lang := Tools.GetRequestLanguage(request)[0]
@@ -66,9 +66,16 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 		data.Basis.Logo = LOGO_UK
 	}
 
+	survey, loadsurveyError := DB.LoadAnswers(session)
+	// Check if session exists, otherwise redirect to start page
+	if loadsurveyError {
+		http.Redirect(response, request, `/start`, 302)
+		return
+	}
+
 	//Prepare localized strings
 	groups := XML.GetData()
-	questionGroup := groups.QuestionsCollection.Questions[data.Progress-1]
+	questionGroup := XML.Questions[survey.Questions[noQuestion]]
 	strings := groups.QuestionStrings
 
 	data.TextBackButton = strings.TextBackButton[langID].Text
@@ -90,7 +97,7 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	}
 
 	//Hide back button on first question
-	if noQuestion == 1 {
+	if noQuestion == 0 {
 		data.ButtonBackStatus = BUTTON_HIDDEN
 	} else {
 		data.ButtonBackStatus = BUTTON_SHOW
@@ -104,10 +111,9 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	}
 
 	//Store questionaire start time (time of first question)
-	if noQuestion == 1 {
-		answers, _ := DB.LoadAnswers(readSession)
-		answers.StartTimeQ1 = time.Now().UTC()
-		DB.UpdateAnswers(answers)
+	if noQuestion == 0 {
+		survey.StartTimeQ1 = time.Now().UTC()
+		DB.UpdateAnswers(survey)
 	}
 
 	// Finally, execute the template

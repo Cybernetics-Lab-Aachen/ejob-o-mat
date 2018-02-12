@@ -44,13 +44,12 @@ type Recommendation struct {
 
 //Survey stores the answer, time and weight for each question.
 type Survey struct {
-	SchemeVersion byte      `bson:"Version"`
-	CreateTimeUTC time.Time `bson:"CreateTimeUTC"`
-	Session       string    `bson:"Session"`
-
-	StartTimeQ1 time.Time `bson:"StartTimeQ1"` // Take this time on deliver Q1
-
-	Answers map[string]Answer
+	SchemeVersion byte              `bson:"Version"`
+	CreateTimeUTC time.Time         `bson:"CreateTimeUTC"`
+	Session       string            `bson:"Session"`
+	StartTimeQ1   time.Time         `bson:"StartTimeQ1"` // Take this time on deliver Q1
+	Answers       map[string]Answer `bson:"Answers"`
+	Questions     []string          `bson:"Questions"` // Permutation of the questions
 }
 
 //GetByInternalName returns the given answer to a question by its internal question name.
