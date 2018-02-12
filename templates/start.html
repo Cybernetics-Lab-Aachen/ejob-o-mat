@@ -3,6 +3,7 @@
 <!-- This site was created in Webflow. http://www.webflow.com-->
 <!-- Last Published: Sun Nov 09 2014 10:24:11 GMT+0000 (UTC) -->
 <html data-wf-site="531b6f81d93d2b40520007fd" data-wf-page="545e5b29a13383b028da344b">
+
 <head>
   <meta charset="utf-8">
   <title>{{.Basis.Name}}</title>
@@ -14,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="/staticFiles/css/re4eee.webflow.css">
   <script type="text/javascript" src="/staticFiles/js/modernizr.js"></script>
 </head>
+
 <body>
   <div class="w-row">
     <div class="w-col w-col-2 w-col-stack w-hidden-medium w-hidden-small w-hidden-tiny"></div>
@@ -36,7 +38,7 @@
           <p>{{.TextWelcome}}</p>
         </div>
         <div class="buttonbox buttonboxstart">
-          <a class="button" href="/question1?lang={{.Basis.Lang}}&session={{.Basis.Session}}">{{.TextStartButton}}</a>
+          <a class="button" href="/question0?lang={{.Basis.Lang}}&session={{.Basis.Session}}">{{.TextStartButton}}</a>
         </div>
         <div class="w-container containerlogo">
           <img src="/staticFiles/images/footer.png">
@@ -47,8 +49,12 @@
       <div class="rightcolumncontainer">
         <img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif">
         <div>
-          <a href="http://www.elearn-o-mat.net/start?lang=de&session={{.Basis.Session}}"><img class="flag" src="/staticFiles/images/flagDE.gif"></a>
-          <a href="http://www.elearning-finder.net/start?lang=en&session={{.Basis.Session}}"><img class="flag lastflag" src="/staticFiles/images/flagUK.gif"></a>
+          <a href="http://www.elearn-o-mat.net/start?lang=de&session={{.Basis.Session}}">
+            <img class="flag" src="/staticFiles/images/flagDE.gif">
+          </a>
+          <a href="http://www.elearning-finder.net/start?lang=en&session={{.Basis.Session}}">
+            <img class="flag lastflag" src="/staticFiles/images/flagUK.gif">
+          </a>
         </div>
         <a class="button buttonsmall" href="/feedback?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&nbsp;&nbsp;Feedback&nbsp;&nbsp;</a>
         <a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}&session={{.Basis.Session}}">Impressum</a>
@@ -58,5 +64,6 @@
   <script type="text/javascript" src="/framework/jQuery/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="/staticFiles/js/webflow.js"></script>
 </body>
+
 </html>
 {{end}}
