@@ -2,7 +2,6 @@
 <?xml-stylesheet type="text/css" href="/staticFiles/css/catalogue.css" ?>
 <xml>
 	<QuestionsGroup>
-
 		<QuestionGroup internalName="Question1">
 			<Topic language="de" text="Video-Inhalte" />
 			<Topic language="en" text="Video Content" />
@@ -25,7 +24,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question2">
 			<Topic language="de" text="Tutoring" />
 			<Topic language="en" text="Tutoring" />
@@ -48,7 +46,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question3">
 			<Topic language="de" text="Kommentare" />
 			<Topic language="en" text="Comments" />
@@ -71,7 +68,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question4">
 			<Topic language="de" text="Synchrone Interaktion" />
 			<Topic language="en" text="Synchronised Interaction" />
@@ -100,7 +96,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question5">
 			<Topic language="de" text="Asynchrone Interaktion" />
 			<Topic language="en" text="Asynchronous Interaction" />
@@ -129,7 +124,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question6">
 			<Topic language="de" text="Anzahl der Zugriffe" />
 			<Topic language="en" text="Amount of Accesses" />
@@ -156,7 +150,6 @@
 				<TextButton language="en" text="more than 500" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question7">
 			<Topic language="de" text="Downloads" />
 			<Topic language="en" text="Downloads" />
@@ -179,7 +172,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question8">
 			<Topic language="de" text="Lernziele" />
 			<Topic language="en" text="Learning Objectives" />
@@ -202,7 +194,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question9">
 			<Topic language="de" text="Einsatzzweck" />
 			<Topic language="en" text="Purpose" />
@@ -221,7 +212,6 @@
 				<TextButton language="en" text="Replace on-site attendance" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question10">
 			<Topic language="de" text="Cloud" />
 			<Topic language="en" text="Cloud" />
@@ -252,7 +242,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question11">
 			<Topic language="de" text="Hochschulnetz" />
 			<Topic language="en" text="University Network" />
@@ -283,7 +272,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question12">
 			<Topic language="de" text="Test- und Prüfungsformate" />
 			<Topic language="en" text="Assessments" />
@@ -306,7 +294,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question13">
 			<Topic language="de" text="Rollen für Studierende" />
 			<Topic language="en" text="Roles for Students" />
@@ -329,7 +316,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question14">
 			<Topic language="de" text="Mathematische Darstellung" />
 			<Topic language="en" text="Presentation of Mathematics" />
@@ -352,7 +338,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question15">
 			<Topic language="de" text="Mathematische Eingabe" />
 			<Topic language="en" text="Writing of Mathematics" />
@@ -375,7 +360,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question16">
 			<Topic language="de" text="Darbietende Lehrverfahren" />
 			<Topic language="en" text="Presenting Teaching Methods" />
@@ -398,7 +382,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question17">
 			<Topic language="de" text="Erarbeitende Lehrverfahren" />
 			<Topic language="en" text="Developing Teaching Methods" />
@@ -421,7 +404,6 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 		<QuestionGroup internalName="Question18">
 			<Topic language="de" text="Explorative Lehrverfahren" />
 			<Topic language="en" text="Explorative Teaching Methods" />
@@ -444,16 +426,13 @@
 				<TextButton language="en" text="Skip question" />
 			</Button>
 		</QuestionGroup>
-
 	</QuestionsGroup>
 	<ProductsGroup>
-
 		<ProductGroup internalName="ARS (Audience Response Systems)">
 			<Names>
 				<Name language="de" text="Audience Response Systems" />
 				<Name language="en" text="Audience Response Systems" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -466,7 +445,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Impossible</VideoContent>
 				<Tutoring>Impossible</Tutoring>
@@ -488,7 +466,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Impossible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="ARS (Audience Response Systems)">
 				<Names>
 					<Name language="de" text="ARS (Audience Response Systems)" />
@@ -506,7 +483,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Poll Everywhere" website="http://www.polleverywhere.com/">
 					<Names>
 						<Name language="de" text="Poll Everywhere" />
@@ -525,7 +501,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="IQ Polls" website="https://iqpolls.com/">
 					<Names>
 						<Name language="de" text="IQ Polls" />
@@ -545,7 +520,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Socrative" website="http://www.socrative.com/">
 					<Names>
 						<Name language="de" text="Socrative" />
@@ -564,16 +538,13 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Blogs">
 			<Names>
 				<Name language="de" text="Blogs" />
 				<Name language="en" text="Blogs" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -586,7 +557,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Possible</VideoContent>
 				<Tutoring>Impossible</Tutoring>
@@ -608,7 +578,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Blogs">
 				<Names>
 					<Name language="de" text="Blogs" />
@@ -626,7 +595,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Wordpress" website="http://wordpress.org/">
 					<Names>
 						<Name language="de" text="Wordpress" />
@@ -645,7 +613,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="LifeType" website="http://lifetype.net/">
 					<Names>
 						<Name language="de" text="LifeType" />
@@ -664,7 +631,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="b2evolution" website="http://b2evolution.net/">
 					<Names>
 						<Name language="de" text="b2evolution" />
@@ -685,13 +651,11 @@
 				</ExampleProduct>
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Game-Based Learning">
 			<Names>
 				<Name language="de" text="Game Based Learning" />
 				<Name language="en" text="Game-Based Learning" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -704,7 +668,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Impossible</VideoContent>
 				<Tutoring>Possible</Tutoring>
@@ -726,7 +689,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Games">
 				<Names>
 					<Name language="de" text="Computerspiele" />
@@ -803,7 +765,6 @@
 					</Descriptions>
 				</ExampleProduct>
 			</ExampleGroup>
-
 			<ExampleGroup internalName="Game Engines">
 				<Names>
 					<Name language="de" text="Werkzeuge zur Herstellung von Computerspielen" />
@@ -821,7 +782,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Unreal Engine" website="https://www.unrealengine.com/">
 					<Names>
 						<Name language="de" text="Unreal Engine" />
@@ -861,13 +821,11 @@
 				</ExampleProduct>
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="LMS">
 			<Names>
 				<Name language="de" text="LMS" />
 				<Name language="en" text="LMS" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -880,7 +838,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Possible</VideoContent>
 				<Tutoring>Possible</Tutoring>
@@ -902,7 +859,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="LMS">
 				<Names>
 					<Name language="de" text="LMS (Learning Management Systeme)" />
@@ -920,7 +876,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="eFront" website="http://www.efrontlearning.net/">
 					<Names>
 						<Name language="de" text="eFront" />
@@ -939,7 +894,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Stud.IP" website="http://www.studip.de/">
 					<Names>
 						<Name language="de" text="Stud.IP" />
@@ -958,7 +912,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Moodle" website="http://moodle.org/">
 					<Names>
 						<Name language="de" text="Moodle" />
@@ -978,7 +931,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Chamilo" website="http://www.chamilo.org/">
 					<Names>
 						<Name language="de" text="Chamilo" />
@@ -997,7 +949,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Claroline" website="http://www.claroline.net/">
 					<Names>
 						<Name language="de" text="Claroline" />
@@ -1016,7 +967,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="ILIAS" website="http://www.ilias.de/">
 					<Names>
 						<Name language="de" text="ILIAS" />
@@ -1037,13 +987,11 @@
 				</ExampleProduct>
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Message Boards">
 			<Names>
 				<Name language="de" text="Internetforen" />
 				<Name language="en" text="Message Boards" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -1056,7 +1004,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Possible</VideoContent>
 				<Tutoring>Impossible</Tutoring>
@@ -1078,7 +1025,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Message Boards">
 				<Names>
 					<Name language="de" text="Web-Foren" />
@@ -1096,7 +1042,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="vBulletin" website="http://www.vbulletin.com/">
 					<Names>
 						<Name language="de" text="vBulletin" />
@@ -1115,7 +1060,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="phpBB" website="http://www.phpbb.com/">
 					<Names>
 						<Name language="de" text="phpBB" />
@@ -1134,7 +1078,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="MyBB" website="http://www.mybb.com/">
 					<Names>
 						<Name language="de" text="MyBB" />
@@ -1153,16 +1096,13 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="MOOCs">
 			<Names>
 				<Name language="de" text="MOOCs" />
 				<Name language="en" text="MOOCs" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -1175,7 +1115,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Possible</VideoContent>
 				<Tutoring>Possible</Tutoring>
@@ -1197,7 +1136,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Impossible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="MOOCs">
 				<Names>
 					<Name language="de" text="MOOCs" />
@@ -1215,7 +1153,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Coursera" website="https://coursera.org/">
 					<Names>
 						<Name language="de" text="Coursera" />
@@ -1234,7 +1171,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="iversity" website="https://www.iversity.org/">
 					<Names>
 						<Name language="de" text="iversity" />
@@ -1253,7 +1189,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="edX" website="https://www.edx.org/">
 					<Names>
 						<Name language="de" text="edX" />
@@ -1272,16 +1207,13 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Online Editors">
 			<Names>
 				<Name language="de" text="Online Editoren" />
 				<Name language="en" text="Online Editors" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -1294,7 +1226,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Impossible</VideoContent>
 				<Tutoring>Impossible</Tutoring>
@@ -1316,7 +1247,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Online Editors">
 				<Names>
 					<Name language="de" text="Online Editoren" />
@@ -1334,7 +1264,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Office Online" website="http://office.microsoft.com/online/">
 					<Names>
 						<Name language="de" text="Office Online" />
@@ -1353,7 +1282,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Google Docs" website="https://docs.google.com">
 					<Names>
 						<Name language="de" text="Google Drive" />
@@ -1372,7 +1300,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Cloud9" website="http://c9.io/">
 					<Names>
 						<Name language="de" text="Cloud9" />
@@ -1391,7 +1318,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Koding" website="https://koding.com/">
 					<Names>
 						<Name language="de" text="Koding" />
@@ -1410,7 +1336,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="TitanPad" website="https://titanpad.com/">
 					<Names>
 						<Name language="de" text="TitanPad" />
@@ -1429,16 +1354,13 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Online Seminars">
 			<Names>
 				<Name language="de" text="Webinar" />
 				<Name language="en" text="Webinar" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -1451,7 +1373,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Mandatory</VideoContent>
 				<Tutoring>Impossible</Tutoring>
@@ -1473,7 +1394,6 @@
 				<TeachingTypeDevelopment>Impossible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Impossible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Online Seminars">
 				<Names>
 					<Name language="de" text="Online Seminare" />
@@ -1491,7 +1411,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Google Hangouts" website="https://www.google.com/hangouts/">
 					<Names>
 						<Name language="de" text="Google Hangouts" />
@@ -1510,7 +1429,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="edudip" website="http://www.edudip.com/">
 					<Names>
 						<Name language="de" text="edudip" />
@@ -1529,7 +1447,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Jitsi" website="http://jitsi.org/">
 					<Names>
 						<Name language="de" text="Jitsi" />
@@ -1548,7 +1465,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Skype" website="http://www.skype.com/">
 					<Names>
 						<Name language="de" text="Skype" />
@@ -1568,7 +1484,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="WebEx" website="http://www.webex.com/">
 					<Names>
 						<Name language="de" text="WebEx" />
@@ -1587,16 +1502,13 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Online Whiteboards">
 			<Names>
 				<Name language="de" text="Online Whiteboards" />
 				<Name language="en" text="Online Whiteboards" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -1609,7 +1521,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Possible</VideoContent>
 				<Tutoring>Impossible</Tutoring>
@@ -1631,7 +1542,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Online Whiteboards">
 				<Names>
 					<Name language="de" text="Online Whiteboards" />
@@ -1649,7 +1559,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="RealtimeBoard" website="https://realtimeboard.com/">
 					<Names>
 						<Name language="de" text="RealtimeBoard" />
@@ -1668,7 +1577,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Web Whiteboard" website="http://webwhiteboard.com/">
 					<Names>
 						<Name language="de" text="Web Whiteboard" />
@@ -1687,7 +1595,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="AWW" website="https://awwapp.com/">
 					<Names>
 						<Name language="de" text="AWW" />
@@ -1706,7 +1613,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Spacedeck" website="https://spacedeck.com/">
 					<Names>
 						<Name language="de" text="Spacedeck" />
@@ -1725,16 +1631,13 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Questions and Answers Platforms">
 			<Names>
 				<Name language="de" text="Q&amp;A Software" />
 				<Name language="en" text="Q&amp;A Software" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -1747,7 +1650,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Impossible</VideoContent>
 				<Tutoring>Impossible</Tutoring>
@@ -1769,7 +1671,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Impossible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Questions and Answers Platforms">
 				<Names>
 					<Name language="de" text="Fragen und Antworten-Plattformen" />
@@ -1787,7 +1688,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="OSQA" website="http://www.osqa.net/">
 					<Names>
 						<Name language="de" text="OSQA" />
@@ -1806,7 +1706,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Piazza" website="https://piazza.com/">
 					<Names>
 						<Name language="de" text="Piazza" />
@@ -1827,7 +1726,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Q2A" website="http://www.question2answer.org/">
 					<Names>
 						<Name language="de" text="Q2A" />
@@ -1846,17 +1744,13 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Simulation-Based Learning">
-
 			<Names>
 				<Name language="de" text="Simulation Based Learning" />
 				<Name language="en" text="Simulation-Based Learning" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -1869,7 +1763,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Impossible</VideoContent>
 				<Tutoring>Possible</Tutoring>
@@ -1891,7 +1784,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Mathematics">
 				<Names>
 					<Name language="de" text="Mathematik" />
@@ -2099,13 +1991,11 @@
 				</ExampleProduct>
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Software-Based Learning">
 			<Names>
 				<Name language="de" text="Computer Based Learning  (CBL)" />
 				<Name language="en" text="Computer-Based Learning  (CBL)" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -2118,7 +2008,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Impossible</VideoContent>
 				<Tutoring>Possible</Tutoring>
@@ -2140,7 +2029,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Mathematics">
 				<Names>
 					<Name language="de" text="Mathematik" />
@@ -2158,7 +2046,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="MATLAB" website="http://www.matlab.com">
 					<Names>
 						<Name language="de" text="MATLAB" />
@@ -2272,9 +2159,7 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
-
 			<ExampleGroup internalName="CAD and 3D Modelling">
 				<Names>
 					<Name language="de" text="CAD und 3D-Modellierung" />
@@ -2292,7 +2177,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="AutoCAD" website="http://www.autodesk.com/">
 					<Names>
 						<Name language="de" text="AutoCAD" />
@@ -2312,7 +2196,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="3ds Max" website="http://www.autodesk.com/">
 					<Names>
 						<Name language="de" text="3ds Max" />
@@ -2331,7 +2214,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Moment of Inspiration" website="http://www.moi3d.com/">
 					<Names>
 						<Name language="de" text="Moment of Inspiration" />
@@ -2350,7 +2232,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="SketchUp" website="http://www.sketchup.com">
 					<Names>
 						<Name language="de" text="SketchUp" />
@@ -2369,9 +2250,7 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
-
 			<ExampleGroup internalName="Audio">
 				<Names>
 					<Name language="de" text="Audio" />
@@ -2389,7 +2268,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Cubase" website="http://www.steinberg.net/">
 					<Names>
 						<Name language="de" text="Cubase" />
@@ -2408,7 +2286,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Ableton Live" website="http://www.ableton.com/">
 					<Names>
 						<Name language="de" text="Ableton Live" />
@@ -2428,7 +2305,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Reason" website="http://www.propellerheads.se/">
 					<Names>
 						<Name language="de" text="Reason" />
@@ -2447,7 +2323,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Pro Tools" website="http://www.avid.com/">
 					<Names>
 						<Name language="de" text="Pro Tools" />
@@ -2466,7 +2341,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Audacity" website="http://audacity.sourceforge.net/">
 					<Names>
 						<Name language="de" text="Audacity" />
@@ -2485,7 +2359,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Pure Data" website="http://puredata.info/">
 					<Names>
 						<Name language="de" text="Pure Data" />
@@ -2504,7 +2377,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Max" website="http://cycling74.com/products/max/">
 					<Names>
 						<Name language="de" text="Max" />
@@ -2523,9 +2395,7 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
-
 			<ExampleGroup internalName="Media">
 				<Names>
 					<Name language="de" text="Media" />
@@ -2543,7 +2413,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Pure Data" website="http://puredata.info/">
 					<Names>
 						<Name language="de" text="Pure Data" />
@@ -2562,7 +2431,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Max" website="http://cycling74.com/products/max/">
 					<Names>
 						<Name language="de" text="Max" />
@@ -2581,7 +2449,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="vvvv" website="http://www.vvvv.org/">
 					<Names>
 						<Name language="de" text="vvvv" />
@@ -2600,9 +2467,7 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
-
 			<ExampleGroup internalName="Software Engineering">
 				<Names>
 					<Name language="de" text="Software-Entwicklung" />
@@ -2620,7 +2485,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="BlueJ" website="http://bluej.org/">
 					<Names>
 						<Name language="de" text="BlueJ" />
@@ -2639,7 +2503,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Koding" website="https://koding.com/">
 					<Names>
 						<Name language="de" text="Koding" />
@@ -2658,7 +2521,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="JS Bin" website="http://jsbin.com/">
 					<Names>
 						<Name language="de" text="JS Bin" />
@@ -2677,7 +2539,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Cloud9" website="http://c9.io/">
 					<Names>
 						<Name language="de" text="Cloud9" />
@@ -2696,9 +2557,7 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
-
 			<ExampleGroup internalName="Data Analytics">
 				<Names>
 					<Name language="de" text="Datenanalyse" />
@@ -2716,7 +2575,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="MATLAB" website="http://www.matlab.com">
 					<Names>
 						<Name language="de" text="MATLAB" />
@@ -2738,7 +2596,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Mathematica" website="http://www.mathematica.com">
 					<Names>
 						<Name language="de" text="Mathematica" />
@@ -2758,7 +2615,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="R" website="http://www.r-project.org/">
 					<Names>
 						<Name language="de" text="R" />
@@ -2778,7 +2634,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="RapidMiner" website="http://rapidminer.com/">
 					<Names>
 						<Name language="de" text="RapidMiner" />
@@ -2797,17 +2652,13 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Video-Based Learning">
-
 			<Names>
 				<Name language="de" text="Video Based Learning" />
 				<Name language="en" text="Video-Based Learning" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -2820,7 +2671,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Mandatory</VideoContent>
 				<Tutoring>Impossible</Tutoring>
@@ -2842,7 +2692,6 @@
 				<TeachingTypeDevelopment>Impossible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Impossible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Video Platforms">
 				<Names>
 					<Name language="de" text="Video-Plattformen" />
@@ -2933,7 +2782,6 @@
 					</Descriptions>
 				</ExampleProduct>
 			</ExampleGroup>
-
 			<ExampleGroup internalName="Screencasting Software">
 				<Names>
 					<Name language="de" text="Screencasting-Software" />
@@ -2951,7 +2799,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Adobe Captivate" website="http://www.adobe.com/products/captivate.html">
 					<Names>
 						<Name language="de" text="Adobe Captivate" />
@@ -2970,7 +2817,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Camtasia Studio" website="http://www.techsmith.com/">
 					<Names>
 						<Name language="de" text="Camtasia Studio" />
@@ -2989,7 +2835,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="CamStudio" website="http://camstudio.org/">
 					<Names>
 						<Name language="de" text="CamStudio" />
@@ -3008,16 +2853,13 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="VR-Based Learning">
 			<Names>
 				<Name language="de" text="VR Based Learning" />
 				<Name language="en" text="VR-Based Learning" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -3030,7 +2872,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Impossible</VideoContent>
 				<Tutoring>Possible</Tutoring>
@@ -3052,7 +2893,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="VR-Based Learning">
 				<Names>
 					<Name language="de" text="VR-basiertes Lernen" />
@@ -3070,7 +2910,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Minecraft" website="http://www.minecraft.net">
 					<Names>
 						<Name language="de" text="Minecraft" />
@@ -3092,7 +2931,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Second Life" website="http://secondlife.com/">
 					<Names>
 						<Name language="de" text="Second Life" />
@@ -3114,13 +2952,11 @@
 				</ExampleProduct>
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="VR-Labs">
 			<Names>
 				<Name language="de" text="VR-Labs" />
 				<Name language="en" text="VR Labs" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -3133,7 +2969,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Possible</VideoContent>
 				<Tutoring>Possible</Tutoring>
@@ -3155,7 +2990,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="VR-Labs">
 				<Names>
 					<Name language="de" text="Virtuelle Labore" />
@@ -3173,7 +3007,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="Labster" website="http://www.labster.com/">
 					<Names>
 						<Name language="de" text="Labster" />
@@ -3192,7 +3025,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="THIX Chemist" website="http://thixlab.com">
 					<Names>
 						<Name language="de" text="THIX Chemist" />
@@ -3211,7 +3043,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="Minecraft" website="http://www.minecraft.net">
 					<Names>
 						<Name language="de" text="Minecraft" />
@@ -3233,16 +3064,13 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 		<ProductGroup internalName="Wikis">
 			<Names>
 				<Name language="de" text="Wikis" />
 				<Name language="en" text="Wikis" />
 			</Names>
-
 			<Descriptions>
 				<Description language="de">
 					<Text>
@@ -3255,7 +3083,6 @@
 					</Text>
 				</Description>
 			</Descriptions>
-
 			<SharedProperties>
 				<VideoContent>Possible</VideoContent>
 				<Tutoring>Impossible</Tutoring>
@@ -3277,7 +3104,6 @@
 				<TeachingTypeDevelopment>Possible</TeachingTypeDevelopment>
 				<TeachingTypeExplorative>Possible</TeachingTypeExplorative>
 			</SharedProperties>
-
 			<ExampleGroup internalName="Wikis">
 				<Names>
 					<Name language="de" text="Wikis" />
@@ -3295,7 +3121,6 @@
 						</Text>
 					</Description>
 				</Descriptions>
-
 				<ExampleProduct internalName="MediaWiki" website="http://www.mediawiki.org/">
 					<Names>
 						<Name language="de" text="MediaWiki" />
@@ -3314,7 +3139,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="DokuWiki" website="https://www.dokuwiki.org/">
 					<Names>
 						<Name language="de" text="DokuWiki" />
@@ -3333,7 +3157,6 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 				<ExampleProduct internalName="MoinMoinWiki" website="https://moinmo.in/">
 					<Names>
 						<Name language="de" text="MoinMoinWiki" />
@@ -3352,85 +3175,68 @@
 						</Description>
 					</Descriptions>
 				</ExampleProduct>
-
 			</ExampleGroup>
 		</ProductGroup>
-
 	</ProductsGroup>
-
 	<QuestionStrings>
 		<TextBackButton>
 			<String language="de">Vorherige Frage</String>
 			<String language="en">Previous question</String>
 		</TextBackButton>
-
 		<TextImportant>
 			<String language="de">Diese Aussage ist mir besonders wichtig</String>
 			<String language="en">This statement is important for me</String>
 		</TextImportant>
-
 		<TextQuestion>
 			<String language="de">Frage</String>
 			<String language="en">Question</String>
 		</TextQuestion>
-
 		<QuestionInfoHeader>
 			<String language="de">Zusätzliche Hinweise</String>
 			<String language="en">Additional Information</String>
 		</QuestionInfoHeader>
-
 		<QuestionInfoClose>
 			<String language="de">Schließen</String>
 			<String language="en">Close</String>
 		</QuestionInfoClose>
 	</QuestionStrings>
-	
 	<ResultStrings>
 		<GoodInfluence>
 			<String language="de">Positiver Einfluss</String>
 			<String language="en">Positive influence</String>
 		</GoodInfluence>
-
 		<BadInfluence>
 			<String language="de">Negativer Einfluss</String>
 			<String language="en">Negative influence</String>
 		</BadInfluence>
-
 		<TextResults>
 			<String language="de">Ergebnisse</String>
 			<String language="en">Results</String>
 		</TextResults>
-
 		<TextMatch>
 			<String language="de">Übereinstimmung mit Ihren Antworten</String>
 			<String language="en">match with your answers</String>
 		</TextMatch>
-
 		<TextGroup>
 			<String language="de">Format</String>
 			<String language="en">Format</String>
 		</TextGroup>
-
 		<TextExamples>
 			<String language="de">Beispiele für</String>
 			<String language="en">Examples for</String>
 		</TextExamples>
-
 		<TextOptionen>
 			<String language="de">Optionen</String>
 			<String language="en">Options</String>
 		</TextOptionen>
-
 		<TextHeaderPrefix>
 			<String language="de">Ihre E-Learning-Empfehlung</String>
 			<String language="en">Your E-Learning Recommendation</String>
 		</TextHeaderPrefix>
-
 		<TextRestart>
 			<String language="de">Den Fragebogen erneut starten</String>
 			<String language="en">Restart the questionnaire</String>
 		</TextRestart>
-
 		<TextHeader1>
 			<String language="de">Unten sehen Sie eine Empfehlung für verschiedene Gruppen von E-Learning-Systemen, basierend auf
 				Ihren Antworten. Bitte wählen Sie eine Gruppe, um Beispiele sehen zu können. Zunächst sehen Sie nur die Top Sechs
@@ -3442,7 +3248,6 @@
 				the options below, you can access the results of all groups.
 			</String>
 		</TextHeader1>
-
 		<TextHeader2>
 			<String language="de">Bitte beachten Sie, dass nur Beispiele in den Gruppen dargestellt werden. Die Aufzählung hat keinen
 				Anspruch auf Vollständigkeit. Möglicherweise existiert in Ihrer Hochschule eine E-Learning-Strategie: Bitte erkundigen
@@ -3460,7 +3265,6 @@
 				please consider countermeasures.
 			</String>
 		</TextHeader2>
-
 		<TextHeader3>
 			<String language="de">Einige der hier vorgestellten Formate sind kostenpflichtig, andere Formate sind dagegen ohne Kosten
 				frei erhältlich. Für viele kostenpflichtige Formate können kostenlose Alternativen gefunden werden. Bei dem Einsatz
@@ -3469,52 +3273,41 @@
 			</String>
 			<String language="en"></String>
 		</TextHeader3>
-
 		<AnswerYes>
 			<String language="de">Ja</String>
 			<String language="en">Yes</String>
 		</AnswerYes>
-
 		<AnswerNo>
 			<String language="de">Nein</String>
 			<String language="en">No</String>
 		</AnswerNo>
-
 		<AnswerStudentCount1>
 			<String language="de">1 bis 12</String>
 			<String language="en">1 til 12</String>
 		</AnswerStudentCount1>
-
 		<AnswerStudentCount2>
 			<String language="de">13 bis 48</String>
 			<String language="en">13 til 48</String>
 		</AnswerStudentCount2>
-
 		<AnswerStudentCount3>
 			<String language="de">49 bis 500</String>
 			<String language="en">49 til 500</String>
 		</AnswerStudentCount3>
-
 		<AnswerStudentCount4>
 			<String language="de">mehr als 500</String>
 			<String language="en">more than 500</String>
 		</AnswerStudentCount4>
-
 		<AnswerSkipped>
 			<String language="de">Übersprungen</String>
 			<String language="en">Skipped</String>
 		</AnswerSkipped>
-
 		<AnswerSupportLecture>
 			<String language="de">Vorlesung/Übung etc. unterstützen</String>
 			<String language="en">Support Lecture</String>
 		</AnswerSupportLecture>
-
 		<AnswerReplaceLecture>
 			<String language="de">Präsenzveranstaltung ersetzen</String>
 			<String language="en">Replace on-site attendance</String>
 		</AnswerReplaceLecture>
-
 	</ResultStrings>
-
 </xml>
