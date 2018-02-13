@@ -9,3 +9,8 @@ type Basis struct {
 	Session               string
 	SiteVerificationToken string
 }
+
+//Add adds two integers. Utility method as templates do not provide arithmetic operations.
+func (basis Basis) Add(a, b int) int {
+	return a + b
+}

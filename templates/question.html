@@ -66,29 +66,14 @@
           </div>
           <div class="line"></div>
           <div class="headerboxtitlecontainer">
-            <h1 class="headerboxtitle">{{.TextQuestion}} {{.NoQuestion}}/{{.NoQuestions}}: {{.TextQuestionTopic}}</h1>
+            <h1 class="headerboxtitle">{{.TextQuestion}} {{.Basis.Add .NoQuestion 1}}/{{.NoQuestions}}: {{.TextQuestionTopic}}</h1>
           </div>
         </div>
         <p class="textbox">{{.TextQuestionBody}}</p>
         <div class="progressbox">
-          <div class="progressitem progressitemfirst{{.GetProgressState 1}}"></div>
-          <div class="progressitem{{.GetProgressState 2}}"></div>
-          <div class="progressitem{{.GetProgressState 3}}"></div>
-          <div class="progressitem{{.GetProgressState 4}}"></div>
-          <div class="progressitem{{.GetProgressState 5}}"></div>
-          <div class="progressitem{{.GetProgressState 6}}"></div>
-          <div class="progressitem{{.GetProgressState 7}}"></div>
-          <div class="progressitem{{.GetProgressState 8}}"></div>
-          <div class="progressitem{{.GetProgressState 9}}"></div>
-          <div class="progressitem{{.GetProgressState 10}}"></div>
-          <div class="progressitem{{.GetProgressState 11}}"></div>
-          <div class="progressitem{{.GetProgressState 12}}"></div>
-          <div class="progressitem{{.GetProgressState 13}}"></div>
-          <div class="progressitem{{.GetProgressState 14}}"></div>
-          <div class="progressitem{{.GetProgressState 15}}"></div>
-          <div class="progressitem{{.GetProgressState 16}}"></div>
-          <div class="progressitem{{.GetProgressState 17}}"></div>
-          <div class="progressitem{{.GetProgressState 18}}"></div>
+          {{range $pos, $state := .ProgressStates}}
+          <div class="progressitem{{if eq $pos 0}} progressitemfirst{{end}}{{$state}}"></div>
+          {{end}}
         </div>
         <div class="infobox">
           <div class="infoboxheader">{{.QuestionInfoHeader}}</div>
@@ -106,7 +91,7 @@
               {{end}}
             </div>
             <div class="optionbox">
-              <a class="button buttonsymbol{{.ButtonBackStatus}}" href="/question{{.PreNoQuestion}}?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&lt;</a>
+              <a class="button buttonsymbol{{if eq .NoQuestion 0}} buttonhidden{{end}}" href="/question{{.Basis.Add .NoQuestion -1}}?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&lt;</a>
               <a class="button buttonsymbol{{.ButtonInfoStatus}}" href="#" data-ix="showinfo">?</a>
               <div class="importantbox">
                 <div class="w-checkbox w-clearfix importantelement">

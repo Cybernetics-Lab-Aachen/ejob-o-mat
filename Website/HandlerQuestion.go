@@ -1,7 +1,6 @@
 package Website
 
 import (
-	"fmt"
 	"net/http"
 	"strconv"
 	"strings"
@@ -47,10 +46,8 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
 
 	//Read question number
-	data.Progress = noQuestion
-	data.NoQuestion = fmt.Sprintf(`%d`, data.Progress)
-	data.PreNoQuestion = fmt.Sprintf(`%d`, data.Progress-1)
-	data.NoQuestions = fmt.Sprintf("%d", len(XML.Questions))
+	data.NoQuestion = noQuestion
+	data.NoQuestions = len(XML.Questions)
 
 	//Detect language
 	lang := Tools.GetRequestLanguage(request)[0]
@@ -96,13 +93,6 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 		data.ButtonInfoStatus = BUTTON_HIDDEN
 	}
 
-	//Hide back button on first question
-	if noQuestion == 0 {
-		data.ButtonBackStatus = BUTTON_HIDDEN
-	} else {
-		data.ButtonBackStatus = BUTTON_SHOW
-	}
-
 	//Option Buttons
 	data.Buttons = make([]PageQuestionButton, len(questionGroup.Buttons))
 	for i, button := range questionGroup.Buttons {
@@ -124,10 +114,8 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 // PageQuestion contains data for the question template.
 type PageQuestion struct {
 	Basis              Basis
-	NoQuestion         string
-	PreNoQuestion      string
-	NoQuestions        string
-	Progress           int
+	NoQuestion         int
+	NoQuestions        int
 	TextQuestion       string
 	QuestionInfoText   string
 	QuestionInfoHeader string
@@ -136,15 +124,19 @@ type PageQuestion struct {
 	TextQuestionBody   string
 	TextBackButton     string
 	TextImportant      string
-	ButtonBackStatus   string
 	ButtonInfoStatus   string
 	Buttons            []PageQuestionButton
 }
 
-//GetProgressState returns the css class representing the progress.
-func (pg PageQuestion) GetProgressState(pos int) (ret string) {
-	if pg.Progress >= pos {
-		ret = ` progressitemdone`
+//ProgressStates returns a list for all question numbers associated with the css class representing the progress.
+func (pg PageQuestion) ProgressStates() (ret []string) {
+	ret = make([]string, pg.NoQuestions)
+	for pos := 0; pos < pg.NoQuestions; pos++ {
+		if pg.NoQuestion >= pos {
+			ret[pos] = ` progressitemdone`
+		} else {
+			ret[pos] = ``
+		}
 	}
 	return
 }
