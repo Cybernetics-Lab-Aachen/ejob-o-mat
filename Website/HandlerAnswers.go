@@ -56,10 +56,11 @@ func HandlerAnswer(response http.ResponseWriter, request *http.Request) {
 		Weight:  byte(weight)}
 	DB.UpdateAnswers(survey)
 
-	if no+1 >= len(XML.Questions) {
-		// Last questions already answered
+	// Select next question
+	next, allAnswerd := survey.NextQuestion()
+	if allAnswerd {
 		http.Redirect(response, request, fmt.Sprintf("/results?lang=%s&session=%s&amount=6", lang, session), 302)
 	} else {
-		http.Redirect(response, request, fmt.Sprintf("/question%d?lang=%s&session=%s", no+1, lang, session), 302)
+		http.Redirect(response, request, fmt.Sprintf("/question%d?lang=%s&session=%s", next, lang, session), 302)
 	}
 }

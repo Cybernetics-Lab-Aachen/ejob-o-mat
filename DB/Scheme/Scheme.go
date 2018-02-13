@@ -57,6 +57,16 @@ func (survey Survey) GetByInternalName(name string) string {
 	return survey.Answers[name].Data
 }
 
+//NextQuestion gives the first unanswered question. Returns true if all questions were answered.
+func (survey Survey) NextQuestion() (int, bool) {
+	for i, question := range survey.Questions {
+		if _, ok := survey.Answers[question]; !ok {
+			return i, false
+		}
+	}
+	return -1, true
+}
+
 //Answer contains the answer, time and weight for a question.
 type Answer struct {
 	TimeUTC time.Time `bson:"TimeUTC"`
