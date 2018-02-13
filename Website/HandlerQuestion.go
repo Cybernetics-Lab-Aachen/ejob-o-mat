@@ -100,6 +100,16 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 		data.Buttons[i].Text = button.Texts[langID].Text
 	}
 
+	// Progress states
+	data.ProgressStates = make([]string, data.NoQuestions)
+	for pos := 0; pos < data.NoQuestions; pos++ {
+		if _, ok := survey.Answers[survey.Questions[pos]]; ok {
+			data.ProgressStates[pos] = ` progressitemdone`
+		} else {
+			data.ProgressStates[pos] = ``
+		}
+	}
+
 	data.ShowImportant = questionGroup.Weighted
 
 	//Store questionaire start time (time of first question)
@@ -128,20 +138,8 @@ type PageQuestion struct {
 	TextImportant      string
 	ButtonInfoStatus   string
 	Buttons            []PageQuestionButton
+	ProgressStates     []string
 	ShowImportant      bool
-}
-
-//ProgressStates returns a list for all question numbers associated with the css class representing the progress.
-func (pg PageQuestion) ProgressStates() (ret []string) {
-	ret = make([]string, pg.NoQuestions)
-	for pos := 0; pos < pg.NoQuestions; pos++ {
-		if pg.NoQuestion >= pos {
-			ret[pos] = ` progressitemdone`
-		} else {
-			ret[pos] = ``
-		}
-	}
-	return
 }
 
 // PageQuestionButton contains data for a single answer button.
