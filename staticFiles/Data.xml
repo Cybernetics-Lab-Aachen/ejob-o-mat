@@ -2,428 +2,820 @@
 <?xml-stylesheet type="text/css" href="/staticFiles/css/catalogue.css" ?>
 <xml>
 	<QuestionsGroup>
-		<QuestionGroup internalName="Question1">
-			<Topic language="de" text="Video-Inhalte" />
-			<Topic language="en" text="Video Content" />
+		<QuestionGroup internalName="R1">
+			<Topic language="de" text="Typ R" />
+			<Topic language="en" text="Typ R" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format Videoinhalte ermöglichen?
+				Ich repariere gerne selbst Dinge, wenn sie defekt sind.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format provide a functionality to display video content?
+				Ich repariere gerne selbst Dinge, wenn sie defekt sind.
 			</QuestionBody>
-			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
-			</Button>
 			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
-			</Button>
-		</QuestionGroup>
-		<QuestionGroup internalName="Question2">
-			<Topic language="de" text="Tutoring" />
-			<Topic language="en" text="Tutoring" />
-			<QuestionBody language="de">
-				Soll das E-Learning-Format Tutoring ermöglichen?
-			</QuestionBody>
-			<QuestionBody language="en">
-				Should the e-learning format provide a functionality for tutoring?
-			</QuestionBody>
 			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
 			</Button>
-			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question3">
-			<Topic language="de" text="Kommentare" />
-			<Topic language="en" text="Comments" />
+		<QuestionGroup internalName="R2">
+			<Topic language="de" text="Typ R" />
+			<Topic language="en" text="Typ R" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format Kommentare der Studierenden ermöglichen?
+				Neue technische Geräte zu bedienen fällt mir leicht.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format provide the possibility to comment by the students?
+				Neue technische Geräte zu bedienen fällt mir leicht.
 			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
 			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
 			</Button>
-			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question4">
-			<Topic language="de" text="Synchrone Interaktion" />
-			<Topic language="en" text="Synchronised Interaction" />
+		<QuestionGroup internalName="R3">
+			<Topic language="de" text="Typ R" />
+			<Topic language="en" text="Typ R" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format eine zeitlich synchrone Interaktion ermöglichen?
+				Es macht mir nichts aus, draußen oder bei schlechten Wetterbedingungen zu arbeiten.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format provide a functionality for synchronised interaction?
+				Es macht mir nichts aus, draußen oder bei schlechten Wetterbedingungen zu arbeiten.
 			</QuestionBody>
-			<Hint language="de">
-				Dies kann ein einfacher Chat zum Austausch von Textnachrichten sein oder eine weiterreichende Interaktion z.B. in einer virtuellen Umgebung.
-			</Hint>
-			<Hint language="en">
-				Examples are e.g. a simple chat to exchange messages or more advanced interactions e.g. within virtual environments.
-			</Hint>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
 			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
 			</Button>
-			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question5">
-			<Topic language="de" text="Asynchrone Interaktion" />
-			<Topic language="en" text="Asynchronous Interaction" />
+		<QuestionGroup internalName="R4">
+			<Topic language="de" text="Typ R" />
+			<Topic language="en" text="Typ R" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format eine zeitlich asynchrone Interaktion ermöglichen?
+				Technische Zeichnungen und Pläne sind mir vertraut und ich kann damit arbeiten.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format provide a functionality for asynchronous interaction?
+				Technische Zeichnungen und Pläne sind mir vertraut und ich kann damit arbeiten.
 			</QuestionBody>
-			<Hint language="de">
-				Dies können z.B. Diskussionsforen und Wikis sein, in denen die Studierenden zeitlich unabhängig voneinander interagieren.
-			</Hint>
-			<Hint language="en">
-				Examples are e.g. discussion boards and Wikis, in which the work occurs time-shifted.
-			</Hint>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
 			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
 			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="I1">
+			<Topic language="de" text="Typ I" />
+			<Topic language="en" text="Typ I" />
+			<QuestionBody language="de">
+				Im Labor finde ich mich gut zurecht.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Im Labor finde ich mich gut zurecht.
+			</QuestionBody>
 			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
-			</Button>
-		</QuestionGroup>
-		<QuestionGroup internalName="Question6">
-			<Topic language="de" text="Anzahl der Zugriffe" />
-			<Topic language="en" text="Amount of Accesses" />
-			<QuestionBody language="de">
-				Wie viele Studierende besuchen Ihren Kurs bzw. Ihre Veranstaltung?
-			</QuestionBody>
-			<QuestionBody language="en">
-				How many students are in your course?
-			</QuestionBody>
-			<Button data="studentCount1">
-				<TextButton language="de" text="1 bis 12" />
-				<TextButton language="en" text="1 til 12" />
-			</Button>
-			<Button data="studentCount2">
-				<TextButton language="de" text="13 bis 48" />
-				<TextButton language="en" text="13 til 48" />
-			</Button>
-			<Button data="studentCount3">
-				<TextButton language="de" text="49 bis 500" />
-				<TextButton language="en" text="49 til 500" />
-			</Button>
-			<Button data="studentCount4">
-				<TextButton language="de" text="mehr als 500" />
-				<TextButton language="en" text="more than 500" />
-			</Button>
-		</QuestionGroup>
-		<QuestionGroup internalName="Question7">
-			<Topic language="de" text="Downloads" />
-			<Topic language="en" text="Downloads" />
-			<QuestionBody language="de">
-				Soll das E-Learning-Format einen Dateidownload ermöglichen?
-			</QuestionBody>
-			<QuestionBody language="en">
-				Should the e-learning format provide a functionality for file downloads?
-			</QuestionBody>
 			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
 			</Button>
-			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question8">
-			<Topic language="de" text="Lernziele" />
-			<Topic language="en" text="Learning Objectives" />
+		<QuestionGroup internalName="I2">
+			<Topic language="de" text="Typ I" />
+			<Topic language="en" text="Typ I" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format das Einsehen der Lernziele ermöglichen?
+				Ich lese gerne wissenschaftliche Artikel, auch wenn sie etwas komplizierter sind.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format provide a functionality to display the learning objectives?
+				Ich lese gerne wissenschaftliche Artikel, auch wenn sie etwas komplizierter sind.
 			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
 			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
 			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="I3">
+			<Topic language="de" text="Typ I" />
+			<Topic language="en" text="Typ I" />
+			<QuestionBody language="de">
+				Ich beobachte und führe gerne Versuche und Untersuchungen durch.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Ich beobachte und führe gerne Versuche und Untersuchungen durch.
+			</QuestionBody>
 			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
-			</Button>
-		</QuestionGroup>
-		<QuestionGroup internalName="Question9">
-			<Topic language="de" text="Einsatzzweck" />
-			<Topic language="en" text="Purpose" />
-			<QuestionBody language="de">
-				Soll das E-Learning-Format Ihre Vorlesung, Übung etc. unterstützen oder die Präsenzveranstaltung ersetzen?
-			</QuestionBody>
-			<QuestionBody language="en">
-				Should the e-learning format support your lecture, exercise, etc. or should it replace the on-site attendance?
-			</QuestionBody>
-			<Button data="support4lecture">
-				<TextButton language="de" text="Vorlesung/Übung etc. unterstützen" />
-				<TextButton language="en" text="Support Lecture" />
-			</Button>
-			<Button data="replace">
-				<TextButton language="de" text="Präsenzveranstaltung ersetzen" />
-				<TextButton language="en" text="Replace on-site attendance" />
-			</Button>
-		</QuestionGroup>
-		<QuestionGroup internalName="Question10">
-			<Topic language="de" text="Cloud" />
-			<Topic language="en" text="Cloud" />
-			<QuestionBody language="de">
-				Darf das E-Learning-Format nach den Statuten Ihrer Hochschule als Cloud-Dienst angeboten werden?
-			</QuestionBody>
-			<QuestionBody language="en">
-				Do the bylaws of your university allow an e-learning format provided by a cloud service?
-			</QuestionBody>
-			<Hint language="de">
-				Häufig laufen sogenannte Cloud-Dienste auf Infrastrukturen von z.B. amerikanischen Unternehmen.
-				Daher können in solchen Fällen die Regeln des europäischen Datenschutzes nicht eingehalten bzw. garantiert werden.
-			</Hint>
-			<Hint language="en">
-				These kinds of services often use e.g. infrastructure from American companies. In such
-				cases, it maybe not possible to guarantee the privacy policies of your country.
-			</Hint>
 			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
 			</Button>
-			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
 			</Button>
-		</QuestionGroup>
-		<QuestionGroup internalName="Question11">
-			<Topic language="de" text="Hochschulnetz" />
-			<Topic language="en" text="University Network" />
-			<QuestionBody language="de">
-				Soll das E-Learning-Format einen Betrieb in Ihrem Hochschulnetz ermöglichen?
-			</QuestionBody>
-			<QuestionBody language="en">
-				Should the e-learning format enable to operate inside of your local university network?
-			</QuestionBody>
-			<Hint language="de">
-				In diesem Fall können Sie die Regeln des Datenschutzes selber anwenden und
-				den Zugang zu dem E-Learning-Format z.B. auf Ihre Studierenden beschränken.
-			</Hint>
-			<Hint language="en">
-				In this case, you are able to apply privacy rules and restrictions e.g. you can restrict
-				the e-learning format to your students only.
-			</Hint>
-			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
 			</Button>
-			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
-			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question12">
-			<Topic language="de" text="Test- und Prüfungsformate" />
-			<Topic language="en" text="Assessments" />
+		<QuestionGroup internalName="I4">
+			<Topic language="de" text="Typ I" />
+			<Topic language="en" text="Typ I" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format Tests oder Prüfungen ermöglichen?
+				Ich arbeite gerne und über eine längere Zeit an einer Problemstellung, um eine Lösung zu finden.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format provide a functionality for assessments?
+				Ich arbeite gerne und über eine längere Zeit an einer Problemstellung, um eine Lösung zu finden.
 			</QuestionBody>
-			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
-			</Button>
 			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question13">
-			<Topic language="de" text="Rollen für Studierende" />
-			<Topic language="en" text="Roles for Students" />
+		<QuestionGroup internalName="A1">
+			<Topic language="de" text="Typ A" />
+			<Topic language="en" text="Typ A" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format Rollen (z.B. Gruppenleiter, Moderator, etc.) für die Studierenden ermöglichen?
+				Zu Dichtung, Poesie und Literatur habe ich einen guten Bezug.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format provide a functionality for students' roles (e.g. moderator, group leader, etc.)?
+				Zu Dichtung, Poesie und Literatur habe ich einen guten Bezug.
 			</QuestionBody>
-			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
-			</Button>
 			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question14">
-			<Topic language="de" text="Mathematische Darstellung" />
-			<Topic language="en" text="Presentation of Mathematics" />
+		<QuestionGroup internalName="A2">
+			<Topic language="de" text="Typ A" />
+			<Topic language="en" text="Typ A" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format die Darstellung mathematischer Ausdrücke z.B. der Höheren Mathematik, Physik, Elektrotechnik, etc. ermöglichen?
+				Ich bin sehr kreativ und ideenreich.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format provide a functionality to show e.g. equations for e.g. further mathematics, physics, electrical engineering, etc.?
+				Ich bin sehr kreativ und ideenreich.
 			</QuestionBody>
-			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
-			</Button>
 			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question15">
-			<Topic language="de" text="Mathematische Eingabe" />
-			<Topic language="en" text="Writing of Mathematics" />
+		<QuestionGroup internalName="A3">
+			<Topic language="de" text="Typ A" />
+			<Topic language="en" text="Typ A" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format das Schreiben mathematischer Ausdrücke z.B. der Höheren Mathematik, Physik, Elektrotechnik, etc. ermöglichen?
+				Etwas künstlerisch oder mit sprachlichen Mitteln zu gestalten fällt mir leicht.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format provide a functionality for writing mathematically e.g. equations?
+				Etwas künstlerisch oder mit sprachlichen Mitteln zu gestalten fällt mir leicht.
 			</QuestionBody>
-			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
-			</Button>
 			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question16">
-			<Topic language="de" text="Darbietende Lehrverfahren" />
-			<Topic language="en" text="Presenting Teaching Methods" />
+		<QuestionGroup internalName="A4">
+			<Topic language="de" text="Typ A" />
+			<Topic language="en" text="Typ A" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format darbietende Lehrverfahren wie z.B. Vorträge, Vorlesungen, Demonstrationen, etc. ermöglichen?
+				Ich setze mich gerne mit anderen Kulturen und Fachbereichen auseinander.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format be enabled for presenting teaching methods like e.g. talks, lectures, demonstrations, etc.?
+				Ich setze mich gerne mit anderen Kulturen und Fachbereichen auseinander.
 			</QuestionBody>
-			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
-			</Button>
 			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question17">
-			<Topic language="de" text="Erarbeitende Lehrverfahren" />
-			<Topic language="en" text="Developing Teaching Methods" />
+		<QuestionGroup internalName="S1">
+			<Topic language="de" text="Typ S" />
+			<Topic language="en" text="Typ S" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format erarbeitende Lehrverfahren wie z.B. problembasiertes Lernen, angeleitetes Praktikum/Übungen, einen Fachdialog zwischen Studierenden und Lehrenden, etc. ermöglichen?
+				Ich kann mich gut in andere Menschen hineinversetzen und weiß oft, wie es ihnen geht.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format be enabled for developing teaching methods like e.g. problem-based learning, guided traineeships or practices, a professional dialogue between students and teacher/professor, etc.?
+				Ich kann mich gut in andere Menschen hineinversetzen und weiß oft, wie es ihnen geht.
 			</QuestionBody>
-			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
-			</Button>
 			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
-		<QuestionGroup internalName="Question18">
-			<Topic language="de" text="Explorative Lehrverfahren" />
-			<Topic language="en" text="Explorative Teaching Methods" />
+		<QuestionGroup internalName="S2">
+			<Topic language="de" text="Typ S" />
+			<Topic language="en" text="Typ S" />
 			<QuestionBody language="de">
-				Soll das E-Learning-Format explorative Lehrverfahren wie z.B. Projektarbeiten, Experimente, Planspiele, etc. ermöglichen?
+				Andere Leute zählen gerne auf meinen Rat und meine Meinung.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Should the e-learning format be enabled for explorative teaching methods like e.g. projects, experiments, simulation games, etc.?
+				Andere Leute zählen gerne auf meinen Rat und meine Meinung.
 			</QuestionBody>
-			<Button data="1">
-				<TextButton language="de" text="Ja" />
-				<TextButton language="en" text="Yes" />
-			</Button>
 			<Button data="0">
-				<TextButton language="de" text="Nein" />
-				<TextButton language="en" text="No" />
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
 			</Button>
-			<Button data="*">
-				<TextButton language="de" text="Enthaltung" />
-				<TextButton language="en" text="Skip question" />
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="S3">
+			<Topic language="de" text="Typ S" />
+			<Topic language="en" text="Typ S" />
+			<QuestionBody language="de">
+				Ich kümmere mich gerne um Andere.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Ich kümmere mich gerne um Andere.
+			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="S4">
+			<Topic language="de" text="Typ S" />
+			<Topic language="en" text="Typ S" />
+			<QuestionBody language="de">
+				Mit anderen Menschen arbeite ich gerne zusammen.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Mit anderen Menschen arbeite ich gerne zusammen.
+			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="E1">
+			<Topic language="de" text="Typ E" />
+			<Topic language="en" text="Typ E" />
+			<QuestionBody language="de">
+				Ich kann andere Menschen gut von etwas überzeugen oder begeistern.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Ich kann andere Menschen gut von etwas überzeugen oder begeistern.
+			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="E2">
+			<Topic language="de" text="Typ E" />
+			<Topic language="en" text="Typ E" />
+			<QuestionBody language="de">
+				In Gruppenarbeiten/Teams habe ich meistens eine führende Rolle und behalte den Durchblick.
+			</QuestionBody>
+			<QuestionBody language="en">
+				In Gruppenarbeiten/Teams habe ich meistens eine führende Rolle und behalte den Durchblick.
+			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="E3">
+			<Topic language="de" text="Typ E" />
+			<Topic language="en" text="Typ E" />
+			<QuestionBody language="de">
+				Ich bin in der Lage, Diskussionen zu leiten.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Ich bin in der Lage, Diskussionen zu leiten.
+			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="E4">
+			<Topic language="de" text="Typ E" />
+			<Topic language="en" text="Typ E" />
+			<QuestionBody language="de">
+				Ich übernehme gerne Verantwortung.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Ich übernehme gerne Verantwortung.
+			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="C1">
+			<Topic language="de" text="Typ C" />
+			<Topic language="en" text="Typ C" />
+			<QuestionBody language="de">
+				Dinge zu verwalten und einen Überblick zu behalten, fällt mir leicht.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Dinge zu verwalten und einen Überblick zu behalten, fällt mir leicht.
+			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="C2">
+			<Topic language="de" text="Typ C" />
+			<Topic language="en" text="Typ C" />
+			<QuestionBody language="de">
+				Ich kann gut mit Statistiken umgehen und auch damit rechnen.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Ich kann gut mit Statistiken umgehen und auch damit rechnen.
+			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="C3">
+			<Topic language="de" text="Typ C" />
+			<Topic language="en" text="Typ C" />
+			<QuestionBody language="de">
+				Mich an feste Regeln und Abläufe zu halten, ist kein Problem für mich.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Mich an feste Regeln und Abläufe zu halten, ist kein Problem für mich.
+			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
+			</Button>
+		</QuestionGroup>
+		<QuestionGroup internalName="C4">
+			<Topic language="de" text="Typ C" />
+			<Topic language="en" text="Typ C" />
+			<QuestionBody language="de">
+				Ich kann mit Ausdauer an langen Aufgaben arbeiten, die viel Konzentration und Genauigkeit erfordern.
+			</QuestionBody>
+			<QuestionBody language="en">
+				Ich kann mit Ausdauer an langen Aufgaben arbeiten, die viel Konzentration und Genauigkeit erfordern.
+			</QuestionBody>
+			<Button data="0">
+				<TextButton language="de" text="Trifft sehr zu" />
+				<TextButton language="en" text="Trifft sehr zu" />
+			</Button>
+			<Button data="1">
+				<TextButton language="de" text="Trifft zu" />
+				<TextButton language="en" text="Trifft zu" />
+			</Button>
+			<Button data="2">
+				<TextButton language="de" text="Trifft eher zu" />
+				<TextButton language="en" text="Trifft eher zu" />
+			</Button>
+			<Button data="3">
+				<TextButton language="de" text="Trifft eher nicht zu" />
+				<TextButton language="en" text="Trifft eher nicht zu" />
+			</Button>
+			<Button data="4">
+				<TextButton language="de" text="Trifft nicht zu" />
+				<TextButton language="en" text="Trifft nicht zu" />
+			</Button>
+			<Button data="5">
+				<TextButton language="de" text="Trifft gar nicht zu" />
+				<TextButton language="en" text="Trifft gar nicht zu" />
 			</Button>
 		</QuestionGroup>
 	</QuestionsGroup>
