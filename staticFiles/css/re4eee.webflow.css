@@ -642,6 +642,9 @@ p {
   padding-left: 42px;
   text-align: left;
 }
+.importantbox.importanthidden {
+  display: none;
+}
 .importantelement {
   display: inline-block;
   width: 222px;

@@ -93,7 +93,7 @@
             <div class="optionbox">
               <a class="button buttonsymbol{{if eq .NoQuestion 0}} buttonhidden{{end}}" href="/question{{.Basis.Add .NoQuestion -1}}?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&lt;</a>
               <a class="button buttonsymbol{{.ButtonInfoStatus}}" href="#" data-ix="showinfo">?</a>
-              <div class="importantbox">
+              <div class="importantbox{{if eq .ShowImportant false}} importanthidden{{end}}">
                 <div class="w-checkbox w-clearfix importantelement">
                   <input class="w-checkbox-input checkbox" id="important" type="checkbox" name="important" data-name="important" value="important">
                   <label class="w-form-label checkboxtext" for="important">{{.TextImportant}}</label>

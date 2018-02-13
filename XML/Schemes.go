@@ -98,6 +98,7 @@ type QuestionGroup struct {
 	QuestionBodies []QuestionBody   `xml:"QuestionBody"`
 	Hints          []QuestionHint   `xml:"Hint"`
 	Buttons        []QuestionButton `xml:"Button"`
+	Weighted       bool             `xml:"weighted,attr"`
 }
 
 type Topic struct {

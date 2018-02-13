@@ -100,6 +100,8 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 		data.Buttons[i].Text = button.Texts[langID].Text
 	}
 
+	data.ShowImportant = questionGroup.Weighted
+
 	//Store questionaire start time (time of first question)
 	if noQuestion == 0 {
 		survey.StartTimeQ1 = time.Now().UTC()
@@ -126,6 +128,7 @@ type PageQuestion struct {
 	TextImportant      string
 	ButtonInfoStatus   string
 	Buttons            []PageQuestionButton
+	ShowImportant      bool
 }
 
 //ProgressStates returns a list for all question numbers associated with the css class representing the progress.
