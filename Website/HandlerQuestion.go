@@ -121,10 +121,36 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	Templates.ProcessHTML(`question`, response, data)
 }
 
+// PageQuestion contains data for the question template.
+type PageQuestion struct {
+	Basis              Basis
+	NoQuestion         string
+	PreNoQuestion      string
+	NoQuestions        string
+	Progress           int
+	TextQuestion       string
+	QuestionInfoText   string
+	QuestionInfoHeader string
+	QuestionInfoClose  string
+	TextQuestionTopic  string
+	TextQuestionBody   string
+	TextBackButton     string
+	TextImportant      string
+	ButtonBackStatus   string
+	ButtonInfoStatus   string
+	Buttons            []PageQuestionButton
+}
+
 //GetProgressState returns the css class representing the progress.
 func (pg PageQuestion) GetProgressState(pos int) (ret string) {
 	if pg.Progress >= pos {
 		ret = ` progressitemdone`
 	}
 	return
+}
+
+// PageQuestionButton contains data for a single answer button.
+type PageQuestionButton struct {
+	Text string
+	Data string
 }

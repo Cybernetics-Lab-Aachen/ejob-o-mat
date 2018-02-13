@@ -31,3 +31,9 @@ func HandlerImpressum(response http.ResponseWriter, request *http.Request) {
 	Tools.SendChosenLanguage(response, lang)
 	Templates.ProcessHTML(`impressum`, response, data)
 }
+
+// PageImpressum contains data for the impressum template.
+type PageImpressum struct {
+	Basis              Basis
+	TextPrefix4English string
+}

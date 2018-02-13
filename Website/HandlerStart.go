@@ -72,3 +72,13 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 	Tools.SendChosenLanguage(response, lang)
 	Templates.ProcessHTML(`start`, response, data)
 }
+
+// PageStart contains data for the start template.
+type PageStart struct {
+	Basis           Basis
+	TextWelcome     string
+	TextStartButton string
+	TextProject     string
+	TextExecuted    string
+	TextPromoted    string
+}

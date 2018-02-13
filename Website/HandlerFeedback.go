@@ -46,3 +46,15 @@ func HandlerFeedback(response http.ResponseWriter, request *http.Request) {
 	Tools.SendChosenLanguage(response, lang)
 	Templates.ProcessHTML(`feedback`, response, data)
 }
+
+// PageFeedback contains data for the feedback template.
+type PageFeedback struct {
+	Basis            Basis
+	TextFeedback     string
+	TextYourFeedback string
+	TextYourRating   string
+	TextRatingLeft   string
+	TextRatingRight  string
+	TextSubmit       string
+	SourceLocation   string
+}

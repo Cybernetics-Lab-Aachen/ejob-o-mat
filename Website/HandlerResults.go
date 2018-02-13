@@ -113,6 +113,20 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	Templates.ProcessHTML(`results`, response, data)
 }
 
+// PageResults contains data for the results template.
+type PageResults struct {
+	Basis          Basis
+	LangPos        int
+	AmountCurrent  int
+	AmountToggle   int
+	Groups         []XML.ProductGroup
+	Questions      []XML.QuestionGroup
+	Recommendation Scheme.Recommendation
+	TextAllGroups  string
+	Strings        XML.ResultStrings
+	Answers        Scheme.Survey
+}
+
 // GetProgressState returns the css class representing the progress.
 func (data PageResults) GetProgressState(influence int8) string {
 	if influence > 0 {

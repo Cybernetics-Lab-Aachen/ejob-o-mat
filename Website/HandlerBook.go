@@ -16,7 +16,7 @@ func HandlerBook(response http.ResponseWriter, request *http.Request) {
 
 	Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameREQUEST, `Someone has requested the whole data source.`, request.RemoteAddr)
 
-	Tools.SendChosenLanguage(response, langBook)
+	Tools.SendChosenLanguage(response, Tools.Language{Factor: 1.0, Language: `de`})
 	MimeTypes.Write2HTTP(response, MimeTypes.TypeXML)
 	fmt.Fprintln(response, string(StaticFiles.FindAndReadFile(`Data.xml`)))
 }
