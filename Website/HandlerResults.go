@@ -25,7 +25,6 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	answers, loadAnswersError := DB.LoadAnswers(session)
 	groups := XML.GetData()
 	amountValue := -1
-	resultSet := Scheme.Recommendation{}
 
 	// Check if session exists, otherwise redirect to start page
 	if loadAnswersError {
@@ -45,16 +44,14 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	}
 
 	// Load/calculate recommendations
-	if !DB.CheckRecommendation(session) {
+	resultSet, loaRecommendationError := DB.LoadRecommendation(session)
+	if loaRecommendationError { // Calculate recommendation
 		resultSet.ProductGroups = Algorithm.ExecuteAnswers(answers.Answers)
 		resultSet.CreateTimeUTC = time.Now().UTC()
 		resultSet.Session = session
 		resultSet.SchemeVersion = Scheme.CurrentVersion
 		DB.StoreRecommendation(resultSet)
-
 	} else {
-		resultSet = DB.LoadRecommendation(session)
-
 		// Check for old session. Can't work with outdated data.
 		if resultSet.SchemeVersion < Scheme.CurrentVersion {
 			http.Redirect(response, request, `/start`, 302)
