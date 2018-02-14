@@ -2,6 +2,7 @@ package Algorithm
 
 import (
 	"sort"
+	"strconv"
 
 	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
 	"github.com/SommerEngineering/ejob-o-mat/XML"
@@ -19,42 +20,31 @@ func ExecuteAnswers(answers map[string]Scheme.Answer) []Scheme.ProductGroup {
 	// Algorithm:
 	for n, productGroup := range data.ProductsCollection.Products {
 		//Calculate points per question for a product
-		groups[n].AnswerInfluences = make(map[string]int8)
-		influence := groups[n].AnswerInfluences
+		influence := make(map[string]int8)
 
 		// Calculate influences of each answer
+		points := 0
 		for _, question := range XML.Questions {
-			v := 0 // TODO
+			if question.InternalName[0] == productGroup.InternalName[4] { // Questions type is this progucr group
+				v, _ := strconv.Atoi(answers[question.InternalName].Data)
+				if v <= 2 {
+					influence[question.InternalName] = int8(1)
+				} else {
+					influence[question.InternalName] = int8(-1)
+				}
 
-			influence[question.InternalName] = int8(v)
-			groups[n].Points += int(v)
+				points += 5 - v
+			}
 		}
 
-		groups[n].Name = productGroup.InternalName
+		groups[n] = Scheme.ProductGroup{
+			Name:             productGroup.InternalName,
+			Points:           points,
+			Percent:          points * 5,
+			AnswerInfluences: influence,
+		}
 	}
 
-	//
-	// Re-align the results to respect the range from 0-100%:
-	//
 	sort.Sort(Scheme.ProductGroupsByPoints(groups))
-	worstPoints := groups[len(groups)-1].Points
-	bestPointsNormal := 0.0
-	for _, answer := range answers {
-		bestPointsNormal += float64(answer.Weight)
-	}
-
-	for n := range groups {
-		if worstPoints < 0 {
-			groups[n].Points -= worstPoints // Normalize points so that worst has zero points
-			// percent = (points - worst) / (maxPoints - worst) * 100
-			percent := float64(groups[n].Points) / (bestPointsNormal - float64(worstPoints)) * 100.0
-			groups[n].Percent = int(percent)
-		} else {
-			// percent = points / maxPoints * 100
-			percent := float64(groups[n].Points) / bestPointsNormal * 100.0
-			groups[n].Percent = int(percent)
-		}
-	}
-
 	return groups
 }
