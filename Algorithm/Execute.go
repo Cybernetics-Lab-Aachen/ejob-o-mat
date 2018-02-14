@@ -31,7 +31,6 @@ func ExecuteAnswers(answers map[string]Scheme.Answer) []Scheme.ProductGroup {
 		}
 
 		groups[n].Name = productGroup.InternalName
-		groups[n].XMLIndex = n //TODO Use id/internal name instead of XMLIndex, as it might not be consistent when question are added or removed
 	}
 
 	//

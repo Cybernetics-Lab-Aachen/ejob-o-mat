@@ -68,7 +68,10 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	data.Basis.Lang = lang.Language
 	data.Basis.Session = session
 	data.Basis.SiteVerificationToken = ConfigurationDB.Read("SiteVerificationToken")
-	data.Groups = groups.ProductsCollection.Products
+	data.Groups = make(map[string]XML.ProductGroup)
+	for _, productGroup := range groups.ProductsCollection.Products {
+		data.Groups[productGroup.InternalName] = productGroup
+	}
 	data.Questions = groups.QuestionsCollection.Questions
 	data.Recommendation = resultSet
 	data.AmountCurrent = amountValue
@@ -114,7 +117,7 @@ type PageResults struct {
 	LangPos        int
 	AmountCurrent  int
 	AmountToggle   int
-	Groups         []XML.ProductGroup
+	Groups         map[string]XML.ProductGroup
 	Questions      []XML.QuestionGroup
 	Recommendation Scheme.Recommendation
 	TextAllGroups  string
@@ -133,9 +136,9 @@ func (data PageResults) GetProgressState(influence int8) string {
 	}
 }
 
-// GetGroupName returns the localized name of a product group by its index.
-func (data PageResults) GetGroupName(xmlIndex int) string {
-	return data.Groups[xmlIndex].GroupName.Names[data.LangPos].Text
+// GetGroupName returns the localized name of a product group by its internal name.
+func (data PageResults) GetGroupName(internalName string) string {
+	return data.Groups[internalName].GroupName.Names[data.LangPos].Text
 }
 
 // Lang returns the localized string using the language id.

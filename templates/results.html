@@ -86,7 +86,7 @@
           </div>
 
           <div class="w-tab-menu resultmenu">
-            {{range .Recommendation.ProductGroups}} {{$groupName := $data.GetGroupName .XMLIndex}}
+            {{range .Recommendation.ProductGroups}} {{$groupName := $data.GetGroupName .Name}}
             <a class="w-tab-link w--current w-inline-block button buttonhuge buttonresult" data-w-tab="{{$groupName}}">
               <div class="resultnamegroup">
                 <strong class="resultpercent">{{.Percent}}%&nbsp;</strong>{{$groupName}}
@@ -96,7 +96,7 @@
           </div>
 
           <div class="w-tab-content resultcontentarea">
-            {{range .Recommendation.ProductGroups}} {{$dataGroup := index $groups .XMLIndex}} {{$groupName := $data.GetGroupName .XMLIndex}}
+            {{range .Recommendation.ProductGroups}} {{$dataGroup := index $groups .Name}} {{$groupName := $data.GetGroupName .Name}}
             {{$influences := .AnswerInfluences}}
             <div class="w-tab-pane" data-w-tab="{{$groupName}}">
               <div class="divresult">
