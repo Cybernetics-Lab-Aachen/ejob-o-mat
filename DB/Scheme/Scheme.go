@@ -51,11 +51,6 @@ type Survey struct {
 	Questions     []string          `bson:"Questions"` // Permutation of the questions
 }
 
-//GetByInternalName returns the given answer to a question by its internal question name.
-func (survey Survey) GetByInternalName(name string) string {
-	return survey.Answers[name].Data
-}
-
 //NextQuestion gives the first unanswered question. Returns true if all questions were answered.
 func (survey Survey) NextQuestion() (int, bool) {
 	for i, question := range survey.Questions {

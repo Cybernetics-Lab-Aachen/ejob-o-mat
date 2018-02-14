@@ -138,7 +138,7 @@ func (data PageResults) GetProgressState(influence int8) string {
 
 // GetGroupName returns the localized name of a product group by its internal name.
 func (data PageResults) GetGroupName(internalName string) string {
-	return data.Groups[internalName].GroupName.Names[data.LangPos].Text
+	return data.Groups[internalName].GroupNames[data.LangPos].Text
 }
 
 // Lang returns the localized string using the language id.
@@ -147,28 +147,7 @@ func (data PageResults) Lang(strings []XML.String) string {
 }
 
 // FormatAnswer returns localized string for a given answer by it's internal representation.
-func (data PageResults) FormatAnswer(answer string) string {
-	switch answer {
-	case `1`:
-		return data.Lang(data.Strings.AnswerYes)
-	case `0`:
-		return data.Lang(data.Strings.AnswerNo)
-	case `*`:
-		return data.Lang(data.Strings.AnswerSkipped)
-	case `studentCount1`:
-		return data.Lang(data.Strings.AnswerStudentCount1)
-	case `studentCount2`:
-		return data.Lang(data.Strings.AnswerStudentCount2)
-	case `studentCount3`:
-		return data.Lang(data.Strings.AnswerStudentCount3)
-	case `studentCount4`:
-		return data.Lang(data.Strings.AnswerStudentCount4)
-	case `support4lecture`:
-		return data.Lang(data.Strings.AnswerSupportLecture)
-	case `replace`:
-		return data.Lang(data.Strings.AnswerReplaceLecture)
-	}
-
-	Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameREQUEST, `Unknown answer!`, answer)
-	return ``
+func (data PageResults) FormatAnswer(question XML.QuestionGroup) string {
+	answer := data.Answers.Answers[question.InternalName].Data
+	return question.ButtonsByData[answer].Texts[data.LangPos].Text
 }

@@ -87,7 +87,7 @@
 
           <div class="w-tab-menu resultmenu">
             {{range .Recommendation.ProductGroups}} {{$groupName := $data.GetGroupName .Name}}
-            <a class="w-tab-link w--current w-inline-block button buttonhuge buttonresult" data-w-tab="{{$groupName}}">
+            <a class="w-tab-link w--current w-inline-block button buttonhuge buttonresult" data-w-tab="{{.Name}}">
               <div class="resultnamegroup">
                 <strong class="resultpercent">{{.Percent}}%&nbsp;</strong>{{$groupName}}
               </div>
@@ -98,19 +98,19 @@
           <div class="w-tab-content resultcontentarea">
             {{range .Recommendation.ProductGroups}} {{$dataGroup := index $groups .Name}} {{$groupName := $data.GetGroupName .Name}}
             {{$influences := .AnswerInfluences}}
-            <div class="w-tab-pane" data-w-tab="{{$groupName}}">
+            <div class="w-tab-pane" data-w-tab="{{.Name}}">
               <div class="divresult">
                 <div class="subheadline">
-                  <div>
-                    {{$data.Lang $strings.TextGroup}}:
-                    <span class="formatname">{{$groupName}}</span>
-                  </div>
+                  {{$data.Lang $strings.TextGroup}}:
+                  <span class="formatname">{{$groupName}}</span>
                 </div>
+
+                <div class="grouptext">{{(index $dataGroup.GroupDescriptions $langPos).Text}}</div>
 
                 <div class="progressbox">
                   {{range $i, $question := $questions}} {{$influence := index $influences $question.InternalName}}
                   <div class="progressitem progressresultpercentage{{if not $i}} percentagefirst{{end}}{{$data.GetProgressState $influence}}"
-                    title="{{(index $question.Topics $langPos).Text}}: {{$data.FormatAnswer ($data.Answers.GetByInternalName $question.InternalName)}}{{if gt $influence 0}} -> {{$data.Lang $strings.GoodInfluence}}{{else if lt $influence 0}} -> {{$data.Lang $strings.BadInfluence}}{{end}}"></div>
+                    title="{{(index $question.Topics $langPos).Text}}: {{$data.FormatAnswer $question}}{{if gt $influence 0}} -> {{$data.Lang $strings.GoodInfluence}}{{else if lt $influence 0}} -> {{$data.Lang $strings.BadInfluence}}{{end}}"></div>
                   {{end}}
                 </div>
 
@@ -124,24 +124,22 @@
                   </div>
                 </div>
 
-                {{range $dataGroup.ExampleGroup}}
                 <div class="examplegroup">
-                  <h3 class="headerexamplegroup">{{$data.Lang $strings.TextExamples}} {{(index .GroupName.Names $langPos).Text}}</h3>
+                  <h3 class="headerexamplegroup">{{$data.Lang $strings.TextExamples}} {{$groupName}}</h3>
 
-                  {{range .GroupProducts}}
+                  {{range $dataGroup.ExampleProducts}}
                   <div class="w-clearfix exampleproduct">
                     <div class="w-clearfix productnameblock">
-                      <h4 class="productname">{{(index .ProductName.Names $langPos).Text}}</h4>
+                      <h4 class="productname">{{(index .ProductNames $langPos).Text}}</h4>
                     </div>
                     <div class="productlinkbox">
                       <a class="productlink" href="{{.Website}}" target="_blank">{{.Website}}</a>
                     </div>
-                    <p class="producttext">{{(index .ProductDescription.Descriptions $langPos).Text}}</p>
+                    <p class="producttext">{{(index .ProductDescriptions $langPos).Text}}</p>
                   </div>
                   {{end}}
 
                 </div>
-                {{end}}
 
               </div>
             </div>

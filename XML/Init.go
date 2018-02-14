@@ -22,7 +22,14 @@ func init() {
 	Log.LogShort(senderName, LM.CategoryAPP, LM.LevelINFO, LM.MessageNameINIT, `The XML data file was parsed without issues.`)
 
 	Questions = make(map[string]QuestionGroup)
-	for _, question := range data.QuestionsCollection.Questions {
+	for i, question := range data.QuestionsCollection.Questions {
+		// Make buttons searchable by data
+		buttonsByData := make(map[string]QuestionButton)
+		for _, button := range question.Buttons {
+			buttonsByData[button.Data] = button
+		}
+		data.QuestionsCollection.Questions[i].ButtonsByData = buttonsByData
+
 		Questions[question.InternalName] = question
 	}
 }
