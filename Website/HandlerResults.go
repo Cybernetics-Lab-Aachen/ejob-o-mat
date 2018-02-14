@@ -24,7 +24,6 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	lang := Tools.GetRequestLanguage(request)[0]
 	answers, loadAnswersError := DB.LoadAnswers(session)
 	groups := XML.GetData()
-	amountValue := -1
 
 	// Check if session exists, otherwise redirect to start page
 	if loadAnswersError {
@@ -32,15 +31,11 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		return
 	}
 
-	// Validate input
-	if amountText != `` && len(amountText) > 2 {
+	amountValue, errConv := strconv.Atoi(amountText)
+	if errConv != nil { // Validate input
+		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameREQUEST, `Cannot read the amount value!`, amountText, errConv.Error())
 		response.WriteHeader(http.StatusNotFound)
 		return
-	}
-	if value, errConv := strconv.Atoi(amountText); errConv != nil {
-		Log.LogFull(senderName, LM.CategoryAPP, LM.LevelERROR, LM.SeverityMiddle, LM.ImpactNone, LM.MessageNameREQUEST, `Cannot read the amount value!`, amountText, errConv.Error())
-	} else {
-		amountValue = value
 	}
 
 	// Load/calculate recommendations
@@ -60,6 +55,9 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	}
 
 	// Reduce number of shown product groups, if requested
+	if amountValue > len(resultSet.ProductGroups) {
+		amountValue = len(resultSet.ProductGroups)
+	}
 	if amountValue >= 1 {
 		resultSet.ProductGroups = resultSet.ProductGroups[0:amountValue]
 	}
