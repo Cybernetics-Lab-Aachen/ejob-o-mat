@@ -1,18 +1,13 @@
 # ejob-o-mat
 
 ## About
-
-ToDo
+This repository contains sources for the recommendation system ejob-o-mat. This work is part of the project "[ELLI](http://elli-online.net) – Excellent Teaching and Learning in Engineering Sciences" and was funded by the federal ministry of education and research, Germany. This work was carried out at the [IMA of RWTH Aachen University](https://cybernetics-lab.de/).
 
 ## Installation
 
 To set up the project, a clone of the repository is necessary. Afterwards, two options for running the recommendation system are available: Run as Docker container or run as Docker Compose service. In order to run the system as Docker container, a MongoDB database instance must be ready. For the Docker Compose solution, this precondition is not necessary: The necessary database gets started automatically.
 
 ### Run with Docker
-
-[![Docker Automated build](https://img.shields.io/docker/automated/elli2/ejob-o-mat.svg)](https://hub.docker.com/r/elli2/ejob-o-mat/)
-
-[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/SommerEngineering/ejob-o-mat)
 
 First of all, the Docker container must be build. In order to do so, perform the following command:
 
@@ -62,8 +57,8 @@ docker-compose up -d --build
 ```
 
 ## License
-
-All sources are available under a BSD 2-clause license and can be used for any purposes, also commercial usage. The author does not provide any support.
+[![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)  
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/). Commercial use of this project is not permitted. Please contact the [IMA of RWTH Aachen University](https://cybernetics-lab.de/).
 
 ## Contact
 
