@@ -7,8 +7,8 @@ import (
 const (
 	NAME_DE       string = `elearn-o-mat.net`
 	NAME_EN       string = `elearning-finder.net`
-	NAME_DE_PLAIN string = `elearn-o-mat`
-	NAME_EN_PLAIN string = `elearning-finder`
+	NAME_DE_PLAIN string = `ejob-o-mat`
+	NAME_EN_PLAIN string = `ejob-finder`
 	LOGO_DE       string = `logoDE`
 	LOGO_UK       string = `logoUK`
 	VERSION       string = `1.1`
