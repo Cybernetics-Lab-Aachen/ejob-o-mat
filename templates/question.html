@@ -66,9 +66,11 @@
           </div>
           <div class="line"></div>
           <div class="headerboxtitlecontainer">
-            <h1 class="headerboxtitle">{{.TextQuestion}} {{.Basis.Add .NoQuestion 1}}/{{.NoQuestions}}: {{.TextQuestionTopic}}</h1>
+            <h1 class="headerboxtitle">{{.TextQuestion}} {{.Basis.Add .NoQuestion 1}}/{{.NoQuestions}}</h1>
           </div>
         </div>
+        <img class="imagetitle" src="/staticFiles/images/home.gif" alt="E-Learning Image">
+        <br>
         <p class="textbox">{{.TextQuestionBody}}</p>
         <div class="progressbox">
           {{range $pos, $state := .ProgressStates}}
@@ -114,14 +116,8 @@
         <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}">
           <img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif">
         </a>
-        <div>
-          <a href="http://www.elearn-o-mat.net/question{{.NoQuestion}}?lang=de&session={{.Basis.Session}}">
-            <img class="flag" src="/staticFiles/images/flagDE.gif">
-          </a>
-          <a href="http://www.elearning-finder.net/question{{.NoQuestion}}?lang=en&session={{.Basis.Session}}">
-            <img class="flag lastflag" src="/staticFiles/images/flagUK.gif">
-          </a>
-        </div>
+        <br>
+        <br>
         <a class="button buttonsmall" href="/feedback?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&nbsp;&nbsp;Feedback&nbsp;&nbsp;</a>
         <a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}&session={{.Basis.Session}}">Impressum</a>
       </div>
