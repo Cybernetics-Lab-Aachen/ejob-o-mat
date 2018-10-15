@@ -72,80 +72,32 @@
         <div class="w-tabs resulttabs" data-duration-in="500" data-duration-out="500">
           <div class="resultheaderprefix">
             <div class="textbox">
-              <p class="resultheaderprefixtext">{{$data.Lang $strings.TextHeader1}}</p>
-              <p class="resultheaderprefixtext">{{$data.Lang $strings.TextHeader2}}</p>
-              <p class="resultheaderprefixtext">{{$data.Lang $strings.TextHeader3}}</p>
-            </div>
-            <div class="buttonbox buttonboxresult">
-              <a class="button buttonhuge buttonhugesmalltext" href="/start?lang={{.Basis.Lang}}">{{$data.Lang $strings.TextRestart}}</a>
-              <a class="button buttonhuge buttonhugesmalltext" href="/results?lang={{.Basis.Lang}}&session={{.Basis.Session}}&amount={{.AmountToggle}}">{{.TextAllGroups}}</a>
+              <p class="resultheaderprefixtext">{{.HeaderText}}</p>
             </div>
           </div>
-          <div class="subheadline">
-            <div>{{$data.Lang $strings.TextResults}}:</div>
+          <div class="resultheaderprefix">
+            <div class="subheadline">
+                <div>{{$data.Lang $strings.TextResults}}:</div>
+            </div>
           </div>
-
-          <div class="w-tab-menu resultmenu">
-            {{range .Recommendation.ProductGroups}} {{$groupName := $data.GetGroupName .Name}}
-            <a class="w-tab-link w--current w-inline-block button buttonhuge buttonresult" data-w-tab="{{.Name}}">
+          <div class="resultheaderprefix">
+            {{range .Recommendation.ProductGroups}} {{$dataGroup := index $groups .Name}} {{$groupName := $data.GetGroupName .Name}} {{$groupId := $data.GetGroupId .Name}}
+            <div class="button buttonhuge buttonresult spoiler" id="{{$groupId}}">
               <div class="resultnamegroup">
                 <strong class="resultpercent">{{.Percent}}%&nbsp;</strong>{{$groupName}}
               </div>
-            </a>
-            {{end}}
-          </div>
-
-          <div class="w-tab-content resultcontentarea">
-            {{range .Recommendation.ProductGroups}} {{$dataGroup := index $groups .Name}} {{$groupName := $data.GetGroupName .Name}}
-            {{$influences := .AnswerInfluences}}
-            <div class="w-tab-pane" data-w-tab="{{.Name}}">
-              <div class="divresult">
-                <div class="subheadline">
-                  {{$data.Lang $strings.TextGroup}}:
-                  <span class="formatname">{{$groupName}}</span>
+              <div class="grouptext spoiler-content">
+                {{(index $dataGroup.GroupDescriptions $langPos).Text}}
+                <div class="jobofferbox">
+                  <strong>Job Angebote</strong> <br>
+                  LanXess:  <br>
+                  Lufthansa: <a class="jobofferlink" href="https://www.google.com/">Kundenforschung</a> <br>
+                  Sonstige:  <br>
                 </div>
-
-                <div class="grouptext">{{(index $dataGroup.GroupDescriptions $langPos).Text}}</div>
-
-                <div class="progressbox">
-                  {{range $i, $question := $questions}} {{$influence := index $influences $question.InternalName}}
-                  <div class="progressitem progressresultpercentage{{if not $i}} percentagefirst{{end}}{{$data.GetProgressState $influence}}"
-                    title="{{(index $question.Topics $langPos).Text}}: {{$data.FormatAnswer $question}}{{if gt $influence 0}} -> {{$data.Lang $strings.GoodInfluence}}{{else if lt $influence 0}} -> {{$data.Lang $strings.BadInfluence}}{{end}}"></div>
-                  {{end}}
-                </div>
-
-                <div class="headerbox headerresult">
-                  <div class="line"></div>
-                  <div class="headerboxtitlecontainer headerboxresulttitlecontainer">
-                    <h1 class="headerboxtitle headerboxresulttitle">
-                      {{.Percent}}%&nbsp;
-                      <span class="matchingtext">{{$data.Lang $strings.TextMatch}}</span>
-                    </h1>
-                  </div>
-                </div>
-
-                <div class="examplegroup">
-                  <h3 class="headerexamplegroup">{{$data.Lang $strings.TextExamples}} {{$groupName}}</h3>
-
-                  {{range $dataGroup.ExampleProducts}}
-                  <div class="w-clearfix exampleproduct">
-                    <div class="w-clearfix productnameblock">
-                      <h4 class="productname">{{(index .ProductNames $langPos).Text}}</h4>
-                    </div>
-                    <div class="productlinkbox">
-                      <a class="productlink" href="{{.Website}}" target="_blank">{{.Website}}</a>
-                    </div>
-                    <p class="producttext">{{(index .ProductDescriptions $langPos).Text}}</p>
-                  </div>
-                  {{end}}
-
-                </div>
-
               </div>
             </div>
             {{end}}
           </div>
-
           <div class="w-container containerlogo">
             <img src="/staticFiles/images/footer.png">
           </div>
@@ -157,14 +109,8 @@
         <a href="/?lang={{.Basis.Lang}}">
           <img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif">
         </a>
-        <div>
-          <a href="http://www.elearn-o-mat.net/results?lang=de&session={{.Basis.Session}}&amount={{.AmountCurrent}}">
-            <img class="flag" src="/staticFiles/images/flagDE.gif">
-          </a>
-          <a href="http://www.elearning-finder.net/results?lang=en&session={{.Basis.Session}}&amount={{.AmountCurrent}}">
-            <img class="flag lastflag" src="/staticFiles/images/flagUK.gif">
-          </a>
-        </div>
+        <br>
+        <br>
         <a class="button buttonsmall" href="/feedback?lang={{.Basis.Lang}}&session={{.Basis.Session}}">&nbsp;&nbsp;Feedback&nbsp;&nbsp;</a>
         <a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}">Impressum</a>
       </div>
@@ -172,6 +118,32 @@
   </div>
   <script type="text/javascript" src="/framework/jQuery/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="/staticFiles/js/webflow.js"></script>
+  <script type="text/javascript">
+
+    $().ready(function () {
+
+      function initSpoiler(spoilerElement) {
+
+        //var button = spoilerElement.find(".spoiler-button")
+        var content = spoilerElement.find(".spoiler-content")
+
+        // Set onclick function
+        spoilerElement.on("click", function () {
+          content.toggle('fast')
+        })
+
+        // Go to initial state
+        var openId = "{{$data.GetMaxPercentGroupId}}"
+        console.log(openId)
+        if(spoilerElement.attr("id") != openId) {
+          content.toggle('fast')
+        }
+      }
+      $(".spoiler").each(function(index) {
+        initSpoiler($(this))
+      })
+    })
+  </script>
 </body>
 
 </html>

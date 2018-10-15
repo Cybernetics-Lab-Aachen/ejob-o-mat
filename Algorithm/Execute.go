@@ -1,7 +1,6 @@
 package Algorithm
 
 import (
-	"sort"
 	"strconv"
 
 	"github.com/SommerEngineering/ejob-o-mat/DB/Scheme"
@@ -45,6 +44,7 @@ func ExecuteAnswers(answers map[string]Scheme.Answer) []Scheme.ProductGroup {
 		}
 	}
 
-	sort.Sort(Scheme.ProductGroupsByPoints(groups))
+	// Do not sort the types here (because the default ordering is needed for rendering)
+	//sort.Sort(Scheme.ProductGroupsByPoints(groups))
 	return groups
 }

@@ -103,9 +103,9 @@ type ResultStrings struct {
 	XMLName          xml.Name `xml:"ResultStrings"`
 	GoodInfluence    []String `xml:"GoodInfluence>String"`
 	BadInfluence     []String `xml:"BadInfluence>String"`
-	TextHeader1      []String `xml:"TextHeader1>String"`
-	TextHeader2      []String `xml:"TextHeader2>String"`
-	TextHeader3      []String `xml:"TextHeader3>String"`
+	TextHeaderAll    []String `xml:"TextHeaderAll>String"`
+	TextHeaderNone   []String `xml:"TextHeaderNone>String"`
+	TextHeaderSome   []String `xml:"TextHeaderSome>String"`
 	TextHeaderPrefix []String `xml:"TextHeaderPrefix>String"`
 	TextMatch        []String `xml:"TextMatch>String"`
 	TextGroup        []String `xml:"TextGroup>String"`

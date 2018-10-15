@@ -106,6 +106,30 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 		data.LangPos = LANG_EN
 	}
 
+	// Prepare localized header string (using reseults)
+	// Choose header string using average percentage on recommendations
+	// Calc average percentage
+	sumPercent := 0
+	for _, productGroup := range resultSet.ProductGroups {
+		sumPercent += productGroup.Percent
+	}
+	averagePercent := sumPercent / len(resultSet.ProductGroups)
+	// Set header string
+	if strings.Contains(lang.Language, `de`) {
+		if averagePercent == 0 {
+			data.HeaderText = `Auch wenn Sie ihre Stärken und Potential aktuell nicht eindeutig identifizieren können, finden Sie sicher passende 
+			Empfehlungen in unseren Job-Shadowing-Angeboten (link).`
+		} else if averagePercent == 100 {
+			data.HeaderText = `Ihre Stärken und Potentiale sind sehr vielfältig ausgeprägt. Schauen Sie sich gerne die Empfehlungen aller Typen, 
+			die sich im Drop-Down-Menü aufrufen lassen, an und wählen Sie ein für Sie passendes Job-Shadowing-Angebot aus.`
+		} else {
+			data.HeaderText = `Ihre Stärken und Potentiale liegen entsprechend der prozentualen Aufteilung in den nachfolgen aufgeführten Empfehlungen. 
+			Schauen Sie sich aber auch gerne die anderen Angebote an.`
+		}
+	} else {
+		// Create english header text here, if needed
+	}
+
 	// Finally, execute the template
 	Tools.SendChosenLanguage(response, lang)
 	Templates.ProcessHTML(`results`, response, data)
@@ -123,6 +147,7 @@ type PageResults struct {
 	TextAllGroups  string
 	Strings        XML.ResultStrings
 	Answers        Scheme.Survey
+	HeaderText     string
 }
 
 // GetProgressState returns the css class representing the progress.
@@ -141,6 +166,12 @@ func (data PageResults) GetGroupName(internalName string) string {
 	return data.Groups[internalName].GroupNames[data.LangPos].Text
 }
 
+// GetGroupId returns an html identifer fo a product group
+func (data PageResults) GetGroupId(internalName string) string {
+	// Simply remove whitespaces
+	return strings.Replace(internalName, " ", "", -1)
+}
+
 // Lang returns the localized string using the language id.
 func (data PageResults) Lang(strings []XML.String) string {
 	return strings[data.LangPos].Text
@@ -150,4 +181,15 @@ func (data PageResults) Lang(strings []XML.String) string {
 func (data PageResults) FormatAnswer(question XML.QuestionGroup) string {
 	answer := data.Answers.Answers[question.InternalName].Data
 	return question.ButtonsByData[answer].Texts[data.LangPos].Text
+}
+
+// GetMaxPercentGroup returns the name of the group with maximal percentage
+func (data PageResults) GetMaxPercentGroupId() string {
+	maxGroup := data.Recommendation.ProductGroups[0]
+	for _, group := range data.Recommendation.ProductGroups {
+		if maxGroup.Percent < group.Percent {
+			maxGroup = group
+		}
+	}
+	return data.GetGroupId(maxGroup.Name)
 }
