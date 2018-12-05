@@ -54,6 +54,7 @@ type QuestionGroup struct {
 	InternalName   string                    `xml:"internalName,attr"`
 	Topics         []Topic                   `xml:"Topic"`
 	QuestionBodies []QuestionBody            `xml:"QuestionBody"`
+	QuestionImages []QuestionImage           `xml:"QuestionImage"`
 	Hints          []QuestionHint            `xml:"Hint"`
 	Buttons        []QuestionButton          `xml:"Button"`
 	Weighted       bool                      `xml:"weighted,attr"`
@@ -70,6 +71,12 @@ type QuestionBody struct {
 	XMLName  xml.Name `xml:"QuestionBody"`
 	Language string   `xml:"language,attr"`
 	Text     string   `xml:",chardata"`
+}
+
+type QuestionImage struct {
+	XMLName  xml.Name `xml:"QuestionImage"`
+	Filename string   `xml:"filename,attr"`
+	Source   string   `xml:"source,attr"`
 }
 
 type QuestionHint struct {

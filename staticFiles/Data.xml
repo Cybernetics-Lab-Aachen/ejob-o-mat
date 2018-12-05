@@ -11,6 +11,7 @@
 			<QuestionBody language="en">
 				Ich repariere gerne selbst Dinge, wenn sie defekt sind.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_reparieren.png" source="unsplash.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -45,6 +46,7 @@
 			<QuestionBody language="en">
 				Neue technische Geräte zu bedienen fällt mir leicht.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_geraete.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -79,6 +81,7 @@
 			<QuestionBody language="en">
 				Es macht mir nichts aus, draußen oder bei schlechten Wetterbedingungen zu arbeiten.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_draussen.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -113,6 +116,7 @@
 			<QuestionBody language="en">
 				Technische Zeichnungen und Pläne sind mir vertraut und ich kann damit arbeiten.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_tech_zeichnung.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -147,6 +151,7 @@
 			<QuestionBody language="en">
 				Im Labor finde ich mich gut zurecht.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_labor.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -181,6 +186,7 @@
 			<QuestionBody language="en">
 				Ich lese gerne wissenschaftliche Artikel, auch wenn sie etwas komplizierter sind.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_zeitung.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -215,6 +221,7 @@
 			<QuestionBody language="en">
 				Ich beobachte und führe gerne Versuche und Untersuchungen durch.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_chemie.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -249,6 +256,7 @@
 			<QuestionBody language="en">
 				Ich arbeite gerne und über eine längere Zeit an einer Problemstellung, um eine Lösung zu finden.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_labyrinth.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -283,6 +291,7 @@
 			<QuestionBody language="en">
 				Zu Dichtung, Poesie und Literatur habe ich einen guten Bezug.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_literatur.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -317,6 +326,7 @@
 			<QuestionBody language="en">
 				Ich bin sehr kreativ und ideenreich.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_skizze.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -351,6 +361,7 @@
 			<QuestionBody language="en">
 				Etwas künstlerisch oder mit sprachlichen Mitteln zu gestalten fällt mir leicht.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_graphik.png" source="pixabay.com"/>
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -385,6 +396,7 @@
 			<QuestionBody language="en">
 				Ich setze mich gerne mit anderen Kulturen und Fachbereichen auseinander.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_austausch.png" source="unsplash.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -419,6 +431,7 @@
 			<QuestionBody language="en">
 				Ich kann mich gut in andere Menschen hineinversetzen und weiß oft, wie es ihnen geht.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_gespraech.png" source="unsplash.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -453,6 +466,7 @@
 			<QuestionBody language="en">
 				Andere Leute zählen gerne auf meinen Rat und meine Meinung.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_teamwork.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -487,6 +501,7 @@
 			<QuestionBody language="en">
 				Ich kümmere mich gerne um Andere.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_high_five.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -521,6 +536,7 @@
 			<QuestionBody language="en">
 				Mit anderen Menschen arbeite ich gerne zusammen.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_huddle.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -555,6 +571,7 @@
 			<QuestionBody language="en">
 				Ich kann andere Menschen gut von etwas überzeugen oder begeistern.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_praesentation.png" source="unsplash.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -589,6 +606,7 @@
 			<QuestionBody language="en">
 				In Gruppenarbeiten/Teams habe ich meistens eine führende Rolle und behalte den Durchblick.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_teambesprechung.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -623,6 +641,7 @@
 			<QuestionBody language="en">
 				Ich bin in der Lage, Diskussionen zu leiten.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_diskussion.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -657,6 +676,7 @@
 			<QuestionBody language="en">
 				Ich übernehme gerne Verantwortung.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_hand_reichen.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -691,6 +711,7 @@
 			<QuestionBody language="en">
 				Dinge zu verwalten und einen Überblick zu behalten, fällt mir leicht.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_pinnwand.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -725,6 +746,7 @@
 			<QuestionBody language="en">
 				Ich kann gut mit Statistiken umgehen und auch damit rechnen.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_statistics.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -759,6 +781,7 @@
 			<QuestionBody language="en">
 				Mich an feste Regeln und Abläufe zu halten, ist kein Problem für mich.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_know_the_rules.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />
@@ -793,6 +816,7 @@
 			<QuestionBody language="en">
 				Ich kann mit Ausdauer an langen Aufgaben arbeiten, die viel Konzentration und Genauigkeit erfordern.
 			</QuestionBody>
+			<QuestionImage filename="staticFiles/images/questionImages/image_konzentriertes_arbeiten.png" source="pixabay.com" />
 			<Button data="0">
 				<TextButton language="de" text="Trifft sehr zu" />
 				<TextButton language="en" text="Trifft sehr zu" />

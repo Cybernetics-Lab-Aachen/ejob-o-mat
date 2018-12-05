@@ -84,6 +84,14 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 	data.TextQuestionTopic = questionGroup.Topics[langID].Text
 	data.TextQuestionBody = questionGroup.QuestionBodies[langID].Text
 
+	// Add image
+	if len(questionGroup.QuestionImages) != 0 {
+		data.QuestionImageFilename = questionGroup.QuestionImages[0].Filename
+		data.QuestionImageSource = questionGroup.QuestionImages[0].Source
+	} else {
+		data.QuestionImageFilename = "/staticFiles/images/home.gif"
+	}
+
 	//Show additional information if available
 	if questionGroup.Hints != nil {
 		data.QuestionInfoText = questionGroup.Hints[langID].Text
@@ -125,21 +133,23 @@ func HandlerQuestion(response http.ResponseWriter, request *http.Request) {
 
 // PageQuestion contains data for the question template.
 type PageQuestion struct {
-	Basis              Basis
-	NoQuestion         int
-	NoQuestions        int
-	TextQuestion       string
-	QuestionInfoText   string
-	QuestionInfoHeader string
-	QuestionInfoClose  string
-	TextQuestionTopic  string
-	TextQuestionBody   string
-	TextBackButton     string
-	TextImportant      string
-	ButtonInfoStatus   string
-	Buttons            []PageQuestionButton
-	ProgressStates     []string
-	ShowImportant      bool
+	Basis                 Basis
+	NoQuestion            int
+	NoQuestions           int
+	TextQuestion          string
+	QuestionInfoText      string
+	QuestionInfoHeader    string
+	QuestionInfoClose     string
+	TextQuestionTopic     string
+	TextQuestionBody      string
+	QuestionImageFilename string
+	QuestionImageSource   string
+	TextBackButton        string
+	TextImportant         string
+	ButtonInfoStatus      string
+	Buttons               []PageQuestionButton
+	ProgressStates        []string
+	ShowImportant         bool
 }
 
 // PageQuestionButton contains data for a single answer button.

@@ -681,8 +681,19 @@ p {
   padding-top: 0px;
   color: black;
 }
+.imagetitle-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
 .imagetitle {
   display: block;
+  border-radius: 16px;
+}
+.imagetitle-subtitle {
+  position: absolute;
+  bottom: 2px;
+  right: 18px;
 }
 .subheadline {
   display: inline-block;

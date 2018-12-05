@@ -69,7 +69,11 @@
             <h1 class="headerboxtitle">{{.TextQuestion}} {{.Basis.Add .NoQuestion 1}}/{{.NoQuestions}}</h1>
           </div>
         </div>
-        <img class="imagetitle" src="/staticFiles/images/home.gif" alt="E-Learning Image">
+        <!--<img class="imagetitle" src="/staticFiles/images/home.gif" alt="E-Learning Image">-->
+        <div class="imagetitle-container">
+          <img class="imagetitle" src="{{.QuestionImageFilename}}" alt="E-Learning Image">
+          <div class="imagetitle-subtitle">{{.QuestionImageSource}}</div>
+        </div>
         <br>
         <p class="textbox">{{.TextQuestionBody}}</p>
         <div class="progressbox">
