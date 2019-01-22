@@ -48,12 +48,13 @@ func HandlerStart(response http.ResponseWriter, request *http.Request) {
 		data.TextProject = `Projekt`
 		data.TextExecuted = `Durchgeführt von`
 		data.TextPromoted = `Gefördert von`
-		data.TextWelcome = `Herzlich Willkommen beim ` + NAME_DE_PLAIN + `! Der ` + NAME_DE_PLAIN + ` ist ein Empfehlungssystem, 
-							dass dir auf Basis deiner Stärken und Potentiale mögliche Perspektiven für eine 
+		data.TextWelcome = `Herzlich Willkommen beim ` + NAME_DE_PLAIN + `! Der ejob-o-mat ist ein Empfehlungssystem, 
+							das Ihnen auf Basis Ihrer Stärken und Potentiale, mögliche Perspektiven für eine 
 							Berufseinordnung und konkrete Beispiele der Firmenpartner für das Job Shadowing 
-							bietet. Der ` + NAME_DE_PLAIN + ` wird realisiert im Projekt „ELLI-Exzellentes Lehren und 
+							bietet. Der ` + NAME_DE_PLAIN + ` wird realisiert im Projekt „ELLI - Exzellentes Lehren und 
 							Lernen in den Ingenieurwissenschaften“, welches im Rahmen des „Qualitätspakt Lehre“ 
 							vom Bundesministerium für Bildung und Forschung gefördert wird.`
+
 	} else {
 		data.TextStartButton = `Start Questionnaire`
 		data.Basis.Name = NAME_EN

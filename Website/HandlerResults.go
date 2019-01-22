@@ -117,13 +117,13 @@ func HandlerResults(response http.ResponseWriter, request *http.Request) {
 	// Set header string
 	if strings.Contains(lang.Language, `de`) {
 		if averagePercent == 0 {
-			data.HeaderText = `Auch wenn Sie ihre Stärken und Potential aktuell nicht eindeutig identifizieren können, finden Sie sicher passende 
+			data.HeaderText = `Auch wenn Sie Ihre Stärken und Potentiale aktuell nicht eindeutig identifizieren können, finden Sie sicher passende 
 			Empfehlungen in unseren Job-Shadowing-Angeboten (link).`
 		} else if averagePercent == 100 {
 			data.HeaderText = `Ihre Stärken und Potentiale sind sehr vielfältig ausgeprägt. Schauen Sie sich gerne die Empfehlungen aller Typen, 
 			die sich im Drop-Down-Menü aufrufen lassen, an und wählen Sie ein für Sie passendes Job-Shadowing-Angebot aus.`
 		} else {
-			data.HeaderText = `Ihre Stärken und Potentiale liegen entsprechend der prozentualen Aufteilung in den nachfolgen aufgeführten Empfehlungen. 
+			data.HeaderText = `Ihre Stärken und Potentiale liegen entsprechend der prozentualen Aufteilung in den nachfolgend aufgeführten Empfehlungen. 
 			Schauen Sie sich aber auch gerne die anderen Angebote an.`
 		}
 	} else {

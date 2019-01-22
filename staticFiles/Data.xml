@@ -41,10 +41,10 @@
 			<Topic language="de" text="Typ R" />
 			<Topic language="en" text="Typ R" />
 			<QuestionBody language="de">
-				Neue technische Geräte zu bedienen fällt mir leicht.
+				Neue technische Geräte zu bedienen, fällt mir leicht.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Neue technische Geräte zu bedienen fällt mir leicht.
+				Neue technische Geräte zu bedienen, fällt mir leicht.
 			</QuestionBody>
 			<QuestionImage filename="staticFiles/images/questionImages/image_geraete.png" source="pixabay.com" />
 			<Button data="0">
@@ -356,10 +356,10 @@
 			<Topic language="de" text="Typ A" />
 			<Topic language="en" text="Typ A" />
 			<QuestionBody language="de">
-				Etwas künstlerisch oder mit sprachlichen Mitteln zu gestalten fällt mir leicht.
+				Etwas künstlerisch oder mit sprachlichen Mitteln zu gestalten, fällt mir leicht.
 			</QuestionBody>
 			<QuestionBody language="en">
-				Etwas künstlerisch oder mit sprachlichen Mitteln zu gestalten fällt mir leicht.
+				Etwas künstlerisch oder mit sprachlichen Mitteln zu gestalten, fällt mir leicht.
 			</QuestionBody>
 			<QuestionImage filename="staticFiles/images/questionImages/image_graphik.png" source="pixabay.com"/>
 			<Button data="0">
@@ -859,8 +859,8 @@
 		<ProductGroup internalName="Typ I">
 			<Name language="de" text="Typ I" />
 			<Name language="en" text="Typ I" />
-			<Description language="de">Menschen, die diesem Typ zuzuordnen sind, sehen ihre Vorlieben in Tätigkeiten, bei denen sie mit naturwissenschaftlichen Vorgängen oder mit geistigen Problemstellungen und kulturellen Phänomenen zu tun haben. Es macht ihnen Freude, Untersuchungen durchzuführen oder etwas zu analysieren. Zu ihren Stärken gehören Fähigkeiten wie Rechnen oder Lesen, Denken und Problemlösen sind wichtige Tätigkeiten.</Description>
-			<Description language="en">Menschen, die diesem Typ zuzuordnen sind, sehen ihre Vorlieben in Tätigkeiten, bei denen sie mit naturwissenschaftlichen Vorgängen oder mit geistigen Problemstellungen und kulturellen Phänomenen zu tun haben. Es macht ihnen Freude, Untersuchungen durchzuführen oder etwas zu analysieren. Zu ihren Stärken gehören Fähigkeiten wie Rechnen oder Lesen, Denken und Problemlösen sind wichtige Tätigkeiten.</Description>
+			<Description language="de">Menschen, die diesem Typ zuzuordnen sind, sehen ihre Vorlieben in Tätigkeiten, bei denen sie mit naturwissenschaftlichen Vorgängen oder mit geistigen Problemstellungen und kulturellen Phänomenen zu tun haben. Es macht ihnen Freude, Untersuchungen durchzuführen oder etwas zu analysieren. Zu ihren Stärken gehören Fähigkeiten wie Rechnen oder Lesen und wichtige Tätigkeiten wie das Denken und Problemlösen.</Description>
+			<Description language="en">Menschen, die diesem Typ zuzuordnen sind, sehen ihre Vorlieben in Tätigkeiten, bei denen sie mit naturwissenschaftlichen Vorgängen oder mit geistigen Problemstellungen und kulturellen Phänomenen zu tun haben. Es macht ihnen Freude, Untersuchungen durchzuführen oder etwas zu analysieren. Zu ihren Stärken gehören Fähigkeiten wie Rechnen oder Lesen und wichtige Tätigkeiten wie das Denken und Problemlösen.</Description>
 			<ExampleProduct website="http://www.example.com/">
 				<Name language="de" text="Aixigo" />
 				<Name language="en" text="Aixigo" />
@@ -883,8 +883,8 @@
 		<ProductGroup internalName="Typ A">
 			<Name language="de" text="Typ A" />
 			<Name language="en" text="Typ A" />
-			<Description language="de">Personen dieses Typs bevorzugen offene, unstrukturierte Aktivitäten, die eine künstlerische Selbstdarstellung oder die Schaffung kreativer Produkte ermöglichen. Dabei geht es um die Entwicklung neuer und fantasievoller Ideen, im Vordergrund stehen schöpferische Tätigkeiten und oft ein unkonventionelles Vorgehen bei der Umsetzung dieser Ideen. Sie interessieren sich für Musik, Kunst und Kultur, sowie Sprache und Schriftstellerei.</Description>
-			<Description language="en">Personen dieses Typs bevorzugen offene, unstrukturierte Aktivitäten, die eine künstlerische Selbstdarstellung oder die Schaffung kreativer Produkte ermöglichen. Dabei geht es um die Entwicklung neuer und fantasievoller Ideen, im Vordergrund stehen schöpferische Tätigkeiten und oft ein unkonventionelles Vorgehen bei der Umsetzung dieser Ideen. Sie interessieren sich für Musik, Kunst und Kultur, sowie Sprache und Schriftstellerei.</Description>
+			<Description language="de">Personen dieses Typs bevorzugen offene, unstrukturierte Aktivitäten, die eine künstlerische Selbstdarstellung oder die Schaffung kreativer Produkte ermöglichen. Dabei geht es um die Entwicklung neuer und fantasievoller Ideen, ein unkonventionelles Vorgehen bei der Umsetzung dieser Ideen und schöpferische Tätigkeiten. Sie interessieren sich für Musik, Kunst und Kultur, sowie Sprache und Schriftstellerei.</Description>
+			<Description language="en">Personen dieses Typs bevorzugen offene, unstrukturierte Aktivitäten, die eine künstlerische Selbstdarstellung oder die Schaffung kreativer Produkte ermöglichen. Dabei geht es um die Entwicklung neuer und fantasievoller Ideen, ein unkonventionelles Vorgehen bei der Umsetzung dieser Ideen und schöpferische Tätigkeiten. Sie interessieren sich für Musik, Kunst und Kultur, sowie Sprache und Schriftstellerei.</Description>
 			<ExampleProduct website="http://www.example.com/">
 				<Name language="de" text="Foo" />
 				<Name language="en" text="Foo" />
@@ -907,8 +907,8 @@
 		<ProductGroup internalName="Typ E">
 			<Name language="de" text="Typ E" />
 			<Name language="en" text="Typ E" />
-			<Description language="de">Personen, die diesem Typ zuzuordnen sind, haben ihre beruflichen Schwerpunkte beim Organisieren und in der Planung von wirtschaftlichen Vorgängen. Wichtige Stärken sind das Leiten und Motivieren anderer Menschen, also liegen im Bereich der Führungs- und Überzeugungsqualität. Ihnen ist es wichtig, erfolgreich zu sein, aber auch Verantwortung zu übernehmen. Sie können gut mit Hilfe der Sprache oder anderer Mittel andere beeinflussen, zu etwas bringen, führen, auch manipulieren.</Description>
-			<Description language="en">Personen, die diesem Typ zuzuordnen sind, haben ihre beruflichen Schwerpunkte beim Organisieren und in der Planung von wirtschaftlichen Vorgängen. Wichtige Stärken sind das Leiten und Motivieren anderer Menschen, also liegen im Bereich der Führungs- und Überzeugungsqualität. Ihnen ist es wichtig, erfolgreich zu sein, aber auch Verantwortung zu übernehmen. Sie können gut mit Hilfe der Sprache oder anderer Mittel andere beeinflussen, zu etwas bringen, führen, auch manipulieren.</Description>
+			<Description language="de">Personen, die diesem Typ zuzuordnen sind, haben ihre beruflichen Schwerpunkte beim Organisieren und in der Planung von wirtschaftlichen Vorgängen. Wichtige Stärken sind das Leiten und Motivieren anderer Menschen, also im Bereich der Führungs- und Überzeugungsqualität. Ihnen ist es wichtig, erfolgreich zu sein, aber auch Verantwortung zu übernehmen. Sie können mit Hilfe der Sprache oder anderer Mittel ihre Mitmenschen beeinflussen, zu etwas bringen, führen, oder auch manipulieren.</Description>
+			<Description language="en">Personen, die diesem Typ zuzuordnen sind, haben ihre beruflichen Schwerpunkte beim Organisieren und in der Planung von wirtschaftlichen Vorgängen. Wichtige Stärken sind das Leiten und Motivieren anderer Menschen, also im Bereich der Führungs- und Überzeugungsqualität. Ihnen ist es wichtig, erfolgreich zu sein, aber auch Verantwortung zu übernehmen. Sie können mit Hilfe der Sprache oder anderer Mittel ihre Mitmenschen beeinflussen, zu etwas bringen, führen, oder auch manipulieren.</Description>
 			<ExampleProduct website="http://www.example.com/">
 				<Name language="de" text="Foo" />
 				<Name language="en" text="Foo" />
@@ -919,8 +919,8 @@
 		<ProductGroup internalName="Typ C">
 			<Name language="de" text="Typ C" />
 			<Name language="en" text="Typ C" />
-			<Description language="de">Personen dieses Typs haben rechnerische und geschäftliche Stärken, die vor allem in der Organisation, beispielweise bei Bürotätigkeiten und Aufzeichnungen, nützlich sind. Sie arbeiten, genau und ordentlich, feste Regeln und Abläufe sind ihnen wichtig. Dabei arbeiten sie sorgfältig, strukturiert, gewissenhaft und ausdauernd, beispielsweise bei der Kontrolle von Zahlenreihen oder von Anträgen.</Description>
-			<Description language="en">Personen dieses Typs haben rechnerische und geschäftliche Stärken, die vor allem in der Organisation, beispielweise bei Bürotätigkeiten und Aufzeichnungen, nützlich sind. Sie arbeiten, genau und ordentlich, feste Regeln und Abläufe sind ihnen wichtig. Dabei arbeiten sie sorgfältig, strukturiert, gewissenhaft und ausdauernd, beispielsweise bei der Kontrolle von Zahlenreihen oder von Anträgen.</Description>
+			<Description language="de">Personen dieses Typs haben rechnerische und geschäftliche Stärken, die vor allem in der Organisation, beispielweise bei Bürotätigkeiten und Aufzeichnungen, nützlich sind. Sie arbeiten genau und ordentlich, feste Regeln und Abläufe sind ihnen sehr wichtig. Dabei arbeiten sie sorgfältig, strukturiert, gewissenhaft und ausdauernd, beispielsweise bei der Kontrolle von Zahlenreihen oder von Anträgen.</Description>
+			<Description language="en">Personen dieses Typs haben rechnerische und geschäftliche Stärken, die vor allem in der Organisation, beispielweise bei Bürotätigkeiten und Aufzeichnungen, nützlich sind. Sie arbeiten genau und ordentlich, feste Regeln und Abläufe sind ihnen sehr wichtig. Dabei arbeiten sie sorgfältig, strukturiert, gewissenhaft und ausdauernd, beispielsweise bei der Kontrolle von Zahlenreihen oder von Anträgen.</Description>
 			<ExampleProduct website="http://www.example.com/">
 				<Name language="de" text="Foo" />
 				<Name language="en" text="Foo" />
