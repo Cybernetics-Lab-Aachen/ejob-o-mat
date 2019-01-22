@@ -35,7 +35,7 @@
             <h1 class="headerboxtitle">Feedback</h1>
           </div>
         </div>
-        <p class="textbox">{{.TextFeedback}}</p>
+        <p class="textbox">{{.TextFeedbackParagraph1}}<br><br>{{.TextFeedbackParagraph2}}</p>
         <div class="w-form">
           <form id="feedback" name="feedback" data-name="feedback" method="post" action="/writeFeedback">
             <input type="hidden" name="lang" value="{{.Basis.Lang}}">
@@ -84,14 +84,8 @@
         <a href="/?lang={{.Basis.Lang}}&session={{.Basis.Session}}">
           <img class="w-hidden-medium w-hidden-small w-hidden-tiny logo" src="/staticFiles/images/{{.Basis.Logo}}.gif">
         </a>
-        <div>
-          <a href="http://www.elearn-o-mat.net/feedback?lang=de&session={{.Basis.Session}}">
-            <img class="flag" src="/staticFiles/images/flagDE.gif">
-          </a>
-          <a href="http://www.elearning-finder.net/feedback?lang=en&session={{.Basis.Session}}">
-            <img class="flag lastflag" src="/staticFiles/images/flagUK.gif">
-          </a>
-        </div>
+        <br>
+        <br>
         <a class="button buttonsmall" href="/impressum?lang={{.Basis.Lang}}&session={{.Basis.Session}}">Impressum</a>
       </div>
     </div>

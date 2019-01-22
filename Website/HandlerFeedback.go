@@ -30,7 +30,8 @@ func HandlerFeedback(response http.ResponseWriter, request *http.Request) {
 		data.TextYourFeedback = `Ihr Feedback`
 		data.TextYourRating = `Ihre Bewertung`
 		data.TextSubmit = `Absenden`
-		data.TextFeedback = `Hier haben Sie die Möglichkeit Ihr Feedback ans uns zu richten. Wir freuen uns über Ihre Meinung und bedanken uns im Voraus, dass Sie sich die Zeit dafür nehmen. Vielen Dank, dass Sie den ` + NAME_DE_PLAIN + ` benutzen.`
+		data.TextFeedbackParagraph1 = `Vielen Dank, dass Sie den ejob-o-mat benutzen.`
+		data.TextFeedbackParagraph2 = `Hier haben Sie die Möglichkeit, Ihr Feedback ans uns zu richten. Wir freuen uns über Ihre Meinung und bedanken uns im Voraus, dass Sie sich die Zeit dafür nehmen.`
 	} else {
 		data.Basis.Name = NAME_EN
 		data.Basis.Logo = LOGO_UK
@@ -39,7 +40,8 @@ func HandlerFeedback(response http.ResponseWriter, request *http.Request) {
 		data.TextYourFeedback = `Your Feedback`
 		data.TextYourRating = `Your Rating`
 		data.TextSubmit = `Submit`
-		data.TextFeedback = `Here you have the possibility to provide feedback for us. We are very interested on your opinion about the ` + NAME_EN_PLAIN + `. Thank you very much for your support and using of the ` + NAME_EN_PLAIN + `.`
+		data.TextFeedbackParagraph1 = `Here you have the possibility to provide feedback for us. `
+		data.TextFeedbackParagraph2 = `We are very interested on your opinion about the ` + NAME_EN_PLAIN + `. Thank you very much for your support and using of the ` + NAME_EN_PLAIN + `.`
 	}
 
 	// Execute the template
@@ -49,12 +51,13 @@ func HandlerFeedback(response http.ResponseWriter, request *http.Request) {
 
 // PageFeedback contains data for the feedback template.
 type PageFeedback struct {
-	Basis            Basis
-	TextFeedback     string
-	TextYourFeedback string
-	TextYourRating   string
-	TextRatingLeft   string
-	TextRatingRight  string
-	TextSubmit       string
-	SourceLocation   string
+	Basis                  Basis
+	TextFeedbackParagraph1 string
+	TextFeedbackParagraph2 string
+	TextYourFeedback       string
+	TextYourRating         string
+	TextRatingLeft         string
+	TextRatingRight        string
+	TextSubmit             string
+	SourceLocation         string
 }
