@@ -981,8 +981,8 @@
 			<String language="en">Options</String>
 		</TextOptionen>
 		<TextHeaderPrefix>
-			<String language="de">Ihre E-Learning-Empfehlung</String>
-			<String language="en">Your E-Learning Recommendation</String>
+			<String language="de">Ihre Job Empfehlung</String>
+			<String language="en">Your Job Recommendation</String>
 		</TextHeaderPrefix>
 		<TextRestart>
 			<String language="de">Den Fragebogen erneut starten</String>
