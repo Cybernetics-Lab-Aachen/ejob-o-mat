@@ -113,6 +113,11 @@ p {
 .button.infoboxclose {
   margin-left: 12px;
 }
+.button.buttonquestion {
+  width: 30%;
+  margin: 8px 3px 5px 3px;
+  font-size: 15.5px;
+}
 .button.buttonhuge {
   min-height: 45px;
   min-width: 220px;
@@ -278,6 +283,8 @@ p {
   font-weight: 700;
 }
 .qcontainer {
+  width: 500px;
+  max-width: 500px;
   min-height: 333px;
   background-color: white;
   box-shadow: none;

@@ -76,11 +76,6 @@
         </div>
         <br>
         <p class="textbox">{{.TextQuestionBody}}</p>
-        <div class="progressbox">
-          {{range $pos, $state := .ProgressStates}}
-          <div class="progressitem{{if eq $pos 0}} progressitemfirst{{end}}{{$state}}"></div>
-          {{end}}
-        </div>
         <div class="infobox">
           <div class="infoboxheader">{{.QuestionInfoHeader}}</div>
           <p class="infoboxtext">{{.QuestionInfoText}}</p>
@@ -93,7 +88,7 @@
             <input type="hidden" name="no" value="{{.NoQuestion}}">
             <div class="divbuttons">
               {{range .Buttons}}
-              <button class="button buttonhuge" type="submit" name="a" value="{{.Data}}">{{.Text}}</button>
+              <button class="button buttonquestion" type="submit" name="a" value="{{.Data}}">{{.Text}}</button>
               {{end}}
             </div>
             <div class="optionbox">
@@ -109,6 +104,11 @@
           </form>
           <div class="w-form-done"></div>
           <div class="w-form-fail"></div>
+        </div>
+        <div class="progressbox">
+          {{range $pos, $state := .ProgressStates}}
+          <div class="progressitem{{if eq $pos 0}} progressitemfirst{{end}}{{$state}}"></div>
+          {{end}}
         </div>
         <div class="w-container containerlogo">
           <img src="/staticFiles/images/footer.png">
