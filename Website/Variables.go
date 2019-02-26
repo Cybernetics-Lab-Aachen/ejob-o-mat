@@ -5,8 +5,8 @@ import (
 )
 
 const (
-	NAME_DE       string = `ejob-o-mat.de`
-	NAME_EN       string = `ejob-o-mat.de`
+	NAME_DE       string = `ejob-o-mat.net`
+	NAME_EN       string = `ejob-o-mat.net`
 	NAME_DE_PLAIN string = `ejob-o-mat`
 	NAME_EN_PLAIN string = `ejob-finder`
 	LOGO_DE       string = `logoDE`
