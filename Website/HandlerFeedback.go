@@ -27,11 +27,13 @@ func HandlerFeedback(response http.ResponseWriter, request *http.Request) {
 		data.Basis.Logo = LOGO_DE
 		data.TextRatingLeft = `sehr gut`
 		data.TextRatingRight = `unbrauchbar`
-		data.TextYourFeedback = `Ihr Feedback`
-		data.TextYourRating = `Ihre Bewertung`
+		data.TextYourFeedback = `Dein Feedback`
+		data.TextYourRating = `Deine Bewertung`
 		data.TextSubmit = `Absenden`
-		data.TextFeedbackParagraph1 = `Vielen Dank, dass Sie den ejob-o-mat benutzen.`
-		data.TextFeedbackParagraph2 = `Hier haben Sie die Möglichkeit, Ihr Feedback ans uns zu richten. Wir freuen uns über Ihre Meinung und bedanken uns im Voraus, dass Sie sich die Zeit dafür nehmen.`
+		data.TextFeedbackParagraph1 = `Vielen Dank, dass Du den ejob-o-mat benutzt.`
+		data.TextFeedbackParagraph2 = `Hier hast Du die Möglichkeit, Dein Feedback ans uns zu richten. 
+									   Wir freuen uns über Deine Meinung und bedanken uns im Voraus, dass 
+									   Du Dir die Zeit dafür nimmst.`
 	} else {
 		data.Basis.Name = NAME_EN
 		data.Basis.Logo = LOGO_UK

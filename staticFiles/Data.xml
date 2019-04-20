@@ -965,7 +965,7 @@
 			<String language="en">Results</String>
 		</TextResults>
 		<TextMatch>
-			<String language="de">Übereinstimmung mit Ihren Antworten</String>
+			<String language="de">Übereinstimmung mit deinen Antworten</String>
 			<String language="en">match with your answers</String>
 		</TextMatch>
 		<TextGroup>
@@ -981,7 +981,7 @@
 			<String language="en">Options</String>
 		</TextOptionen>
 		<TextHeaderPrefix>
-			<String language="de">Ihre Job Empfehlung</String>
+			<String language="de">Deine Job Empfehlung</String>
 			<String language="en">Your Job Recommendation</String>
 		</TextHeaderPrefix>
 		<TextRestart>
